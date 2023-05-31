@@ -1,0 +1,10 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "esModuleInterop": false,
+        "outDir": "./libDev"
+    },
+    "include": ["."],
+    "references": []
+}

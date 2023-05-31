@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.lib.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "libDev",
+        "composite": true,
+        "incremental": true,
+        "declarationMap": true
+    },
+    "include": [".", "**/*.json"],
+    "references": [
+        { "path": "../blockchain-link-types" },
+        { "path": "../blockchain-link-utils" },
+        { "path": "../utils" },
+        { "path": "../utxo-lib" },
+        { "path": "../e2e-utils" }
+    ]
+}

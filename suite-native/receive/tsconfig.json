@@ -1,0 +1,25 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": { "outDir": "libDev" },
+    "references": [
+        { "path": "../../suite-common/icons" },
+        {
+            "path": "../../suite-common/wallet-core"
+        },
+        {
+            "path": "../../suite-common/wallet-types"
+        },
+        {
+            "path": "../../suite-common/wallet-utils"
+        },
+        { "path": "../accounts" },
+        { "path": "../analytics" },
+        { "path": "../atoms" },
+        { "path": "../ethereum-tokens" },
+        { "path": "../formatters" },
+        { "path": "../link" },
+        { "path": "../navigation" },
+        { "path": "../qr-code" },
+        { "path": "../../packages/styles" }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "name": "@suite-native/state",
+    "version": "1.0.0",
+    "private": true,
+    "license": "See LICENSE.md in repo root",
+    "sideEffects": false,
+    "main": "src/index",
+    "scripts": {
+        "lint:js": "yarn g:eslint '**/*.{ts,tsx,js}'",
+        "type-check": "tsc --build"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "1.9.5",
+        "@suite-common/analytics": "workspace:*",
+        "@suite-common/logger": "workspace:*",
+        "@suite-common/redux-utils": "workspace:*",
+        "@suite-common/test-utils": "workspace:*",
+        "@suite-common/toast-notifications": "workspace:*",
+        "@suite-common/wallet-core": "workspace:*",
+        "@suite-native/config": "workspace:*",
+        "@suite-native/fiat-rates": "workspace:*",
+        "@suite-native/logger": "workspace:*",
+        "@suite-native/module-devices": "workspace:*",
+        "@suite-native/module-settings": "workspace:*",
+        "@suite-native/storage": "workspace:*",
+        "@suite-native/toasts": "workspace:*",
+        "@trezor/connect": "workspace:*",
+        "@trezor/utils": "workspace:*",
+        "react": "18.2.0",
+        "react-redux": "8.0.5",
+        "redux-flipper": "2.0.2",
+        "redux-persist": "6.0.0"
+    },
+    "devDependencies": {
+        "typescript": "4.9.5"
+    }
+}

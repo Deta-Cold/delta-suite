@@ -1,0 +1,17 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./libDev",
+        "types": ["web", "jest"]
+    },
+    "references": [
+        { "path": "../connect" },
+        { "path": "../connect-common" },
+        { "path": "../env-utils" }
+    ],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}

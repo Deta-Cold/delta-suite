@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.aliases.json",
+    "compilerOptions": { "outDir": "./libDev" },
+    "include": ["."],
+    "references": [
+        {
+            "path": "../../suite-common/formatters"
+        },
+        { "path": "../../suite-common/sentry" },
+        { "path": "../device-utils" },
+        { "path": "../suite" },
+        {
+            "path": "../../suite-common/test-utils"
+        },
+        { "path": "../e2e-utils" },
+        { "path": "../trezor-user-env-link" },
+        { "path": "../utils" }
+    ]
+}

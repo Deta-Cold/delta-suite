@@ -1,0 +1,32 @@
+# ! DO NOT set latest here USE custom hash !
+image: registry.gitlab.com/satoshilabs/trezor/trezor-suite/base@sha256:ba5cf63ec1db0b102664b216114674f98c88cff206f537394f6203ad7d9c580f
+
+variables:
+  DEV_SERVER_URL: "https://suite.corp.sldev.cz"
+  STAGING_WALLET_SERVER_URL: "https://staging-wallet.trezor.io/wallet"
+  STAGING_SUITE_SERVER_URL: "https://staging-suite.trezor.io"
+  DESKTOP_APP_NAME: "Trezor-Suite"
+  GIT_CLEAN_FLAGS: "-ffdx -e .yarn"
+
+stages:
+  - setup environment
+  - prebuild
+  - build
+  - deploy to dev
+  - deploy npm
+  - integration testing
+  - build artifacts
+  - utils
+  - deploy to staging
+  - deploy to production
+
+include:
+  - ci/environment.yml
+  - ci/prebuild.yml
+  - ci/build.yml
+  - ci/deploy.yml
+  - ci/npm-deploy.yml
+  - ci/test.yml
+  - ci/releases.yml
+  # # to be run only on scheduled pipelines
+  - ci/utils.yml

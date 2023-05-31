@@ -1,0 +1,50 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": { "outDir": "libDev" },
+    "references": [
+        {
+            "path": "../../suite-common/formatters"
+        },
+        { "path": "../../suite-common/icons" },
+        {
+            "path": "../../suite-common/redux-utils"
+        },
+        {
+            "path": "../../suite-common/wallet-config"
+        },
+        {
+            "path": "../../suite-common/wallet-core"
+        },
+        {
+            "path": "../../suite-common/wallet-types"
+        },
+        {
+            "path": "../../suite-common/wallet-utils"
+        },
+        { "path": "../accounts" },
+        { "path": "../alerts" },
+        { "path": "../analytics" },
+        { "path": "../atoms" },
+        { "path": "../config" },
+        { "path": "../ethereum-tokens" },
+        { "path": "../fiat-rates" },
+        { "path": "../formatters" },
+        { "path": "../forms" },
+        { "path": "../module-devices" },
+        { "path": "../module-settings" },
+        { "path": "../navigation" },
+        { "path": "../qr-code" },
+        { "path": "../video-assets" },
+        {
+            "path": "../../packages/blockchain-link"
+        },
+        {
+            "path": "../../packages/blockchain-link-types"
+        },
+        { "path": "../../packages/connect" },
+        { "path": "../../packages/styles" },
+        { "path": "../../packages/utxo-lib" },
+        { "path": "../../packages/validation" }
+    ],
+    "include": [".", "**/*.json"]
+}

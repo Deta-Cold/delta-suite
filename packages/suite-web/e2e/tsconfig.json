@@ -1,0 +1,13 @@
+{
+    // "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "types": ["cypress", "node"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "target": "ES6",
+        "composite": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "references": [{ "path": "../../e2e-utils" }]
+}

@@ -1,0 +1,31 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": { "outDir": "libDev" },
+    "references": [
+        {
+            "path": "../../suite-common/analytics"
+        },
+        { "path": "../../suite-common/logger" },
+        {
+            "path": "../../suite-common/redux-utils"
+        },
+        {
+            "path": "../../suite-common/test-utils"
+        },
+        {
+            "path": "../../suite-common/toast-notifications"
+        },
+        {
+            "path": "../../suite-common/wallet-core"
+        },
+        { "path": "../config" },
+        { "path": "../fiat-rates" },
+        { "path": "../logger" },
+        { "path": "../module-devices" },
+        { "path": "../module-settings" },
+        { "path": "../storage" },
+        { "path": "../toasts" },
+        { "path": "../../packages/connect" },
+        { "path": "../../packages/utils" }
+    ]
+}

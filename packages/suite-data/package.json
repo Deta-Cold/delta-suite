@@ -1,0 +1,56 @@
+{
+    "name": "@trezor/suite-data",
+    "version": "1.0.0",
+    "private": true,
+    "author": "Trezor <info@trezor.io>",
+    "keywords": [
+        "Trezor",
+        "trezor-data"
+    ],
+    "license": "SEE LICENSE IN LICENSE.md",
+    "description": "Trezor data",
+    "scripts": {
+        "build:lib": "yarn browser-detection && yarn guide-pull-content",
+        "browser-detection": "webpack --config ./browser-detection.webpack.ts",
+        "guide-pull-content": "tsx ./src/guide/index.ts",
+        "update-coinjoin-middleware": "./files/bin/coinjoin/update.sh",
+        "type-check": "tsc --build tsconfig.json"
+    },
+    "dependencies": {
+        "@suite-common/suite-types": "workspace:*",
+        "@suite-common/suite-utils": "workspace:*",
+        "@trezor/env-utils": "workspace:*",
+        "@trezor/urls": "workspace:*",
+        "@trezor/utils": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.1",
+        "autoprefixer": "^10.4.14",
+        "babel-loader": "^9.1.2",
+        "css-loader": "^6.7.4",
+        "fs-extra": "^11.1.1",
+        "jest": "^26.6.3",
+        "postcss-loader": "^7.3.0",
+        "postcss-modules-extract-imports": "^3.0.0",
+        "postcss-modules-local-by-default": "^4.0.1",
+        "postcss-modules-scope": "^3.0.0",
+        "postcss-modules-values": "^4.0.0",
+        "simple-git": "^3.18.0",
+        "style-loader": "^3.3.3",
+        "tsx": "^3.12.7",
+        "typescript": "4.9.5",
+        "webpack": "^5.83.1",
+        "webpack-cli": "^5.1.1"
+    },
+    "nx": {
+        "targets": {
+            "build:lib": {
+                "outputs": [
+                    "./tmp",
+                    "./files/browser-detection",
+                    "./files/guide"
+                ]
+            }
+        }
+    }
+}

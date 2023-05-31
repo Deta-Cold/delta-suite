@@ -1,0 +1,28 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": { "outDir": "libDev" },
+    "references": [
+        {
+            "path": "../../suite-common/analytics"
+        },
+        { "path": "../../suite-common/icons" },
+        {
+            "path": "../../suite-common/suite-config"
+        },
+        {
+            "path": "../../suite-common/suite-constants"
+        },
+        { "path": "../alerts" },
+        { "path": "../analytics" },
+        { "path": "../atoms" },
+        { "path": "../biometrics" },
+        { "path": "../config" },
+        { "path": "../link" },
+        { "path": "../navigation" },
+        { "path": "../storage" },
+        { "path": "../theme" },
+        { "path": "../../packages/connect" },
+        { "path": "../../packages/styles" },
+        { "path": "../../packages/theme" }
+    ]
+}

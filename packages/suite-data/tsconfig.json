@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "outDir": "./libDev"
+    },
+    "include": ["./src"],
+    "references": [
+        {
+            "path": "../../suite-common/suite-types"
+        },
+        {
+            "path": "../../suite-common/suite-utils"
+        },
+        { "path": "../env-utils" },
+        { "path": "../urls" },
+        { "path": "../utils" }
+    ]
+}

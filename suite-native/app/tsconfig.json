@@ -1,0 +1,51 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": { "outDir": "libDev" },
+    "references": [
+        {
+            "path": "../../suite-common/analytics"
+        },
+        {
+            "path": "../../suite-common/connect-init"
+        },
+        {
+            "path": "../../suite-common/formatters"
+        },
+        { "path": "../../suite-common/icons" },
+        {
+            "path": "../../suite-common/redux-utils"
+        },
+        {
+            "path": "../../suite-common/suite-constants"
+        },
+        {
+            "path": "../../suite-common/wallet-core"
+        },
+        { "path": "../alerts" },
+        { "path": "../analytics" },
+        { "path": "../atoms" },
+        { "path": "../biometrics" },
+        { "path": "../config" },
+        { "path": "../fiat-rates" },
+        { "path": "../module-accounts" },
+        { "path": "../module-accounts-import" },
+        { "path": "../module-dev-utils" },
+        { "path": "../module-home" },
+        { "path": "../module-onboarding" },
+        { "path": "../module-receive" },
+        { "path": "../module-settings" },
+        { "path": "../navigation" },
+        { "path": "../notifications" },
+        { "path": "../receive" },
+        { "path": "../state" },
+        { "path": "../storage" },
+        { "path": "../theme" },
+        { "path": "../toasts" },
+        { "path": "../transactions" },
+        { "path": "../../packages/connect" },
+        { "path": "../../packages/styles" },
+        { "path": "../../packages/suite-data" },
+        { "path": "../../packages/theme" }
+    ],
+    "include": [".", "**.json"]
+}

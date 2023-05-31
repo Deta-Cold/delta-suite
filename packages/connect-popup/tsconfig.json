@@ -1,0 +1,23 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./libDev",
+        "types": ["web", "jest"]
+    },
+    "include": [".", "**/*.json"],
+    "references": [
+        { "path": "../connect" },
+        { "path": "../connect-analytics" },
+        { "path": "../connect-common" },
+        { "path": "../connect-ui" },
+        { "path": "../crypto-utils" },
+        { "path": "../urls" },
+        { "path": "../node-utils" },
+        { "path": "../trezor-user-env-link" }
+    ],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}

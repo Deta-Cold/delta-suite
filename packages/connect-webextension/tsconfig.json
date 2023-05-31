@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.aliases.json",
+    "compilerOptions": {
+        "isolatedModules": false,
+        "noEmit": true
+    },
+    "include": ["**/*.ts", "**/*.js"],
+    "references": [
+        { "path": "../node-utils" },
+        { "path": "../trezor-user-env-link" }
+    ]
+}

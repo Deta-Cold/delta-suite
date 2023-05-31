@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": { "outDir": "libDev" },
+    "references": [
+        {
+            "path": "../../suite-common/formatters"
+        },
+        { "path": "../../suite-common/icons" },
+        { "path": "../assets" },
+        { "path": "../atoms" },
+        { "path": "../formatters" },
+        { "path": "../graph" },
+        { "path": "../module-accounts" },
+        { "path": "../module-settings" },
+        { "path": "../navigation" },
+        { "path": "../receive" },
+        { "path": "../../packages/styles" }
+    ]
+}
