@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from '@suite-hooks';
-import { P, Button, Image } from '@trezor/components';
-import { HELP_CENTER_FAILED_BACKUP_URL } from '@trezor/urls';
+import { P, Button, Image } from '@detahard/components';
+import { HELP_CENTER_FAILED_BACKUP_URL } from '@detahard/urls';
 import { backupDevice } from '@backup-actions/backupActions';
 import { changePin } from '@settings-actions/deviceSettingsActions';
-import { Loading, Translation, TrezorLink, Modal } from '@suite-components';
+import { Loading, Translation, detahardLink, Modal } from '@suite-components';
 import { PreBackupCheckboxes, AfterBackupCheckboxes } from '@backup-components';
 import { canStart, canContinue } from '@backup-utils';
 import { selectDevice, selectLocks } from '@suite-reducers/suiteReducer';
@@ -125,9 +125,9 @@ export const Backup = ({ cancelable, onCancel }: ForegroundAppProps) => {
                         <StyledImage image="UNI_ERROR" />
                         <StyledP data-test="@backup/already-failed-message">
                             <Translation id="BACKUP_BACKUP_ALREADY_FAILED_DESCRIPTION" />
-                            <TrezorLink icon="EXTERNAL_LINK" href={HELP_CENTER_FAILED_BACKUP_URL}>
+                            <detahardLink icon="EXTERNAL_LINK" href={HELP_CENTER_FAILED_BACKUP_URL}>
                                 <Translation id="TR_LEARN_MORE" />
-                            </TrezorLink>
+                            </detahardLink>
                         </StyledP>
                     </VerticalCenter>
                 ) : (

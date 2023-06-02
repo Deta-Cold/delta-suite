@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { capitalizeFirstLetter } from '@trezor/utils';
+import { capitalizeFirstLetter } from '@detahard/utils';
 import { ActionColumn, SectionItem, TextColumn, ActionButton } from '@suite-components/Settings';
 import { useSelector, useActions } from '@suite-hooks';
 import * as metadataActions from '@suite-actions/metadataActions';

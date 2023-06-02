@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, variables } from '@trezor/components';
+import { Card, variables } from '@detahard/components';
 import { CoinmarketExchangeOfferInfo, CoinmarketExchangeTopPanel } from '@wallet-components';
 import { useCoinmarketExchangeDetailContext } from '@wallet-hooks/useCoinmarketExchangeDetail';
 import { ExchangeTradeFinalStatuses } from '@wallet-hooks/useCoinmarket';
@@ -28,7 +28,7 @@ const StyledCard = styled(Card)`
 `;
 
 const CoinmarketDetail = () => {
-    useLayout('Trezor Suite | Trade', CoinmarketExchangeTopPanel);
+    useLayout('detahard Suite | Trade', CoinmarketExchangeTopPanel);
 
     const { account, trade, exchangeInfo } = useCoinmarketExchangeDetailContext();
     const { goto } = useActions({ goto: routerActions.goto });

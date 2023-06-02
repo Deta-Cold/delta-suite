@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Icon, IconName } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Box, Text } from '@suite-native/atoms';
 
 type AnalyticsInfoRowProps = {

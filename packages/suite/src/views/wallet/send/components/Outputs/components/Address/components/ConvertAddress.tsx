@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import { Translation } from '@suite-components/Translation';
 import type { ExtendedMessageDescriptor } from '@suite-types';
 

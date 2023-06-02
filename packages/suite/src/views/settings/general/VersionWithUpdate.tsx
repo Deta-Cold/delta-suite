@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 
 import * as desktopUpdateActions from '@suite-actions/desktopUpdateActions';
 import { VersionWithGithubTooltip } from '@suite-components/VersionWithGithubTooltip';

@@ -55,7 +55,7 @@ export type ComposeRequest = {
     outputs: ComposeOutput[]; // all output "requests"
     height: number;
     feeRate: string | number; // in sat/byte, virtual size
-    basePath: number[]; // for trezor inputs
+    basePath: number[]; // for detahard inputs
     network: Network;
     changeId: number;
     changeAddress: string;

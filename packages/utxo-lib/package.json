@@ -1,20 +1,20 @@
 {
-    "name": "@trezor/utxo-lib",
+    "name": "@detahard/utxo-lib",
     "version": "1.0.7",
-    "author": "Trezor <info@trezor.io>",
-    "homepage": "https://github.com/trezor/trezor-suite/tree/develop/packages/utxo-lib",
+    "author": "detahard <info@detahard.io>",
+    "homepage": "https://github.com/detahard/detahard-suite/tree/develop/packages/utxo-lib",
     "description": "Client-side Bitcoin-like JavaScript library",
     "npmPublishAccess": "public",
     "license": "SEE LICENSE IN LICENSE.md",
     "repository": {
         "type": "git",
-        "url": "git://github.com/trezor/trezor-suite.git"
+        "url": "git://github.com/detahard/detahard-suite.git"
     },
     "bugs": {
-        "url": "https://github.com/trezor/trezor-suite/issues"
+        "url": "https://github.com/detahard/detahard-suite/issues"
     },
     "keywords": [
-        "Trezor",
+        "detahard",
         "bitcoin",
         "altcoins",
         "utxo",
@@ -36,7 +36,7 @@
         "prepublish": "yarn tsx ../../scripts/prepublish.js"
     },
     "dependencies": {
-        "@trezor/utils": "workspace:*",
+        "@detahard/utils": "workspace:*",
         "bchaddrjs": "^0.5.2",
         "bech32": "^2.0.0",
         "bip66": "^1.1.5",

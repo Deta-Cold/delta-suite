@@ -1,4 +1,4 @@
-name: "@trezor/blockchain-link"
+name: "@detahard/blockchain-link"
 
 on:
   push:
@@ -41,5 +41,5 @@ jobs:
       - run: yarn
       - run: yarn build:libs
       - run: git status
-      - run: yarn workspace @trezor/blockchain-link build:workers
+      - run: yarn workspace @detahard/blockchain-link build:workers
       - run: "./docker/docker-blockchain-link-test.sh"

@@ -1,5 +1,5 @@
 import { decode } from 'bs58';
-import { throwError } from '@trezor/utils';
+import { throwError } from '@detahard/utils';
 import { p2pkh, p2sh, p2wpkh, p2tr } from './payments';
 import { fromBase58 } from './bip32';
 import { bitcoin, Network } from './networks';

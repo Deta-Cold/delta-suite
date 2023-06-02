@@ -11,7 +11,7 @@ import Animated, {
 import { PanGestureHandler, PanGestureHandlerGestureEvent } from 'react-native-gesture-handler';
 import { TouchableWithoutFeedback } from 'react-native';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Box, Text } from '@suite-native/atoms';
 import { InvertedThemeProvider } from '@suite-native/theme';
 

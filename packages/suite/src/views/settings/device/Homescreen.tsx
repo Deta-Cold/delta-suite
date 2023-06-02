@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import { HOMESCREEN_EDITOR_URL } from '@trezor/urls';
+import { HOMESCREEN_EDITOR_URL } from '@detahard/urls';
 
 import { Translation } from '@suite-components';
 import { ActionButton, ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
-import { Tooltip, variables } from '@trezor/components';
+import { Tooltip, variables } from '@detahard/components';
 import { useDevice, useActions } from '@suite-hooks';
 import * as modalActions from '@suite-actions/modalActions';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
-import { DeviceModel, getDeviceModel } from '@trezor/device-utils';
+import { DeviceModel, getDeviceModel } from '@detahard/device-utils';
 import {
     deviceModelInformation,
     imagePathToHex,
@@ -20,7 +20,7 @@ import {
 } from '@suite-utils/homescreen';
 import { useAnchor } from '@suite-hooks/useAnchor';
 import { SettingsAnchor } from '@suite-constants/anchors';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
 const StyledActionButton = styled(ActionButton)`
     &:not(:first-of-type) {

@@ -1,10 +1,10 @@
 import url from 'url';
 
-import { TOR_URLS } from '@trezor/urls';
+import { TOR_URLS } from '@detahard/urls';
 import { isDevEnv, isCodesignBuild } from '@suite-common/suite-utils';
 
 const getAppName = () => {
-    const appName = 'Trezor Suite';
+    const appName = 'detahard Suite';
 
     if (!isCodesignBuild) {
         return `${appName} ${isDevEnv ? 'Local' : 'Dev'}`;
@@ -29,9 +29,9 @@ export const APP_SRC = isDevEnv
 export const HTTP_ORIGINS_DEFAULT = [
     '127.0.0.1',
     'localhost',
-    'trezor.io',
-    '*.trezor.io',
+    'detahard.io',
+    '*.detahard.io',
     '*.sldev.cz',
-    TOR_URLS['trezor.io'],
-    `*.${TOR_URLS['trezor.io']}`,
+    TOR_URLS['detahard.io'],
+    `*.${TOR_URLS['detahard.io']}`,
 ];

@@ -1,16 +1,16 @@
-import { Device, UnavailableCapability, FirmwareRelease } from '@trezor/connect';
-import { TrezorDevice, AcquiredDevice } from '@suite-types';
-import { DeviceModel, getDeviceModel } from '@trezor/device-utils';
-import * as URLS from '@trezor/urls';
+import { Device, UnavailableCapability, FirmwareRelease } from '@detahard/connect';
+import { detahardDevice, AcquiredDevice } from '@suite-types';
+import { DeviceModel, getDeviceModel } from '@detahard/device-utils';
+import * as URLS from '@detahard/urls';
 
 /**
  * Used in Welcome step in Onboarding
  * Status 'ok' or 'initialized' is what we expect, 'bootloader', 'seedless' and 'unreadable' are no go
  *
- * @param {(TrezorDevice | undefined)} device
+ * @param {(detahardDevice | undefined)} device
  * @returns
  */
-export const getConnectedDeviceStatus = (device: TrezorDevice | undefined) => {
+export const getConnectedDeviceStatus = (device: detahardDevice | undefined) => {
     if (!device) return null;
 
     const isInBlWithFwPresent =
@@ -23,7 +23,7 @@ export const getConnectedDeviceStatus = (device: TrezorDevice | undefined) => {
     return 'ok';
 };
 
-export const getStatus = (device: TrezorDevice) => {
+export const getStatus = (device: detahardDevice) => {
     if (device.type === 'acquired') {
         if (!device.connected) {
             return 'disconnected';
@@ -108,14 +108,14 @@ export const getDeviceNeedsAttentionMessage = (deviceStatus: ReturnType<typeof g
     }
 };
 
-export const isDeviceRemembered = (device?: TrezorDevice): boolean => !!device?.remember;
+export const isDeviceRemembered = (device?: detahardDevice): boolean => !!device?.remember;
 
-export const isDeviceAccessible = (device?: TrezorDevice) => {
+export const isDeviceAccessible = (device?: detahardDevice) => {
     if (!device || !device.features) return false;
     return device.mode === 'normal' && device.firmware !== 'required';
 };
 
-export const isSelectedInstance = (selected?: TrezorDevice, device?: TrezorDevice) =>
+export const isSelectedInstance = (selected?: detahardDevice, device?: detahardDevice) =>
     !!(
         selected &&
         device &&
@@ -126,7 +126,7 @@ export const isSelectedInstance = (selected?: TrezorDevice, device?: TrezorDevic
         selected.instance === device.instance
     );
 
-export const isSelectedDevice = (selected?: TrezorDevice | Device, device?: TrezorDevice) => {
+export const isSelectedDevice = (selected?: detahardDevice | Device, device?: detahardDevice) => {
     if (!selected || !device) return false;
     if (!selected.id || selected.mode === 'bootloader') return selected.path === device.path;
     return selected.id === device.id;
@@ -143,7 +143,7 @@ export const getCoinUnavailabilityMessage = (reason: UnavailableCapability) => {
             return 'FW_CAPABILITY_NO_SUPPORT';
         case 'update-required':
             return 'FW_CAPABILITY_UPDATE_REQUIRED';
-        case 'trezor-connect-outdated':
+        case 'detahard-connect-outdated':
             return 'FW_CAPABILITY_CONNECT_OUTDATED';
         // no default
     }
@@ -151,11 +151,11 @@ export const getCoinUnavailabilityMessage = (reason: UnavailableCapability) => {
 
 /**
  * Generate new instance number
- * @param {TrezorDevice[]} devices
+ * @param {detahardDevice[]} devices
  * @param {AcquiredDevice} device
  * @returns number
  */
-export const getNewInstanceNumber = (devices: TrezorDevice[], device: TrezorDevice | Device) => {
+export const getNewInstanceNumber = (devices: detahardDevice[], device: detahardDevice | Device) => {
     if (!device.features) return undefined;
     // find all instances with device "device_id"
     // and sort them by instance number
@@ -176,7 +176,7 @@ export const getNewInstanceNumber = (devices: TrezorDevice[], device: TrezorDevi
     return instance > 0 ? instance : undefined;
 };
 
-export const getNewWalletNumber = (devices: TrezorDevice[], device: TrezorDevice) => {
+export const getNewWalletNumber = (devices: detahardDevice[], device: detahardDevice) => {
     const relevantDevices = devices
         .filter(d => d.features && d.id === device.id && d.walletNumber && !d.useEmptyPassphrase)
         .sort((a, b) =>
@@ -188,10 +188,10 @@ export const getNewWalletNumber = (devices: TrezorDevice[], device: TrezorDevice
 
 /**
  * Find exact instance index
- * @param {TrezorDevice[]} draft
+ * @param {detahardDevice[]} draft
  * @param {AcquiredDevice} device
  */
-export const findInstanceIndex = (draft: TrezorDevice[], device: AcquiredDevice) =>
+export const findInstanceIndex = (draft: detahardDevice[], device: AcquiredDevice) =>
     draft.findIndex(
         d => d.features && d.id && d.id === device.id && d.instance === device.instance,
     );
@@ -199,14 +199,14 @@ export const findInstanceIndex = (draft: TrezorDevice[], device: AcquiredDevice)
 /**
  * Utility for retrieving fresh data from the "devices" reducer
  * It's used for keep "suite" reducer synchronized via `suiteMiddleware > suiteActions.observeSelectedDevice`
- * @param {(TrezorDevice)} device
- * @param {TrezorDevice[]} devices
- * @returns {TrezorDevice | undefined }
+ * @param {(detahardDevice)} device
+ * @param {detahardDevice[]} devices
+ * @returns {detahardDevice | undefined }
  */
 export const getSelectedDevice = (
-    device: TrezorDevice,
-    devices: TrezorDevice[],
-): TrezorDevice | undefined => {
+    device: detahardDevice,
+    devices: detahardDevice[],
+): detahardDevice | undefined => {
     // selected device is not acquired
     if (!device.features) return devices.find(d => d.path === device.path);
     const { path, instance } = device;
@@ -228,15 +228,15 @@ export const getSelectedDevice = (
     });
 };
 
-export const getChangelogUrl = (device: TrezorDevice, revision?: string | null) => {
+export const getChangelogUrl = (device: detahardDevice, revision?: string | null) => {
     const deviceModel = getDeviceModel(device);
     const commit = revision || 'master';
     const folder = deviceModel === DeviceModel.T1 ? 'legacy/firmware' : 'core';
 
-    return `https://github.com/trezor/trezor-firmware/blob/${commit}/${folder}/CHANGELOG.md`;
+    return `https://github.com/detahard/detahard-firmware/blob/${commit}/${folder}/CHANGELOG.md`;
 };
 
-export const getCheckBackupUrl = (device?: TrezorDevice) => {
+export const getCheckBackupUrl = (device?: detahardDevice) => {
     const deviceModel = getDeviceModel(device);
 
     if (!deviceModel) {
@@ -246,7 +246,7 @@ export const getCheckBackupUrl = (device?: TrezorDevice) => {
     return URLS[`HELP_CENTER_DRY_RUN_T${deviceModel}_URL`];
 };
 
-export const getPackagingUrl = (device?: TrezorDevice) => {
+export const getPackagingUrl = (device?: detahardDevice) => {
     const deviceModel = getDeviceModel(device);
 
     if (!deviceModel) {
@@ -256,7 +256,7 @@ export const getPackagingUrl = (device?: TrezorDevice) => {
     return URLS[`HELP_CENTER_PACKAGING_T${deviceModel}_URL`];
 };
 
-export const getFirmwareDowngradeUrl = (device?: TrezorDevice) => {
+export const getFirmwareDowngradeUrl = (device?: detahardDevice) => {
     const deviceModel = getDeviceModel(device);
 
     if (!deviceModel) {
@@ -269,10 +269,10 @@ export const getFirmwareDowngradeUrl = (device?: TrezorDevice) => {
 /**
  * Used by suiteActions
  * Sort devices by "ts" (timestamp) field
- * @param {TrezorDevice[]} devices
- * @returns {TrezorDevice[]}
+ * @param {detahardDevice[]} devices
+ * @returns {detahardDevice[]}
  */
-export const sortByTimestamp = (devices: TrezorDevice[]): TrezorDevice[] =>
+export const sortByTimestamp = (devices: detahardDevice[]): detahardDevice[] =>
     // Node.js v11+ changed sort algo https://github.com/nodejs/node/pull/22754#issuecomment-423452575
     // In unit tests some devices have undefined ts
     devices.sort((a, b) => {
@@ -282,7 +282,7 @@ export const sortByTimestamp = (devices: TrezorDevice[]): TrezorDevice[] =>
         return b.ts - a.ts;
     });
 
-export const sortByPriority = (a: TrezorDevice, b: TrezorDevice) => {
+export const sortByPriority = (a: detahardDevice, b: detahardDevice) => {
     // sort by priority:
     // 1. unacquired
     // 2. force remembered
@@ -320,14 +320,14 @@ export const sortByPriority = (a: TrezorDevice, b: TrezorDevice) => {
 
 /**
  * Returns all device instances sorted by `instance` field
- * @param {TrezorDevice | undefined} device
- * @param {TrezorDevice[]} devices
+ * @param {detahardDevice | undefined} device
+ * @param {detahardDevice[]} devices
  * @param {boolean} exclude - excludes `device` from results
- * @returns {TrezorDevice[]}
+ * @returns {detahardDevice[]}
  */
 export const getDeviceInstances = (
-    device: TrezorDevice,
-    devices: TrezorDevice[],
+    device: detahardDevice,
+    devices: detahardDevice[],
     exclude = false,
 ): AcquiredDevice[] => {
     if (!device || !device.features || !device.id) return [];
@@ -347,10 +347,10 @@ export const getDeviceInstances = (
 
 /**
  * Returns first available instance for each device sorted by priority
- * @param {TrezorDevice[]} devices
- * @returns {TrezorDevice[]}
+ * @param {detahardDevice[]} devices
+ * @returns {detahardDevice[]}
  */
-export const getFirstDeviceInstance = (devices: TrezorDevice[]) =>
+export const getFirstDeviceInstance = (devices: detahardDevice[]) =>
     // filter device instances
     devices
         .reduce((result, dev) => {
@@ -362,7 +362,7 @@ export const getFirstDeviceInstance = (devices: TrezorDevice[]) =>
             if (alreadyExists) return result;
             // base (np passphrase) or first passphrase instance
             return result.concat(instances[0]);
-        }, [] as TrezorDevice[])
+        }, [] as detahardDevice[])
         .sort(sortByPriority);
 
 export const getPhysicalDeviceUniqueIds = (devices: Device[]) =>

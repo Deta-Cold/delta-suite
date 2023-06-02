@@ -10,7 +10,7 @@ import child_process from 'child_process';
 import yargs from 'yargs/yargs';
 import path from 'path';
 import fs from 'fs';
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
 
 import cypressConfig from './cypress.config';
 
@@ -69,7 +69,7 @@ const getTestFiles = (): string[] => {
 };
 
 const runTests = async () => {
-    await TrezorUserEnvLink.connect();
+    await detahardUserEnvLink.connect();
 
     const {
         BROWSER = 'chrome',

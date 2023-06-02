@@ -1,6 +1,6 @@
 import React from 'react';
 import BigNumber from 'bignumber.js';
-import { Input, Icon } from '@trezor/components';
+import { Input, Icon } from '@detahard/components';
 import { QuestionTooltip } from '@suite-components';
 import { InputError } from '@wallet-components';
 import { useSendFormContext } from '@wallet-hooks';

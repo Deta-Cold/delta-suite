@@ -1,6 +1,6 @@
 import type { ExtendedMessageDescriptor } from '@suite-common/intl-types';
-import type { Keys, Without } from '@trezor/type-utils';
-import { DeviceModel } from '@trezor/device-utils';
+import type { Keys, Without } from '@detahard/type-utils';
+import { DeviceModel } from '@detahard/device-utils';
 
 export const networks = {
     btc: {
@@ -10,9 +10,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://btc1.trezor.io/tx/',
-            account: 'https://btc1.trezor.io/xpub/',
-            address: 'https://btc1.trezor.io/address/',
+            tx: 'https://btc1.detahard.io/tx/',
+            account: 'https://btc1.detahard.io/xpub/',
+            address: 'https://btc1.detahard.io/address/',
         },
         features: ['rbf', 'sign-verify', 'amount-unit'],
         customBackends: ['blockbook', 'electrum'],
@@ -41,9 +41,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://ltc1.trezor.io/tx/',
-            account: 'https://ltc1.trezor.io/xpub/',
-            address: 'https://ltc1.trezor.io/address/',
+            tx: 'https://ltc1.detahard.io/tx/',
+            account: 'https://ltc1.detahard.io/xpub/',
+            address: 'https://ltc1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -64,10 +64,10 @@ export const networks = {
         decimals: 18,
         testnet: false,
         explorer: {
-            tx: 'https://eth1.trezor.io/tx/',
-            account: 'https://eth1.trezor.io/address/',
-            nft: 'https://eth1.trezor.io/nft/',
-            address: 'https://eth1.trezor.io/address/',
+            tx: 'https://eth1.detahard.io/tx/',
+            account: 'https://eth1.detahard.io/address/',
+            nft: 'https://eth1.detahard.io/nft/',
+            address: 'https://eth1.detahard.io/address/',
         },
         features: ['rbf', 'sign-verify', 'tokens'],
         label: 'TR_NETWORK_ETHEREUM_LABEL',
@@ -83,10 +83,10 @@ export const networks = {
         decimals: 18,
         testnet: false,
         explorer: {
-            tx: 'https://etc1.trezor.io/tx/',
-            account: 'https://etc1.trezor.io/address/',
-            nft: 'https://etc1.trezor.io/nft/',
-            address: 'https://etc1.trezor.io/address/',
+            tx: 'https://etc1.detahard.io/tx/',
+            account: 'https://etc1.detahard.io/address/',
+            nft: 'https://etc1.detahard.io/nft/',
+            address: 'https://etc1.detahard.io/address/',
         },
         features: ['sign-verify', 'tokens'],
         customBackends: ['blockbook'],
@@ -115,9 +115,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://bch1.trezor.io/tx/',
-            account: 'https://bch1.trezor.io/xpub/',
-            address: 'https://bch1.trezor.io/address/',
+            tx: 'https://bch1.detahard.io/tx/',
+            account: 'https://bch1.detahard.io/xpub/',
+            address: 'https://bch1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -130,9 +130,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://btg1.trezor.io/tx/',
-            account: 'https://btg1.trezor.io/xpub/',
-            address: 'https://btg1.trezor.io/address/',
+            tx: 'https://btg1.detahard.io/tx/',
+            account: 'https://btg1.detahard.io/xpub/',
+            address: 'https://btg1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -149,9 +149,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://dash1.trezor.io/tx/',
-            account: 'https://dash1.trezor.io/xpub/',
-            address: 'https://dash1.trezor.io/address/',
+            tx: 'https://dash1.detahard.io/tx/',
+            account: 'https://dash1.detahard.io/xpub/',
+            address: 'https://dash1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -164,9 +164,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://dgb1.trezor.io/tx/',
-            account: 'https://dgb1.trezor.io/xpub/',
-            address: 'https://dgb1.trezor.io/address/',
+            tx: 'https://dgb1.detahard.io/tx/',
+            account: 'https://dgb1.detahard.io/xpub/',
+            address: 'https://dgb1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -183,9 +183,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://doge1.trezor.io/tx/',
-            account: 'https://doge1.trezor.io/xpub/',
-            address: 'https://doge1.trezor.io/address/',
+            tx: 'https://doge1.detahard.io/tx/',
+            account: 'https://doge1.detahard.io/xpub/',
+            address: 'https://doge1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -198,9 +198,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://nmc1.trezor.io/tx/',
-            account: 'https://nmc1.trezor.io/xpub/',
-            address: 'https://nmc1.trezor.io/address/',
+            tx: 'https://nmc1.detahard.io/tx/',
+            account: 'https://nmc1.detahard.io/xpub/',
+            address: 'https://nmc1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -213,9 +213,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://vtc1.trezor.io/tx/',
-            account: 'https://vtc1.trezor.io/xpub/',
-            address: 'https://vtc1.trezor.io/address/',
+            tx: 'https://vtc1.detahard.io/tx/',
+            account: 'https://vtc1.detahard.io/xpub/',
+            address: 'https://vtc1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -235,9 +235,9 @@ export const networks = {
         decimals: 8,
         testnet: false,
         explorer: {
-            tx: 'https://zec1.trezor.io/tx/',
-            account: 'https://zec1.trezor.io/xpub/',
-            address: 'https://zec1.trezor.io/address/',
+            tx: 'https://zec1.detahard.io/tx/',
+            account: 'https://zec1.detahard.io/xpub/',
+            address: 'https://zec1.detahard.io/address/',
         },
         features: ['sign-verify'],
         customBackends: ['blockbook'],
@@ -252,9 +252,9 @@ export const networks = {
         testnet: true,
         label: 'TR_TESTNET_COINS_LABEL',
         explorer: {
-            tx: 'https://tbtc1.trezor.io/tx/',
-            account: 'https://tbtc1.trezor.io/xpub/',
-            address: 'https://tbtc1.trezor.io/address/',
+            tx: 'https://tbtc1.detahard.io/tx/',
+            account: 'https://tbtc1.detahard.io/xpub/',
+            address: 'https://tbtc1.detahard.io/address/',
         },
         features: ['rbf', 'sign-verify', 'amount-unit'],
         customBackends: ['blockbook', 'electrum'],
@@ -317,10 +317,10 @@ export const networks = {
         testnet: true,
         label: 'TR_TESTNET_COINS_LABEL',
         explorer: {
-            tx: 'https://goerli1.trezor.io/tx/',
-            account: 'https://goerli1.trezor.io/address/',
-            nft: 'https://goerli1.trezor.io/nft/',
-            address: 'https://goerli1.trezor.io/address/',
+            tx: 'https://goerli1.detahard.io/tx/',
+            account: 'https://goerli1.detahard.io/address/',
+            nft: 'https://goerli1.detahard.io/nft/',
+            address: 'https://goerli1.detahard.io/address/',
         },
         features: ['rbf', 'sign-verify', 'tokens'],
         customBackends: ['blockbook'],
@@ -361,7 +361,7 @@ export const networks = {
         customBackends: ['blockfrost'],
         accountTypes: {
             legacy: {
-                // icarus-trezor derivation
+                // icarus-detahard derivation
                 bip43Path: "m/1852'/1815'/i'",
             },
             ledger: {
@@ -390,7 +390,7 @@ export const networks = {
         customBackends: ['blockfrost'],
         accountTypes: {
             legacy: {
-                // icarus-trezor derivation
+                // icarus-detahard derivation
                 bip43Path: "m/1852'/1815'/i'",
             },
             ledger: {
@@ -401,11 +401,11 @@ export const networks = {
     },
 } as const;
 
-export const TREZOR_CONNECT_BACKENDS = ['blockbook', 'electrum', 'ripple', 'blockfrost'] as const;
+export const detahard_CONNECT_BACKENDS = ['blockbook', 'electrum', 'ripple', 'blockfrost'] as const;
 export const NON_STANDARD_BACKENDS = ['coinjoin'] as const;
 
 export type BackendType =
-    | (typeof TREZOR_CONNECT_BACKENDS)[number]
+    | (typeof detahard_CONNECT_BACKENDS)[number]
     | (typeof NON_STANDARD_BACKENDS)[number];
 
 type Networks = typeof networks;

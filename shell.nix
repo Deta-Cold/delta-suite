@@ -12,7 +12,7 @@ let
   nodejs = nodejs-18_x;
 in
   stdenv.mkDerivation {
-    name = "trezor-suite-dev";
+    name = "detahard-suite-dev";
     buildInputs = [
       bash
       git-lfs

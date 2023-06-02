@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables, Loader, Button, Link } from '@trezor/components';
+import { variables, Loader, Button, Link } from '@detahard/components';
 import { Translation } from '@suite-components/Translation';
 
 const Wrapper = styled.div`

@@ -15,11 +15,11 @@ const transform = (field: Field, value: any) => {
         }
 
         // [compatibility]
-        // it is likely that we can remove this right away because trezor-connect tests don't ever trigger this condition
-        // we should probably make sure that trezor-connect treats following protobuf types as strings: int64, uint64, sint64, fixed64, sfixed64
+        // it is likely that we can remove this right away because detahard-connect tests don't ever trigger this condition
+        // we should probably make sure that detahard-connect treats following protobuf types as strings: int64, uint64, sint64, fixed64, sfixed64
         if (field.long) {
             if (Number.isSafeInteger(value.toNumber())) {
-                // old trezor-link behavior https://github.com/trezor/trezor-link/blob/9c200cc5608976cff0542484525e98c753ba1888/src/lowlevel/protobuf/message_decoder.js#L80
+                // old detahard-link behavior https://github.com/detahard/detahard-link/blob/9c200cc5608976cff0542484525e98c753ba1888/src/lowlevel/protobuf/message_decoder.js#L80
                 return value.toNumber();
             }
             // otherwise return as string

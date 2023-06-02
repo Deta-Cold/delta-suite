@@ -7,7 +7,7 @@ import {
     selectAccountByDescriptorAndNetworkSymbol,
 } from '@suite-common/wallet-core';
 import { NetworkSymbol } from '@suite-common/wallet-config';
-import { AccountInfo } from '@trezor/connect';
+import { AccountInfo } from '@detahard/connect';
 import { enabledNetworks } from '@suite-native/config';
 
 import { AccountImportSummaryForm } from './AccountImportSummaryForm';

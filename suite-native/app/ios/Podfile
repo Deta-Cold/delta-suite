@@ -22,7 +22,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'TrezorSuite' do
+target 'detahardSuite' do
   use_expo_modules!
   post_integrate do |installer|
     begin
@@ -53,7 +53,7 @@ target 'TrezorSuite' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'TrezorSuiteTests' do
+  target 'detahardSuiteTests' do
     inherit! :complete
     # Pods for testing
   end

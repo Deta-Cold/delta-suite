@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, Tooltip, variables } from '@trezor/components';
-import { INVITY_SCHEDULE_OF_FEES } from '@trezor/urls';
+import { Link, Tooltip, variables } from '@detahard/components';
+import { INVITY_SCHEDULE_OF_FEES } from '@detahard/urls';
 import { Translation } from '@suite-components';
 
 const StyledTooltip = styled(Tooltip)`

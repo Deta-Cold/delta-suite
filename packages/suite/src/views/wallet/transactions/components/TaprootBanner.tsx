@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables, H2, Button, Card, Icon, useTheme } from '@trezor/components';
+import { variables, H2, Button, Card, Icon, useTheme } from '@detahard/components';
 import { Translation } from '@suite-components';
 
 const StyledCard = styled(Card)`

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as routerActions from '@suite-actions/routerActions';
-import { TrezorDevice } from '@suite-types';
+import { detahardDevice } from '@suite-types';
 import {
     CheckSeedStep,
     CloseButton,
@@ -14,9 +14,9 @@ import { DeviceUnreadable } from '@suite-views/device-unreadable';
 import { Translation, Modal } from '@suite-components';
 import { OnboardingStepBox } from '@onboarding-components';
 import { useActions, useFirmware, useSelector } from '@suite-hooks';
-import { ConfirmOnDevice, variables } from '@trezor/components';
+import { ConfirmOnDevice, variables } from '@detahard/components';
 import * as suiteActions from '@suite-actions/suiteActions';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 
 const Wrapper = styled.div<{ isWithTopPadding: boolean }>`
     display: flex;
@@ -59,7 +59,7 @@ export const Firmware = ({ shouldSwitchFirmwareType }: FirmwareProps) => {
         resetReducer();
     };
 
-    const [cachedDevice, setCachedDevice] = useState<TrezorDevice | undefined>(device);
+    const [cachedDevice, setCachedDevice] = useState<detahardDevice | undefined>(device);
 
     // some of the application states can be reused here.
     // some don't make sense handling here as they are handled somewhere up the tree
@@ -161,7 +161,7 @@ export const Firmware = ({ shouldSwitchFirmwareType }: FirmwareProps) => {
             modalPrompt={
                 status === 'waiting-for-confirmation' && (
                     <ConfirmOnDevice
-                        title={<Translation id="TR_CONFIRM_ON_TREZOR" />}
+                        title={<Translation id="TR_CONFIRM_ON_detahard" />}
                         deviceModel={deviceModel}
                     />
                 )

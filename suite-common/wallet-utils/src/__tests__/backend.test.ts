@@ -1,4 +1,4 @@
-import { getDefaultBackendType, isElectrumUrl, isTrezorConnectBackendType } from '../backend';
+import { getDefaultBackendType, isElectrumUrl, isdetahardConnectBackendType } from '../backend';
 
 describe('backend utils', () => {
     test('getDefaultBackendType', () => {
@@ -18,13 +18,13 @@ describe('backend utils', () => {
         expect(isElectrumUrl('')).toBe(false);
     });
 
-    test('isTrezorConnectBackendType', () => {
-        expect(isTrezorConnectBackendType()).toBe(true);
-        expect(isTrezorConnectBackendType('blockbook')).toBe(true);
-        expect(isTrezorConnectBackendType('coinjoin')).toBe(false);
+    test('isdetahardConnectBackendType', () => {
+        expect(isdetahardConnectBackendType()).toBe(true);
+        expect(isdetahardConnectBackendType('blockbook')).toBe(true);
+        expect(isdetahardConnectBackendType('coinjoin')).toBe(false);
         // @ts-expect-error
-        expect(isTrezorConnectBackendType('gibberish')).toBe(false);
+        expect(isdetahardConnectBackendType('gibberish')).toBe(false);
         // @ts-expect-error
-        expect(isTrezorConnectBackendType({})).toBe(false);
+        expect(isdetahardConnectBackendType({})).toBe(false);
     });
 });

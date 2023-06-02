@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text as RNText, TextProps as RNTextProps, TextStyle } from 'react-native';
 
-import { useNativeStyles, prepareNativeStyle, NativeStyleObject } from '@trezor/styles';
-import { Color, TypographyStyle } from '@trezor/theme';
+import { useNativeStyles, prepareNativeStyle, NativeStyleObject } from '@detahard/styles';
+import { Color, TypographyStyle } from '@detahard/theme';
 
 import { TestProps } from './types';
 

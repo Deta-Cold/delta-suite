@@ -2,8 +2,8 @@ import type { ComposedTransaction } from './transaction';
 import type { CompleteResult } from './coinselect';
 
 // Output from coinselect algorithm
-// 'nonfinal' - contains info about the outputs, but not Trezor tx
-// 'final' - contains info about outputs + Trezor tx
+// 'nonfinal' - contains info about the outputs, but not detahard tx
+// 'final' - contains info about outputs + detahard tx
 // 'error' - some error, so far only NOT-ENOUGH-FUNDS and EMPTY strings
 export type ComposeResult =
     | {

@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from '@suite-hooks';
 import styled from 'styled-components';
 
 import { Account } from '@suite-common/wallet-types';
-import { Translation, TrezorLink } from '@suite-components';
+import { Translation, detahardLink } from '@suite-components';
 import { Error } from '@suite-components/Error';
-import { Button, Card, Checkbox, Link, Note, Tooltip, variables } from '@trezor/components';
-import { DATA_TOS_URL, ZKSNACKS_TERMS_URL } from '@trezor/urls';
+import { Button, Card, Checkbox, Link, Note, Tooltip, variables } from '@detahard/components';
+import { DATA_TOS_URL, ZKSNACKS_TERMS_URL } from '@detahard/urls';
 import { startCoinjoinSession } from '@wallet-actions/coinjoinAccountActions';
 import {
     selectCurrentTargetAnonymity,
@@ -204,10 +204,10 @@ export const CoinjoinConfirmation = ({ account }: CoinjoinConfirmationProps) => 
                                     {chunks}
                                 </Link>
                             ),
-                            trezor: chunks => (
-                                <TrezorLink href={DATA_TOS_URL} variant="underline">
+                            detahard: chunks => (
+                                <detahardLink href={DATA_TOS_URL} variant="underline">
                                     {chunks}
-                                </TrezorLink>
+                                </detahardLink>
                             ),
                         }}
                     />

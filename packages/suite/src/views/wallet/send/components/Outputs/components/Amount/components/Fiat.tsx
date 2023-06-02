@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import styled from 'styled-components';
 import { Controller } from 'react-hook-form';
 
-import { Select } from '@trezor/components';
+import { Select } from '@detahard/components';
 import { InputError } from '@wallet-components';
 import { useSendFormContext } from '@wallet-hooks';
 import {

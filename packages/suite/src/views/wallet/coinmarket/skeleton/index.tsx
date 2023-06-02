@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import { useLoadingSkeleton } from '@suite-hooks';
 import { SkeletonRectangle, Spread } from '@suite-components/Skeleton';
 import { Wrapper, Left, Middle, Right, StyledIcon, FooterWrapper } from '@wallet-views/coinmarket';

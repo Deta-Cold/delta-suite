@@ -23,12 +23,12 @@ import {
     BadgeVariant,
     HStack,
 } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Screen, ScreenHeader } from '@suite-native/navigation';
 import { CryptoIcon, tokenIcons, Icon, IconName, icons } from '@suite-common/icons';
 import { CoinsSettings } from '@suite-native/module-settings';
 import { isDevelopOrDebugEnv } from '@suite-native/config';
-import { TypographyStyle } from '@trezor/theme';
+import { TypographyStyle } from '@detahard/theme';
 import { TokenSymbol } from '@suite-common/wallet-types';
 
 const inputStackStyle = prepareNativeStyle(utils => ({

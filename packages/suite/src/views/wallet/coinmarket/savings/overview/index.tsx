@@ -7,7 +7,7 @@ import {
     WithCoinmarketProps,
 } from '@wallet-components';
 import styled from 'styled-components';
-import { Icon, variables } from '@trezor/components';
+import { Icon, variables } from '@detahard/components';
 import {
     FiatValue,
     FormattedCryptoAmount,

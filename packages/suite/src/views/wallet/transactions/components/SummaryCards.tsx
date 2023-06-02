@@ -6,7 +6,7 @@ import { Translation, HiddenPlaceholder, FormattedDate } from '@suite-components
 import { Account } from '@wallet-types';
 
 import { useFormatters } from '@suite-common/formatters';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 
 import { InfoCard } from './InfoCard';
 import { AggregatedAccountHistory, GraphRange } from '@wallet-types/graph';

@@ -13,7 +13,7 @@ import {
 } from '@suite-native/navigation';
 import { AlertBox, Box, Image, VStack } from '@suite-native/atoms';
 import { useActiveColorScheme } from '@suite-native/theme';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { OnboardingFooter } from '../components/OnboardingFooter';
 import { OnboardingScreen } from '../components/OnboardingScreen';
@@ -64,7 +64,7 @@ export const GetStartedScreen = () => {
                 />
             </Box>
             <VStack style={applyStyle(footerStyle)} spacing="medium">
-                <AlertBox title="This requires Trezor hardware wallet and access to the Trezor Suite app." />
+                <AlertBox title="This requires detahard hardware wallet and access to the detahard Suite app." />
 
                 <OnboardingFooter redirectTarget={handleRedirect} isLastStep />
             </VStack>

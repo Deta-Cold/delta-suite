@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { FIAT } from '@suite-config';
 import { Translation, NumberInput } from '@suite-components';
-import { Select } from '@trezor/components';
+import { Select } from '@detahard/components';
 import { buildOption } from '@wallet-utils/coinmarket/coinmarketUtils';
 import Bignumber from 'bignumber.js';
 import { Controller } from 'react-hook-form';

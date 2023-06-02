@@ -1,4 +1,4 @@
-import { CARDANO, PROTO } from '@trezor/connect';
+import { CARDANO, PROTO } from '@detahard/connect';
 
 import {
     composeTxPlan,
@@ -163,7 +163,7 @@ describe('cardano utils', () => {
 
     fixtures.getStakePoolForDelegation.forEach(f => {
         it(`getStakePoolForDelegation: ${f.description}`, () => {
-            expect(getStakePoolForDelegation(f.trezorPools, f.accountBalance)).toMatchObject(
+            expect(getStakePoolForDelegation(f.detahardPools, f.accountBalance)).toMatchObject(
                 f.result,
             );
         });

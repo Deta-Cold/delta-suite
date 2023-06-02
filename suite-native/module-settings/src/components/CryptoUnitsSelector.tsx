@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Select } from '@suite-native/atoms';
-import { PROTO } from '@trezor/connect';
+import { PROTO } from '@detahard/connect';
 import { analytics, EventType } from '@suite-native/analytics';
 import { UNIT_ABBREVIATIONS } from '@suite-common/suite-constants';
 

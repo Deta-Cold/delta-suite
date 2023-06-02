@@ -1,4 +1,4 @@
-import { TrezorDevice } from '@suite-types';
+import { detahardDevice } from '@suite-types';
 import { getFormattedFingerprint, validateFirmware } from '..';
 
 describe('getFormattedFingerprint', () => {
@@ -32,7 +32,7 @@ describe('validateFirmware', () => {
     it('should return TR_FIRMWARE_VALIDATION_UNRECOGNIZED_FORMAT if firmware format is unrecognized', () => {
         const fw = new ArrayBuffer(20);
 
-        const device = { features: { model: 'T' } } as TrezorDevice;
+        const device = { features: { model: 'T' } } as detahardDevice;
 
         expect(validateFirmware(fw, device)).toBe('TR_FIRMWARE_VALIDATION_UNRECOGNIZED_FORMAT');
     });
@@ -40,7 +40,7 @@ describe('validateFirmware', () => {
     it('should return TR_FIRMWARE_VALIDATION_UNMATCHING_DEVICE if firmware format does not match the device model', () => {
         const fw = getT1V2FW();
 
-        const device = { features: { model: 'R' } } as TrezorDevice;
+        const device = { features: { model: 'R' } } as detahardDevice;
 
         expect(validateFirmware(fw, device)).toBe('TR_FIRMWARE_VALIDATION_UNMATCHING_DEVICE');
     });
@@ -50,7 +50,7 @@ describe('validateFirmware', () => {
 
         const device = {
             features: { model: '1', major_version: 1, minor_version: 6, patch_version: 0 },
-        } as TrezorDevice;
+        } as detahardDevice;
 
         expect(validateFirmware(fw, device)).toBe('TR_FIRMWARE_VALIDATION_T1_V2');
     });
@@ -60,7 +60,7 @@ describe('validateFirmware', () => {
 
         const device = {
             features: { model: '1', major_version: 1, minor_version: 8, patch_version: 3 },
-        } as TrezorDevice;
+        } as detahardDevice;
 
         expect(validateFirmware(fw, device)).toBe(undefined);
     });

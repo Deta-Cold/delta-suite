@@ -8,8 +8,8 @@ import { useAnchor } from '@suite-hooks/useAnchor';
 import { SettingsAnchor } from '@suite-constants/anchors';
 
 import { selectHasUserAllowedTracking } from '@suite-common/analytics';
-import { Switch } from '@trezor/components';
-import { analytics } from '@trezor/suite-analytics';
+import { Switch } from '@detahard/components';
+import { analytics } from '@detahard/suite-analytics';
 
 const PositionedSwitch = styled.div`
     align-self: center;

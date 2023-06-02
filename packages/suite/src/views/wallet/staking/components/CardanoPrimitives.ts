@@ -1,4 +1,4 @@
-import { variables, H1, Card } from '@trezor/components';
+import { variables, H1, Card } from '@detahard/components';
 import styled from 'styled-components';
 
 export const Heading = styled.div`

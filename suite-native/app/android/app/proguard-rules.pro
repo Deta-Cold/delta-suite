@@ -14,4 +14,4 @@
 -keep public class com.horcrux.svg.** {*;}
 
 # https://www.npmjs.com/package/react-native-config
--keep class io.trezor.suite.BuildConfig { *; }
+-keep class io.detahard.suite.BuildConfig { *; }

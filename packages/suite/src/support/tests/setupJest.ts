@@ -27,7 +27,7 @@ declare global {
         getSuiteDevice: typeof testMocks.getSuiteDevice;
         getWalletAccount: typeof testMocks.getWalletAccount;
         getWalletTransaction: typeof testMocks.getWalletTransaction;
-        getTrezorConnect: typeof testMocks.getTrezorConnect;
+        getdetahardConnect: typeof testMocks.getdetahardConnect;
         getAnalytics: typeof testMocks.getAnalytics;
         getMessageSystemConfig: typeof testMocks.getMessageSystemConfig;
         getGuideNode: typeof testMocks.getGuideNode;
@@ -42,7 +42,7 @@ global.JestMocks = {
     getSuiteDevice: testMocks.getSuiteDevice,
     getWalletAccount: testMocks.getWalletAccount,
     getWalletTransaction: testMocks.getWalletTransaction,
-    getTrezorConnect: testMocks.getTrezorConnect,
+    getdetahardConnect: testMocks.getdetahardConnect,
     getAnalytics: testMocks.getAnalytics,
     getMessageSystemConfig: testMocks.getMessageSystemConfig,
     getGuideNode: testMocks.getGuideNode,

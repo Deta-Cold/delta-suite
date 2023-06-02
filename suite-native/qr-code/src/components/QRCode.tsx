@@ -4,9 +4,9 @@ import ReactQRCode from 'react-qr-code';
 
 import * as Brightness from 'expo-brightness';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Box } from '@suite-native/atoms';
-import { colorVariants } from '@trezor/theme';
+import { colorVariants } from '@detahard/theme';
 
 type QRCodeProps = {
     data: string;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSendFormContext } from '@wallet-hooks';
 import { Translation } from '@suite-components';
 import { InputError } from '@wallet-components';
-import { Textarea, Icon, Tooltip } from '@trezor/components';
+import { Textarea, Icon, Tooltip } from '@detahard/components';
 import { getInputState, isHexValid } from '@suite-common/wallet-utils';
 import { OpenGuideFromTooltip } from '@guide-components';
 import { MAX_LENGTH } from '@suite-constants/inputs';

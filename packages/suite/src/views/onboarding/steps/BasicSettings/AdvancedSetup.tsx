@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
-import { Icon, useTheme, CollapsibleCard } from '@trezor/components';
+import { Icon, useTheme, CollapsibleCard } from '@detahard/components';
 import { useSelector } from '@suite-hooks';
 import { isDesktop, isWeb } from '@suite-utils/env';
 import { TorSection } from './TorSection';

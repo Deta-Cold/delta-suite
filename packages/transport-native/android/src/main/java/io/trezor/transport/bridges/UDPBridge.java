@@ -1,4 +1,4 @@
-package io.trezor.transport.bridges;
+package io.detahard.transport.bridges;
 
 import android.content.Context;
 import android.util.Log;
@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import io.trezor.transport.TrezorException;
-import io.trezor.transport.Utils;
-import io.trezor.transport.interfaces.BridgeInterface;
-import io.trezor.transport.interfaces.TrezorInterface;
+import io.detahard.transport.detahardException;
+import io.detahard.transport.Utils;
+import io.detahard.transport.interfaces.BridgeInterface;
+import io.detahard.transport.interfaces.detahardInterface;
 
 public class UDPBridge implements BridgeInterface {
-  private static final String TAG = "Trezor UDPBridge";
+  private static final String TAG = "detahard UDPBridge";
   private static final String EMULATOR_UDP_HOST = "10.0.2.2";
   private static final int EMULATOR_UDP_PORT = 21324;
   private final byte[] PING = "PINGPING".getBytes();
@@ -29,7 +29,7 @@ public class UDPBridge implements BridgeInterface {
 
   private final Context context;
 
-  private List<TrezorInterface> trezorDeviceList = new ArrayList<>();
+  private List<detahardInterface> detahardDeviceList = new ArrayList<>();
 
   public UDPBridge(Context context) {
     this.context = context;
@@ -43,20 +43,20 @@ public class UDPBridge implements BridgeInterface {
   }
 
   @Override
-  public List<TrezorInterface> enumerate() {
+  public List<detahardInterface> enumerate() {
     if (!checkDevice()) {
-      trezorDeviceList = new ArrayList<>();
-    } else if (trezorDeviceList.size() == 0) {
-      trezorDeviceList.add(new TrezorDevice("udp-emulator"));
+      detahardDeviceList = new ArrayList<>();
+    } else if (detahardDeviceList.size() == 0) {
+      detahardDeviceList.add(new detahardDevice("udp-emulator"));
     }
 
-    return trezorDeviceList;
+    return detahardDeviceList;
   }
 
   @Override
-  public TrezorInterface getDeviceByPath(String path) {
-    if (trezorDeviceList.size() > 0) {
-      return trezorDeviceList.get(0);
+  public detahardInterface getDeviceByPath(String path) {
+    if (detahardDeviceList.size() > 0) {
+      return detahardDeviceList.get(0);
     } else {
       return enumerate().get(0);
     }
@@ -91,15 +91,15 @@ public class UDPBridge implements BridgeInterface {
     }
   }
 
-  public static class TrezorDevice implements TrezorInterface {
-    private static final String TAG = "UDP" + UDPBridge.TrezorDevice.class.getSimpleName();
+  public static class detahardDevice implements detahardInterface {
+    private static final String TAG = "UDP" + UDPBridge.detahardDevice.class.getSimpleName();
 
     private final String path;
     private DatagramSocket socket;
     private InetAddress socketAddress;
     private byte[] response;
 
-    public TrezorDevice(String path) {
+    public detahardDevice(String path) {
       this.path = path;
     }
 
@@ -158,7 +158,7 @@ public class UDPBridge implements BridgeInterface {
         } catch (IOException e) {
           Log.e(TAG, "messageRead: read from socket failed");
           e.printStackTrace();
-          throw new TrezorException("Socket IOException", e);
+          throw new detahardException("Socket IOException", e);
         }
         Log.i(TAG, String.format("messageRead: Read chunk: %d bytes", b.length));
 
@@ -189,7 +189,7 @@ public class UDPBridge implements BridgeInterface {
           socket.receive(datagramPacketIn);
         } catch (IOException e) {
           e.printStackTrace();
-          throw new TrezorException("Socket IOException", e);
+          throw new detahardException("Socket IOException", e);
         }
         Log.i(TAG, String.format("messageRead: Read chunk (cont): %d bytes", b.length));
         if (b[0] != (byte) '?') {
@@ -207,7 +207,7 @@ public class UDPBridge implements BridgeInterface {
     }
 
     @Override
-    public void openConnection(Context context) throws TrezorException {
+    public void openConnection(Context context) throws detahardException {
       try {
         socketAddress = InetAddress.getByName(EMULATOR_UDP_HOST);
         if (socket == null) {
@@ -215,10 +215,10 @@ public class UDPBridge implements BridgeInterface {
         }
       } catch (SocketException e) {
         e.printStackTrace();
-        throw new TrezorException("Socket exception", e);
+        throw new detahardException("Socket exception", e);
       } catch (UnknownHostException e) {
         e.printStackTrace();
-        throw new TrezorException("Unknown exception", e);
+        throw new detahardException("Unknown exception", e);
       }
     }
 

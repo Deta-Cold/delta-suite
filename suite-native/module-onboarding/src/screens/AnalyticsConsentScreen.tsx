@@ -9,7 +9,7 @@ import {
 } from '@suite-native/navigation';
 import { Button, Card, Stack, Text, VStack } from '@suite-native/atoms';
 import { Link } from '@suite-native/link';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { analytics } from '@suite-native/analytics';
 
 import { OnboardingScreen } from '../components/OnboardingScreen';
@@ -29,7 +29,7 @@ const analyticsConsentStyle = prepareNativeStyle(_ => ({
 const PrivacyDescription = () => (
     <Text variant="hint" color="textSubdued">
         We value privacy and security above all. Learn more about our data and security protocols{' '}
-        <Link href="https://trezor.io/" label="here" />.
+        <Link href="https://detahard.io/" label="here" />.
     </Text>
 );
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables, Button, IconProps, H3, Image } from '@trezor/components';
+import { variables, Button, IconProps, H3, Image } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { useDevice, useActions } from '@suite-hooks';
 import * as discoveryActions from '@wallet-actions/discoveryActions';

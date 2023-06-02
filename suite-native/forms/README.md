@@ -5,7 +5,7 @@ Small wrapper around react-hook-form to make usage easier.
 ## Usage
 
 ```tsx
-import { yup } from '@trezor/validation';
+import { yup } from '@detahard/validation';
 import { useForm, Form, TextInputField } from '@suite-native/forms';
 import { Button } from '@suite-native/atoms';
 

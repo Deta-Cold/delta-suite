@@ -1,8 +1,8 @@
 skip_docs
 
 # iOS Specific Constants
-IOS_PROJECT = File.join(IOS_PATH, "TrezorSuite.xcodeproj").freeze
-IOS_PROJECT_WORKSPACE = File.join(IOS_PATH, "TrezorSuite.xcworkspace").freeze
+IOS_PROJECT = File.join(IOS_PATH, "detahardSuite.xcodeproj").freeze
+IOS_PROJECT_WORKSPACE = File.join(IOS_PATH, "detahardSuite.xcworkspace").freeze
 
 # temporary keychain database
 def delete_temp_keychain(name)
@@ -58,7 +58,7 @@ platform :ios do
     import_certificate(
       keychain_name: ENV['TMP_KEYCHAIN_NAME'],
       keychain_password: ENV['TMP_KEYCHAIN_PASSWORD'],
-      certificate_path: "TrezorDistributionCertificate.p12",
+      certificate_path: "detahardDistributionCertificate.p12",
       certificate_password: ENV["APPSTORE_CERTIFICATE_PASSWORD"] || "default"
     )
   end
@@ -130,7 +130,7 @@ platform :ios do
    # update the code signing identities to match profile name and app bundle identifier
    update_code_signing_settings(
      use_automatic_signing: false, # turn off automatic signing during build so correct code signing identity is guaranteed to be used
-     targets: ["TrezorSuite"],
+     targets: ["detahardSuite"],
      code_sign_identity: code_sign_identity,
      bundle_identifier: app_identifier,
      profile_name: PROVISIONING_NAME,
@@ -144,7 +144,7 @@ platform :ios do
     build_app(
       scheme: build_scheme,
       export_method: export_method,
-      output_name: "#{build_scheme}-TrezorSuite",
+      output_name: "#{build_scheme}-detahardSuite",
       workspace: IOS_PROJECT_WORKSPACE,
       configuration: build_scheme
     )
@@ -213,7 +213,7 @@ platform :ios do
     # Configures Xcode's Codesigning options
     update_code_signing_settings(
       use_automatic_signing: true,
-      targets: ["TrezorSuite"],
+      targets: ["detahardSuite"],
       code_sign_identity: code_sign_identity,
       bundle_identifier: app_identifier,
       build_configurations: [build_scheme], # only toggle code signing settings for Release configurations
@@ -223,7 +223,7 @@ platform :ios do
     build_app(
       scheme: build_scheme,
       export_method: export_method,
-      output_name: "#{build_scheme}-TrezorSuite",
+      output_name: "#{build_scheme}-detahardSuite",
       workspace: IOS_PROJECT_WORKSPACE,
       configuration: build_scheme
     )

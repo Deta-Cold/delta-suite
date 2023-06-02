@@ -90,7 +90,7 @@ const fixtures = [
 ];
 
 const parsedMessages = protobuf.Root.fromJSON({
-    nested: { hw: { nested: { trezor: { nested: { messages: { nested: messages } } } } } },
+    nested: { hw: { nested: { detahard: { nested: { messages: { nested: messages } } } } } },
 });
 
 describe('encoding json -> protobuf -> json', () => {

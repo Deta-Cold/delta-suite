@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { DATA_URL, HELP_CENTER_TOR_URL, GITHUB_BRIDGE_CHANGELOG_URL } from '@trezor/urls';
-import { Translation, TrezorLink, Modal, Metadata } from '@suite-components';
-import { Button, P, Link, Select, Image, useTheme, variables, Loader } from '@trezor/components';
+import { DATA_URL, HELP_CENTER_TOR_URL, GITHUB_BRIDGE_CHANGELOG_URL } from '@detahard/urls';
+import { Translation, detahardLink, Modal, Metadata } from '@suite-components';
+import { Button, P, Link, Select, Image, useTheme, variables, Loader } from '@detahard/components';
 import * as routerActions from '@suite-actions/routerActions';
 import { isDesktop, isWeb } from '@suite-utils/env';
 import { useSelector, useActions } from '@suite-hooks';
 import { selectTorState } from '@suite-reducers/suiteReducer';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 
 const Content = styled.div`
     display: flex;
@@ -131,15 +131,15 @@ export const InstallBridge = () => {
 
     return (
         <Modal
-            heading={<Translation id="TR_TREZOR_BRIDGE_DOWNLOAD" />}
+            heading={<Translation id="TR_detahard_BRIDGE_DOWNLOAD" />}
             description={<Translation id="TR_NEW_COMMUNICATION_TOOL" />}
             data-test="@modal/bridge"
         >
-            <Metadata title="Download Bridge | Trezor Suite" />
+            <Metadata title="Download Bridge | detahard Suite" />
             <Content>
                 <Version show={!!data.currentVersion}>
                     <Translation
-                        id="TR_CURRENTLY_INSTALLED_TREZOR"
+                        id="TR_CURRENTLY_INSTALLED_detahard"
                         values={{ version: data.currentVersion }}
                     />
                     {isDesktop() && (
@@ -148,7 +148,7 @@ export const InstallBridge = () => {
                         </BridgeDesktopNote>
                     )}
                 </Version>
-                <StyledImage image={`BRIDGE_CHECK_TREZOR_T${DeviceModel.TT}`} />
+                <StyledImage image={`BRIDGE_CHECK_detahard_T${DeviceModel.TT}`} />
                 {isLoading ? (
                     <LoaderWrapper data-test="@bridge/loading">
                         <CenteredLoader size={50} strokeWidth={2} />
@@ -168,21 +168,21 @@ export const InstallBridge = () => {
                             data-test="@bridge/installers"
                         />
 
-                        <TrezorLink variant="nostyle" href={`${data.uri}${target.value}`}>
+                        <detahardLink variant="nostyle" href={`${data.uri}${target.value}`}>
                             <DownloadBridgeButton data-test="@bridge/download-button">
                                 <Translation
                                     id="TR_DOWNLOAD_LATEST_BRIDGE"
                                     values={{ version: data.latestVersion }}
                                 />
                             </DownloadBridgeButton>
-                        </TrezorLink>
+                        </detahardLink>
                     </Download>
                 )}
                 {isWeb() && isTorEnabled && (
                     <P>
-                        <TrezorLink href={HELP_CENTER_TOR_URL}>
+                        <detahardLink href={HELP_CENTER_TOR_URL}>
                             <Translation id="TR_TOR_BRIDGE" />
-                        </TrezorLink>
+                        </detahardLink>
                     </P>
                 )}
             </Content>
@@ -217,7 +217,7 @@ export const InstallBridge = () => {
                         </Col>
                         <Col justify="flex-end">
                             {data && target?.signature && (
-                                <TrezorLink variant="nostyle" href={data.uri + target.signature}>
+                                <detahardLink variant="nostyle" href={data.uri + target.signature}>
                                     <Button
                                         color={theme.TYPE_LIGHT_GREY}
                                         icon="SIGNATURE"
@@ -226,7 +226,7 @@ export const InstallBridge = () => {
                                     >
                                         <Translation id="TR_CHECK_PGP_SIGNATURE" />
                                     </Button>
-                                </TrezorLink>
+                                </detahardLink>
                             )}
                         </Col>
                     </>

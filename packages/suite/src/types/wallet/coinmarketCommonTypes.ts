@@ -7,7 +7,7 @@ import type {
     SellVoucherTrade as SpendTrade,
     SavingsTradeItem,
 } from 'invity-api';
-import type { FlagProps } from '@trezor/components';
+import type { FlagProps } from '@detahard/components';
 
 type CommonTrade = {
     date: string;

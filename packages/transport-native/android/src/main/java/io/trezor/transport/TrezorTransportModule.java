@@ -1,4 +1,4 @@
-package io.trezor.transport;
+package io.detahard.transport;
 
 import android.util.Log;
 
@@ -10,20 +10,20 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 
-import io.trezor.transport.bridges.UDPBridge;
-import io.trezor.transport.bridges.USBBridge;
-import io.trezor.transport.interfaces.BridgeInterface;
-import io.trezor.transport.interfaces.TrezorInterface;
+import io.detahard.transport.bridges.UDPBridge;
+import io.detahard.transport.bridges.USBBridge;
+import io.detahard.transport.interfaces.BridgeInterface;
+import io.detahard.transport.interfaces.detahardInterface;
 
 import java.util.List;
 
-public class TrezorTransportModule extends ReactContextBaseJavaModule {
-  private static final String TAG = "Trezor TransportModule";
+public class detahardTransportModule extends ReactContextBaseJavaModule {
+  private static final String TAG = "detahard TransportModule";
   private static ReactApplicationContext reactContext;
   private static BridgeInterface bridge;
 
 
-  public TrezorTransportModule(ReactApplicationContext context) {
+  public detahardTransportModule(ReactApplicationContext context) {
     super(context);
     reactContext = context;
 
@@ -42,18 +42,18 @@ public class TrezorTransportModule extends ReactContextBaseJavaModule {
   public String getName() {
     // This name is used as property name in imported NativeModules in JS.
     // Used in src/index.ts
-    return "TrezorTransport";
+    return "detahardTransport";
   }
 
   @ReactMethod
   public void enumerate(Promise promise) {
     try {
-      List<TrezorInterface> trezorDeviceList = bridge.enumerate();
-      Log.d(TAG, "Enumerate" + trezorDeviceList);
+      List<detahardInterface> detahardDeviceList = bridge.enumerate();
+      Log.d(TAG, "Enumerate" + detahardDeviceList);
 
-      // translate TrezorDevice object to react-native response
+      // translate detahardDevice object to react-native response
       WritableArray array = Arguments.createArray();
-      for (TrezorInterface device : trezorDeviceList) {
+      for (detahardInterface device : detahardDeviceList) {
         WritableMap d = Arguments.createMap();
         d.putString("path", device.getSerial()); // TODO: no serial (bootloader)
         d.putBoolean("debug", false); // debugLink, disabled for now
@@ -69,7 +69,7 @@ public class TrezorTransportModule extends ReactContextBaseJavaModule {
   public void acquire(String path, Boolean debugLink, Promise promise) {
     Log.i(TAG, "acquire " + path + " ");
     try {
-      TrezorInterface device = bridge.getDeviceByPath(path); // TODO: debugLink interface
+      detahardInterface device = bridge.getDeviceByPath(path); // TODO: debugLink interface
       if (device != null) {
         Log.d(TAG, "Opening connection");
         device.openConnection(reactContext);
@@ -85,7 +85,7 @@ public class TrezorTransportModule extends ReactContextBaseJavaModule {
     Log.i(TAG, "close connection " + path + " ");
     promise.resolve(true);
     try {
-      TrezorInterface device = bridge.getDeviceByPath(path);
+      detahardInterface device = bridge.getDeviceByPath(path);
       if (device != null) {
         device.closeConnection();
       }
@@ -97,7 +97,7 @@ public class TrezorTransportModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void write(String path, Boolean debugLink, String data, Promise promise) {
     try {
-      TrezorInterface device = bridge.getDeviceByPath(path);
+      detahardInterface device = bridge.getDeviceByPath(path);
       byte[] bytes = Utils.hexStringToByteArray(data);
       if (device != null) {
         device.rawPost(bytes);
@@ -114,7 +114,7 @@ public class TrezorTransportModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void read(String path, Boolean debugLink, Promise promise) {
     try {
-      TrezorInterface device = bridge.getDeviceByPath(path);
+      detahardInterface device = bridge.getDeviceByPath(path);
       if (device != null) {
         byte[] bytes = device.rawRead();
         WritableMap map = Arguments.createMap();

@@ -9,11 +9,11 @@ import {
     AccountLabeling,
     FormattedCryptoAmount,
 } from '@suite-components';
-import { Input, Button, variables, CoinLogo, Image } from '@trezor/components';
+import { Input, Button, variables, CoinLogo, Image } from '@detahard/components';
 import { useCoinmarketBuyOffersContext } from '@wallet-hooks/useCoinmarketBuyOffers';
 import { AddressOptions } from '@wallet-views/coinmarket/common/AddressOptions';
 import { useAccountAddressDictionary } from '@wallet-hooks/useAccounts';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 
 const Wrapper = styled.div`
     display: flex;
@@ -198,8 +198,8 @@ const VerifyAddressComponent = () => {
                 )}
                 {addressVerified && addressVerified === address && deviceModel && (
                     <Confirmed>
-                        <StyledImage alt="Trezor" image={`TREZOR_T${deviceModel}`} />
-                        <Translation id="TR_BUY_CONFIRMED_ON_TREZOR" />
+                        <StyledImage alt="detahard" image={`detahard_T${deviceModel}`} />
+                        <Translation id="TR_BUY_CONFIRMED_ON_detahard" />
                     </Confirmed>
                 )}
             </CardContent>
@@ -208,14 +208,14 @@ const VerifyAddressComponent = () => {
                     <Button
                         isLoading={callInProgress}
                         isDisabled={callInProgress}
-                        data-test="@coinmarket/buy/offers/confirm-on-trezor-button"
+                        data-test="@coinmarket/buy/offers/confirm-on-detahard-button"
                         onClick={() => {
                             if (accountAddress && address) {
                                 verifyAddress(account, address, accountAddress.path);
                             }
                         }}
                     >
-                        <Translation id="TR_BUY_CONFIRM_ON_TREZOR" />
+                        <Translation id="TR_BUY_CONFIRM_ON_detahard" />
                     </Button>
                 )}
                 {addressVerified && addressVerified === address && (

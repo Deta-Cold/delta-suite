@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { Input, Icon, useTheme, Tooltip, KEYBOARD_CODE } from '@trezor/components';
+import { Input, Icon, useTheme, Tooltip, KEYBOARD_CODE } from '@detahard/components';
 import { useActions } from '@suite-hooks';
 import { SETTINGS } from '@suite-config';
 import { useTranslation } from '@suite-hooks/useTranslation';

@@ -3,8 +3,8 @@ import { extraDependenciesMock } from '@suite-common/test-utils';
 import { enabledNetworks } from '@suite-native/config';
 import { selectDevices } from '@suite-native/module-devices';
 import { selectFiatCurrencyCode, setFiatCurrency } from '@suite-native/module-settings';
-import { PROTO } from '@trezor/connect';
-import { mergeDeepObject } from '@trezor/utils';
+import { PROTO } from '@detahard/connect';
+import { mergeDeepObject } from '@detahard/utils';
 
 export const extraDependencies: ExtraDependencies = mergeDeepObject(extraDependenciesMock, {
     selectors: {

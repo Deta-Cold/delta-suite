@@ -21,16 +21,16 @@ import type { GuideAction } from '@suite-actions/guideActions';
 import type { Route } from '@suite-constants/routes';
 
 import { analyticsActions } from '@suite-common/analytics';
-import { Environment } from '@trezor/analytics';
-import type { ObjectValues } from '@trezor/type-utils';
-import type { UiEvent, DeviceEvent, TransportEvent, BlockchainEvent } from '@trezor/connect';
+import { Environment } from '@detahard/analytics';
+import type { ObjectValues } from '@detahard/type-utils';
+import type { UiEvent, DeviceEvent, TransportEvent, BlockchainEvent } from '@detahard/connect';
 import { transactionsActions } from '@suite-common/wallet-core';
 import { notificationsActions } from '@suite-common/toast-notifications';
 
 // reexport
 export type { ExtendedMessageDescriptor } from '@suite-components/Translation/components/BaseTranslation';
 export type { AppState } from '@suite/reducers/store';
-export type { SuiteThemeColors } from '@trezor/components';
+export type { SuiteThemeColors } from '@detahard/components';
 export type { PrerequisiteType } from '@suite-utils/prerequisites';
 export type { Route, Environment as EnvironmentType };
 export type {
@@ -39,10 +39,10 @@ export type {
     AcquiredDevice,
     UnknownDevice,
     UnreadableDevice,
-    TrezorDevice,
+    detahardDevice,
 } from '@suite-common/suite-types';
 
-type TrezorConnectEvents = TransportEvent | UiEvent | DeviceEvent | BlockchainEvent;
+type detahardConnectEvents = TransportEvent | UiEvent | DeviceEvent | BlockchainEvent;
 
 export type TransactionAction = ReturnType<
     (typeof transactionsActions)[keyof typeof transactionsActions]
@@ -54,7 +54,7 @@ type AnalyticsAction = ReturnType<(typeof analyticsActions)[keyof typeof analyti
 
 // all actions from all apps used to properly type Dispatch.
 export type Action =
-    | TrezorConnectEvents
+    | detahardConnectEvents
     | RouterAction
     | ResizeAction
     | StorageAction
@@ -102,7 +102,7 @@ export type ForegroundAppProps = {
 
 export type ToastNotificationVariant = 'success' | 'info' | 'warning' | 'error' | 'transparent';
 
-export { TorStatus } from '@trezor/suite-desktop-api/src/enums';
+export { TorStatus } from '@detahard/suite-desktop-api/src/enums';
 export interface TorBootstrap {
     current: number;
     total: number;

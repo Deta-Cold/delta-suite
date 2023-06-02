@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CoinmarketFooter, CoinmarketBuyTopPanel } from '@wallet-components';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { useLayout } from '@suite-hooks';
 import { useCoinmarketBuyOffersContext } from '@wallet-hooks/useCoinmarketBuyOffers';
@@ -63,7 +63,7 @@ const Offers = () => {
         useCoinmarketBuyOffersContext();
     const { navigateToBuyForm } = useCoinmarketNavigation(account);
 
-    useLayout('Trezor Suite | Trade', CoinmarketBuyTopPanel);
+    useLayout('detahard Suite | Trade', CoinmarketBuyTopPanel);
 
     const hasLoadingFailed = !(quotes && alternativeQuotes);
     const noOffers = hasLoadingFailed || (quotes.length === 0 && alternativeQuotes.length === 0);

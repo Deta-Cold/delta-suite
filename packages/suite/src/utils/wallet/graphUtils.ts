@@ -15,7 +15,7 @@ import {
     GraphScale,
 } from '../../types/wallet/graph';
 
-import type { BlockchainAccountBalanceHistory, FiatRates } from '@trezor/connect';
+import type { BlockchainAccountBalanceHistory, FiatRates } from '@detahard/connect';
 
 type ObjectType<T> = T extends 'account'
     ? AggregatedAccountHistory

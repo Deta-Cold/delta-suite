@@ -1,7 +1,7 @@
 import * as routerActions from '@suite-actions/routerActions';
 import React from 'react';
 import styled from 'styled-components';
-import { Button, variables, Link, Image } from '@trezor/components';
+import { Button, variables, Link, Image } from '@detahard/components';
 import { useActions } from '@suite-hooks/useActions';
 import { Account } from '@wallet-types';
 import { Translation } from '@suite-components/Translation';

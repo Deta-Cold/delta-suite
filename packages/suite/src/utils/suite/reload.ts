@@ -1,4 +1,4 @@
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 
 /**
  * Reload application with optional delay

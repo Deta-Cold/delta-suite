@@ -1,6 +1,6 @@
 # @suite-common/test-utils
 
-This package defines mocks for TrezorConnect to be shared between more packages that use these mocks in their tests.
+This package defines mocks for detahardConnect to be shared between more packages that use these mocks in their tests.
 
 ## Usage and configuration
 

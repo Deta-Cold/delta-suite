@@ -1,4 +1,4 @@
-package io.trezor.transport;
+package io.detahard.transport;
 
 import androidx.annotation.NonNull;
 
@@ -12,12 +12,12 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class TrezorTransportPackage implements ReactPackage {
+public class detahardTransportPackage implements ReactPackage {
   @NonNull
   @Override
   public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
-    modules.add(new TrezorTransportModule(reactContext));
+    modules.add(new detahardTransportModule(reactContext));
     return modules;
   }
 

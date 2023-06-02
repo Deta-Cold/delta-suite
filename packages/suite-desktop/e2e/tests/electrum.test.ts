@@ -1,6 +1,6 @@
 import { Page, test as testPlaywright } from '@playwright/test';
 
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
 
 import { patchBinaries, launchSuite, waitForDataTestSelector } from '../support/common';
 
@@ -20,9 +20,9 @@ testPlaywright.describe.serial('Suite works with Electrum server', () => {
         // binaries somewhere where they are not, so I copy them to that place. Maybe I find a
         // better solution later
         await patchBinaries();
-        await TrezorUserEnvLink.api.trezorUserEnvConnect();
-        await TrezorUserEnvLink.api.startEmu({ wipe: true });
-        await TrezorUserEnvLink.api.setupEmu({
+        await detahardUserEnvLink.api.detahardUserEnvConnect();
+        await detahardUserEnvLink.api.startEmu({ wipe: true });
+        await detahardUserEnvLink.api.setupEmu({
             needs_backup: true,
             mnemonic: 'all all all all all all all all all all all all',
         });

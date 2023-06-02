@@ -1,11 +1,11 @@
 import { app, ipcMain } from 'electron';
 
-import TrezorConnect from '@trezor/connect';
-import { createIpcProxyHandler, IpcProxyHandlerOptions } from '@trezor/ipc-proxy';
+import detahardConnect from '@detahard/connect';
+import { createIpcProxyHandler, IpcProxyHandlerOptions } from '@detahard/ipc-proxy';
 
 import type { Module } from './index';
 
-const SERVICE_NAME = '@trezor/connect';
+const SERVICE_NAME = '@detahard/connect';
 
 export const init: Module = ({ store }) => {
     const { logger } = global;
@@ -16,40 +16,40 @@ export const init: Module = ({ store }) => {
         if (ifRunning && !tor.running) return Promise.resolve();
         const payload = tor.running ? { proxy: `socks://${tor.host}:${tor.port}` } : { proxy: '' };
         logger.info(SERVICE_NAME, `${tor.running ? 'Enable' : 'Disable'} proxy ${payload.proxy}`);
-        return TrezorConnect.setProxy(payload);
+        return detahardConnect.setProxy(payload);
     };
 
-    const ipcProxyOptions: IpcProxyHandlerOptions<typeof TrezorConnect> = {
+    const ipcProxyOptions: IpcProxyHandlerOptions<typeof detahardConnect> = {
         onCreateInstance: () => ({
             onRequest: async (method, params) => {
                 logger.debug(SERVICE_NAME, `call ${method}`);
                 if (method === 'init') {
-                    const response = await TrezorConnect[method](...params);
+                    const response = await detahardConnect[method](...params);
                     await setProxy(true);
                     return response;
                 }
-                return (TrezorConnect[method] as any)(...params);
+                return (detahardConnect[method] as any)(...params);
             },
             onAddListener: (eventName, listener) => {
                 logger.debug(SERVICE_NAME, `Add event listener ${eventName}`);
-                return TrezorConnect.on(eventName, listener);
+                return detahardConnect.on(eventName, listener);
             },
             onRemoveListener: eventName => {
                 logger.debug(SERVICE_NAME, `Remove event listener ${eventName}`);
-                return TrezorConnect.removeAllListeners(eventName);
+                return detahardConnect.removeAllListeners(eventName);
             },
         }),
     };
 
-    const unregisterProxy = createIpcProxyHandler(ipcMain, 'TrezorConnect', ipcProxyOptions);
+    const unregisterProxy = createIpcProxyHandler(ipcMain, 'detahardConnect', ipcProxyOptions);
 
     app.on('before-quit', () => {
         unregisterProxy();
-        TrezorConnect.dispose();
+        detahardConnect.dispose();
     });
 
     return () => {
         // reset previous instance, possible left over after renderer refresh (F5)
-        TrezorConnect.dispose();
+        detahardConnect.dispose();
     };
 };

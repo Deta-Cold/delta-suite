@@ -13,7 +13,7 @@ import {
     TokenInfoBranded,
     TokenSymbol,
 } from '@suite-common/wallet-types';
-import { TokenInfo, TokenTransfer } from '@trezor/blockchain-link';
+import { TokenInfo, TokenTransfer } from '@detahard/blockchain-link';
 import {
     FiatRatesRootState,
     selectFiatRatesByFiatRateKey,

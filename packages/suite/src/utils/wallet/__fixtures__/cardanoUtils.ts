@@ -514,7 +514,7 @@ export const isPoolOverSaturated = [
 export const getStakePoolForDelegation = [
     {
         description: 'should pick "next" pool',
-        trezorPools: {
+        detahardPools: {
             next: {
                 hex: 'a',
                 bech32: 'pool1a',
@@ -552,7 +552,7 @@ export const getStakePoolForDelegation = [
     },
     {
         description: 'should pick pool a',
-        trezorPools: {
+        detahardPools: {
             next: {
                 hex: 'a',
                 bech32: 'pool1a',

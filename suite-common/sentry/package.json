@@ -13,7 +13,7 @@
         "@sentry/integrations": "^7.52.1",
         "@sentry/types": "^7.52.1",
         "@suite-common/suite-utils": "workspace:*",
-        "@trezor/utils": "workspace:*"
+        "@detahard/utils": "workspace:*"
     },
     "devDependencies": {
         "jest": "^26.6.3",

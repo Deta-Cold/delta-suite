@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { Checkbox } from '@trezor/components';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { Checkbox } from '@detahard/components';
+import { desktopApi } from '@detahard/suite-desktop-api';
 
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 
@@ -55,7 +55,7 @@ export const Processes = () => {
             <SectionItem data-test="@settings/debug/processes">
                 <TextColumn
                     title="Processes"
-                    description="You may control subprocesses launched by Trezor Suite in this panel"
+                    description="You may control subprocesses launched by detahard Suite in this panel"
                 />
             </SectionItem>
             {items.map(item => (

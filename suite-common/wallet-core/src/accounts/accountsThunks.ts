@@ -1,4 +1,4 @@
-import TrezorConnect, { AccountInfo, TokenInfo } from '@trezor/connect';
+import detahardConnect, { AccountInfo, TokenInfo } from '@detahard/connect';
 import { Account } from '@suite-common/wallet-types';
 import { networksCompatibility as NETWORKS } from '@suite-common/wallet-config';
 import {
@@ -10,7 +10,7 @@ import {
     getAreSatoshisUsed,
     isAccountOutdated,
     isPending,
-    isTrezorConnectBackendType,
+    isdetahardConnectBackendType,
 } from '@suite-common/wallet-utils';
 import { settingsCommonConfig } from '@suite-common/suite-config';
 import { createThunk } from '@suite-common/redux-utils';
@@ -51,7 +51,7 @@ const fetchAccountTokens = async (account: Account, payloadTokens: AccountInfo['
         account.tokens?.filter(t => !payloadTokens?.find(p => p.contract === t.contract)) ?? [];
 
     const promises = customTokens.map(t =>
-        TrezorConnect.getAccountInfo({
+        detahardConnect.getAccountInfo({
             coin: account.symbol,
             descriptor: account.descriptor,
             details: 'tokenBalances',
@@ -79,10 +79,10 @@ export const fetchAndUpdateAccountThunk = createThunk(
             selectors: { selectDevices, selectBitcoinAmountUnit },
         } = extra;
 
-        if (!isTrezorConnectBackendType(account.backendType)) return; // skip unsupported backend type
+        if (!isdetahardConnectBackendType(account.backendType)) return; // skip unsupported backend type
         // first basic check, traffic optimization
         // basic check returns only small amount of data without full transaction history
-        const basic = await TrezorConnect.getAccountInfo({
+        const basic = await detahardConnect.getAccountInfo({
             coin: account.symbol,
             descriptor: account.descriptor,
             details: 'basic',
@@ -101,7 +101,7 @@ export const fetchAndUpdateAccountThunk = createThunk(
                 ? account.history.unconfirmed
                 : settingsCommonConfig.TXS_PER_PAGE;
 
-        const response = await TrezorConnect.getAccountInfo({
+        const response = await detahardConnect.getAccountInfo({
             coin: account.symbol,
             descriptor: account.descriptor,
             details: 'txs',

@@ -1,5 +1,5 @@
-import { parseHostname } from '@trezor/utils';
-import { TOR_URLS } from '@trezor/urls';
+import { parseHostname } from '@detahard/utils';
+import { TOR_URLS } from '@detahard/urls';
 import { TorStatus } from '@suite-types';
 
 /**
@@ -10,7 +10,7 @@ export const getTorUrlIfAvailable = (url: string) => {
         url.match(/^https?:\/\/([^:/]+\.)?([^/.]+\.[^/.]+)(\/.*)?$/i) ?? [];
     // ^https?:\/\/ - required http(s) protocol
     // ([^:/]+\.)? - optional subdomains, e.g. 'blog.'
-    // ([^/.]+\.[^/.]+) - required two-part domain name, e.g. 'trezor.io'
+    // ([^/.]+\.[^/.]+) - required two-part domain name, e.g. 'detahard.io'
     // (\/.*)?$ - optional path and/or query, e.g. '/api/data?id=1234'
 
     if (!domain) return;

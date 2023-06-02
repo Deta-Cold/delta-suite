@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables, Card } from '@trezor/components';
+import { variables, Card } from '@detahard/components';
 import {
     HiddenPlaceholder,
     FormattedCryptoAmount,

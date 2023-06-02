@@ -1,14 +1,14 @@
 {
-    "name": "@trezor/suite-storage",
+    "name": "@detahard/suite-storage",
     "version": "1.0.0",
-    "author": "Trezor <info@trezor.io>",
+    "author": "detahard <info@detahard.io>",
     "private": true,
     "keywords": [
-        "Trezor",
+        "detahard",
         "suite-storage"
     ],
     "license": "SEE LICENSE IN LICENSE.md",
-    "description": "trezor suite storage",
+    "description": "detahard suite storage",
     "scripts": {
         "lint:js": "yarn g:eslint '**/*.{ts,tsx,js}'",
         "type-check": "tsc --build tsconfig.json",
@@ -18,7 +18,7 @@
     "react-native": "./src/native/index.ts",
     "browser": "./src/web/index.ts",
     "dependencies": {
-        "@trezor/env-utils": "workspace:*",
+        "@detahard/env-utils": "workspace:*",
         "broadcast-channel": "^5.1.0",
         "idb": "^7.1.1"
     },

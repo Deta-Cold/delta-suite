@@ -1,6 +1,6 @@
-import { TOR_URLS } from '@trezor/urls';
+import { TOR_URLS } from '@detahard/urls';
 
-export const onionDomain = TOR_URLS['trezor.io'];
+export const onionDomain = TOR_URLS['detahard.io'];
 
 export const oauthUrls = [
     'https://accounts.google.com',
@@ -12,7 +12,7 @@ export const allowedProtocols = ['http:', 'https:'];
 export const allowedDomains = [
     'localhost',
     '127.0.0.1',
-    'trezor.io',
+    'detahard.io',
     'invity.io',
     'api.github.com',
     'api.dropboxapi.com',
@@ -22,8 +22,8 @@ export const allowedDomains = [
     'oauth2.googleapis.com',
     'googleapis.com',
     onionDomain,
-    'trezor-cardano-mainnet.blockfrost.io',
-    'trezor-cardano-preview.blockfrost.io',
+    'detahard-cardano-mainnet.blockfrost.io',
+    'detahard-cardano-preview.blockfrost.io',
     'blockfrost.dev',
 ];
 
@@ -32,6 +32,6 @@ export const cspRules = [
     "default-src 'self'",
     // Allow all API calls (Can't be restricted bc of custom backends)
     'connect-src *',
-    // Allow images from trezor.io
-    "img-src 'self' *.trezor.io",
+    // Allow images from detahard.io
+    "img-src 'self' *.detahard.io",
 ];

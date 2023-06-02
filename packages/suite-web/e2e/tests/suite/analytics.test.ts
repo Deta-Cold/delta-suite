@@ -1,8 +1,8 @@
 // @group:suite
 // @retry=2
 
-import { urlSearchParams } from '@trezor/suite/src/utils/suite/metadata';
-import { EventType } from '@trezor/suite-analytics';
+import { urlSearchParams } from '@detahard/suite/src/utils/suite/metadata';
+import { EventType } from '@detahard/suite-analytics';
 
 type Requests = ReturnType<typeof urlSearchParams>[];
 let requests: Requests;
@@ -20,7 +20,7 @@ describe('Analytics', () => {
     });
 
     it('should respect disabled analytics in onboarding with following enabling in settings', () => {
-        cy.intercept({ hostname: 'data.trezor.io', url: '/suite/log/**' }, req => {
+        cy.intercept({ hostname: 'data.detahard.io', url: '/suite/log/**' }, req => {
             const params = urlSearchParams(req.url);
             requests.push(params);
         }).as('data-fetch');
@@ -105,7 +105,7 @@ describe('Analytics', () => {
     });
 
     it('should respect enabled analytics in onboarding with following disabling in settings', () => {
-        cy.intercept({ hostname: 'data.trezor.io', url: '/suite/log/**' }, req => {
+        cy.intercept({ hostname: 'data.detahard.io', url: '/suite/log/**' }, req => {
             const params = urlSearchParams(req.url);
             requests.push(params);
         }).as('data-fetch');

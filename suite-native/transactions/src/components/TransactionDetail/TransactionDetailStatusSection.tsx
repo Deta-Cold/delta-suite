@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Box, Text } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { useFormatters } from '@suite-common/formatters';
 import {
     selectIsTransactionPending,

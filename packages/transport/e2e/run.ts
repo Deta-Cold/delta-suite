@@ -1,12 +1,12 @@
 import { runCLI } from 'jest';
 
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
 
 import argv from './jest.config';
 
 (async () => {
-    // Before actual tests start, establish connection with trezor-user-env
-    await TrezorUserEnvLink.connect();
+    // Before actual tests start, establish connection with detahard-user-env
+    await detahardUserEnvLink.connect();
 
     // @ts-expect-error
     argv.runInBand = true;

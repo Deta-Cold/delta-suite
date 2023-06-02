@@ -1,7 +1,7 @@
 import React from 'react';
 import { components } from 'react-select';
 import styled from 'styled-components';
-import { Select, SelectProps } from '@trezor/components';
+import { Select, SelectProps } from '@detahard/components';
 import type { Account } from '@wallet-types';
 import type { State as RevealedAddresses } from '@wallet-reducers/receiveReducer';
 import {

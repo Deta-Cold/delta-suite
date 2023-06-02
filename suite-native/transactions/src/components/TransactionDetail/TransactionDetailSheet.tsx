@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import { Icon, IconName } from '@suite-common/icons/src';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles/src';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles/src';
 import { BottomSheet, Box, Button, Text } from '@suite-native/atoms/src';
 
 type TransactionDetailSheetProps = {

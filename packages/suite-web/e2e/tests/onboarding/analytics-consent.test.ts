@@ -1,7 +1,7 @@
 // @group:onboarding
 // @retry=2
 
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 
 const navigateToSettingsAndBack = () => {
     cy.getTestElement('@analytics/consent');
@@ -23,7 +23,7 @@ const acceptAnalyticsConsentOnInitializedDevice = () => {
 
 describe('Onboarding - analytics consent', () => {
     const startEmuOpts = {
-        url: 'https://gitlab.com/satoshilabs/trezor/trezor-firmware/-/jobs/3104755066/artifacts/raw/core/build/unix/trezor-emu-core',
+        url: 'https://gitlab.com/satoshilabs/detahard/detahard-firmware/-/jobs/3104755066/artifacts/raw/core/build/unix/detahard-emu-core',
         model: DeviceModel.T2B1,
         wipe: true,
     };

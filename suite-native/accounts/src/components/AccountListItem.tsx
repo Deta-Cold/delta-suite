@@ -8,7 +8,7 @@ import {
 } from '@suite-common/wallet-core';
 import { Badge, Box, RoundedIcon, Text } from '@suite-native/atoms';
 import { Account } from '@suite-common/wallet-types';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { CryptoAmountFormatter, CryptoToFiatAmountFormatter } from '@suite-native/formatters';
 import { FiatRatesRootState } from '@suite-native/fiat-rates';
 import { selectIsEthereumAccountWithTokensWithFiatRates } from '@suite-native/ethereum-tokens';

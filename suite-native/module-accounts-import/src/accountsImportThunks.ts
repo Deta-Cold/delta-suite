@@ -1,6 +1,6 @@
 import { createThunk } from '@suite-common/redux-utils';
 import { accountsActions, selectAccountsByNetworkAndDevice } from '@suite-common/wallet-core';
-import { AccountInfo } from '@trezor/connect';
+import { AccountInfo } from '@detahard/connect';
 import { networks, NetworkSymbol, AccountType } from '@suite-common/wallet-config';
 import {
     createDevice,
@@ -9,7 +9,7 @@ import {
     HIDDEN_DEVICE_STATE,
     selectDeviceById,
 } from '@suite-native/module-devices';
-import { getXpubOrDescriptorInfo } from '@trezor/utxo-lib';
+import { getXpubOrDescriptorInfo } from '@detahard/utxo-lib';
 
 import { paymentTypeToAccountType } from './constants';
 

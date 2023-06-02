@@ -1,13 +1,13 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import styled from 'styled-components';
-import { ConfirmOnDevice } from '@trezor/components';
+import { ConfirmOnDevice } from '@detahard/components';
 import { useActions, useDevice, useFirmware } from '@suite-hooks';
 import { Translation, Modal } from '@suite-components';
 import { DeviceAcquire } from '@suite-views/device-acquire';
 import { DeviceUnknown } from '@suite-views/device-unknown';
 import { DeviceUnreadable } from '@suite-views/device-unreadable';
 import * as routerActions from '@suite-actions/routerActions';
-import type { TrezorDevice } from '@suite-types';
+import type { detahardDevice } from '@suite-types';
 import { ConnectDevicePromptManager, OnboardingStepBox } from '@onboarding-components';
 import { useCachedDevice } from '@firmware-hooks/useCachedDevice';
 import {
@@ -18,7 +18,7 @@ import {
     SelectCustomFirmware,
 } from '@firmware-components';
 import * as suiteActions from '@suite-actions/suiteActions';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 
 const StyledModal = styled(Modal)<{ isNarrow: boolean }>`
     width: ${({ isNarrow }) => (isNarrow ? '450px' : '620px')};
@@ -75,7 +75,7 @@ export const FirmwareCustom = () => {
         resetReducer();
     }, [liveDevice, acquireDevice, closeModalApp, resetReducer]);
 
-    const shouldDisplayConnectPrompt = (device?: TrezorDevice) =>
+    const shouldDisplayConnectPrompt = (device?: detahardDevice) =>
         !device?.connected || !device?.features;
 
     const isCancelable = [
@@ -176,7 +176,7 @@ export const FirmwareCustom = () => {
             modalPrompt={
                 status === 'waiting-for-confirmation' && (
                     <ConfirmOnDevice
-                        title={<Translation id="TR_CONFIRM_ON_TREZOR" />}
+                        title={<Translation id="TR_CONFIRM_ON_detahard" />}
                         deviceModel={liveDeviceModel}
                     />
                 )

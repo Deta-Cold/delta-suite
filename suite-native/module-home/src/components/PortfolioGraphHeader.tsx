@@ -11,7 +11,7 @@ import {
     percentageDiff,
     PriceChangeIndicator,
 } from '@suite-native/graph';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 // use atomic jotai structure for absolute minimum re-renders and maximum performance
 // otherwise graph will be freezing on slower device while point swipe gesture

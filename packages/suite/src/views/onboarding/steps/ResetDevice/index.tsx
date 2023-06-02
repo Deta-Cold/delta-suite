@@ -11,7 +11,7 @@ import {
 import { Translation } from '@suite-components';
 import { useActions, useSelector, useOnboarding } from '@suite-hooks';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 import { selectIsActionAbortable } from '@suite-reducers/suiteReducer';
 
 export const ResetDeviceStep = () => {

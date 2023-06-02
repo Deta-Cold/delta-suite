@@ -1,5 +1,5 @@
 import React from 'react';
-import { PROTO } from '@trezor/connect';
+import { PROTO } from '@detahard/connect';
 
 import { ActionColumn, ActionSelect, SectionItem, TextColumn } from '@suite-components/Settings';
 import { Translation } from '@suite-components/Translation';

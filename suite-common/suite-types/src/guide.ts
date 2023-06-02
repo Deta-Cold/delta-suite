@@ -1,4 +1,4 @@
-import { Environment } from '@trezor/analytics';
+import { Environment } from '@detahard/analytics';
 
 /**
  * A group of Guide content.

@@ -1,9 +1,9 @@
 import React from 'react';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
 import { Translation } from '@suite-components';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
-import { Switch } from '@trezor/components';
+import { Switch } from '@detahard/components';
 import { useDevice, useActions } from '@suite-hooks';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
 import { useAnchor } from '@suite-hooks/useAnchor';

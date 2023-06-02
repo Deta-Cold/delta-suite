@@ -3,7 +3,7 @@
 import React from 'react';
 import { useDevice, useActions } from '@suite-hooks';
 import * as suiteActions from '@suite-actions/suiteActions';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import { Translation, DeviceInvalidModeLayout } from '@suite-components';
 
 export const DeviceAcquire = () => {

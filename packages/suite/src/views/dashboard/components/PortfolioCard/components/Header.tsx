@@ -7,7 +7,7 @@ import { updateGraphData } from '@wallet-actions/graphActions';
 import { useFastAccounts } from '@wallet-hooks';
 
 import { useFormatters } from '@suite-common/formatters';
-import { H2, Button, LoadingContent } from '@trezor/components';
+import { H2, Button, LoadingContent } from '@detahard/components';
 import { GraphRange } from '../../../../../types/wallet/graph';
 
 const Wrapper = styled.div<{ hideBorder: boolean }>`

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { createRenderer, StylesProvider as StylesStyleProvider } from '@trezor/styles';
-import { prepareNativeTheme } from '@trezor/theme';
+import { createRenderer, StylesProvider as StylesStyleProvider } from '@detahard/styles';
+import { prepareNativeTheme } from '@detahard/theme';
 import { useActiveColorScheme } from '@suite-native/theme';
 
 type StylesProviderProps = {

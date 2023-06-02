@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getFirmwareVersion } from '@trezor/device-utils';
+import { getFirmwareVersion } from '@detahard/device-utils';
 
-import { Translation, TrezorLink } from '@suite-components';
+import { Translation, detahardLink } from '@suite-components';
 import { ActionButton, ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { useDevice, useActions } from '@suite-hooks';
 import * as routerActions from '@suite-actions/routerActions';
 import { getChangelogUrl, getFwUpdateVersion } from '@suite-utils/device';
-import { Button, Tooltip } from '@trezor/components';
+import { Button, Tooltip } from '@detahard/components';
 import { AcquiredDevice } from '@suite-types';
 import { useAnchor } from '@suite-hooks/useAnchor';
 import { SettingsAnchor } from '@suite-constants/anchors';
@@ -97,9 +97,9 @@ export const FirmwareVersion = ({ isDeviceLocked }: FirmwareVersionProps) => {
                                     version: (
                                         <VersionTooltip content={revision} disabled={!revision}>
                                             {revision ? (
-                                                <TrezorLink href={changelogUrl} variant="nostyle">
+                                                <detahardLink href={changelogUrl} variant="nostyle">
                                                     <GithubButton />
-                                                </TrezorLink>
+                                                </detahardLink>
                                             ) : (
                                                 // remove the link if revision is unknown (in bootloader mode)
                                                 <GithubButton />

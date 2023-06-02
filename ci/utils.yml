@@ -9,7 +9,7 @@
   retry: 2
   script:
     - yarn install --immutable
-    - yarn workspace @trezor/urls test:e2e
+    - yarn workspace @detahard/urls test:e2e
 
 urls health nightly:
   extends: .urls health
@@ -27,7 +27,7 @@ urls health:
   needs: []
   script:
     - yarn install --immutable
-    - yarn workspace @trezor/suite translations:list-unused
+    - yarn workspace @detahard/suite translations:list-unused
 
 translation unused nightly:
   extends: .translations unused

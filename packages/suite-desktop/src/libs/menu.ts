@@ -63,7 +63,7 @@ const mainMenuTemplate: MenuItem[] = [
         submenu: [
             {
                 label: 'Learn More',
-                click: () => shell.openExternal('https://trezor.io/'),
+                click: () => shell.openExternal('https://detahard.io/'),
             },
         ],
     },
@@ -119,7 +119,7 @@ if (isMac) {
     mainMenuTemplate[3].submenu.push({ role: 'close' });
 }
 
-// for those wondering why is this a function, it is because otherwise app.name used in the template has incorrect value @trezor/suite-desktop instead of "Trezor Suite"
+// for those wondering why is this a function, it is because otherwise app.name used in the template has incorrect value @detahard/suite-desktop instead of "detahard Suite"
 export const buildMainMenu = () => Menu.buildFromTemplate(mainMenuTemplate);
 
 export const inputMenu = Menu.buildFromTemplate([

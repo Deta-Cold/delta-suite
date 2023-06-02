@@ -7,7 +7,7 @@ import type { ComposeInput, ComposeFinalOutput } from './request';
 import type { CoinSelectInput, CoinSelectOutputFinal } from '../coinselect';
 import type { Network } from '../networks';
 
-// types for building the transaction in trezor.js
+// types for building the transaction in detahard.js
 export type ComposedTxOutput =
     | {
           path: number[];
@@ -37,7 +37,7 @@ export type ComposedTxInput = {
 
 export type ComposedTransaction = {
     inputs: ComposedTxInput[];
-    outputs: Permutation<ComposedTxOutput>; // not in trezor.js, but needed for metadata saving
+    outputs: Permutation<ComposedTxOutput>; // not in detahard.js, but needed for metadata saving
 };
 
 function convertInput(utxo: ComposeInput, basePath: number[]): ComposedTxInput {

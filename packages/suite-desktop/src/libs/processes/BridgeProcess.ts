@@ -2,7 +2,7 @@ import { BaseProcess, Status } from './BaseProcess';
 
 export class BridgeProcess extends BaseProcess {
     constructor() {
-        super('bridge', 'trezord', {
+        super('bridge', 'detahardd', {
             startupCooldown: 3,
         });
     }
@@ -13,7 +13,7 @@ export class BridgeProcess extends BaseProcess {
             const resp = await fetch(`http://127.0.0.1:21325/`, {
                 method: 'POST',
                 headers: {
-                    Origin: 'https://electron.trezor.io',
+                    Origin: 'https://electron.detahard.io',
                 },
             });
             this.logger.debug(this.logTopic, `Checking status (${resp.status})`);

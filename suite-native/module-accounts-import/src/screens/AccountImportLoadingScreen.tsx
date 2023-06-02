@@ -11,7 +11,7 @@ import {
     Screen,
     StackToTabCompositeScreenProps,
 } from '@suite-native/navigation';
-import TrezorConnect, { AccountInfo } from '@trezor/connect';
+import detahardConnect, { AccountInfo } from '@detahard/connect';
 
 import { AccountImportHeader } from '../components/AccountImportHeader';
 import { AccountImportLoader } from '../components/AccountImportLoader';
@@ -65,7 +65,7 @@ export const AccountImportLoadingScreen = ({
 
         const getAccountInfo = async () => {
             const [fetchedAccountInfo] = await Promise.all([
-                TrezorConnect.getAccountInfo({
+                detahardConnect.getAccountInfo({
                     coin: networkSymbol,
                     descriptor: xpubAddress,
                     details: 'tokenBalances',

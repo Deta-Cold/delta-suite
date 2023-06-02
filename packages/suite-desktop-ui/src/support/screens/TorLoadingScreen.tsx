@@ -5,7 +5,7 @@ import { ThemeProvider } from '@suite-support/ThemeProvider';
 import { TorLoader } from '@suite-components';
 import { useTor } from '@suite-support/useTor';
 
-import { Modal } from '@trezor/components';
+import { Modal } from '@detahard/components';
 
 const Wrapper = styled.div`
     height: 100%;

@@ -9,7 +9,7 @@ import {
     variables,
     SelectBar,
     Tooltip,
-} from '@trezor/components';
+} from '@detahard/components';
 import { InputError, WalletLayout, WalletLayoutHeader } from '@wallet-components';
 import { CharacterCount, Translation } from '@suite-components';
 import { useActions, useDevice, useSelector, useTranslation } from '@suite-hooks';
@@ -319,7 +319,7 @@ const SignVerify = () => {
                         isCompleted={isCompleted}
                         isSubmitting={isSubmitting}
                         isSignPage={isSignPage}
-                        isTrezorLocked={isLocked()}
+                        isdetahardLocked={isLocked()}
                         resetForm={resetForm}
                         closeScreen={closeScreen}
                     />

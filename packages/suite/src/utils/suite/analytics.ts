@@ -1,7 +1,7 @@
 import { AppState } from '@suite-types';
 import { AccountTransactionBaseAnchor } from '@suite-constants/anchors';
 
-import { AppUpdateEvent } from '@trezor/suite-analytics';
+import { AppUpdateEvent } from '@detahard/suite-analytics';
 import {
     getScreenWidth,
     getScreenHeight,
@@ -12,10 +12,10 @@ import {
     getWindowWidth,
     getWindowHeight,
     getPlatformLanguages,
-} from '@trezor/env-utils';
+} from '@detahard/env-utils';
 import { getCustomBackends } from '@suite-common/wallet-utils';
 import { UNIT_ABBREVIATIONS } from '@suite-common/suite-constants';
-import type { UpdateInfo } from '@trezor/suite-desktop-api';
+import type { UpdateInfo } from '@detahard/suite-desktop-api';
 
 import { getIsTorEnabled } from './tor';
 

@@ -1,4 +1,4 @@
-import { TOR_URLS } from '@trezor/urls';
+import { TOR_URLS } from '@detahard/urls';
 import { getTorUrlIfAvailable, getIsTorDomain, isOnionUrl } from '@suite-utils/tor';
 
 describe('tor', () => {
@@ -14,28 +14,28 @@ describe('tor', () => {
         const fixtures = [
             {
                 desc: 'simple domain',
-                in: 'https://trezor.io/',
-                out: `http://${TOR_URLS['trezor.io']}/`,
+                in: 'https://detahard.io/',
+                out: `http://${TOR_URLS['detahard.io']}/`,
             },
             {
                 desc: 'subdomain',
-                in: 'https://cdn.trezor.io/static/medium/images/max/1024/1*RPmW1VsUphMbk83oKWXpLw.png',
-                out: `http://cdn.${TOR_URLS['trezor.io']}/static/medium/images/max/1024/1*RPmW1VsUphMbk83oKWXpLw.png`,
+                in: 'https://cdn.detahard.io/static/medium/images/max/1024/1*RPmW1VsUphMbk83oKWXpLw.png',
+                out: `http://cdn.${TOR_URLS['detahard.io']}/static/medium/images/max/1024/1*RPmW1VsUphMbk83oKWXpLw.png`,
             },
             {
                 desc: 'subsubdomain',
-                in: 'http://alpha.beta.trezor.io',
-                out: `http://alpha.beta.${TOR_URLS['trezor.io']}`,
+                in: 'http://alpha.beta.detahard.io',
+                out: `http://alpha.beta.${TOR_URLS['detahard.io']}`,
             },
             {
                 desc: 'with query - blockbook',
-                in: 'https://btc1.trezor.io/api/v2/multi-tickers/?timestamp=12345678',
-                out: `http://btc1.${TOR_URLS['trezor.io']}/api/v2/multi-tickers/?timestamp=12345678`,
+                in: 'https://btc1.detahard.io/api/v2/multi-tickers/?timestamp=12345678',
+                out: `http://btc1.${TOR_URLS['detahard.io']}/api/v2/multi-tickers/?timestamp=12345678`,
             },
             {
                 desc: 'with query - coingecko',
-                in: 'https://cdn.trezor.io/dynamic/coingecko/api/v3/coins/bitcoin/history?date=13-1-2021',
-                out: `http://cdn.${TOR_URLS['trezor.io']}/dynamic/coingecko/api/v3/coins/bitcoin/history?date=13-1-2021`,
+                in: 'https://cdn.detahard.io/dynamic/coingecko/api/v3/coins/bitcoin/history?date=13-1-2021',
+                out: `http://cdn.${TOR_URLS['detahard.io']}/dynamic/coingecko/api/v3/coins/bitcoin/history?date=13-1-2021`,
             },
             {
                 desc: 'not valid domain',
@@ -55,7 +55,7 @@ describe('tor', () => {
         const fixtures = [
             {
                 desc: 'yes',
-                in: TOR_URLS['trezor.io'],
+                in: TOR_URLS['detahard.io'],
                 out: true,
             },
             {
@@ -76,7 +76,7 @@ describe('tor', () => {
         const fixtures = [
             {
                 desc: 'yes',
-                in: `https://${TOR_URLS['trezor.io']}`,
+                in: `https://${TOR_URLS['detahard.io']}`,
                 out: true,
             },
             {
@@ -86,7 +86,7 @@ describe('tor', () => {
             },
             {
                 desc: 'yes with params',
-                in: `https://${TOR_URLS['trezor.io']}/foo/bar?foo=bar`,
+                in: `https://${TOR_URLS['detahard.io']}/foo/bar?foo=bar`,
                 out: true,
             },
             {

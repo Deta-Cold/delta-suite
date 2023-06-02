@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables, Switch } from '@trezor/components';
+import { variables, Switch } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { useActions } from '@suite-hooks';
 import { toggleTor as toggleTorAction } from '@suite-actions/suiteActions';

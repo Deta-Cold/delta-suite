@@ -16,7 +16,7 @@ import {
     selectTransactionByTxidAndAccountKey,
     TransactionsRootState,
 } from '@suite-common/wallet-core';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { analytics, EventType } from '@suite-native/analytics';
 import { EthereumTokenTransfer, WalletAccountTransaction } from '@suite-native/ethereum-tokens';
 
@@ -42,7 +42,7 @@ export const TransactionDetailScreen = ({
 
     useEffect(() => {
         // TODO: Report tokenSymbol if displaying ERC20 token transaction detail.
-        // related to issue: https://github.com/trezor/trezor-suite/issues/7881
+        // related to issue: https://github.com/detahard/detahard-suite/issues/7881
         if (transaction)
             analytics.report({
                 type: EventType.TransactionDetail,

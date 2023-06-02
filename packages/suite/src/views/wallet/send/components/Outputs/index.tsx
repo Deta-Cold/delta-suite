@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSendFormContext } from '@wallet-hooks';
-import { variables, motionAnimation } from '@trezor/components';
+import { variables, motionAnimation } from '@detahard/components';
 import { Address } from './components/Address';
 import { Amount } from './components/Amount';
 import OpReturn from './components/OpReturn';

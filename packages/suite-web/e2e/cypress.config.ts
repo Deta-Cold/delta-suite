@@ -5,18 +5,18 @@ import fs from 'fs';
 import path from 'path';
 import { addMatchImageSnapshotPlugin } from 'cypress-image-snapshot/plugin';
 
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
-import * as metadataUtils from '@trezor/suite/src/utils/suite/metadata';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
+import * as metadataUtils from '@detahard/suite/src/utils/suite/metadata';
 
 import {
-    TrezorBridgeMock,
+    detahardBridgeMock,
     DropboxMock,
     GoogleMock,
     BackendWebsocketServerMock,
-} from '@trezor/e2e-utils';
+} from '@detahard/e2e-utils';
 
 const mocked = {
-    bridge: new TrezorBridgeMock(),
+    bridge: new detahardBridgeMock(),
     dropbox: new DropboxMock(),
     google: new GoogleMock(),
 };
@@ -232,7 +232,7 @@ export default defineConfig({
                 get({ key }: { key: string }): any {
                     return store[key];
                 },
-                ...TrezorUserEnvLink.api,
+                ...detahardUserEnvLink.api,
             });
         },
     },

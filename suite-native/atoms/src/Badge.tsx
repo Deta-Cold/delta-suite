@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Icon, IconSize, IconName, CryptoIconName, icons, CryptoIcon } from '@suite-common/icons';
-import { Color } from '@trezor/theme';
+import { Color } from '@detahard/theme';
 
 import { Text } from './Text';
 import { HStack } from './Stack';

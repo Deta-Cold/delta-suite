@@ -1,8 +1,8 @@
-// @trezor/suite-data -> @trezor/suite -> @trezor/suite-data
+// @detahard/suite-data -> @detahard/suite -> @detahard/suite-data
 // this is causing module cyclic dependency!!! it will work since this dep is not specified
 // in package.json or refs, and also these files must be excluded from TS check
 // TODO: intl or scripts should have dedicated package on that could both suite-data and suite depends
-import messages from '@trezor/suite/src/support/messages';
+import messages from '@detahard/suite/src/support/messages';
 
 type Message = {
     [key: string]: {

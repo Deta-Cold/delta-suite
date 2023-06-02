@@ -10,8 +10,8 @@ import {
     StackNavigationProps,
 } from '@suite-native/navigation';
 import { Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 import { useActiveColorScheme } from '@suite-native/theme';
 
 import { OnboardingFooter } from '../components/OnboardingFooter';
@@ -64,11 +64,11 @@ export const WelcomeScreen = () => {
                     <Box alignItems="center" flex={1}>
                         <Box alignItems="center">
                             <Box marginBottom="large">
-                                <Icon size="large" name="trezor" color="backgroundPrimaryDefault" />
+                                <Icon size="large" name="detahard" color="backgroundPrimaryDefault" />
                             </Box>
                             <Text style={applyStyle(titleStyle)}>
                                 <TitleText color="textDefault">Welcome to</TitleText>
-                                <TitleText color="textSecondaryHighlight"> Trezor Suite</TitleText>
+                                <TitleText color="textSecondaryHighlight"> detahard Suite</TitleText>
                                 <TitleText color="textSubdued"> Lite</TitleText>
                             </Text>
                         </Box>

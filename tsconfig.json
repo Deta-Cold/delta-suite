@@ -39,7 +39,7 @@
         "**/coverage",
         "**/public",
         "**/protobuf-patches",
-        "**/trezor-common",
+        "**/detahard-common",
         "**/jest.config.js"
     ],
     "references": [

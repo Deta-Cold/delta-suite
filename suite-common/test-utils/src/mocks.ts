@@ -1,9 +1,9 @@
 /* WARNING! This file should be imported ONLY in tests! */
 /* eslint-disable require-await */
 
-import { AccountUtxo, Device, Features } from '@trezor/connect';
-import { TrezorDevice, GuideNode, GuidePage, GuideCategory } from '@suite-common/suite-types';
-import { MessageSystem, Action } from '@trezor/message-system';
+import { AccountUtxo, Device, Features } from '@detahard/connect';
+import { detahardDevice, GuideNode, GuidePage, GuideCategory } from '@suite-common/suite-types';
+import { MessageSystem, Action } from '@detahard/message-system';
 import {
     Account,
     FeeInfo,
@@ -11,7 +11,7 @@ import {
     BlockchainNetworks,
 } from '@suite-common/wallet-types';
 import { networksCompatibility } from '@suite-common/wallet-config';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 
 // in-memory implementation of indexedDB
 import 'fake-indexeddb/auto';
@@ -62,7 +62,7 @@ const getFirmwareRelease = (): NonNullable<Device['firmwareRelease']> => ({
             min_bridge_version: [2, 0, 25],
             min_firmware_version: [2, 0, 0],
             min_bootloader_version: [2, 0, 0],
-            url: 'data/firmware/1/trezor-1.8.1.bin',
+            url: 'data/firmware/1/detahard-1.8.1.bin',
             fingerprint: '019e849c1eb285a03a92bbad6d18a328af3b4dc6999722ebb47677b403a4cd16',
             changelog:
                 '* Fix fault when using the device with no PIN* Fix OMNI transactions parsing',
@@ -74,7 +74,7 @@ const getFirmwareRelease = (): NonNullable<Device['firmwareRelease']> => ({
         min_bridge_version: [2, 0, 25],
         min_firmware_version: [2, 0, 0],
         min_bootloader_version: [2, 0, 0],
-        url: 'data/firmware/1/trezor-1.8.1.bin',
+        url: 'data/firmware/1/detahard-1.8.1.bin',
         fingerprint: '019e849c1eb285a03a92bbad6d18a328af3b4dc6999722ebb47677b403a4cd16',
         changelog: '* Fix fault when using the device with no PIN* Fix OMNI transactions parsing',
     },
@@ -86,7 +86,7 @@ const getFirmwareRelease = (): NonNullable<Device['firmwareRelease']> => ({
  * @returns {Features}
  */
 const getDeviceFeatures = (feat?: Partial<Features>): Features => ({
-    vendor: 'trezor.io',
+    vendor: 'detahard.io',
     major_version: 2,
     minor_version: 1,
     patch_version: 1,
@@ -95,7 +95,7 @@ const getDeviceFeatures = (feat?: Partial<Features>): Features => ({
     pin_protection: false,
     passphrase_protection: false,
     language: 'en-US',
-    label: 'My Trezor',
+    label: 'My detahard',
     initialized: true,
     revision: 'df0963ec',
     bootloader_hash: '7447a41717022e3eb32011b00b2a68ebb9c7f603cdc730e7307850a3f4d62a5c',
@@ -127,7 +127,7 @@ const getDeviceFeatures = (feat?: Partial<Features>): Features => ({
 });
 
 /**
- * simplified Device from '@trezor/connect'
+ * simplified Device from '@detahard/connect'
  * @param {Partial<Device>} [dev]
  * @param {Partial<Features>} [feat]
  * @returns {Device}
@@ -137,7 +137,7 @@ const getConnectDevice = (dev?: Partial<Device>, feat?: Partial<Features>): Devi
         return {
             type: dev.type,
             path: dev && dev.path ? dev.path : '1',
-            label: dev && dev.label ? dev.label : 'My Trezor',
+            label: dev && dev.label ? dev.label : 'My detahard',
             features: undefined,
         } as Device;
     }
@@ -146,7 +146,7 @@ const getConnectDevice = (dev?: Partial<Device>, feat?: Partial<Features>): Devi
     return {
         id: features.device_id,
         path: '',
-        label: 'My Trezor',
+        label: 'My detahard',
         firmware: 'valid',
         firmwareRelease: getFirmwareRelease(),
         status: 'available',
@@ -165,11 +165,11 @@ const getConnectDevice = (dev?: Partial<Device>, feat?: Partial<Features>): Devi
 
 /**
  * Extended device from suite reducer
- * @param {Partial<TrezorDevice>} [dev]
+ * @param {Partial<detahardDevice>} [dev]
  * @param {Partial<Features>} [feat]
- * @returns {TrezorDevice}
+ * @returns {detahardDevice}
  */
-const getSuiteDevice = (dev?: Partial<TrezorDevice>, feat?: Partial<Features>): TrezorDevice => {
+const getSuiteDevice = (dev?: Partial<detahardDevice>, feat?: Partial<Features>): detahardDevice => {
     const device = getConnectDevice(dev, feat);
     if (device.type === 'acquired') {
         return {
@@ -184,9 +184,9 @@ const getSuiteDevice = (dev?: Partial<TrezorDevice>, feat?: Partial<Features>): 
             metadata: { status: 'disabled' },
             ...dev,
             ...device,
-        } as TrezorDevice;
+        } as detahardDevice;
     }
-    return device as TrezorDevice;
+    return device as detahardDevice;
 };
 
 const getWalletTransaction = (t?: Partial<WalletAccountTransaction>): WalletAccountTransaction => ({
@@ -246,8 +246,8 @@ const getWalletTransaction = (t?: Partial<WalletAccountTransaction>): WalletAcco
     ...t,
 });
 
-// Mocked TrezorConnect used in various tests
-const getTrezorConnect = <M>(methods?: M) => {
+// Mocked detahardConnect used in various tests
+const getdetahardConnect = <M>(methods?: M) => {
     // event listeners
     const listeners: { [key: string]: (e: any) => void } = {};
     // methods response fixtures
@@ -259,13 +259,13 @@ const getTrezorConnect = <M>(methods?: M) => {
         return fixtures;
     };
 
-    const originalModule = jest.requireActual('@trezor/connect');
+    const originalModule = jest.requireActual('@detahard/connect');
 
     return {
         __esModule: true, // export as module
         ...originalModule,
         default: {
-            // define mocked TrezorConnect methods
+            // define mocked detahardConnect methods
             init: () => {},
             on: (event: string, cb: (e: any) => void) => {
                 listeners[event] = cb;
@@ -398,9 +398,9 @@ const getTrezorConnect = <M>(methods?: M) => {
     };
 };
 
-// Mocked @trezor/suite-analytics package used in various tests
+// Mocked @detahard/suite-analytics package used in various tests
 const getAnalytics = () => {
-    const originalModule = jest.requireActual('@trezor/suite-analytics');
+    const originalModule = jest.requireActual('@detahard/suite-analytics');
     return {
         __esModule: true, // this property makes it work
         ...originalModule,
@@ -465,7 +465,7 @@ const getMessageSystemConfig = (
                             bootloader: '*',
                             firmwareRevision: '*',
                             variant: 'regular',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                     ],
                 },
@@ -477,12 +477,12 @@ const getMessageSystemConfig = (
                 variant: 'warning',
                 category: 'banner',
                 content: {
-                    'en-GB': 'New Trezor firmware is available!',
-                    en: 'New Trezor firmware is available!',
-                    es: 'El nuevo firmware de Trezor está disponible!',
-                    cs: 'Nová verze Trezor firmware je k dispozici',
-                    ru: 'Доступна новая прошивка Trezor!',
-                    ja: '新しいTrezorファームウェアが利用可能です！',
+                    'en-GB': 'New detahard firmware is available!',
+                    en: 'New detahard firmware is available!',
+                    es: 'El nuevo firmware de detahard está disponible!',
+                    cs: 'Nová verze detahard firmware je k dispozici',
+                    ru: 'Доступна новая прошивка detahard!',
+                    ja: '新しいdetahardファームウェアが利用可能です！',
                 },
                 cta: {
                     action: 'internal-link',
@@ -509,12 +509,12 @@ const getMessageSystemConfig = (
                 variant: 'info',
                 category: ['banner', 'context', 'modal'],
                 content: {
-                    'en-GB': 'New Trezor app is available!',
-                    en: 'New Trezor app is available!',
-                    es: 'La nueva aplicación Trezor está disponible!',
-                    cs: 'Nová Trezor aplikace je k dispozici!',
-                    ru: 'Доступно новое приложение Trezor!',
-                    ja: '新しいTrezorアプリが利用可能になりました！',
+                    'en-GB': 'New detahard app is available!',
+                    en: 'New detahard app is available!',
+                    es: 'La nueva aplicación detahard está disponible!',
+                    cs: 'Nová detahard aplikace je k dispozici!',
+                    ru: 'Доступно новое приложение detahard!',
+                    ja: '新しいdetahardアプリが利用可能になりました！',
                 },
                 cta: {
                     action: 'external-link',
@@ -674,7 +674,7 @@ export const testMocks = {
     getConnectDevice,
     getSuiteDevice,
     getWalletTransaction,
-    getTrezorConnect,
+    getdetahardConnect,
     getAnalytics,
     getMessageSystemConfig,
     getGuideNode,

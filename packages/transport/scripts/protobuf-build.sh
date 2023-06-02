@@ -6,7 +6,7 @@ echo $#
 
 PARENT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
-SRC="../../submodules/trezor-common/protob"
+SRC="../../submodules/detahard-common/protob"
 DIST="."
 
 if [[ $# -ne 0 && $# -ne 2 ]]
@@ -22,13 +22,13 @@ if [[ $# -eq 2 ]]
 fi
 
 # BUILD combined messages.proto file from protobuf files
-# this code was copied from ./submodules/trezor-common/protob Makekile
+# this code was copied from ./submodules/detahard-common/protob Makekile
 # clear protobuf syntax and remove unknown values to be able to work with proto2js
 echo 'syntax = "proto2";' > "$DIST"/messages.proto
 echo 'import "google/protobuf/descriptor.proto";' >> "$DIST"/messages.proto
 echo "Build proto file from $SRC"
 grep -hv -e '^import ' -e '^syntax' -e '^package' -e 'option java_' "$SRC"/messages*.proto \
-| sed 's/ hw\.trezor\.messages\.common\./ /' \
+| sed 's/ hw\.detahard\.messages\.common\./ /' \
 | sed 's/ common\./ /' \
 | sed 's/ ethereum_definitions\./ /' \
 | sed 's/ management\./ /' \

@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { Screen } from '@suite-native/navigation';
 import { Box } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { OnboardingScreenHeader } from './OnboardingScreenHeader';
 

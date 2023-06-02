@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { Dropdown } from '@trezor/components';
+import { Dropdown } from '@detahard/components';
 import { Card, QuestionTooltip, Translation } from '@suite-components';
 import { Section } from '@dashboard-components';
 import { useDiscovery, useSelector, useActions } from '@suite-hooks';

@@ -1,12 +1,12 @@
 import { Account, Discovery } from '@wallet-types';
 import { DISCOVERY } from '@wallet-actions/constants';
 import { SUITE } from '@suite-actions/constants';
-import { AppState, TrezorDevice } from '@suite-types';
+import { AppState, detahardDevice } from '@suite-types';
 import { getEnvironment } from '@suite-utils/env';
 import { getIsTorEnabled } from '@suite-utils/tor';
 
 import { LogEntry } from '@suite-common/logger';
-import { DEVICE } from '@trezor/connect';
+import { DEVICE } from '@detahard/connect';
 import { getCustomBackends } from '@suite-common/wallet-utils';
 import {
     getBrowserName,
@@ -18,7 +18,7 @@ import {
     getScreenWidth,
     getWindowHeight,
     getWindowWidth,
-} from '@trezor/env-utils';
+} from '@detahard/env-utils';
 import {
     getBootloaderHash,
     getBootloaderVersion,
@@ -26,8 +26,8 @@ import {
     getFirmwareRevision,
     getFirmwareType,
     getFirmwareVersion,
-} from '@trezor/device-utils';
-import { DeepPartial } from '@trezor/type-utils';
+} from '@detahard/device-utils';
+import { DeepPartial } from '@detahard/type-utils';
 import { accountsActions } from '@suite-common/wallet-core';
 
 import { getPhysicalDeviceUniqueIds } from './device';
@@ -82,7 +82,7 @@ export const redactDiscovery = (discovery: DeepPartial<Discovery> | undefined) =
     };
 };
 
-export const redactDevice = (device: DeepPartial<TrezorDevice> | undefined) => {
+export const redactDevice = (device: DeepPartial<detahardDevice> | undefined) => {
     if (!device) return undefined;
     return {
         ...device,
@@ -205,7 +205,7 @@ export const getApplicationInfo = (state: AppState, hideSensitiveInfo: boolean) 
         .map(({ coin }) => coin)
         .filter(coin => state.wallet.settings.enabledNetworks.includes(coin)),
     devices: getPhysicalDeviceUniqueIds(state.devices)
-        .map(id => state.devices.find(device => device.id === id) as TrezorDevice) // filter unique devices
+        .map(id => state.devices.find(device => device.id === id) as detahardDevice) // filter unique devices
         .concat(state.devices.filter(device => device.id === null)) // add devices in bootloader mode
         .map(device => ({
             id: hideSensitiveInfo ? REDACTED_REPLACEMENT : device.id,

@@ -48,7 +48,7 @@ if (triggerUpdateAfter > 0) {
 
 const updateInfo = {
     version: '31.33.7',
-    path: 'Trezor-Suite-31.33.7-fake.AppImage',
+    path: 'detahard-Suite-31.33.7-fake.AppImage',
     sha512: 'tfvdNXsjMe8YXJwTuujz4tKTdfsCuR/9VECF8EkcRP95YM7vuDV8dumru1jKtdiv0gaS1GT3SPEeAfmczY5jGg==',
     releaseDate: '2029-12-12T13:39:03.416Z',
     releaseName: 'v31.33.7',
@@ -95,7 +95,7 @@ const autoUpdater = {
                         version: '31.33.7',
                         releaseDate: new Date(updateInfo.releaseDate),
                         downloadedFile:
-                            '/home/myuser/.cache/@trezorsuite-desktop-updater/pending/Trezor-Suite-31.33.7-fake.AppImage',
+                            '/home/myuser/.cache/@detahardsuite-desktop-updater/pending/detahard-Suite-31.33.7-fake.AppImage',
                     });
                     return resolve();
                 }

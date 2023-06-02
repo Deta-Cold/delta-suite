@@ -75,7 +75,7 @@ const RULE_PATCH = {
     'StellarPathPaymentStrictSendOp.paths': 'optional', // its valid to be undefined according to implementation/tests
 };
 
-// custom types IN to trezor
+// custom types IN to detahard
 // protobuf lib will handle the translation to required type
 // connect or other 3rd party libs are using compatible types (string as number etc...)
 const TYPE_PATCH = {

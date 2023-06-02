@@ -1,14 +1,14 @@
 {
-    "name": "@trezor/suite-build",
+    "name": "@detahard/suite-build",
     "version": "1.0.0",
-    "author": "Trezor <info@trezor.io>",
+    "author": "detahard <info@detahard.io>",
     "private": true,
     "keywords": [
-        "Trezor",
+        "detahard",
         "suite-build"
     ],
     "license": "SEE LICENSE IN LICENSE.md",
-    "description": "trezor suite build",
+    "description": "detahard suite build",
     "scripts": {
         "base": "TS_NODE_PROJECT=\"tsconfig.json\" webpack --config ./webpack.config.ts",
         "web": "PROJECT=web yarn run base",
@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "@suite-common/suite-config": "workspace:*",
-        "@trezor/suite": "workspace:*",
+        "@detahard/suite": "workspace:*",
         "babel-loader": "^9.1.2",
         "babel-plugin-styled-components": "^2.1.3",
         "copy-webpack-plugin": "^11.0.0",

@@ -5,8 +5,8 @@ import {
     withTiming,
 } from 'react-native-reanimated';
 
-import { useNativeStyles } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { useNativeStyles } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 
 const pressTimingConfig = { duration: 70 };
 

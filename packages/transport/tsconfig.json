@@ -7,6 +7,6 @@
     "include": ["src"],
     "references": [
         { "path": "../utils" },
-        { "path": "../trezor-user-env-link" }
+        { "path": "../detahard-user-env-link" }
     ]
 }

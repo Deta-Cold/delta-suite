@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { TouchableOpacity } from 'react-native';
 
-import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 
 import { Box } from './Box';
 import { Text } from './Text';

@@ -17,10 +17,10 @@ protobuf.configure();
 export type {
     Transport,
     AcquireInput,
-    TrezorDeviceInfoWithSession,
-    MessageFromTrezor,
+    detahardDeviceInfoWithSession,
+    MessageFromdetahard,
 } from './types';
-export { TREZOR_DESCS } from './constants';
+export { detahard_DESCS } from './constants';
 
 export { Messages } from './types';
 

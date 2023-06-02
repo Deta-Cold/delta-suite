@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import { G } from '@mobily/ts-belt';
 
 import { Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { Box } from '../Box';
 import { Text } from '../Text';

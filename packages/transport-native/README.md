@@ -1,17 +1,17 @@
-# @trezor/transport-native
+# @detahard/transport-native
 
-Trezor Transport layer for low level communication with Trezor devices for React Native.
+detahard Transport layer for low level communication with detahard devices for React Native.
 
 ## Installation
 
 ```sh
-yarn add @trezor/transport-native
+yarn add @detahard/transport-native
 ```
 
 ## Usage
 
 ```js
-import { enumerate } from '@trezor/transport-native';
+import { enumerate } from '@detahard/transport-native';
 
 // ...
 

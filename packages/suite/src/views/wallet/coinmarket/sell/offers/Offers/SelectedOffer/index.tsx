@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, Icon, variables, colors } from '@trezor/components';
+import { Card, Icon, variables, colors } from '@detahard/components';
 import { SelectBankAccount } from './components/SelectBankAccount';
 import { SendTransaction } from './components/SendTransaction';
 import { CoinmarketSellOfferInfo } from '@wallet-components';

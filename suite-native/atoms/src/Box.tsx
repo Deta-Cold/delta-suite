@@ -3,8 +3,8 @@ import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { D, pipe } from '@mobily/ts-belt';
 
-import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { Spacing } from '@trezor/theme';
+import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { Spacing } from '@detahard/theme';
 
 import { useDebugView, DebugView } from './DebugView';
 import { TestProps } from './types';

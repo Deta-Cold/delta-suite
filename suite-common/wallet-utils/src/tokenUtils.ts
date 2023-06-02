@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 
 import { Account, CoinFiatRates } from '@suite-common/wallet-types';
-import { TokenInfo, FiatRates } from '@trezor/connect';
+import { TokenInfo, FiatRates } from '@detahard/connect';
 
 interface TokensWithRates extends TokenInfo {
     rates?: FiatRates;

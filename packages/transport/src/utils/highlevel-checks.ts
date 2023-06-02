@@ -1,6 +1,6 @@
 // input checks for high-level transports
 
-import type { TrezorDeviceInfoWithSession, MessageFromTrezor } from '../types';
+import type { detahardDeviceInfoWithSession, MessageFromdetahard } from '../types';
 
 const ERROR = 'Wrong result type.';
 
@@ -33,14 +33,14 @@ function convertSession(r: any) {
     return r;
 }
 
-export function devices(res: any): Array<TrezorDeviceInfoWithSession> {
+export function devices(res: any): Array<detahardDeviceInfoWithSession> {
     if (typeof res !== 'object') {
         throw new Error(ERROR);
     }
     if (!(res instanceof Array)) {
         throw new Error(ERROR);
     }
-    return res.map((o: any): TrezorDeviceInfoWithSession => {
+    return res.map((o: any): detahardDeviceInfoWithSession => {
         if (typeof o !== 'object' || o == null) {
             throw new Error(ERROR);
         }
@@ -72,7 +72,7 @@ export function acquire(res: any) {
     return session.toString();
 }
 
-export function call(res: any): MessageFromTrezor {
+export function call(res: any): MessageFromdetahard {
     if (typeof res !== 'object' || res == null) {
         throw new Error(ERROR);
     }

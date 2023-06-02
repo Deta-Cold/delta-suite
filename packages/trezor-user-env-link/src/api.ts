@@ -171,11 +171,11 @@ export const api = (controller: any) => ({
         await controller.send({ type: 'log', text });
         return null;
     },
-    trezorUserEnvConnect: async () => {
+    detahardUserEnvConnect: async () => {
         await controller.connect();
         return null;
     },
-    trezorUserEnvDisconnect: async () => {
+    detahardUserEnvDisconnect: async () => {
         await controller.disconnect();
         return null;
     },

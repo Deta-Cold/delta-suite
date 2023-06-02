@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Card, HStack, IconButton, Text, VStack } from '@suite-native/atoms';
 import { Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 import { useOpenLink } from '@suite-native/link';
 
 const cardStyle = prepareNativeStyle<{ backgroundColor: Color }>((utils, { backgroundColor }) => ({
@@ -26,9 +26,9 @@ export const AboutUsBanners = () => {
         <>
             <Card style={applyStyle(cardStyle, { backgroundColor: 'backgroundNeutralBold' })}>
                 <VStack spacing="large" style={applyStyle(stackStyle)}>
-                    <Icon color="iconOnPrimary" name="trezor" />
+                    <Icon color="iconOnPrimary" name="detahard" />
                     <Text color="textOnPrimary">
-                        Trezor Suite Lite is a safe and secure way to stay connected to the crypto
+                        detahard Suite Lite is a safe and secure way to stay connected to the crypto
                         on your hardware wallet. Track coin balances on the go without exposing your
                         private data. Easily create and send payment addresses to anyone.
                     </Text>
@@ -43,17 +43,17 @@ export const AboutUsBanners = () => {
                         <IconButton
                             colorScheme="tertiaryElevation1"
                             iconName="facebook"
-                            onPress={() => openLink('https://www.facebook.com/trezor.io')}
+                            onPress={() => openLink('https://www.facebook.com/detahard.io')}
                         />
                         <IconButton
                             colorScheme="tertiaryElevation1"
                             iconName="twitter"
-                            onPress={() => openLink('https://twitter.com/Trezor')}
+                            onPress={() => openLink('https://twitter.com/detahard')}
                         />
                         <IconButton
                             colorScheme="tertiaryElevation1"
                             iconName="github"
-                            onPress={() => openLink('https://github.com/trezor')}
+                            onPress={() => openLink('https://github.com/detahard')}
                         />
                     </HStack>
                 </VStack>

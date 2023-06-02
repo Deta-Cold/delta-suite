@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Icon } from '@trezor/components';
+import { Icon } from '@detahard/components';
 import { getReasonForDisabledAction, useCardanoStaking } from '@wallet-hooks/useCardanoStaking';
 import { Translation } from '@suite-components/Translation';
 import { Actions, Title, Heading, Text, StyledCard } from './CardanoPrimitives';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 import { useDeviceModel } from '@suite-hooks/useDeviceModel';
 import { DeviceButton } from '@suite-components';
 

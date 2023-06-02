@@ -1,5 +1,5 @@
-import { Environment } from '@trezor/analytics';
-import { desktopApi, SuiteThemeVariant } from '@trezor/suite-desktop-api';
+import { Environment } from '@detahard/analytics';
+import { desktopApi, SuiteThemeVariant } from '@detahard/suite-desktop-api';
 
 export const isWeb = () => process.env.SUITE_TYPE === 'web';
 

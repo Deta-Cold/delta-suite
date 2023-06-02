@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from '@trezor/components';
+import { Dropdown } from '@detahard/components';
 import { GraphScaleDropdownItem } from '@suite-components/TransactionsGraph/components/GraphScaleDropdownItem';
 import { Translation } from '@suite-components';
 

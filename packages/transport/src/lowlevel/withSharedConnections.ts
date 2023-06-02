@@ -3,15 +3,15 @@ import { parseConfigure } from './protobuf/messages';
 import { buildAndSend } from './send';
 import { receiveAndParse } from './receive';
 import type { Deferred } from '../utils/defered';
-import type { LowlevelTransportSharedPlugin, TrezorDeviceInfoDebug } from './sharedPlugin';
-import type { MessageFromTrezor, TrezorDeviceInfoWithSession, AcquireInput } from '../types';
+import type { LowlevelTransportSharedPlugin, detahardDeviceInfoDebug } from './sharedPlugin';
+import type { MessageFromdetahard, detahardDeviceInfoWithSession, AcquireInput } from '../types';
 
 import { postModuleMessage } from './sharedConnectionWorker';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const stringify = require('json-stable-stringify');
 
-function stableStringify(devices?: Array<TrezorDeviceInfoWithSession>) {
+function stableStringify(devices?: Array<detahardDeviceInfoWithSession>) {
     if (devices == null) {
         return 'null';
     }
@@ -25,7 +25,7 @@ function stableStringify(devices?: Array<TrezorDeviceInfoWithSession>) {
     return stringify(pureDevices);
 }
 
-function compare(a: TrezorDeviceInfoWithSession, b: TrezorDeviceInfoWithSession) {
+function compare(a: detahardDeviceInfoWithSession, b: detahardDeviceInfoWithSession) {
     if (!Number.isNaN(parseInt(a.path, 10))) {
         return parseInt(a.path, 10) - parseInt(b.path, 10);
     }
@@ -56,7 +56,7 @@ export type MessageToSharedWorker =
       }
     | {
           type: 'get-sessions-and-disconnect';
-          devices: Array<TrezorDeviceInfoDebug>;
+          devices: Array<detahardDeviceInfoDebug>;
       }
     | {
           type: 'release-intent';
@@ -143,7 +143,7 @@ export default class LowlevelTransportWithSharedConnections {
 
     async _silentEnumerate() {
         await this.sendToWorker({ type: 'enumerate-intent' });
-        let devices: Array<TrezorDeviceInfoDebug> = [];
+        let devices: Array<detahardDeviceInfoDebug> = [];
         try {
             devices = await this.plugin.enumerate();
         } finally {
@@ -175,7 +175,7 @@ export default class LowlevelTransportWithSharedConnections {
         return devicesWithSessions.sort(compare);
     }
 
-    _releaseDisconnected(devices: Array<TrezorDeviceInfoWithSession>) {
+    _releaseDisconnected(devices: Array<detahardDeviceInfoWithSession>) {
         const connected: { [session: string]: boolean } = {};
         devices.forEach(device => {
             if (device.session != null) {
@@ -196,7 +196,7 @@ export default class LowlevelTransportWithSharedConnections {
 
     _lastStringified = '';
 
-    listen(old: Array<TrezorDeviceInfoWithSession>) {
+    listen(old: Array<detahardDeviceInfoWithSession>) {
         const oldStringified = stableStringify(old);
         const last = old == null ? this._lastStringified : oldStringified;
         return this._runIter(0, last);
@@ -205,7 +205,7 @@ export default class LowlevelTransportWithSharedConnections {
     async _runIter(
         iteration: number,
         oldStringified: string,
-    ): Promise<Array<TrezorDeviceInfoWithSession>> {
+    ): Promise<Array<detahardDeviceInfoWithSession>> {
         const devices = await this._silentEnumerate();
         const stringified = stableStringify(devices);
         if (stringified !== oldStringified || iteration === ITER_MAX) {
@@ -352,7 +352,7 @@ export default class LowlevelTransportWithSharedConnections {
         name: string,
         data: Record<string, unknown>,
         debugLink: boolean,
-    ): Promise<MessageFromTrezor> {
+    ): Promise<MessageFromdetahard> {
         const callInside = async (path: string) => {
             const messages = this.messages();
             await buildAndSend(messages, this._sendLowlevel(path, debugLink), name, data);
@@ -372,7 +372,7 @@ export default class LowlevelTransportWithSharedConnections {
         return this.doWithSession(session, debugLink, callInside);
     }
 
-    read(session: string, debugLink: boolean): Promise<MessageFromTrezor> {
+    read(session: string, debugLink: boolean): Promise<MessageFromdetahard> {
         const callInside = async (path: string) => {
             const messages = this.messages();
             const message = await receiveAndParse(messages, this._receiveLowlevel(path, debugLink));

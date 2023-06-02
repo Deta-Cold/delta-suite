@@ -10,17 +10,17 @@ import {
     getBackendFromSettings,
     getCustomBackends,
     getNetwork,
-    isTrezorConnectBackendType,
+    isdetahardConnectBackendType,
 } from '@suite-common/wallet-utils';
-import TrezorConnect, {
+import detahardConnect, {
     BlockchainBlock,
     BlockchainError,
     BlockchainNotification,
     FeeLevel,
-} from '@trezor/connect';
-import { arrayDistinct } from '@trezor/utils';
+} from '@detahard/connect';
+import { arrayDistinct } from '@detahard/utils';
 import type { Account, CustomBackend, NetworksFees } from '@suite-common/wallet-types';
-import type { Timeout } from '@trezor/type-utils';
+import type { Timeout } from '@detahard/type-utils';
 import { notificationsActions } from '@suite-common/toast-notifications';
 
 import { selectAccounts } from '../accounts/accountsReducer';
@@ -31,12 +31,12 @@ import { selectBlockchainState, selectNetworkBlockchainInfo } from './blockchain
 const ACCOUNTS_SYNC_INTERVAL = 60 * 1000;
 
 // Conditionally subscribe to blockchain backend
-// called after TrezorConnect.init successfully emits TRANSPORT.START event
+// called after detahardConnect.init successfully emits TRANSPORT.START event
 // checks if there are discovery processes loaded from LocalStorage
 // if so starts subscription to proper networks
 
 // sort FeeLevels in reversed order (Low > High)
-// TODO: consider to use same order in @trezor/connect to avoid double sorting
+// TODO: consider to use same order in @detahard/connect to avoid double sorting
 const order: FeeLevel['label'][] = ['low', 'economy', 'normal', 'high'];
 const sortLevels = (levels: FeeLevel[]) =>
     levels.sort((levelA, levelB) => order.indexOf(levelA.label) - order.indexOf(levelB.label));
@@ -48,7 +48,7 @@ export const preloadFeeInfoThunk = createThunk(
         // Fetch default fee levels
         const networks = networksCompatibility.filter(n => !n.isHidden && !n.accountType);
         const promises = networks.map(network =>
-            TrezorConnect.blockchainEstimateFee({
+            detahardConnect.blockchainEstimateFee({
                 coin: network.symbol,
                 request: {
                     feeLevels: 'preloaded',
@@ -95,10 +95,10 @@ export const updateFeeInfoThunk = createThunk(
         let newFeeInfo;
 
         if (network.networkType === 'ethereum') {
-            // NOTE: ethereum smart fees are not implemented properly in @trezor/connect Issue: https://github.com/trezor/trezor-suite/issues/5340
-            // create raw call to @trezor/blockchain-link, receive data and create FeeLevel.normal from it
+            // NOTE: ethereum smart fees are not implemented properly in @detahard/connect Issue: https://github.com/detahard/detahard-suite/issues/5340
+            // create raw call to @detahard/blockchain-link, receive data and create FeeLevel.normal from it
 
-            const result = await TrezorConnect.blockchainEstimateFee({
+            const result = await detahardConnect.blockchainEstimateFee({
                 coin: network.symbol,
                 request: {
                     blocks: [2],
@@ -113,13 +113,13 @@ export const updateFeeInfoThunk = createThunk(
                     ...result.payload,
                     levels: result.payload.levels.map(l => ({
                         ...l,
-                        blocks: -1, // NOTE: @trezor/connect returns -1 for ethereum default
+                        blocks: -1, // NOTE: @detahard/connect returns -1 for ethereum default
                         label: 'normal' as const,
                     })),
                 };
             }
         } else {
-            const result = await TrezorConnect.blockchainEstimateFee({
+            const result = await detahardConnect.blockchainEstimateFee({
                 coin: network.symbol,
                 request: {
                     feeLevels: 'smart',
@@ -145,16 +145,16 @@ export const updateFeeInfoThunk = createThunk(
     },
 );
 
-// call TrezorConnect.unsubscribe, it doesn't cost anything and should emit BLOCKCHAIN.CONNECT or BLOCKCHAIN.ERROR event
+// call detahardConnect.unsubscribe, it doesn't cost anything and should emit BLOCKCHAIN.CONNECT or BLOCKCHAIN.ERROR event
 export const reconnectBlockchainThunk = createThunk(
     `${actionsPrefix}/reconnectBlockchainThunk`,
-    (coin: NetworkSymbol) => TrezorConnect.blockchainUnsubscribeFiatRates({ coin }),
+    (coin: NetworkSymbol) => detahardConnect.blockchainUnsubscribeFiatRates({ coin }),
 );
 
 const setBackendsToConnect = (backends: CustomBackend[]) =>
     Promise.all(
         backends.map(({ coin, type, urls }) =>
-            TrezorConnect.blockchainSetCustomBackend({
+            detahardConnect.blockchainSetCustomBackend({
                 coin,
                 blockchainLink: {
                     type,
@@ -223,12 +223,12 @@ export const subscribeBlockchainThunk = createThunk(
 
             // Skipping account subscription has a problem (besides that you actually don't subscribe to all addresses),
             // due to lack of subscriptions for the network, blockchain-link will close the connection
-            // after 50s thinking it is not needed anymore. https://github.com/trezor/trezor-suite/blob/6253be3f9f657a9a14f21941c76ae1db36e2193c/packages/blockchain-link/src/workers/blockfrost/websocket.ts#L104
+            // after 50s thinking it is not needed anymore. https://github.com/detahard/detahard-suite/blob/6253be3f9f657a9a14f21941c76ae1db36e2193c/packages/blockchain-link/src/workers/blockfrost/websocket.ts#L104
             // However if you do full discovery then everything seems to be normal. It is because
             // subscribe func will be called, without fiatRates param, every time new account is added (from walletMiddleware), but if you have the device remembered
             // subscribe function is called only once, after bl connects to a backend, with param fiatRates set to true,
             // thus it will not subscribe the accounts addresses.
-            const { success } = await TrezorConnect.blockchainSubscribeFiatRates({ coin: symbol });
+            const { success } = await detahardConnect.blockchainSubscribeFiatRates({ coin: symbol });
             // if first subscription fails, do not run the second one
             if (!success) return;
         }
@@ -238,9 +238,9 @@ export const subscribeBlockchainThunk = createThunk(
         const accountsToSubscribe = findAccountsByNetwork(
             symbol,
             selectAccounts(getState()),
-        ).filter(a => isTrezorConnectBackendType(a.backendType)); // do not subscribe accounts with unsupported backend type
+        ).filter(a => isdetahardConnectBackendType(a.backendType)); // do not subscribe accounts with unsupported backend type
         if (!accountsToSubscribe.length) return;
-        return TrezorConnect.blockchainSubscribe({
+        return detahardConnect.blockchainSubscribe({
             accounts: accountsToSubscribe,
             coin: symbol,
         });
@@ -257,17 +257,17 @@ export const unsubscribeBlockchainThunk = createThunk(
         const accounts = selectAccounts(getState());
         const promises = symbols.map(symbol => {
             const accountsToSubscribe = findAccountsByNetwork(symbol, accounts).filter(a =>
-                isTrezorConnectBackendType(a.backendType),
+                isdetahardConnectBackendType(a.backendType),
             ); // do not unsubscribe accounts with unsupported backend type
             if (accountsToSubscribe.length) {
                 // there are some accounts left, update subscription
-                return TrezorConnect.blockchainSubscribe({
+                return detahardConnect.blockchainSubscribe({
                     accounts: accountsToSubscribe,
                     coin: symbol,
                 });
             }
             // there are no accounts left for this coin, disconnect backend
-            return TrezorConnect.blockchainDisconnect({ coin: symbol });
+            return detahardConnect.blockchainDisconnect({ coin: symbol });
         });
 
         return Promise.all(promises as Promise<any>[]);

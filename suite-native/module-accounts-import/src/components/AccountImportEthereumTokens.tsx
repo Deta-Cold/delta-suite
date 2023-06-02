@@ -3,7 +3,7 @@ import React from 'react';
 import { A } from '@mobily/ts-belt';
 
 import { Box, VStack, Text } from '@suite-native/atoms';
-import { TokenInfo } from '@trezor/blockchain-link-types';
+import { TokenInfo } from '@detahard/blockchain-link-types';
 import { TokenAddress, TokenSymbol } from '@suite-common/wallet-types';
 
 import { EthereumTokenInfo } from './EthereumTokenInfo';

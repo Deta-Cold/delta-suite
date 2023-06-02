@@ -6,7 +6,7 @@ import {
     selectIsAnalyticsConfirmed,
 } from '@suite-common/analytics';
 import { createThunk } from '@suite-common/redux-utils';
-import { getTrackingRandomId } from '@trezor/analytics';
+import { getTrackingRandomId } from '@detahard/analytics';
 import { getCommitHash, isDevelopEnv } from '@suite-native/config';
 
 import { analytics } from './analytics';

@@ -8,7 +8,7 @@ import * as walletSettingsActions from '@settings-actions/walletSettingsActions'
 import { useAnchor } from '@suite-hooks/useAnchor';
 import { SettingsAnchor } from '@suite-constants/anchors';
 
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 import { FiatCurrencyCode } from '@suite-common/suite-config';
 
 const buildCurrencyOption = (currency: string) => ({

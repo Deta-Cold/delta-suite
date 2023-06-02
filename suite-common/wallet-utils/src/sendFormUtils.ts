@@ -9,7 +9,7 @@ import { TypedFieldError } from '@suite-common/wallet-types';
 import { FIAT } from '@suite-common/suite-config';
 import { isFeatureFlagEnabled } from '@suite-common/suite-utils';
 import { Network, NetworkType } from '@suite-common/wallet-config';
-import { EthereumTransaction, TokenInfo, ComposeOutput, PROTO } from '@trezor/connect';
+import { EthereumTransaction, TokenInfo, ComposeOutput, PROTO } from '@detahard/connect';
 import { DEFAULT_PAYMENT, DEFAULT_VALUES, ERC20_TRANSFER } from '@suite-common/wallet-constants';
 import type {
     FormState,
@@ -88,7 +88,7 @@ const getSerializedErc20Transfer = (token: TokenInfo, to: string, amount: string
     return `0x${ERC20_TRANSFER}${erc20recipient}${erc20amount}`;
 };
 
-// TrezorConnect.blockchainEstimateFee for ethereum
+// detahardConnect.blockchainEstimateFee for ethereum
 // NOTE:
 // - amount cannot be "0" (send max calculation), use at least 1 unit.
 export const getEthereumEstimateFeeParams = (
@@ -203,7 +203,7 @@ export const isLowAnonymityWarning = (
     outputErrors?: DeepMap<Output, FieldError> | (DeepMap<Output, FieldError> | undefined)[],
 ) => {
     const isLowAnonymityMessage = (error?: DeepMap<Output, FieldError>) =>
-        ((error?.amount as TypedFieldError)?.message as { id: string })?.id === // TODO: type message as ExtendedMessageDescriptor after https://github.com/trezor/trezor-suite/pull/5647 is merged
+        ((error?.amount as TypedFieldError)?.message as { id: string })?.id === // TODO: type message as ExtendedMessageDescriptor after https://github.com/detahard/detahard-suite/pull/5647 is merged
         'TR_NOT_ENOUGH_ANONYMIZED_FUNDS_WARNING';
 
     return Array.isArray(outputErrors)

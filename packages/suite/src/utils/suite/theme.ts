@@ -1,4 +1,4 @@
-import { THEME } from '@trezor/components/src/config/colors';
+import { THEME } from '@detahard/components/src/config/colors';
 import type { AppState } from '@suite-types';
 
 export const getThemeColors = (theme: AppState['suite']['settings']['theme']) => {

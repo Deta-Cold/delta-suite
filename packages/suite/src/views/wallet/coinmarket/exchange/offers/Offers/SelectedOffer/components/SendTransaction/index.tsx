@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Translation, AccountLabeling } from '@suite-components';
-import { Button, variables } from '@trezor/components';
+import { Button, variables } from '@detahard/components';
 import { useCoinmarketExchangeOffersContext } from '@wallet-hooks/useCoinmarketExchangeOffers';
 
 const Wrapper = styled.div`
@@ -66,11 +66,11 @@ const SendTransactionComponent = () => {
 
             <ButtonWrapper>
                 <Button
-                    data-test="@coinmarket/exchange/offers/confirm-on-trezor-and-send"
+                    data-test="@coinmarket/exchange/offers/confirm-on-detahard-and-send"
                     isLoading={callInProgress}
                     onClick={sendTransaction}
                 >
-                    <Translation id="TR_EXCHANGE_CONFIRM_ON_TREZOR_SEND" />
+                    <Translation id="TR_EXCHANGE_CONFIRM_ON_detahard_SEND" />
                 </Button>
             </ButtonWrapper>
         </Wrapper>

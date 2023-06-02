@@ -1,15 +1,15 @@
-package io.trezor.transport.interfaces;
+package io.detahard.transport.interfaces;
 
 import android.content.Context;
 
-import io.trezor.transport.TrezorException;
+import io.detahard.transport.detahardException;
 
-public interface TrezorInterface {
+public interface detahardInterface {
   void rawPost(byte[] raw);
 
   byte[] rawRead();
 
-  void openConnection(Context context) throws TrezorException;
+  void openConnection(Context context) throws detahardException;
 
   void closeConnection();
 

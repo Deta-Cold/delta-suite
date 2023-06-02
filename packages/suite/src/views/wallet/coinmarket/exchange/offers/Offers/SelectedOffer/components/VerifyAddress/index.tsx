@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { RegisterOptions, useForm } from 'react-hook-form';
-import addressValidator from 'trezor-address-validator';
+import addressValidator from 'detahard-address-validator';
 import { QuestionTooltip, Translation } from '@suite-components';
-import { Input, variables, Image, Button } from '@trezor/components';
+import { Input, variables, Image, Button } from '@detahard/components';
 import { InputError } from '@wallet-components';
 import { useCoinmarketExchangeOffersContext } from '@wallet-hooks/useCoinmarketExchangeOffers';
 import { TypedValidationRules } from '@wallet-types/form';
@@ -11,7 +11,7 @@ import { isHexValid, isInteger } from '@suite-common/wallet-utils';
 import { AddressOptions } from '@wallet-views/coinmarket/common/AddressOptions';
 import { useAccountAddressDictionary } from '@wallet-hooks/useAccounts';
 import { ReceiveOptions, AccountSelectOption } from './ReceiveOptions';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 
 const Wrapper = styled.div`
     display: flex;
@@ -206,8 +206,8 @@ const VerifyAddressComponent = () => {
 
                     {addressVerified && addressVerified === address && deviceModel && (
                         <Confirmed>
-                            <StyledImage alt="Trezor" image={`TREZOR_T${deviceModel}`} />
-                            <Translation id="TR_EXCHANGE_CONFIRMED_ON_TREZOR" />
+                            <StyledImage alt="detahard" image={`detahard_T${deviceModel}`} />
+                            <Translation id="TR_EXCHANGE_CONFIRMED_ON_detahard" />
                         </Confirmed>
                     )}
                 </Row>
@@ -271,7 +271,7 @@ const VerifyAddressComponent = () => {
                     {(!addressVerified || addressVerified !== address) &&
                         selectedAccountOption.account && (
                             <Button
-                                data-test="@coinmarket/exchange/offers/confirm-on-trezor-button"
+                                data-test="@coinmarket/exchange/offers/confirm-on-detahard-button"
                                 isLoading={callInProgress}
                                 isDisabled={callInProgress}
                                 onClick={() => {
@@ -284,7 +284,7 @@ const VerifyAddressComponent = () => {
                                     }
                                 }}
                             >
-                                <Translation id="TR_EXCHANGE_CONFIRM_ON_TREZOR" />
+                                <Translation id="TR_EXCHANGE_CONFIRM_ON_detahard" />
                             </Button>
                         )}
                     {((addressVerified && addressVerified === address) ||

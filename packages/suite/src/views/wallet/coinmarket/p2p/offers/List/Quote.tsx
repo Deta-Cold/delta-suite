@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import BigNumber from 'bignumber.js';
 import { useFormatters } from '@suite-common/formatters';
 import { Translation } from '@suite-components';
-import { Button, H3, Icon, Tooltip, useTheme, variables } from '@trezor/components';
+import { Button, H3, Icon, Tooltip, useTheme, variables } from '@detahard/components';
 import regional from '@wallet-constants/coinmarket/regional';
 import { useCoinmarketP2pOffersContext } from '@wallet-hooks/useCoinmarketP2pOffers';
 import { CoinmarketProviderInfo } from '@wallet-components';

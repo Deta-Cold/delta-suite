@@ -5,7 +5,7 @@ import { Translation } from '@suite-components';
 import * as onboardingActions from '@onboarding-actions/onboardingActions';
 import { useActions, useRecovery, useSelector } from '@suite-hooks';
 import RecoveryStepBox from './RecoveryStepBox';
-import { DeviceModel, getDeviceModel, pickByDeviceModel } from '@trezor/device-utils';
+import { DeviceModel, getDeviceModel, pickByDeviceModel } from '@detahard/device-utils';
 import { selectIsActionAbortable } from '@suite-reducers/suiteReducer';
 import styled from 'styled-components';
 

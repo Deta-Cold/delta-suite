@@ -1,5 +1,5 @@
 import * as utils from '@suite-utils/device';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 import { AcquiredDevice } from '@suite-types';
 import fixtures from '../__fixtures__/device';
 

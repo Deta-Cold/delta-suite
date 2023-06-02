@@ -6,7 +6,7 @@ import {
     WithCoinmarketProps,
 } from '@wallet-components';
 import { useSavingsPaymentInfo } from '@wallet-hooks/useCoinmarketSavingsPaymentInfo';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import React from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';

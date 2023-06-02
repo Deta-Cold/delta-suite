@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { Dimensions, LayoutChangeEvent, View } from 'react-native';
 
 import { useDiscreetMode } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { FiatAmountFormatter } from '@suite-native/formatters';
 
 type AxisLabelProps = {

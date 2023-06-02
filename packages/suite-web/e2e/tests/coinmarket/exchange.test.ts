@@ -46,7 +46,7 @@ describe.skip('Coinmarket exchange', () => {
      * 5. Pick one offer
      * 6. Verifies the amounts, currencies, addresses and providers are all in accordance with the mock
      * 7. Confirms the transaction and verifies the same information in the modal
-     * 8. Return back to the Exchange tab in Trezor Suite
+     * 8. Return back to the Exchange tab in detahard Suite
      */
     it('Should exchange crypto successfully', () => {
         const testData = {
@@ -150,11 +150,11 @@ describe.skip('Coinmarket exchange', () => {
             });
 
         // Confirming the transaction
-        cy.getTestElement('@coinmarket/exchange/offers/confirm-on-trezor-button').click();
+        cy.getTestElement('@coinmarket/exchange/offers/confirm-on-detahard-button').click();
         cy.getTestElement('@prompts/confirm-on-device');
         cy.task('pressYes');
         cy.getTestElement('@coinmarket/exchange/offers/continue-transaction-button').click();
-        cy.getTestElement('@coinmarket/exchange/offers/confirm-on-trezor-and-send').click();
+        cy.getTestElement('@coinmarket/exchange/offers/confirm-on-detahard-and-send').click();
 
         // Verification modal opens
         cy.get('[class*="OutputElement__OutputWrapper"]')

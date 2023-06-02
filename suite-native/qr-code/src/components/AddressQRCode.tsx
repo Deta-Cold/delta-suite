@@ -4,7 +4,7 @@ import { Alert, Share } from 'react-native';
 import { pipe, S, A } from '@mobily/ts-belt';
 
 import { Box, Text, Button, ButtonBackgroundElevation, VStack } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { QRCode } from './QRCode';
 import { QRCodeCopyButton } from './QRCodeCopyButton';

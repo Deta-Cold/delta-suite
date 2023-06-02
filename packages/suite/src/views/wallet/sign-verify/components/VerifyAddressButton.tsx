@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Icon, variables } from '@trezor/components';
+import { Icon, variables } from '@detahard/components';
 import { showAddress as showAddressAction } from '@wallet-actions/signVerifyActions';
 import { useActions } from '@suite-hooks';
 import { Translation } from '@suite-components';

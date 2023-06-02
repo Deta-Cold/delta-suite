@@ -6,7 +6,7 @@ import {
     EthereumTokenAmountFormatter,
     EthereumTokenToFiatAmountFormatter,
 } from '@suite-native/formatters';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { AccountKey, TokenAddress, TokenSymbol } from '@suite-common/wallet-types';
 import { AccountsRootState, selectAccountLabel } from '@suite-common/wallet-core';
 

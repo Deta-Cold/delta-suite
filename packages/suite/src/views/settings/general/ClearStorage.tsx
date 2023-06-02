@@ -1,5 +1,5 @@
 import React from 'react';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 import { ActionButton, ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { Translation } from '@suite-components';
 import * as storageActions from '@suite-actions/storageActions';

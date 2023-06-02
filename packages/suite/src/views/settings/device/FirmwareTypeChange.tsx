@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Translation, TrezorLink } from '@suite-components';
+import { Translation, detahardLink } from '@suite-components';
 import { ActionButton, ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { useDevice, useActions } from '@suite-hooks';
 import * as routerActions from '@suite-actions/routerActions';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import { useAnchor } from '@suite-hooks/useAnchor';
 import { SettingsAnchor } from '@suite-constants/anchors';
-import { getFirmwareType, getFirmwareVersion } from '@trezor/device-utils';
-import { HELP_FIRMWARE_TYPE } from '@trezor/urls';
+import { getFirmwareType, getFirmwareVersion } from '@detahard/device-utils';
+import { HELP_FIRMWARE_TYPE } from '@detahard/urls';
 
 const Version = styled.div`
     span {
@@ -64,7 +64,7 @@ export const FirmwareTypeChange = ({ isDeviceLocked }: FirmwareTypeProps) => {
                                 id="TR_YOUR_FIRMWARE_TYPE"
                                 values={{
                                     version: (
-                                        <TrezorLink href={HELP_FIRMWARE_TYPE} variant="nostyle">
+                                        <detahardLink href={HELP_FIRMWARE_TYPE} variant="nostyle">
                                             <Button
                                                 variant="tertiary"
                                                 icon="EXTERNAL_LINK"
@@ -72,7 +72,7 @@ export const FirmwareTypeChange = ({ isDeviceLocked }: FirmwareTypeProps) => {
                                             >
                                                 {currentFwType}
                                             </Button>
-                                        </TrezorLink>
+                                        </detahardLink>
                                     ),
                                 }}
                             />

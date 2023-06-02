@@ -11,14 +11,14 @@ interface CardanoStakingDashboardProps {
 }
 
 export const CardanoStakingDashboard = ({ selectedAccount }: CardanoStakingDashboardProps) => {
-    const { isActive, isStakingOnTrezorPool, isCurrentPoolOversaturated } = useCardanoStaking();
+    const { isActive, isStakingOndetahardPool, isCurrentPoolOversaturated } = useCardanoStaking();
 
     return (
         <WalletLayout title="TR_NAV_STAKING" account={selectedAccount} showEmptyHeaderPlaceholder>
             <>
                 {isActive && <CardanoRewards account={selectedAccount.account} />}
                 {!isActive && <CardanoStake account={selectedAccount.account} />}
-                {isActive && (isStakingOnTrezorPool === false || isCurrentPoolOversaturated) && (
+                {isActive && (isStakingOndetahardPool === false || isCurrentPoolOversaturated) && (
                     <CardanoRedelegate />
                 )}
             </>

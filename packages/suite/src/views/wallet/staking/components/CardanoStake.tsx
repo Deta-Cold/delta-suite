@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { formatNetworkAmount } from '@suite-common/wallet-utils';
-import { Icon, Warning } from '@trezor/components';
+import { Icon, Warning } from '@detahard/components';
 import { Translation } from '@suite-components/Translation';
 import { HiddenPlaceholder } from '@suite-components/HiddenPlaceholder';
 import { useCardanoStaking, getReasonForDisabledAction } from '@wallet-hooks/useCardanoStaking';
@@ -18,7 +18,7 @@ import {
     StyledH1,
     StyledCard,
 } from './CardanoPrimitives';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 import { useDeviceModel } from '@suite-hooks/useDeviceModel';
 import { DeviceButton } from '@suite-components';
 

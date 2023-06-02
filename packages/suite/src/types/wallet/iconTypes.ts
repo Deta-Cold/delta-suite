@@ -1,4 +1,4 @@
-import { IconProps } from '@trezor/components';
+import { IconProps } from '@detahard/components';
 
 export interface Icon {
     size: number;

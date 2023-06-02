@@ -2,7 +2,7 @@ import { NavigatorScreenParams } from '@react-navigation/native';
 
 import { AccountKey, TokenAddress, XpubAddress } from '@suite-common/wallet-types';
 import { NetworkSymbol } from '@suite-common/wallet-config';
-import { AccountInfo, TokenTransfer } from '@trezor/connect';
+import { AccountInfo, TokenTransfer } from '@detahard/connect';
 
 import {
     AppTabsRoutes,

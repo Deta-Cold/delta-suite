@@ -22,15 +22,15 @@ SOURCE=../build/
 
 # Set destination
 if [ "x$1" == "xstaging-wallet" ]; then
-    BUCKET=stage.mytrezor.com
+    BUCKET=stage.mydetahard.com
     DISTRIBUTION_ID=E24M0QWO692FQL
     DESTDIR=/wallet/web
 elif [ "x$1" == "xstaging-suite" ]; then
-    BUCKET=staging-suite.trezor.io
+    BUCKET=staging-suite.detahard.io
     DISTRIBUTION_ID=E232X8775ST76R
     DESTDIR=/web
 elif [ "x$1" == "xsuite" ]; then
-    BUCKET=suite.trezor.io
+    BUCKET=suite.detahard.io
     DISTRIBUTION_ID=E4TDVEWU4P4CY
     DESTDIR=/web
 else

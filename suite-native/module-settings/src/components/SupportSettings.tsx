@@ -25,8 +25,8 @@ export const SupportSettings = () => {
     return (
         <SettingsSection title="Support">
             <SettingsSectionItem
-                title="About Trezor Suite Lite"
-                iconName="trezorT"
+                title="About detahard Suite Lite"
+                iconName="detahardT"
                 onPress={() => navigation.navigate(SettingsStackRoutes.SettingsAbout)}
             />
             <SettingsSectionItem

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
-import { CoinLogo, H2, Icon, variables } from '@trezor/components';
+import { CoinLogo, H2, Icon, variables } from '@detahard/components';
 import { useCoinmarketP2pOffersContext } from '@wallet-hooks/useCoinmarketP2pOffers';
 import { CoinmarketRefreshTime } from '@wallet-components';
 import { InvityAPIReloadQuotesAfterSeconds } from '@wallet-constants/coinmarket/metadata';

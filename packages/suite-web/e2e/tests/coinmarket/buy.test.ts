@@ -36,8 +36,8 @@ describe('Coinmarket buy', () => {
      * 5. Picks one offer and clicks “Get this deal”.
      * 6. Verifies that a modal opens.
      * 7. Clicks the checkbox and “Confirm”.
-     * 8. Clicks “Confirm on Trezor”  in Suite and on the emulator.
-     * 9. Verifies “Confirmed on Trezor” text.
+     * 8. Clicks “Confirm on detahard”  in Suite and on the emulator.
+     * 9. Verifies “Confirmed on detahard” text.
      * 10. Verifies the amount, currency, crypto, provider and payment method all match the mocked/given data.
      * 11. Clicks “Finish transaction”.
      * 12. Simulates interaction with the partner's site
@@ -102,7 +102,7 @@ describe('Coinmarket buy', () => {
         cy.getTestElement('@coinmarket/buy/offers/get-this-deal-button').eq(2).click();
         cy.getTestElement('@modal').should('be.visible');
         cy.getTestElement('@coinmarket/buy/offers/buy-terms-confirm-button').click();
-        cy.getTestElement('@coinmarket/buy/offers/confirm-on-trezor-button').click();
+        cy.getTestElement('@coinmarket/buy/offers/confirm-on-detahard-button').click();
         cy.getTestElement('@prompts/confirm-on-device');
         cy.task('pressYes');
 

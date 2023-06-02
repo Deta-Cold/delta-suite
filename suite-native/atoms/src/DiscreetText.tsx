@@ -4,8 +4,8 @@ import { LayoutChangeEvent } from 'react-native';
 import { useAtom } from 'jotai';
 import { Blur, Canvas, Text as SkiaText, useFont } from '@shopify/react-native-skia';
 
-import { Color, typographyStylesBase } from '@trezor/theme';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { Color, typographyStylesBase } from '@detahard/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { atomWithUnecryptedStorage } from '@suite-native/storage';
 
 import { Text, TextProps } from './Text';

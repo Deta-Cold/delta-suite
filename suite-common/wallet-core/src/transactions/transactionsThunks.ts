@@ -11,13 +11,13 @@ import {
     formatData,
     getAccountTransactions,
     getExportedFileName,
-    isTrezorConnectBackendType,
+    isdetahardConnectBackendType,
     getPendingAccount,
     findAccountsByAddress,
 } from '@suite-common/wallet-utils';
-import TrezorConnect from '@trezor/connect';
-import { blockbookUtils } from '@trezor/blockchain-link-utils';
-import { Transaction } from '@trezor/blockchain-link-types/lib/blockbook';
+import detahardConnect from '@detahard/connect';
+import { blockbookUtils } from '@detahard/blockchain-link-utils';
+import { Transaction } from '@detahard/blockchain-link-types/lib/blockbook';
 import { createThunk } from '@suite-common/redux-utils';
 
 import { accountsActions } from '../accounts/accountsActions';
@@ -180,7 +180,7 @@ export const addFakePendingCardanoTxThunk = createThunk(
         const blockHeight = selectBlockchainHeightBySymbol(getState(), account.symbol);
 
         // Used in cardano send form and staking tab until Blockfrost supports pending txs on its backend
-        // https://github.com/trezor/trezor-suite/issues/4932
+        // https://github.com/detahard/detahard-suite/issues/4932
         const fakeTx = {
             type: 'sent' as const,
             txid,
@@ -276,7 +276,7 @@ export const fetchTransactionsThunk = createThunk(
     ) => {
         const account = selectAccountByKey(getState(), accountKey);
         if (!account) return;
-        if (!isTrezorConnectBackendType(account.backendType)) return; // skip unsupported backend type
+        if (!isdetahardConnectBackendType(account.backendType)) return; // skip unsupported backend type
         const transactions = selectTransactions(getState());
         const reducerTxs = getAccountTransactions(account.key, transactions);
 
@@ -313,7 +313,7 @@ export const fetchTransactionsThunk = createThunk(
         }
 
         const { marker } = account;
-        const result = await TrezorConnect.getAccountInfo({
+        const result = await detahardConnect.getAccountInfo({
             coin: account.symbol,
             descriptor: account.descriptor,
             details: 'txs',

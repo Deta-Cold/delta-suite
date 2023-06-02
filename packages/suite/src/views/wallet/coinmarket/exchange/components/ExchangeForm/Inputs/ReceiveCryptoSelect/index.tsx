@@ -1,4 +1,4 @@
-import { variables, Select } from '@trezor/components';
+import { variables, Select } from '@detahard/components';
 import { ExchangeInfo } from '@wallet-actions/coinmarketExchangeActions';
 import React from 'react';
 import { Controller } from 'react-hook-form';

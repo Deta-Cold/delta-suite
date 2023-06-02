@@ -6,7 +6,7 @@ import { NetworkSymbol } from '@suite-common/wallet-config';
 import { selectCoinsLegacy } from '@suite-native/fiat-rates';
 import { convertCryptoToFiatAmount, useFormatters } from '@suite-common/formatters';
 import { selectFiatCurrency } from '@suite-native/module-settings';
-import { FiatRates } from '@trezor/blockchain-link';
+import { FiatRates } from '@detahard/blockchain-link';
 import { isTestnet } from '@suite-common/wallet-utils';
 
 import { FormatterProps } from '../types';

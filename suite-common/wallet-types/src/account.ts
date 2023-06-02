@@ -1,5 +1,5 @@
 import { Network, BackendType, NetworkSymbol } from '@suite-common/wallet-config';
-import { AccountInfo, PROTO, TokenInfo } from '@trezor/connect';
+import { AccountInfo, PROTO, TokenInfo } from '@detahard/connect';
 
 export type MetadataItem = string;
 export type XpubAddress = string;
@@ -54,7 +54,7 @@ type AccountNetworkSpecific =
           page: AccountInfo['page'];
       };
 
-// decides if account is using TrezorConnect/blockchain-link or other non-standard api
+// decides if account is using detahardConnect/blockchain-link or other non-standard api
 export type AccountBackendSpecific =
     | {
           backendType?: Exclude<BackendType, 'coinjoin'>;

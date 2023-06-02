@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Switch } from '@trezor/components';
+import { Switch } from '@detahard/components';
 import { COINJOIN_NETWORKS } from '@suite/services/coinjoin';
 import { ActionColumn, ActionSelect, SectionItem, TextColumn } from '@suite-components/Settings';
 import * as coinjoinClientActions from '@wallet-actions/coinjoinClientActions';

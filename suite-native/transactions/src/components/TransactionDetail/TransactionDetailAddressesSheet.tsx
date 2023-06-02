@@ -7,7 +7,7 @@ import { BottomSheet, Box, Button, Card, Text, Toggle, VStack } from '@suite-nat
 import { TransactionsRootState } from '@suite-common/wallet-core';
 import { useCopyToClipboard } from '@suite-native/helpers';
 import { Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { selectTransactionAddresses, AddressesType } from '../../selectors';
 

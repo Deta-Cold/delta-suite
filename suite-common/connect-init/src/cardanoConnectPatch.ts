@@ -1,6 +1,6 @@
-import TrezorConnect from '@trezor/connect';
+import detahardConnect from '@detahard/connect';
 
-type ConnectKey = keyof typeof TrezorConnect;
+type ConnectKey = keyof typeof detahardConnect;
 
 // List of methods that doesn't work with additional `useCardanoDerivation` param
 // (eg. because they don't accept options object as a param)
@@ -33,16 +33,16 @@ const blacklist: ConnectKey[] = [
 ];
 
 export const cardanoConnectPatch = (getEnabledNetworks: () => string[]) => {
-    // Pass additional parameter `useCardanoDerivation` to Trezor Connect methods
+    // Pass additional parameter `useCardanoDerivation` to detahard Connect methods
     // in order to enable cardano derivation on a device
-    // https://github.com/trezor/trezor-firmware/blob/master/core/src/apps/cardano/README.md#seed-derivation-schemes
-    Object.keys(TrezorConnect)
+    // https://github.com/detahard/detahard-firmware/blob/master/core/src/apps/cardano/README.md#seed-derivation-schemes
+    Object.keys(detahardConnect)
         .filter(k => !blacklist.includes(k as ConnectKey))
         .forEach(key => {
             // typescript complains about params and return type, need to be "any"
-            const original: any = TrezorConnect[key as ConnectKey];
+            const original: any = detahardConnect[key as ConnectKey];
             if (!original) return;
-            (TrezorConnect[key as ConnectKey] as any) = async (params: any) => {
+            (detahardConnect[key as ConnectKey] as any) = async (params: any) => {
                 const enabledNetworks = getEnabledNetworks();
                 const cardanoEnabled = !!enabledNetworks.find(a => a === 'ada' || a === 'tada');
                 const result = await original({

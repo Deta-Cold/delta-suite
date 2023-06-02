@@ -27,14 +27,14 @@ export const patchBinaries = async () => {
         '/node_modules/electron/dist/resources/bin',
     );
 
-    const trezordPathFrom = path.join(binResourcesPathFrom, '/bridge/linux-x64/trezord');
-    const trezordPathTo = path.join(binResourcesPathTo, 'bridge');
-    if (!(await fileExists(trezordPathTo))) {
-        await mkdir(trezordPathTo, {
+    const detaharddPathFrom = path.join(binResourcesPathFrom, '/bridge/linux-x64/detahardd');
+    const detaharddPathTo = path.join(binResourcesPathTo, 'bridge');
+    if (!(await fileExists(detaharddPathTo))) {
+        await mkdir(detaharddPathTo, {
             recursive: true,
         });
     }
-    await copyFile(trezordPathFrom, `${trezordPathTo}/trezord`);
+    await copyFile(detaharddPathFrom, `${detaharddPathTo}/detahardd`);
 
     const torPathFrom = path.join(binResourcesPathFrom, '/tor/linux-x64/tor');
     const torPathTo = path.join(binResourcesPathTo, 'tor');

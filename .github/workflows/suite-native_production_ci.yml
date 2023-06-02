@@ -88,13 +88,13 @@ jobs:
         env:
           APPSTORE_CERTIFICATE_CONTENT: ${{ secrets.APPSTORE_CERTIFICATE_CONTENT_PROD }}
         run: |
-          echo $APPSTORE_CERTIFICATE_CONTENT | base64 -d > suite-native/app/TrezorDistributionCertificate.p12
+          echo $APPSTORE_CERTIFICATE_CONTENT | base64 -d > suite-native/app/detahardDistributionCertificate.p12
 
       - name: Install dependecies
         run: |
           yarn install
           yarn build:libs
-          yarn workspace @trezor/suite-native pods
+          yarn workspace @detahard/suite-native pods
 
       - name: Ruby Setup for Fastlane
         uses: ruby/setup-ruby@v1

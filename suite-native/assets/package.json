@@ -26,7 +26,7 @@
         "@suite-native/module-devices": "workspace:*",
         "@suite-native/module-settings": "workspace:*",
         "@suite-native/navigation": "workspace:*",
-        "@trezor/styles": "workspace:*",
+        "@detahard/styles": "workspace:*",
         "bignumber.js": "^9.1.1",
         "proxy-memoize": "^2.0.4",
         "react": "^18.2.0",

@@ -5,7 +5,7 @@ import { analytics, EventType } from '@suite-native/analytics';
 import { Screen, ScreenHeader } from '@suite-native/navigation';
 import { selectIsAnalyticsEnabled } from '@suite-common/analytics';
 import { Box, Card, DiscreetCanvas, Text, useDiscreetMode } from '@suite-native/atoms';
-import { useNativeStyles } from '@trezor/styles';
+import { useNativeStyles } from '@detahard/styles';
 import { getIsBiometricsFeatureAvailable, useIsBiometricsEnabled } from '@suite-native/biometrics';
 import { useAlert } from '@suite-native/alerts';
 
@@ -75,7 +75,7 @@ const AnalyticsSwitchRow = () => {
             iconName="database"
             description={
                 <RowDescription>
-                    All data is kept strictly anonymous; we only use it to improve the Trezor
+                    All data is kept strictly anonymous; we only use it to improve the detahard
                     ecosystem.
                 </RowDescription>
             }

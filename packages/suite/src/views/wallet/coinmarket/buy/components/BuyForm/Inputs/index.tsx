@@ -6,7 +6,7 @@ import { Controller } from 'react-hook-form';
 import { FIAT } from '@suite-config';
 import { FormattedCryptoAmount, Translation, NumberInput } from '@suite-components';
 import { getCryptoOptions } from '@wallet-utils/coinmarket/buyUtils';
-import { Select, CoinLogo } from '@trezor/components';
+import { Select, CoinLogo } from '@detahard/components';
 import { buildOption } from '@wallet-utils/coinmarket/coinmarketUtils';
 import { useCoinmarketBuyFormContext } from '@wallet-hooks/useCoinmarketBuyForm';
 import {

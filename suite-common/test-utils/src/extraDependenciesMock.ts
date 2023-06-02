@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { createThunk, ExtraDependencies } from '@suite-common/redux-utils';
-import { PROTO } from '@trezor/connect';
+import { PROTO } from '@detahard/connect';
 
 import { testMocks } from './mocks';
 
@@ -53,7 +53,7 @@ export const mockReducer = (name: string) => (state: any, action: any) => {
 export const extraDependenciesMock: ExtraDependencies = {
     thunks: {
         cardanoValidatePendingTxOnBlock: mockThunk('validatePendingTxOnBlock'),
-        cardanoFetchTrezorPools: mockThunk('fetchTrezorPools'),
+        cardanoFetchdetahardPools: mockThunk('fetchdetahardPools'),
     },
     selectors: {
         selectFeeInfo: (networkSymbol: any) =>
@@ -95,8 +95,8 @@ export const extraDependenciesMock: ExtraDependencies = {
         connectInitSettings: {
             debug: false,
             manifest: {
-                email: 'info@trezor.io',
-                appUrl: '@trezor/suite-native',
+                email: 'info@detahard.io',
+                appUrl: '@detahard/suite-native',
             },
         },
     },

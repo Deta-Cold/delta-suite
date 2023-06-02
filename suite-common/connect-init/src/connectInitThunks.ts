@@ -1,10 +1,10 @@
 import { createThunk } from '@suite-common/redux-utils';
-import TrezorConnect, {
+import detahardConnect, {
     BLOCKCHAIN_EVENT,
     DEVICE_EVENT,
     TRANSPORT_EVENT,
     UI_EVENT,
-} from '@trezor/connect';
+} from '@detahard/connect';
 
 import { cardanoConnectPatch } from './cardanoConnectPatch';
 
@@ -29,22 +29,22 @@ export const connectInitThunk = createThunk(
         const getEnabledNetworks = () => selectEnabledNetworks(getState());
 
         // set event listeners and dispatch as
-        TrezorConnect.on(DEVICE_EVENT, ({ event: _, ...action }) => {
+        detahardConnect.on(DEVICE_EVENT, ({ event: _, ...action }) => {
             // dispatch event as action
             dispatch(action);
         });
 
-        TrezorConnect.on(UI_EVENT, ({ event: _, ...action }) => {
+        detahardConnect.on(UI_EVENT, ({ event: _, ...action }) => {
             // dispatch event as action
             dispatch(action);
         });
 
-        TrezorConnect.on(TRANSPORT_EVENT, ({ event: _, ...action }) => {
+        detahardConnect.on(TRANSPORT_EVENT, ({ event: _, ...action }) => {
             // dispatch event as action
             dispatch(action);
         });
 
-        TrezorConnect.on(BLOCKCHAIN_EVENT, ({ event: _, ...action }) => {
+        detahardConnect.on(BLOCKCHAIN_EVENT, ({ event: _, ...action }) => {
             // dispatch event as action
             dispatch(action);
         });
@@ -73,9 +73,9 @@ export const connectInitThunk = createThunk(
 
         wrappedMethods.forEach(key => {
             // typescript complains about params and return type, need to be "any"
-            const original: any = TrezorConnect[key];
+            const original: any = detahardConnect[key];
             if (!original) return;
-            (TrezorConnect[key] as any) = async (params: any) => {
+            (detahardConnect[key] as any) = async (params: any) => {
                 dispatch(lockDevice(true));
                 const result = await original(params);
                 dispatch(lockDevice(false));
@@ -86,7 +86,7 @@ export const connectInitThunk = createThunk(
         cardanoConnectPatch(getEnabledNetworks);
 
         try {
-            await TrezorConnect.init({
+            await detahardConnect.init({
                 ...connectInitSettings,
                 pendingTransportEvent: selectIsPendingTransportEvent(getState()),
                 transports: selectDebugSettings(getState()).transports,

@@ -1,6 +1,6 @@
-# @trezor/suite-native
+# @detahard/suite-native
 
-Trezor Suite native application.
+detahard Suite native application.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ It's good to have some tools installed before you begin:
 
 ## Running app on Android
 
-1. Connect device or run emulator. For a physical device, it's recommended to use [adb over wifi](https://developer.android.com/studio/command-line/adb#connect-to-a-device-over-wi-fi-android-11+) because you will have free up a USB port to connect Trezor device.
+1. Connect device or run emulator. For a physical device, it's recommended to use [adb over wifi](https://developer.android.com/studio/command-line/adb#connect-to-a-device-over-wi-fi-android-11+) because you will have free up a USB port to connect detahard device.
 1. Run packager - `yarn start`
 1. Run native build - `yarn android`
 
@@ -23,7 +23,7 @@ Transport layer not working for iOS but it's possible to run app in watch-only m
 
 1. Install CocoaPods dependencies - `yarn pods` (it's necessary to do this every time native dependencies are changed)
 2. Run packager - `yarn start`
-3. Open `ios/TrezorSuite.xcworkspace` in Xcode
+3. Open `ios/detahardSuite.xcworkspace` in Xcode
 4. Hit ▶️ `Run` button
 
 ## Building Android

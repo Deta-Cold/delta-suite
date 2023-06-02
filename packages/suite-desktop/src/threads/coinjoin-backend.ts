@@ -1,5 +1,5 @@
-import { createInterceptor } from '@trezor/request-manager';
-import { CoinjoinBackend, CoinjoinBackendSettings } from '@trezor/coinjoin';
+import { createInterceptor } from '@detahard/request-manager';
+import { CoinjoinBackend, CoinjoinBackendSettings } from '@detahard/coinjoin';
 import { isDevEnv } from '@suite-common/suite-utils';
 
 import { createThread } from '../libs/thread';

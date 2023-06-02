@@ -1,4 +1,4 @@
-// To ensure that two website don't read from/to Trezor at the same time, I need a sharedworker
+// To ensure that two website don't read from/to detahard at the same time, I need a sharedworker
 // to synchronize them.
 // However, sharedWorker cannot directly use webusb API... so I need to send messages
 // about intent to acquire/release and then send another message when that is done.
@@ -6,7 +6,7 @@
 
 import { create as createDeferred } from '../utils/defered';
 import type { Deferred } from '../utils/defered';
-import type { TrezorDeviceInfoDebug } from './sharedPlugin';
+import type { detahardDeviceInfoDebug } from './sharedPlugin';
 import type { MessageFromSharedWorker, MessageToSharedWorker } from './withSharedConnections';
 
 interface LockResult {
@@ -114,7 +114,7 @@ function handleReleaseIntent(session: string, debug: boolean, id: number, port: 
     });
 }
 
-function handleGetSessions(id: number, port: PortObject, devices?: Array<TrezorDeviceInfoDebug>) {
+function handleGetSessions(id: number, port: PortObject, devices?: Array<detahardDeviceInfoDebug>) {
     if (devices != null) {
         const connected: { [path: string]: boolean } = {};
         devices.forEach(d => {

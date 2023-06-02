@@ -8,7 +8,7 @@ import { OnboardingStepBox } from '@onboarding-components';
 import steps from '@onboarding-config/steps';
 
 import IsSameDevice from './components/IsSameDevice';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 
 const Wrapper = styled.div`
     display: flex;

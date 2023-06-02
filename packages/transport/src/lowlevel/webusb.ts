@@ -1,7 +1,7 @@
 /// <reference types="w3c-web-usb" />
 
 import { EventEmitter } from 'events';
-import { TREZOR_DESCS } from '../constants';
+import { detahard_DESCS } from '../constants';
 
 const T1HID_VENDOR = 0x534c;
 const CONFIGURATION_ID = 1;
@@ -54,14 +54,14 @@ export default class WebUsbPlugin {
     async _listDevices() {
         let bootloaderId = 0;
         const devices = await this.usb!.getDevices();
-        const trezorDevices = devices.filter(dev => {
-            const isTrezor = TREZOR_DESCS.some(
+        const detahardDevices = devices.filter(dev => {
+            const isdetahard = detahard_DESCS.some(
                 desc => dev.vendorId === desc.vendorId && dev.productId === desc.productId,
             );
-            return isTrezor;
+            return isdetahard;
         });
-        const hidDevices = trezorDevices.filter(dev => this._deviceIsHid(dev));
-        const nonHidDevices = trezorDevices.filter(dev => !this._deviceIsHid(dev));
+        const hidDevices = detahardDevices.filter(dev => this._deviceIsHid(dev));
+        const nonHidDevices = detahardDevices.filter(dev => !this._deviceIsHid(dev));
 
         this._lastDevices = nonHidDevices.map(device => {
             // path is just serial number
@@ -192,6 +192,6 @@ export default class WebUsbPlugin {
 
     async requestDevice() {
         // I am throwing away the resulting device, since it appears in enumeration anyway
-        await this.usb!.requestDevice({ filters: TREZOR_DESCS });
+        await this.usb!.requestDevice({ filters: detahard_DESCS });
     }
 }

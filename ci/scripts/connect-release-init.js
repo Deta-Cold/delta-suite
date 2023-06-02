@@ -62,8 +62,8 @@ const formArrayToText = arr => arr.join('\n');
 const initConnectRelease = () => {
     const checkResult = checkPackageDependencies('connect');
 
-    const update = checkResult.update.map(package => package.replace('@trezor/', ''));
-    const errors = checkResult.errors.map(package => package.replace('@trezor/', ''));
+    const update = checkResult.update.map(package => package.replace('@detahard/', ''));
+    const errors = checkResult.errors.map(package => package.replace('@detahard/', ''));
 
     if (update) {
         update.forEach(packageName => {
@@ -84,7 +84,7 @@ const initConnectRelease = () => {
 
             const newCommits = [];
             commitsArr.forEach(commit => {
-                if (commit.includes(`npm-release: @trezor/${packageName}`)) {
+                if (commit.includes(`npm-release: @detahard/${packageName}`)) {
                     return;
                 }
                 newCommits.push(commit.replaceAll('"', ''));
@@ -105,12 +105,12 @@ const initConnectRelease = () => {
 
             commit({
                 path: PACKAGE_PATH,
-                message: `npm-release: @trezor/${packageName} ${version}`,
+                message: `npm-release: @detahard/${packageName} ${version}`,
             });
         });
     }
 
-    exec('yarn', ['workspace', '@trezor/connect', 'version:patch']);
+    exec('yarn', ['workspace', '@detahard/connect', 'version:patch']);
 
     const PACKAGE_PATH = path.join(ROOT, 'packages', 'connect');
     const PACKAGE_JSON_PATH = path.join(PACKAGE_PATH, 'package.json');
@@ -118,7 +118,7 @@ const initConnectRelease = () => {
     const packageJSON = JSON.parse(rawPackageJSON);
     const { version } = packageJSON;
 
-    const commitMessage = `npm-release: @trezor/connect ${version}`;
+    const commitMessage = `npm-release: @detahard/connect ${version}`;
     const branchName = `npm-release/connect-${version}`;
 
     exec('git', ['checkout', '-b', branchName]);
@@ -134,7 +134,7 @@ const initConnectRelease = () => {
         'pr',
         'create',
         '--repo',
-        'trezor/trezor-suite',
+        'detahard/detahard-suite',
         '--title',
         `${commitMessage}`,
         '--body-file',
@@ -147,7 +147,7 @@ const initConnectRelease = () => {
 
     const prNumber = ghPrCreateResult.stdout
         .replaceAll('\n', '')
-        .replace('https://github.com/trezor/trezor-suite/pull/', '');
+        .replace('https://github.com/detahard/detahard-suite/pull/', '');
 
     if (errors.length) {
         comment({
@@ -160,7 +160,7 @@ const initConnectRelease = () => {
 
     const depsChecklist = update.reduce(
         (acc, packageName) =>
-            `${acc}\n- [ ] [![NPM](https://img.shields.io/npm/v/@trezor/${packageName}.svg)](https://www.npmjs.org/package/@trezor/${packageName}) @trezor/${packageName}`,
+            `${acc}\n- [ ] [![NPM](https://img.shields.io/npm/v/@detahard/${packageName}.svg)](https://www.npmjs.org/package/@detahard/${packageName}) @detahard/${packageName}`,
         '',
     );
 
@@ -174,7 +174,7 @@ const initConnectRelease = () => {
     // Adding list of commits form the connect* packages to help creating and checking connect CHANGELOG.
     const connectGitLog = getGitCommitByPackageName('connect*', 1000);
     const connectGitLogArr = splitByNewlines(connectGitLog.stdout);
-    const connectGitLogIndex = findIndexByCommit(connectGitLogArr, 'npm-release: @trezor/connect');
+    const connectGitLogIndex = findIndexByCommit(connectGitLogArr, 'npm-release: @detahard/connect');
 
     // Creating a comment only if there are commits to add since last connect release.
     if (connectGitLogIndex !== -1) {

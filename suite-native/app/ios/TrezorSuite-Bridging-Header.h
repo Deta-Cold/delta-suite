@@ -1,13 +1,13 @@
 #import <Expo/Expo.h>
 //
-//  TrezorSuite-Bridging-Header.h
-//  TrezorSuite
+//  detahardSuite-Bridging-Header.h
+//  detahardSuite
 //
 //  Created by Daniel Suchy on 28.11.2022.
 //
 
-#ifndef TrezorSuite_Bridging_Header_h
-#define TrezorSuite_Bridging_Header_h
+#ifndef detahardSuite_Bridging_Header_h
+#define detahardSuite_Bridging_Header_h
 
 
-#endif /* TrezorSuite_Bridging_Header_h */
+#endif /* detahardSuite_Bridging_Header_h */

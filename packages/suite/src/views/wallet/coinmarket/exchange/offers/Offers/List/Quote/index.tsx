@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, variables, Icon, useTheme, H2 } from '@trezor/components';
+import { Button, variables, Icon, useTheme, H2 } from '@detahard/components';
 import { FormattedCryptoAmount, QuestionTooltip, Translation } from '@suite-components';
 import { useFormatters } from '@suite-common/formatters';
 import { ExchangeTrade } from 'invity-api';

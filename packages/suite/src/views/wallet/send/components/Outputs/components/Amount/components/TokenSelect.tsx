@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Controller } from 'react-hook-form';
-import { Select, variables } from '@trezor/components';
+import { Select, variables } from '@detahard/components';
 import { components } from 'react-select';
 import styled from 'styled-components';
 import { useSendFormContext } from '@wallet-hooks';

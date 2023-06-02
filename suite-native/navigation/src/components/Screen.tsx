@@ -6,8 +6,8 @@ import * as SystemUI from 'expo-system-ui';
 import * as NavigationBar from 'expo-navigation-bar';
 import { BottomTabBarHeightContext } from '@react-navigation/bottom-tabs';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { Color, nativeSpacings } from '@trezor/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { Color, nativeSpacings } from '@detahard/theme';
 import { Box, Divider } from '@suite-native/atoms';
 
 import { ScreenContent } from './ScreenContent';

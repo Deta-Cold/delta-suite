@@ -1,9 +1,9 @@
 {
-    "name": "@trezor/transport-native",
+    "name": "@detahard/transport-native",
     "version": "1.0.0",
-    "author": "Trezor.io",
-    "homepage": "https://github.com/trezor/trezor-suite/tree/develop/packages/transport-native",
-    "description": "Trezor device transport layer for React Native",
+    "author": "detahard.io",
+    "homepage": "https://github.com/detahard/detahard-suite/tree/develop/packages/transport-native",
+    "description": "detahard device transport layer for React Native",
     "npmPublishAccess": "public",
     "main": "lib/commonjs/index",
     "module": "lib/module/index",
@@ -16,7 +16,7 @@
         "android",
         "ios",
         "cpp",
-        "trezor-transport-native.podspec",
+        "detahard-transport-native.podspec",
         "!lib/typescript/example",
         "!android/build",
         "!ios/build",
@@ -31,16 +31,16 @@
         "prepublish": "yarn tsx ../../scripts/prepublish.js"
     },
     "keywords": [
-        "Trezor",
+        "detahard",
         "transport"
     ],
     "repository": {
         "type": "git",
-        "url": "git://github.com/trezor/trezor-suite.git"
+        "url": "git://github.com/detahard/detahard-suite.git"
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "bugs": {
-        "url": "https://github.com/trezor/trezor-suite/issues"
+        "url": "https://github.com/detahard/detahard-suite/issues"
     },
     "devDependencies": {
         "@types/react": "18.0.32",

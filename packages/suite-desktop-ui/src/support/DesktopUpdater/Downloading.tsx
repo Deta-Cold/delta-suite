@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Translation, Modal } from '@suite-components';
 
-import { UpdateProgress } from '@trezor/suite-desktop-api';
-import { bytesToHumanReadable } from '@trezor/utils';
-import { Button, H2, variables } from '@trezor/components';
+import { UpdateProgress } from '@detahard/suite-desktop-api';
+import { bytesToHumanReadable } from '@detahard/utils';
+import { Button, H2, variables } from '@detahard/components';
 
 import { Row } from './styles';
 

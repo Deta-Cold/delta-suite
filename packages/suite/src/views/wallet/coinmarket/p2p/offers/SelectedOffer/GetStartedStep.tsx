@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
-import { Button, variables } from '@trezor/components';
+import { Button, variables } from '@detahard/components';
 import { useCoinmarketP2pOffersContext } from '@wallet-hooks/useCoinmarketP2pOffers';
 
 const Wrapper = styled.div`

@@ -4,13 +4,13 @@ import WebSocket from 'ws';
 import { EventEmitter } from 'events';
 import fetch from 'cross-fetch';
 
-import { createDeferred, Deferred } from '@trezor/utils';
+import { createDeferred, Deferred } from '@detahard/utils';
 
 import { api } from './api';
 
 const NOT_INITIALIZED = new Error('websocket_not_initialized');
 
-// Making the timeout high because the controller in trezor-user-env
+// Making the timeout high because the controller in detahard-user-env
 // must synchronously run actions on emulator and they may take a long time
 // (for example in case of Shamir backup)
 const DEFAULT_TIMEOUT = 5 * 60 * 1000;
@@ -39,7 +39,7 @@ export interface Firmwares {
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-class TrezorUserEnvLinkClass extends EventEmitter {
+class detahardUserEnvLinkClass extends EventEmitter {
     messageID: number;
     options: Options;
     messages: Deferred<any>[];
@@ -179,10 +179,10 @@ class TrezorUserEnvLinkClass extends EventEmitter {
     async connect() {
         if (this.isConnected()) return Promise.resolve();
 
-        // workaround for karma... proper fix: set allow origin headers in trezor-user-env server. but we are going
+        // workaround for karma... proper fix: set allow origin headers in detahard-user-env server. but we are going
         // to get rid of karma anyway, so this does not matter
         if (typeof window === 'undefined') {
-            await this.waitForTrezorUserEnv();
+            await this.waitFordetahardUserEnv();
         }
 
         return new Promise(resolve => {
@@ -272,25 +272,25 @@ class TrezorUserEnvLinkClass extends EventEmitter {
         this.removeAllListeners();
     }
 
-    waitForTrezorUserEnv() {
+    waitFordetahardUserEnv() {
         return new Promise<void>(async (resolve, reject) => {
-            // unfortunately, it can take incredibly long for trezor-user-env to start, we should
+            // unfortunately, it can take incredibly long for detahard-user-env to start, we should
             // do something about it
             const limit = 300;
             let error = '';
 
-            console.log('waiting for trezor-user-env');
+            console.log('waiting for detahard-user-env');
 
             for (let i = 0; i < limit; i++) {
                 if (i === limit - 1) {
-                    console.log(`cant connect to trezor-user-env: ${error}\n`);
+                    console.log(`cant connect to detahard-user-env: ${error}\n`);
                 }
                 await delay(1000);
 
                 try {
                     const res = await fetch(USER_ENV_URL.DASHBOARD);
                     if (res.status === 200) {
-                        console.log('trezor-user-env is online');
+                        console.log('detahard-user-env is online');
                         return resolve();
                     }
                 } catch (err) {
@@ -310,4 +310,4 @@ class TrezorUserEnvLinkClass extends EventEmitter {
     }
 }
 
-export const TrezorUserEnvLink = new TrezorUserEnvLinkClass();
+export const detahardUserEnvLink = new detahardUserEnvLinkClass();

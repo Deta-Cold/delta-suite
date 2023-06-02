@@ -1,4 +1,4 @@
-package io.trezor.transport.bridges;
+package io.detahard.transport.bridges;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -18,20 +18,20 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import io.trezor.transport.TrezorException;
-import io.trezor.transport.Utils;
-import io.trezor.transport.interfaces.BridgeInterface;
-import io.trezor.transport.interfaces.TrezorInterface;
-import io.trezor.transport.receivers.USBPermissionReceiver;
+import io.detahard.transport.detahardException;
+import io.detahard.transport.Utils;
+import io.detahard.transport.interfaces.BridgeInterface;
+import io.detahard.transport.interfaces.detahardInterface;
+import io.detahard.transport.receivers.USBPermissionReceiver;
 
 public class USBBridge implements BridgeInterface {
-  private static final String TAG = "Trezor USBBridge";
+  private static final String TAG = "detahard USBBridge";
   private static USBBridge instance;
 
   private final Context context;
   private final UsbManager usbManager;
 
-  private List<TrezorInterface> trezorDeviceList;
+  private List<detahardInterface> detahardDeviceList;
 
   private USBBridge(Context context) {
     this.context = context.getApplicationContext();
@@ -46,24 +46,24 @@ public class USBBridge implements BridgeInterface {
   }
 
   @Override
-  public List<TrezorInterface> enumerate() {
+  public List<detahardInterface> enumerate() {
     // We only check the usbManager device list if we don't already have it
     // otherwise we trust attached/detached receivers to do their job
-    if (trezorDeviceList == null) {
+    if (detahardDeviceList == null) {
       HashMap<String, UsbDevice> deviceList = usbManager.getDeviceList();
-      trezorDeviceList = new ArrayList();
+      detahardDeviceList = new ArrayList();
       for (final UsbDevice usbDevice : deviceList.values()) {
-        // check if the device is Trezor
+        // check if the device is detahard
         Log.d(TAG, usbDevice.toString());
-        if (!Utils.deviceIsTrezor(usbDevice))
+        if (!Utils.deviceIsdetahard(usbDevice))
           continue;
         if (usbManager.hasPermission(usbDevice)) {
-          trezorDeviceList.add(new TrezorDevice(usbDevice));
+          detahardDeviceList.add(new detahardDevice(usbDevice));
         }
       }
     }
 
-    return trezorDeviceList;
+    return detahardDeviceList;
   }
 
   @Override
@@ -79,7 +79,7 @@ public class USBBridge implements BridgeInterface {
   public void addDevice(UsbDevice device) {
     Log.d(TAG, "Trying to add USB device");
     if (usbManager.hasPermission(device)) {
-      addDeviceToList(new TrezorDevice(device));
+      addDeviceToList(new detahardDevice(device));
       Log.d(TAG, "Device added");
     } else {
       Log.d(TAG, "No permission, requesting permissions for device...");
@@ -89,11 +89,11 @@ public class USBBridge implements BridgeInterface {
   }
 
   @Override
-  public TrezorInterface getDeviceByPath(String serialNumber) { // TODO: throw exxception?
-    if (trezorDeviceList != null) {
-      for (TrezorInterface trezorDevice : trezorDeviceList) {
-        if (trezorDevice.getSerial().equalsIgnoreCase(serialNumber)) {
-          return trezorDevice;
+  public detahardInterface getDeviceByPath(String serialNumber) { // TODO: throw exxception?
+    if (detahardDeviceList != null) {
+      for (detahardInterface detahardDevice : detahardDeviceList) {
+        if (detahardDevice.getSerial().equalsIgnoreCase(serialNumber)) {
+          return detahardDevice;
         }
       }
     } else {
@@ -103,40 +103,40 @@ public class USBBridge implements BridgeInterface {
   }
 
   // Should be called from device attached receiver
-  public void addDeviceToList(TrezorDevice device) {
-    if (trezorDeviceList != null) {
+  public void addDeviceToList(detahardDevice device) {
+    if (detahardDeviceList != null) {
       if (getDeviceByPath(device.serial) == null) {
-        trezorDeviceList.add(device);
+        detahardDeviceList.add(device);
       } else {
-        Log.d(TAG, String.format("device %s already in trezorDeviceList", device.getSerial()));
+        Log.d(TAG, String.format("device %s already in detahardDeviceList", device.getSerial()));
       }
     } else {
-      trezorDeviceList = new ArrayList();
-      trezorDeviceList.add(device);
+      detahardDeviceList = new ArrayList();
+      detahardDeviceList.add(device);
     }
   }
 
   // should be called from device detached receiver
-  public void removeDeviceFromList(TrezorInterface device) {
-    if (trezorDeviceList != null) {
-      if (trezorDeviceList.contains(device)) {
-        trezorDeviceList.remove(device);
+  public void removeDeviceFromList(detahardInterface device) {
+    if (detahardDeviceList != null) {
+      if (detahardDeviceList.contains(device)) {
+        detahardDeviceList.remove(device);
       } else {
-        Log.d(TAG, String.format("device %s not found in trezorDeviceList", device.getSerial()));
+        Log.d(TAG, String.format("device %s not found in detahardDeviceList", device.getSerial()));
       }
     }
   }
 
   public void removeAllDevices() {
-    trezorDeviceList = null;
+    detahardDeviceList = null;
   }
 
   //
   // INNER CLASSES
   //
 
-  public static class TrezorDevice implements TrezorInterface {
-    private static final String TAG = "USB" + TrezorDevice.class.getSimpleName();
+  public static class detahardDevice implements detahardInterface {
+    private static final String TAG = "USB" + detahardDevice.class.getSimpleName();
 
     private final String deviceName;
     private final String serial;
@@ -148,7 +148,7 @@ public class USBBridge implements BridgeInterface {
     private UsbEndpoint readEndpoint;
     private UsbEndpoint writeEndpoint;
 
-    public TrezorDevice(UsbDevice usbDevice) {
+    public detahardDevice(UsbDevice usbDevice) {
       this.deviceName = usbDevice.getDeviceName();
       this.serial = usbDevice.getSerialNumber();
 
@@ -162,7 +162,7 @@ public class USBBridge implements BridgeInterface {
     @Override
     public void rawPost(byte[] raw) {
       if (usbConnection == null)
-        throw new TrezorException(TAG + ": sendMessage: usbConnection already closed, cannot send message");
+        throw new detahardException(TAG + ": sendMessage: usbConnection already closed, cannot send message");
 
       ByteBuffer data = ByteBuffer.allocate(raw.length + 1024); // 32768);
       data.put(raw);
@@ -204,7 +204,7 @@ public class USBBridge implements BridgeInterface {
         if (b.length < 9 || b[0] != (byte) '?' || b[1] != (byte) '#' || b[2] != (byte) '#') {
           if (invalidChunksCounter++ > 5) {
             Log.e(TAG, "THROW EXCEPTION");
-            throw new TrezorException("too many invalid chunks");
+            throw new detahardException("too many invalid chunks");
           }
           continue;
         }
@@ -232,7 +232,7 @@ public class USBBridge implements BridgeInterface {
         if (b[0] != (byte) '?') {
           if (invalidChunksCounter++ > 5) {
             Log.e(TAG, "THROW EXCEPTION");
-            throw new TrezorException("too many invalid chunks");
+            throw new detahardException("too many invalid chunks");
           }
           continue;
         }
@@ -246,7 +246,7 @@ public class USBBridge implements BridgeInterface {
     }
 
     @Override
-    public void openConnection(Context context) throws TrezorException {
+    public void openConnection(Context context) throws detahardException {
       UsbManager usbManager = (UsbManager) context.getSystemService(Context.USB_SERVICE);
 
       // use first interface
@@ -269,27 +269,27 @@ public class USBBridge implements BridgeInterface {
 
       // TODO: error states
       if (readEndpoint == null) {
-        throw new TrezorException("Could not find read endpoint");
+        throw new detahardException("Could not find read endpoint");
       }
       if (writeEndpoint == null) {
-        throw new TrezorException("Could not find write endpoint");
+        throw new detahardException("Could not find write endpoint");
       }
       if (readEndpoint.getMaxPacketSize() != 64) {
-        throw new TrezorException("Wrong packet size for read endpoint");
+        throw new detahardException("Wrong packet size for read endpoint");
       }
       if (writeEndpoint.getMaxPacketSize() != 64) {
-        throw new TrezorException("Wrong packet size for write endpoint");
+        throw new detahardException("Wrong packet size for write endpoint");
       }
 
       Log.d(TAG, "opening connection");
       usbConnection = usbManager.openDevice(usbDevice);
       if (usbConnection == null) {
-        throw new TrezorException("Could not open connection");
+        throw new detahardException("Could not open connection");
       } else {
         if (usbConnection.claimInterface(usbInterface, true)) {
           Log.d(TAG, "Connection should be open now");
         } else {
-          throw new TrezorException("Could not claim interface");
+          throw new detahardException("Could not claim interface");
         }
       }
     }

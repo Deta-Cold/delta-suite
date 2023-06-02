@@ -4,7 +4,7 @@ import { init as initSentry, ElectronOptions, IPCMode } from '@sentry/electron';
 
 import { SENTRY_CONFIG } from '@suite-common/sentry';
 import { isDevEnv } from '@suite-common/suite-utils';
-import type { HandshakeClient } from '@trezor/suite-desktop-api';
+import type { HandshakeClient } from '@detahard/suite-desktop-api';
 
 import { ipcMain } from './typed-electron';
 import { APP_NAME } from './libs/constants';
@@ -92,11 +92,11 @@ const init = async () => {
         getSessions: () => [session.defaultSession],
     };
 
-    // Sentry still ignore userPath change so in local build it uses @trezor/suite-desktop/sentry folder.
+    // Sentry still ignore userPath change so in local build it uses @detahard/suite-desktop/sentry folder.
     // I believe it is not a problem.
     initSentry(sentryConfig);
 
-    app.name = APP_NAME; // overrides @trezor/suite-desktop app name in menu
+    app.name = APP_NAME; // overrides @detahard/suite-desktop app name in menu
 
     // App is launched via custom protocol (macOS)
     // It is called always when custom protocol is invoked but it only works when app is launching

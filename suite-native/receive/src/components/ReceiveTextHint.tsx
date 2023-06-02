@@ -26,7 +26,7 @@ export const ReceiveTextHint = ({ onShowAddress }: ReceiveTextHintProps) => {
                                     color="textSecondaryHighlight"
                                     align="center"
                                 >
-                                    Trezor Suite
+                                    detahard Suite
                                 </Text>{' '}
                                 <Text variant="titleSmall" color="textSubdued" align="center">
                                     Lite
@@ -35,7 +35,7 @@ export const ReceiveTextHint = ({ onShowAddress }: ReceiveTextHintProps) => {
                                 receive address
                             </Text>
                         }
-                        subtitle="For an extra layer of security, use Trezor Suite with your Trezor hardware
+                        subtitle="For an extra layer of security, use detahard Suite with your detahard hardware
                     wallet to verify the receiving address."
                     />
                 </Box>
@@ -43,7 +43,7 @@ export const ReceiveTextHint = ({ onShowAddress }: ReceiveTextHintProps) => {
 
             <TouchableOpacity
                 onPress={() =>
-                    openLink('https://trezor.io/learn/a/verifying-trezor-suite-lite-addresses')
+                    openLink('https://detahard.io/learn/a/verifying-detahard-suite-lite-addresses')
                 }
             >
                 <HStack justifyContent="center" alignItems="center">

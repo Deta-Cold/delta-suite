@@ -1,5 +1,5 @@
 import { networksCompatibility, NetworkSymbol } from '@suite-common/wallet-config';
-import { Timeout } from '@trezor/type-utils';
+import { Timeout } from '@detahard/type-utils';
 
 /**
  * @deprecated

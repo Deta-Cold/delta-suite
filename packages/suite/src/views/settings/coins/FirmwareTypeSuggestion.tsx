@@ -7,7 +7,7 @@ import { Translation } from '@suite-components';
 import { TextColumn } from '@suite-components/Settings';
 import { SettingsAnchor } from '@suite-constants/anchors';
 import { useActions, useDevice } from '@suite-hooks';
-import { Button, Card } from '@trezor/components';
+import { Button, Card } from '@detahard/components';
 
 const StyledCard = styled(Card)`
     align-items: flex-start;

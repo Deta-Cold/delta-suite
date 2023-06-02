@@ -2,7 +2,7 @@
 
 import { Page, test as testPlaywright } from '@playwright/test';
 
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
 
 import { patchBinaries, launchSuite } from '../support/common';
 import { sendToAddress, generateBlock, waitForCoinjoinBackend } from '../support/regtest';
@@ -60,9 +60,9 @@ const startCoinjoin = async (window: Page) => {
     await window.click('[data-test="@coinjoin/checkbox"] div >> nth=0');
     await window.click('role=button[name="Anonymize"]');
     await window.waitForSelector('[data-test="@prompts/confirm-on-device"]');
-    await TrezorUserEnvLink.api.pressYes();
+    await detahardUserEnvLink.api.pressYes();
     await window.waitForSelector('[data-test="@prompts/confirm-on-device"]');
-    await TrezorUserEnvLink.api.pressYes();
+    await detahardUserEnvLink.api.pressYes();
 
     await window.waitForSelector('text=Collecting inputs');
 };
@@ -85,7 +85,7 @@ const addCoinjoinAccount = async (window: Page) => {
     // todo: this is weird it looks like device sometimes is not ready to accept pressYes, although modal
     // is already visible
     await window.waitForTimeout(5000);
-    await TrezorUserEnvLink.api.pressYes();
+    await detahardUserEnvLink.api.pressYes();
 };
 
 const receiveCoins = async () => {
@@ -116,11 +116,11 @@ testPlaywright.describe('Coinjoin', () => {
         // better solution later
         await patchBinaries();
 
-        await TrezorUserEnvLink.api.trezorUserEnvConnect();
+        await detahardUserEnvLink.api.detahardUserEnvConnect();
         await waitForCoinjoinBackend();
-        await TrezorUserEnvLink.api.stopBridge();
-        await TrezorUserEnvLink.api.startEmu({ wipe: true, version: '2-master' });
-        await TrezorUserEnvLink.api.setupEmu({
+        await detahardUserEnvLink.api.stopBridge();
+        await detahardUserEnvLink.api.startEmu({ wipe: true, version: '2-master' });
+        await detahardUserEnvLink.api.setupEmu({
             needs_backup: false,
             passphrase_protection: true,
             mnemonic: 'all all all all all all all all all all all all',
@@ -149,8 +149,8 @@ testPlaywright.describe('Coinjoin', () => {
         // here is a bug, race condition. if I proceed with hidden wallet creation immediately before
         // discovery ends, hidden account will not be created. so I am waiting here to see something
         // i know renders only when discovery is finished
-        // https://github.com/trezor/trezor-suite/issues/6748
-        // todo: anonymize should be added to wrapped methods in TrezorConnectActions
+        // https://github.com/detahard/detahard-suite/issues/6748
+        // todo: anonymize should be added to wrapped methods in detahardConnectActions
         await suite.window.waitForSelector('[data-test="@wallet/menu/wallet-receive"]');
         await suite.window.waitForTimeout(5000);
 
@@ -160,16 +160,16 @@ testPlaywright.describe('Coinjoin', () => {
         await suite.window.locator('[data-test="@passphrase/input"]').type('a');
         await suite.window.click('[data-test="@passphrase/hidden/submit-button"]');
         await suite.window.waitForSelector('[data-test="@prompts/confirm-on-device"]');
-        await TrezorUserEnvLink.api.pressYes();
+        await detahardUserEnvLink.api.pressYes();
         await suite.window.waitForSelector('[data-test="@prompts/confirm-on-device"]');
-        await TrezorUserEnvLink.api.pressYes();
+        await detahardUserEnvLink.api.pressYes();
         await suite.window.locator('[data-test="@passphrase/input"]').type('a');
         await suite.window.click('[data-test="@passphrase/confirm-checkbox"] div >> nth=0');
         await suite.window.click('[data-test="@passphrase/hidden/submit-button"]');
         await suite.window.waitForSelector('[data-test="@prompts/confirm-on-device"]');
-        await TrezorUserEnvLink.api.pressYes();
+        await detahardUserEnvLink.api.pressYes();
         await suite.window.waitForSelector('[data-test="@prompts/confirm-on-device"]');
-        await TrezorUserEnvLink.api.pressYes();
+        await detahardUserEnvLink.api.pressYes();
 
         // add coinjoin account fro passphrase 'a'
         await addCoinjoinAccount(suite.window);

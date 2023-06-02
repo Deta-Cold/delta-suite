@@ -2,9 +2,9 @@
 /* eslint-disable global-require */
 import path from 'path';
 
-import { isNotUndefined } from '@trezor/utils';
+import { isNotUndefined } from '@detahard/utils';
 import { isDevEnv } from '@suite-common/suite-utils';
-import type { HandshakeClient } from '@trezor/suite-desktop-api';
+import type { HandshakeClient } from '@detahard/suite-desktop-api';
 
 import { StrictBrowserWindow } from '../typed-electron';
 import type { Store } from '../libs/store';
@@ -32,7 +32,7 @@ const MODULES = [
     'store',
     'udev-install',
     'user-data',
-    'trezor-connect',
+    'detahard-connect',
     'dev-tools',
     'request-interceptor',
     'coinjoin',

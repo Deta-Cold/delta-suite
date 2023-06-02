@@ -1,5 +1,5 @@
 // upstream: https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/ts_src/types.ts
-// fork: https://github.com/trezor/trezor-utxo-lib/blob/trezor/src/types.js
+// fork: https://github.com/detahard/detahard-utxo-lib/blob/detahard/src/types.js
 // differences:
 // - Removed unused objects.
 

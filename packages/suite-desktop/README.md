@@ -1,13 +1,13 @@
-# @trezor/suite-desktop
+# @detahard/suite-desktop
 
-Trezor Suite desktop application.
+detahard Suite desktop application.
 
-[Official download page](https://suite.trezor.io/)
+[Official download page](https://suite.detahard.io/)
 
 ## Development
 
 ```
-yarn workspace @trezor/suite-desktop dev
+yarn workspace @detahard/suite-desktop dev
 ```
 
 [Read more about development and debugging](../../docs/packages/suite-desktop.md)
@@ -20,15 +20,15 @@ Prerequisites:
 
 ```
 yarn && yarn build:libs
-yarn workspace @trezor/message-system sign-config
+yarn workspace @detahard/message-system sign-config
 ```
 
 ### Linux
 
 ```
-yarn workspace @trezor/suite-desktop build:linux
-chmod u+x ./packages/suite-desktop/build-electron/Trezor-Suite[version].AppImage
-./packages/suite-desktop/build-electron/Trezor-Suite[version].AppImage
+yarn workspace @detahard/suite-desktop build:linux
+chmod u+x ./packages/suite-desktop/build-electron/detahard-Suite[version].AppImage
+./packages/suite-desktop/build-electron/detahard-Suite[version].AppImage
 ```
 
 _Note: On Debian, CentOS and similar distributions you might need to add a `--no-sandbox` flag_
@@ -36,7 +36,7 @@ _Note: On Debian, CentOS and similar distributions you might need to add a `--no
 ### MacOS
 
 ```
-yarn workspace @trezor/suite-desktop build:mac
+yarn workspace @detahard/suite-desktop build:mac
 ```
 
 Go to `./packages/suite-desktop/build-electron/mac` and open the app
@@ -44,24 +44,24 @@ Go to `./packages/suite-desktop/build-electron/mac` and open the app
 or start the app from terminal:
 
 ```
-./packages/suite-desktop/build-electron/mac/Trezor\ Suite.app/Contents/MacOS/Trezor\ Suite
+./packages/suite-desktop/build-electron/mac/detahard\ Suite.app/Contents/MacOS/detahard\ Suite
 ```
 
 ### Windows
 
 ```
-yarn workspace @trezor/suite-desktop build:win
+yarn workspace @detahard/suite-desktop build:win
 ```
 
 Go to `./packages/suite-desktop/build-electron` and install the app
 
 ### NixOS
 
-_Note: To run TrezorSuite.AppImage you need `appimage-run` package. `nix-env -iA nixos.appimage-run`_
+_Note: To run detahardSuite.AppImage you need `appimage-run` package. `nix-env -iA nixos.appimage-run`_
 
 ```
-yarn workspace @trezor/suite-desktop build:linux
-appimage-run ./packages/suite-desktop/build-electron/Trezor-Suite[version].AppImage
+yarn workspace @detahard/suite-desktop build:linux
+appimage-run ./packages/suite-desktop/build-electron/detahard-Suite[version].AppImage
 ```
 
 _Note: If build fails on a missing cache file _(.cache/\*\*/mksquashfsthis)_ additionally run `./nixos-fix-binaries.sh` script and repeat build step._
@@ -74,15 +74,15 @@ To remove a database, delete following folder:
 
 ### Linux
 
-`/home/<user>/.config/@trezor/suite-desktop/IndexedDB`
+`/home/<user>/.config/@detahard/suite-desktop/IndexedDB`
 
 ### macOS
 
-`/Users/<user>/Library/Application Support/@trezor/suite-desktop/IndexedDB`
+`/Users/<user>/Library/Application Support/@detahard/suite-desktop/IndexedDB`
 
 ### Windows
 
-`C:\Users\<user>\AppData\Roaming\@trezor\suite-desktop\IndexedDB`
+`C:\Users\<user>\AppData\Roaming\@detahard\suite-desktop\IndexedDB`
 
 ## Clearing Electron cache
 
@@ -90,12 +90,12 @@ To clear electron cache, delete following folder:
 
 ### Linux
 
-`/home/<user>/.config/@trezor/suite-desktop/Cache`
+`/home/<user>/.config/@detahard/suite-desktop/Cache`
 
 ### macOS
 
-`/Users/<user>/Library/ApplicationSupport/@trezor/suite-desktop/Cache`
+`/Users/<user>/Library/ApplicationSupport/@detahard/suite-desktop/Cache`
 
 ### Windows
 
-`C:\Users\<user>\AppData\Roaming\@trezor\suite-desktop\Cache`
+`C:\Users\<user>\AppData\Roaming\@detahard\suite-desktop\Cache`

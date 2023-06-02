@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, variables } from '@trezor/components';
+import { Card, variables } from '@detahard/components';
 import VerifyAddress from './components/VerifyAddress';
 import { CoinmarketBuyOfferInfo } from '@wallet-components';
 import { useCoinmarketBuyOffersContext } from '@wallet-hooks/useCoinmarketBuyOffers';

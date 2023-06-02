@@ -1,4 +1,4 @@
-package io.trezor.transport.receivers;
+package io.detahard.transport.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,11 +7,11 @@ import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.util.Log;
 
-import io.trezor.transport.bridges.USBBridge;
-import io.trezor.transport.interfaces.TrezorInterface;
+import io.detahard.transport.bridges.USBBridge;
+import io.detahard.transport.interfaces.detahardInterface;
 
 public class DeviceAttachmentReceiver extends BroadcastReceiver {
-  private static final String TAG = "Trezor DeviceAttachmentReceiver";
+  private static final String TAG = "detahard DeviceAttachmentReceiver";
 
   @Override
   public void onReceive(Context context, Intent intent) {
@@ -33,7 +33,7 @@ public class DeviceAttachmentReceiver extends BroadcastReceiver {
       if (usbManager.hasPermission(device)) {
         // It never gets here
         Log.d(TAG, "Has permission to detach device");
-        TrezorInterface oldDevice = bridge.getDeviceByPath(device.getSerialNumber());
+        detahardInterface oldDevice = bridge.getDeviceByPath(device.getSerialNumber());
 
         if (oldDevice != null) {
           bridge.removeDeviceFromList(oldDevice);

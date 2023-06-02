@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
 import { Translation } from '@suite-components';
 import { ActionButton, ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import { useActions } from '@suite-hooks';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
 import { useAnchor } from '@suite-hooks/useAnchor';

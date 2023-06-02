@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Box } from '@suite-native/atoms';
 
 import { TimeSwitchItem, TimeSwitchValue } from './TimeSwitchItem';

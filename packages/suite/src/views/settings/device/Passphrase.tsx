@@ -1,10 +1,10 @@
 import React from 'react';
-import { HELP_CENTER_PASSPHRASE_URL } from '@trezor/urls';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { HELP_CENTER_PASSPHRASE_URL } from '@detahard/urls';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
 import { Translation } from '@suite-components';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
-import { Switch } from '@trezor/components';
+import { Switch } from '@detahard/components';
 import { useDevice, useActions } from '@suite-hooks';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
 import { useAnchor } from '@suite-hooks/useAnchor';

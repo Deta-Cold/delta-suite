@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="io.trezor.transport">
+  package="io.detahard.transport">
 
   <application>
     <receiver
@@ -19,7 +19,7 @@
       android:name=".receivers.USBPermissionReceiver"
       android:exported="true">
       <intent-filter>
-        <action android:name="io.trezor.transport.USB_PERMISSION" />
+        <action android:name="io.detahard.transport.USB_PERMISSION" />
       </intent-filter>
     </receiver>
   </application>

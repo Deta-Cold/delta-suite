@@ -1,15 +1,15 @@
 /**
- * Uses @trezor/coinjoin package in nodejs context
+ * Uses @detahard/coinjoin package in nodejs context
  */
 
 import { app, ipcMain } from 'electron';
 import { captureMessage, withScope } from '@sentry/electron';
 
 import { coinjoinReportTag, coinjoinNetworktTag } from '@suite-common/sentry';
-import { createIpcProxyHandler, IpcProxyHandlerOptions } from '@trezor/ipc-proxy';
-import { CoinjoinClient, CoinjoinBackend, CoinjoinBackendSettings } from '@trezor/coinjoin';
-import { getSynchronize } from '@trezor/utils';
-import { getFreePort } from '@trezor/node-utils';
+import { createIpcProxyHandler, IpcProxyHandlerOptions } from '@detahard/ipc-proxy';
+import { CoinjoinClient, CoinjoinBackend, CoinjoinBackendSettings } from '@detahard/coinjoin';
+import { getSynchronize } from '@detahard/utils';
+import { getFreePort } from '@detahard/node-utils';
 
 import { CoinjoinProcess } from '../libs/processes/CoinjoinProcess';
 import { PowerSaveBlocker } from '../libs/power-save-blocker';
@@ -17,7 +17,7 @@ import { ThreadProxy } from '../libs/thread-proxy';
 
 import type { Module } from './index';
 
-const SERVICE_NAME = '@trezor/coinjoin';
+const SERVICE_NAME = '@detahard/coinjoin';
 const CLIENT_CHANNEL = 'CoinjoinClient';
 const BACKEND_CHANNEL = 'CoinjoinBackend';
 

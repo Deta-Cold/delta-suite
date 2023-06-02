@@ -1,7 +1,7 @@
 import { getProtocolInfo, isProtocolScheme } from '@suite-utils/protocol';
 import * as fixtures from '../__fixtures__/protocol';
 
-jest.mock('@trezor/suite-analytics', () => global.JestMocks.getAnalytics());
+jest.mock('@detahard/suite-analytics', () => global.JestMocks.getAnalytics());
 
 describe('getProtocolInfo', () => {
     fixtures.getProtocolInfo.forEach(f => {

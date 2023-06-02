@@ -1,7 +1,7 @@
-import { ObjectValues } from '@trezor/type-utils';
+import { ObjectValues } from '@detahard/type-utils';
 import { STATUS as discoveryStatus } from '@suite-common/wallet-constants';
 import { Network } from '@suite-common/wallet-config';
-import { Deferred } from '@trezor/utils';
+import { Deferred } from '@detahard/utils';
 
 import { Account, AccountBackendSpecific } from './account';
 
@@ -31,7 +31,7 @@ export interface Discovery {
 }
 
 export type DiscoveryItem = {
-    // @trezor/connect
+    // @detahard/connect
     path: string;
     unlockPath?: Account['unlockPath'];
     coin: Account['symbol'];

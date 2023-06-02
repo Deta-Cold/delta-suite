@@ -7,7 +7,7 @@ import Animated, {
     useSharedValue,
 } from 'react-native-reanimated';
 
-import { useNativeStyles } from '@trezor/styles';
+import { useNativeStyles } from '@detahard/styles';
 
 import { useOpenLink } from '../useOpenLink';
 

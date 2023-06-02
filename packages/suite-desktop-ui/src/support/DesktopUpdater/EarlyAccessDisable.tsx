@@ -1,16 +1,16 @@
 import React, { useCallback, useState } from 'react';
 
-import { Translation, Modal, TrezorLink } from '@suite-components';
+import { Translation, Modal, detahardLink } from '@suite-components';
 import styled from 'styled-components';
 
-import { SUITE_URL } from '@trezor/urls';
-import { analytics, EventType } from '@trezor/suite-analytics';
-import { desktopApi } from '@trezor/suite-desktop-api';
-import { Button, Image } from '@trezor/components';
+import { SUITE_URL } from '@detahard/urls';
+import { analytics, EventType } from '@detahard/suite-analytics';
+import { desktopApi } from '@detahard/suite-desktop-api';
+import { Button, Image } from '@detahard/components';
 
 import { ImageWrapper, Description, Title } from './styles';
 
-export const Link = styled(TrezorLink)`
+export const Link = styled(detahardLink)`
     width: 100%;
 `;
 

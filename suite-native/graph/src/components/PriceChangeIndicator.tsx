@@ -4,7 +4,7 @@ import { Atom, useAtom } from 'jotai';
 
 import { Box, Text } from '@suite-native/atoms';
 import { Icon, IconName } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 type PriceChangeIndicatorProps = {
     percentageChangeAtom: PercentageChangeAtom;

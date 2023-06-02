@@ -2,13 +2,13 @@
 
 set -euxo pipefail
 
-SRC='./submodules/trezor-common/tools'
+SRC='./submodules/detahard-common/tools'
 DIST='./packages/connect-common/files'
 
 # todo:
 # if [ $# -ge 1 ] && [ "$1" == "local" ]
 #     then
-#         SRC='../trezor-firmware/common/tools'
+#         SRC='../detahard-firmware/common/tools'
 # fi
 
 # BUID coins.json using tezor-common cointool

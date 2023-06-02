@@ -19,7 +19,7 @@
         "@suite-common/wallet-utils": "workspace:*",
         "@suite-native/fiat-rates": "workspace:*",
         "@suite-native/module-settings": "workspace:*",
-        "@trezor/blockchain-link": "workspace:*",
+        "@detahard/blockchain-link": "workspace:*",
         "proxy-memoize": "^2.0.4",
         "react": "18.2.0"
     }

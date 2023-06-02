@@ -25,7 +25,7 @@ export const SettingsAboutUsScreen = () => {
     const hasCommitHash = S.isNotEmpty(getCommitHash());
 
     return (
-        <Screen header={<ScreenHeader content="About Trezor Suite Lite" />}>
+        <Screen header={<ScreenHeader content="About detahard Suite Lite" />}>
             <VStack spacing="small">
                 <AboutUsBanners />
                 <Divider marginVertical="medium" />
@@ -35,14 +35,14 @@ export const SettingsAboutUsScreen = () => {
                         <VStack spacing="medium">
                             <ListItem
                                 onPress={() =>
-                                    openLink('https://data.trezor.io/legal/mobile-wallet-terms.pdf')
+                                    openLink('https://data.detahard.io/legal/mobile-wallet-terms.pdf')
                                 }
                                 title="Terms & conditions"
                                 iconName="pdf"
                             />
                             <ListItem
                                 onPress={() =>
-                                    openLink('https://data.trezor.io/legal/privacy-policy.html')
+                                    openLink('https://data.detahard.io/legal/privacy-policy.html')
                                 }
                                 title="Privacy policy"
                                 iconName="pdf"

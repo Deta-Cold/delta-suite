@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Image } from '@trezor/components';
+import { Image } from '@detahard/components';
 
 import {
     OnboardingButtonCta,

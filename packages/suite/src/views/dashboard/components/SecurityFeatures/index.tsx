@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Button, SecurityCard, SecurityCardProps, variables } from '@trezor/components';
+import { Button, SecurityCard, SecurityCardProps, variables } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { Section } from '@dashboard-components';
 import { AcquiredDevice } from '@suite-types';

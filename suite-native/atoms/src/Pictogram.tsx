@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 
 import { IconName, Icon } from '@suite-common/icons';
-import { Color } from '@trezor/theme';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { Color } from '@detahard/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { Box } from './Box';
 import { Text } from './Text';

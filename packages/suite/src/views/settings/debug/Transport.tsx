@@ -1,18 +1,18 @@
 import React, { useMemo } from 'react';
 
-import { Checkbox } from '@trezor/components';
+import { Checkbox } from '@detahard/components';
 import { isDesktop } from '@suite-utils/env';
 import { useSelector, useActions } from '@suite-hooks';
 import * as suiteActions from '@suite-actions/suiteActions';
 import { DebugModeOptions } from '@suite/reducers/suite/suiteReducer';
-import { ArrayElement } from '@trezor/type-utils';
+import { ArrayElement } from '@detahard/type-utils';
 
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 
 type TransportMenuItem = {
     name: ArrayElement<NonNullable<DebugModeOptions['transports']>>;
     // todo: this is not true, at the moment it means something like "registered by connect"
-    // @trezor/connect is actively using this transport
+    // @detahard/connect is actively using this transport
     active?: boolean;
 };
 
@@ -50,7 +50,7 @@ export const Transport = () => {
             <SectionItem data-test="@settings/debug/transport">
                 <TextColumn
                     title="Transports"
-                    description="You may override TrezorConnect default settings here. Select preferred transports that are to be used. You will need to reload after changes"
+                    description="You may override detahardConnect default settings here. Select preferred transports that are to be used. You will need to reload after changes"
                 />
             </SectionItem>
             {/* todo: make it drag and drop sortable */}

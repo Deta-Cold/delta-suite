@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { H2, P, variables } from '@trezor/components';
+import { H2, P, variables } from '@detahard/components';
 
 export const Row = styled.div`
     display: flex;

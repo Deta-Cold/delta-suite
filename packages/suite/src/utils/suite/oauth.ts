@@ -1,12 +1,12 @@
 /* eslint-disable camelcase */
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 import { getPrefixedURL } from '@suite-utils/router';
 import { METADATA } from '@suite-actions/constants';
-import { Deferred, createDeferred } from '@trezor/utils';
+import { Deferred, createDeferred } from '@detahard/utils';
 import { urlHashParams, urlSearchParams } from '@suite-utils/metadata';
 
 /**
- * For web, use oauth_receiver.html hosted on the same origin (localhost/sldev/trezor.io)
+ * For web, use oauth_receiver.html hosted on the same origin (localhost/sldev/detahard.io)
  */
 export const getOauthReceiverUrl = () => {
     if (!desktopApi.available) {
@@ -121,7 +121,7 @@ const getWebHandlerInstance = (
     webHandlerInstance = (e: MessageEvent<Message>) => {
         if (window.location.origin !== e.origin) return;
         if (!e.data.search && !e.data.hash) return;
-        if (e.data.key !== 'trezor-oauth') return;
+        if (e.data.key !== 'detahard-oauth') return;
 
         handleResponse(
             e.data,

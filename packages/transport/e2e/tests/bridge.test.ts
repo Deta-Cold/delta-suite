@@ -1,10 +1,10 @@
-// testing build. yarn workspace @trezor/transport build:lib is a required step therefore
-import TrezorLink from '../../lib';
+// testing build. yarn workspace @detahard/transport build:lib is a required step therefore
+import detahardLink from '../../lib';
 import messages from '../../messages.json';
 import fetch from 'cross-fetch';
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
 
-const { BridgeV2 } = TrezorLink;
+const { BridgeV2 } = detahardLink;
 
 // todo: introduce global jest config for e2e
 jest.setTimeout(60000);
@@ -15,7 +15,7 @@ const emulatorSetupOpts = {
     mnemonic: mnemonicAll,
     pin: '',
     passphrase_protection: false,
-    label: 'TrezorT',
+    label: 'detahardT',
     needs_backup: true,
 };
 
@@ -23,31 +23,31 @@ const emulatorStartOpts = { version: '2-master', wipe: true };
 
 describe('bridge', () => {
     beforeAll(async () => {
-        await TrezorUserEnvLink.connect();
+        await detahardUserEnvLink.connect();
     });
 
     afterAll(() => {
-        TrezorUserEnvLink.disconnect();
+        detahardUserEnvLink.disconnect();
     });
 
-    // there might be more versions of bridge out there, see https://github.com/trezor/webwallet-data/tree/master/bridge
-    // but they are not available from trezor-user-env, see https://github.com/trezor/trezor-user-env/tree/master/src/binaries/trezord-go/bin
+    // there might be more versions of bridge out there, see https://github.com/detahard/webwallet-data/tree/master/bridge
+    // but they are not available from detahard-user-env, see https://github.com/detahard/detahard-user-env/tree/master/src/binaries/detahardd-go/bin
     ['2.0.26', '2.0.27', undefined].forEach(bridgeVersion => {
         describe(bridgeVersion || 'latest', () => {
             let bridge: any;
             let devices: any[];
             let session: any;
             beforeEach(async () => {
-                await TrezorUserEnvLink.send({ type: 'bridge-stop' });
-                await TrezorUserEnvLink.send({ type: 'emulator-start', ...emulatorStartOpts });
-                await TrezorUserEnvLink.send({ type: 'emulator-setup', ...emulatorSetupOpts });
-                await TrezorUserEnvLink.send({ type: 'bridge-start', version: bridgeVersion });
+                await detahardUserEnvLink.send({ type: 'bridge-stop' });
+                await detahardUserEnvLink.send({ type: 'emulator-start', ...emulatorStartOpts });
+                await detahardUserEnvLink.send({ type: 'emulator-setup', ...emulatorSetupOpts });
+                await detahardUserEnvLink.send({ type: 'bridge-start', version: bridgeVersion });
 
                 BridgeV2.setFetch(fetch, true);
 
                 bridge = new BridgeV2(undefined, undefined);
 
-                // this is how @trezor/connect is using it at the moment
+                // this is how @detahard/connect is using it at the moment
                 // bridge.setBridgeLatestVersion(bridgeVersion);
 
                 await bridge.init(false);
@@ -74,8 +74,8 @@ describe('bridge', () => {
                 expect(message).toMatchObject({
                     type: 'Features',
                     message: {
-                        vendor: 'trezor.io',
-                        label: 'TrezorT',
+                        vendor: 'detahard.io',
+                        label: 'detahardT',
                     },
                 });
             });
@@ -88,8 +88,8 @@ describe('bridge', () => {
                 expect(readResponse).toMatchObject({
                     type: 'Features',
                     message: {
-                        vendor: 'trezor.io',
-                        label: 'TrezorT',
+                        vendor: 'detahard.io',
+                        label: 'detahardT',
                     },
                 });
             });
@@ -120,8 +120,8 @@ describe('bridge', () => {
                 expect(message).toMatchObject({
                     type: 'Features',
                     message: {
-                        vendor: 'trezor.io',
-                        label: 'TrezorT',
+                        vendor: 'detahard.io',
+                        label: 'detahardT',
                     },
                 });
             });
@@ -152,8 +152,8 @@ describe('bridge', () => {
                 expect(message).toMatchObject({
                     type: 'Features',
                     message: {
-                        vendor: 'trezor.io',
-                        label: 'TrezorT',
+                        vendor: 'detahard.io',
+                        label: 'detahardT',
                     },
                 });
             });

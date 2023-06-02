@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
-import { Card, Icon, colors, variables } from '@trezor/components';
+import { Card, Icon, colors, variables } from '@detahard/components';
 import { useCoinmarketP2pOffersContext } from '@wallet-hooks/useCoinmarketP2pOffers';
 import { P2pStep } from '@wallet-types/coinmarketP2pOffers';
 import { GetStartedStep } from './GetStartedStep';

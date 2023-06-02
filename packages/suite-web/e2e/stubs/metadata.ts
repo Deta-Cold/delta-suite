@@ -5,7 +5,7 @@ export const stubOpen = (win: Window) => {
     // @ts-expect-error
     win.Math.random = () => 0.4; // to make tests deterministic, this value ensures state YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
     return () =>
-        win.postMessage({ search: '?code=chicken-cho-cha&state=YYYYYYYYYY', key: 'trezor-oauth' });
+        win.postMessage({ search: '?code=chicken-cho-cha&state=YYYYYYYYYY', key: 'detahard-oauth' });
 };
 
 export const rerouteMetadataToMockProvider = (

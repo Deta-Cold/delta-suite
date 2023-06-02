@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useActions, useDevice } from '@suite-hooks';
 import { Translation } from '@suite-components';
 import * as routerActions from '@suite-actions/routerActions';
-import { Button, variables } from '@trezor/components';
+import { Button, variables } from '@detahard/components';
 import { useCoinmarketP2pOffersContext } from '@wallet-hooks/useCoinmarketP2pOffers';
 import * as receiveActions from '@wallet-actions/receiveActions';
 import { getUnusedAddressFromAccount } from '@wallet-utils/coinmarket/coinmarketUtils';
@@ -107,7 +107,7 @@ export const ReceivingAddressStep = () => {
                         </Address>
                         <StyledButton
                             variant="tertiary"
-                            icon="TREZOR_LOGO"
+                            icon="detahard_LOGO"
                             isDisabled={isLocked()}
                             isLoading={isLocked()}
                             onClick={() => showAddress(path, unusedAddress)}

@@ -1,6 +1,6 @@
 import { A, G, pipe } from '@mobily/ts-belt';
 
-import { EnhancedVinVout, Target } from '@trezor/blockchain-link-types';
+import { EnhancedVinVout, Target } from '@detahard/blockchain-link-types';
 
 export const mapTransactionInputsOutputsToAddresses = (
     inputsOutputs: EnhancedVinVout[] | Target[],

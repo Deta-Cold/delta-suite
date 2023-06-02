@@ -1,5 +1,5 @@
 import React from 'react';
-import { H2, P } from '@trezor/components';
+import { H2, P } from '@detahard/components';
 import { Account } from '@wallet-types';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';

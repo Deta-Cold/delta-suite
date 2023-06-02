@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Switch } from '@trezor/components';
+import { Switch } from '@detahard/components';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { isTranslationMode, setTranslationMode } from '@suite-utils/l10n';
 import { useAnchor } from '@suite-hooks/useAnchor';

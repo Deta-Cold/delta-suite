@@ -12,7 +12,7 @@ describe('TT - Device settings', () => {
      * 1. Navigate to settings/device screen and wait for it to load
      * 2. open the firmware update modal
      * 3. verify it by clicking on the close btn
-     * 4. change the trezor's name via its input
+     * 4. change the detahard's name via its input
      * 5. verify the name from top left wallet overview btn
      * 6. enable the passphrase protection
      * 7. verify that the passphrase input is now enabled
@@ -43,7 +43,7 @@ describe('TT - Device settings', () => {
         cy.getTestElement('@modal/close-button').click();
 
         // change device's name
-        cy.log(`-> Filling in ${newDeviceName} as new trezor's name.`);
+        cy.log(`-> Filling in ${newDeviceName} as new detahard's name.`);
         cy.getTestElement('@settings/device/label-input').clear().type(newDeviceName);
         cy.getTestElement(editNameBtn).should('be.enabled');
         cy.getTestElement(editNameBtn).click();
@@ -100,7 +100,7 @@ describe('TT - Device settings', () => {
         cy.getTestElement('@settings/device/homescreen').scrollIntoView();
 
         cy.getTestElement('@settings/device/homescreen-gallery').click();
-        cy.get('#trezor').should('exist');
+        cy.get('#detahard').should('exist');
 
         //
     });

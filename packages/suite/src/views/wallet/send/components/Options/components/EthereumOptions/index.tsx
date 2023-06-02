@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Tooltip } from '@trezor/components';
+import { Button, Tooltip } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { OnOffSwitcher } from '@wallet-components';
 import { useSendFormContext } from '@wallet-hooks';

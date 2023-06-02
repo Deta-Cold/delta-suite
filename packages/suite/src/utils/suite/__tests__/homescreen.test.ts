@@ -8,7 +8,7 @@ import {
     isValidImageSize,
     isValidImageWidth,
 } from '@suite-utils/homescreen';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 import * as fixtures from '../__fixtures__/homescreen';
 
 describe('homescreen', () => {

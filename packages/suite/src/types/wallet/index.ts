@@ -18,7 +18,7 @@ import { CoinjoinAccountAction } from '@wallet-actions/coinjoinAccountActions';
 import { CoinjoinClientAction } from '@wallet-actions/coinjoinClientActions';
 import { NETWORKS } from '@wallet-config';
 
-import { ArrayElement } from '@trezor/type-utils';
+import { ArrayElement } from '@detahard/type-utils';
 import { accountsActions, fiatRatesActions, blockchainActions } from '@suite-common/wallet-core';
 
 export type Network = ArrayElement<typeof NETWORKS>;

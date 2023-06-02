@@ -9,7 +9,7 @@ import {
 } from '@onboarding-components';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
 import { useActions, useSelector, useOnboarding } from '@suite-hooks';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 import { selectIsActionAbortable } from '@suite-reducers/suiteReducer';
 
 const SetPinStep = () => {

@@ -5,10 +5,10 @@ import { captureException } from '@sentry/electron';
 import { session } from 'electron';
 import path from 'path';
 
-import { TorStatus, BootstrapTorEvent, HandshakeTorModule } from '@trezor/suite-desktop-api';
-import { BootstrapEvent } from '@trezor/request-manager';
-import TrezorConnect from '@trezor/connect';
-import { getFreePort } from '@trezor/node-utils';
+import { TorStatus, BootstrapTorEvent, HandshakeTorModule } from '@detahard/suite-desktop-api';
+import { BootstrapEvent } from '@detahard/request-manager';
+import detahardConnect from '@detahard/connect';
+import { getFreePort } from '@detahard/node-utils';
 
 import { TorProcess, TorProcessStatus } from '../libs/processes/TorProcess';
 import { app, ipcMain } from '../typed-electron';
@@ -127,12 +127,12 @@ const load = async ({ mainWindow, store }: Dependencies) => {
         try {
             await setupTor(shouldEnableTor);
 
-            // After setupTor we can assume TOR is available so we set the proxy in TrezorConnect
-            // This is only required when 'toggle' because when app starts with TOR enable TrezorConnect is
-            // correctly set in module trezor-connect-ipc.
+            // After setupTor we can assume TOR is available so we set the proxy in detahardConnect
+            // This is only required when 'toggle' because when app starts with TOR enable detahardConnect is
+            // correctly set in module detahard-connect-ipc.
             const proxySettings = getProxySettings(shouldEnableTor);
 
-            await TrezorConnect.setProxy(proxySettings);
+            await detahardConnect.setProxy(proxySettings);
 
             logger.info(
                 'tor',
@@ -143,7 +143,7 @@ const load = async ({ mainWindow, store }: Dependencies) => {
 
             const proxySettings = getProxySettings(!shouldEnableTor);
 
-            await TrezorConnect.setProxy(proxySettings);
+            await detahardConnect.setProxy(proxySettings);
 
             const loggerMessage = shouldEnableTor
                 ? `Failed to start: ${error.message}`

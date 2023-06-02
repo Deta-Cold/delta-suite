@@ -10,7 +10,7 @@ import {
     enabledMainnets,
     enabledTestnets,
 } from '@suite-native/config';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { SelectableNetworkItem } from './SelectableNetworkItem';
 

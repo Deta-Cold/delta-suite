@@ -1,4 +1,4 @@
-import type { TokenTransfer } from '@trezor/blockchain-link';
+import type { TokenTransfer } from '@detahard/blockchain-link';
 import type { WalletAccountTransaction } from '@suite-common/wallet-types';
 
 import { getIsZeroValuePhishing } from '../antiFraud';

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Translation, AccountLabeling } from '@suite-components';
-import { Button, Loader, P, RadioButton, Truncate, variables } from '@trezor/components';
+import { Button, Loader, P, RadioButton, Truncate, variables } from '@detahard/components';
 import { useCoinmarketExchangeOffersContext } from '@wallet-hooks/useCoinmarketExchangeOffers';
 import { useCoinmarketNavigation } from '@wallet-hooks/useCoinmarketNavigation';
 import { DexApprovalType, ExchangeTrade } from 'invity-api';
@@ -331,7 +331,7 @@ const SendApprovalTransactionComponent = () => {
                         isDisabled={callInProgress}
                         onClick={sendTransaction}
                     >
-                        <Translation id="TR_EXCHANGE_CONFIRM_ON_TREZOR_SEND" />
+                        <Translation id="TR_EXCHANGE_CONFIRM_ON_detahard_SEND" />
                     </Button>
                 </ButtonWrapper>
             )}

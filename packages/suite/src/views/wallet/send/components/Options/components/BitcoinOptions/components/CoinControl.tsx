@@ -8,7 +8,7 @@ import { SETTINGS } from '@suite-config';
 import { useActions, useSelector } from '@suite-hooks';
 import { ExtendedMessageDescriptor } from '@suite-types';
 import { Pagination } from '@wallet-components';
-import { useTheme, Checkbox, Icon, Switch, variables } from '@trezor/components';
+import { useTheme, Checkbox, Icon, Switch, variables } from '@detahard/components';
 import { UtxoSelectionList } from '@wallet-components/CoinControl/UtxoSelectionList';
 import { useSendFormContext } from '@wallet-hooks';
 import { useBitcoinAmountUnit } from '@wallet-hooks/useBitcoinAmountUnit';

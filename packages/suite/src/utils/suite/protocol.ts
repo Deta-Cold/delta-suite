@@ -1,6 +1,6 @@
 import { PROTOCOL_SCHEME } from '@suite-constants/protocol';
 import { parseQuery, parseUri } from './parseUri';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
 export type CoinProtocolInfo = {
     scheme: PROTOCOL_SCHEME;

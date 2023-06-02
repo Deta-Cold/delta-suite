@@ -9,7 +9,7 @@
             "client_info": {
                 "mobilesdk_app_id": "1:191883890128:android:625bcdab76b3b3a644bdd5",
                 "android_client_info": {
-                    "package_name": "io.trezor.suite.develop"
+                    "package_name": "io.detahard.suite.develop"
                 }
             },
             "oauth_client": [

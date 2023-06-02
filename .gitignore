@@ -38,7 +38,7 @@ __pycache__/
 *.tsbuildinfo
 
 # T1 emulation file
-docker/trezor-user-env/controller/emulator.img
+docker/detahard-user-env/controller/emulator.img
 
 # Vagrant
 .vagrant
@@ -149,7 +149,7 @@ local.properties
 !.yarn/sdks
 !.yarn/versions
 
-# @trezor/suite-data
+# @detahard/suite-data
 packages/suite-data/files/browser-detection
 packages/suite-data/files/guide
 packages/suite-data/files/translations/master.json

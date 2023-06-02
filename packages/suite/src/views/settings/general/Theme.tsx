@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
-import { desktopApi, SuiteThemeVariant } from '@trezor/suite-desktop-api';
+import { desktopApi, SuiteThemeVariant } from '@detahard/suite-desktop-api';
 import * as suiteActions from '@suite-actions/suiteActions';
 import { Translation } from '@suite-components/Translation';
 import { SectionItem, ActionColumn, ActionSelect, TextColumn } from '@suite-components/Settings';

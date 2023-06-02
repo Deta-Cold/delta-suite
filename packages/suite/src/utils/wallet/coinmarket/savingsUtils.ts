@@ -7,7 +7,7 @@ import type { CurrentFiatRates } from '@wallet-types/fiatRates';
 import BigNumber from 'bignumber.js';
 import type { PaymentFrequencyOption } from '@wallet-types/coinmarketCommonTypes';
 import { isDesktop } from '@suite-utils/env';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 import { Translation } from '@suite-components/Translation';
 import type { PaymentFrequencyTranslationId } from '@wallet-types/coinmarketSavingsSetup';
 

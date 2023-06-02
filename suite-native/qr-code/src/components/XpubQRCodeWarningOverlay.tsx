@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Card, Pictogram } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 const overlayStyle = prepareNativeStyle(utils => ({
     justifyContent: 'center',

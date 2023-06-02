@@ -18,8 +18,8 @@ import {
     RootStackRoutes,
     StackToTabCompositeProps,
 } from '@suite-native/navigation';
-import { AccountInfo } from '@trezor/connect';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { AccountInfo } from '@detahard/connect';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { analytics, EventType } from '@suite-native/analytics';
 import { TokenSymbol } from '@suite-common/wallet-types';
 import { isEthereumAccountSymbol } from '@suite-common/wallet-utils';

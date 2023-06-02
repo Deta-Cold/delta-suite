@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 
-import { FiatRates } from '@trezor/connect';
+import { FiatRates } from '@detahard/connect';
 
 export const toFiatCurrency = (
     amount: string,

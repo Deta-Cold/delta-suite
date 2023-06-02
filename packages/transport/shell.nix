@@ -7,7 +7,7 @@ with import
 { };
 
 stdenv.mkDerivation {
-  name = "trezor-link-dev";
+  name = "detahard-link-dev";
   buildInputs = [
     autoPatchelfHook
     git

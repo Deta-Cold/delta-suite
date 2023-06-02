@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useFormatters } from '@suite-common/formatters';
 import { AccountLabeling, Translation } from '@suite-components';
-import { CoinLogo, variables } from '@trezor/components';
+import { CoinLogo, variables } from '@detahard/components';
 import { Account } from '@wallet-types';
 import { CoinmarketProviderInfo } from '@wallet-components';
 import { P2pProviderInfo, P2pQuote, P2pQuotesRequest } from 'invity-api';

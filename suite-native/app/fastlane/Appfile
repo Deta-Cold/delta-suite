@@ -4,19 +4,19 @@ for_platform :ios do
   team_id("C3P22XVH2C") # Developer Portal Team ID
 
   for_lane :debug do
-    app_identifier 'io.trezor.suite.debug'
+    app_identifier 'io.detahard.suite.debug'
   end
 
   for_lane :develop do
-    app_identifier 'io.trezor.suite.develop'
+    app_identifier 'io.detahard.suite.develop'
   end
 
   for_lane :staging do
-    app_identifier 'io.trezor.suite.staging'
+    app_identifier 'io.detahard.suite.staging'
   end
 
   for_lane :production do
-    app_identifier 'io.trezor.suite'
+    app_identifier 'io.detahard.suite'
   end
 end
 
@@ -25,15 +25,15 @@ for_platform :android do
   json_key_file(ENV['GOOGLE_PLAY_JSON_KEY_FILE']) # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 
   for_lane :debug do
-    package_name 'io.trezor.suite.debug'
+    package_name 'io.detahard.suite.debug'
   end
   for_lane :develop do
-    package_name 'io.trezor.suite.develop'
+    package_name 'io.detahard.suite.develop'
   end
   for_lane :staging do
-    package_name 'io.trezor.suite.staging'
+    package_name 'io.detahard.suite.staging'
   end
   for_lane :production do
-    package_name 'io.trezor.suite'
+    package_name 'io.detahard.suite'
   end
 end

@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { G } from '@mobily/ts-belt';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles/src';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles/src';
 import { Box, Text } from '@suite-native/atoms/src';
 
 type TransactionDetailRowProps = {

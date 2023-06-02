@@ -49,7 +49,7 @@ export default defineMessages({
     },
     TR_ACCOUNT_EXCEPTION_AUTH_ERROR_DESC: {
         defaultMessage:
-            'The authorization process for this device failed. Please click "Retry" or reconnect your Trezor device.',
+            'The authorization process for this device failed. Please click "Retry" or reconnect your detahard device.',
         id: 'TR_ACCOUNT_EXCEPTION_AUTH_ERROR_DESC',
     },
     TR_ACCOUNT_EXCEPTION_DISCOVERY_EMPTY: {
@@ -95,24 +95,24 @@ export default defineMessages({
         id: 'TR_ACCOUNT_PASSPHRASE_DISABLED',
     },
     TR_ACQUIRE_DEVICE: {
-        defaultMessage: 'Use Trezor here',
+        defaultMessage: 'Use detahard here',
         description:
             'call-to-action to use device in current window when it is used in other window',
         id: 'TR_ACQUIRE_DEVICE',
     },
     TR_ACQUIRE_DEVICE_DESCRIPTION: {
         defaultMessage:
-            'Your Trezor seems to be in use in another window. Please close all other windows or tabs that might be using your Trezor.',
+            'Your detahard seems to be in use in another window. Please close all other windows or tabs that might be using your detahard.',
         id: 'TR_ACQUIRE_DEVICE_DESCRIPTION',
     },
     TR_RECONNECT_DEVICE_DESCRIPTION: {
         defaultMessage:
-            'If closing tabs and refreshing this page didn’t help, try reconnecting your Trezor.',
+            'If closing tabs and refreshing this page didn’t help, try reconnecting your detahard.',
         id: 'TR_RECONNECT_DEVICE_DESCRIPTION',
     },
     TR_RECONNECT_DEVICE_DESCRIPTION_DESKTOP: {
         defaultMessage:
-            "If closing tabs and reopening Trezor Suite doesn't help, please try reconnecting your Trezor.",
+            "If closing tabs and reopening detahard Suite doesn't help, please try reconnecting your detahard.",
         id: 'TR_RECONNECT_DEVICE_DESCRIPTION_DESKTOP',
     },
     TR_ACQUIRE_DEVICE_TITLE: {
@@ -174,7 +174,7 @@ export default defineMessages({
     },
     TR_SPEND_PROVIDER_CONTENT_WINDOW: {
         defaultMessage:
-            'Spend content is fully provided by our partner Bitrefill. You’ll choose your purchase on their website and finish the transaction in Trezor Suite.',
+            'Spend content is fully provided by our partner Bitrefill. You’ll choose your purchase on their website and finish the transaction in detahard Suite.',
         id: 'TR_SPEND_PROVIDER_CONTENT_WINDOW',
     },
     TR_SPEND_STATUS_FINISHED: {
@@ -285,7 +285,7 @@ export default defineMessages({
         dynamic: true,
     },
     TR_EXCHANGE_MODAL_SECURITY_HEADER: {
-        defaultMessage: 'Security first with your Trezor',
+        defaultMessage: 'Security first with your detahard',
         id: 'TR_EXCHANGE_MODAL_SECURITY_HEADER',
         dynamic: true,
     },
@@ -346,7 +346,7 @@ export default defineMessages({
         dynamic: true,
     },
     TR_EXCHANGE_DEX_MODAL_SECURITY_HEADER: {
-        defaultMessage: 'Security first with your Trezor',
+        defaultMessage: 'Security first with your detahard',
         id: 'TR_EXCHANGE_DEX_MODAL_SECURITY_HEADER',
         dynamic: true,
     },
@@ -638,9 +638,9 @@ export default defineMessages({
         defaultMessage: 'Slippage must be in the range 0.01% - 50%',
         id: 'TR_EXCHANGE_SWAP_SLIPPAGE_NOT_IN_RANGE',
     },
-    TR_EXCHANGE_CONFIRM_ON_TREZOR_SEND: {
-        defaultMessage: 'Confirm on Trezor & send',
-        id: 'TR_EXCHANGE_CONFIRM_ON_TREZOR_SEND',
+    TR_EXCHANGE_CONFIRM_ON_detahard_SEND: {
+        defaultMessage: 'Confirm on detahard & send',
+        id: 'TR_EXCHANGE_CONFIRM_ON_detahard_SEND',
     },
     TR_EXCHANGE_RECEIVE_ACCOUNT_QUESTION_TOOLTIP: {
         id: 'TR_EXCHANGE_RECEIVE_ACCOUNT_QUESTION_TOOLTIP',
@@ -678,7 +678,7 @@ export default defineMessages({
     TR_EXCHANGE_RECEIVE_ADDRESS_QUESTION_TOOLTIP: {
         id: 'TR_EXCHANGE_RECEIVE_ADDRESS_QUESTION_TOOLTIP',
         defaultMessage:
-            'This is the specific alphanumeric address that will receive your coins. Verify this address on your Trezor.',
+            'This is the specific alphanumeric address that will receive your coins. Verify this address on your detahard.',
     },
     TR_EXCHANGE_EXTRA_FIELD: {
         defaultMessage: '{extraFieldName}',
@@ -704,13 +704,13 @@ export default defineMessages({
         defaultMessage: "Use an account ({symbol}) that isn't in Suite",
         id: 'TR_EXCHANGE_USE_NON_SUITE_ACCOUNT',
     },
-    TR_EXCHANGE_CONFIRMED_ON_TREZOR: {
-        defaultMessage: 'Confirmed on Trezor',
-        id: 'TR_EXCHANGE_CONFIRMED_ON_TREZOR',
+    TR_EXCHANGE_CONFIRMED_ON_detahard: {
+        defaultMessage: 'Confirmed on detahard',
+        id: 'TR_EXCHANGE_CONFIRMED_ON_detahard',
     },
-    TR_EXCHANGE_CONFIRM_ON_TREZOR: {
-        defaultMessage: 'Confirm on Trezor',
-        id: 'TR_EXCHANGE_CONFIRM_ON_TREZOR',
+    TR_EXCHANGE_CONFIRM_ON_detahard: {
+        defaultMessage: 'Confirm on detahard',
+        id: 'TR_EXCHANGE_CONFIRM_ON_detahard',
     },
     TR_EXCHANGE_GO_TO_PAYMENT: {
         defaultMessage: 'Continue transaction',
@@ -791,7 +791,7 @@ export default defineMessages({
         dynamic: true,
     },
     TR_SELL_MODAL_SECURITY_HEADER: {
-        defaultMessage: 'Security first with your Trezor',
+        defaultMessage: 'Security first with your detahard',
         id: 'TR_SELL_MODAL_SECURITY_HEADER',
         dynamic: true,
     },
@@ -905,9 +905,9 @@ export default defineMessages({
         defaultMessage: 'Send to {providerName}’s address',
         id: 'TR_SELL_SEND_TO',
     },
-    TR_SELL_CONFIRM_ON_TREZOR_SEND: {
-        defaultMessage: 'Confirm on Trezor & Send',
-        id: 'TR_SELL_CONFIRM_ON_TREZOR_SEND',
+    TR_SELL_CONFIRM_ON_detahard_SEND: {
+        defaultMessage: 'Confirm on detahard & Send',
+        id: 'TR_SELL_CONFIRM_ON_detahard_SEND',
     },
     TR_SELL_BANK_ACCOUNT: {
         defaultMessage: 'Your bank accounts',
@@ -1153,7 +1153,7 @@ export default defineMessages({
         dynamic: true,
     },
     TR_P2P_MODAL_SECURITY_HEADER: {
-        defaultMessage: 'Security first with your Trezor',
+        defaultMessage: 'Security first with your detahard',
         id: 'TR_P2P_MODAL_SECURITY_HEADER',
         dynamic: true,
     },
@@ -1230,7 +1230,7 @@ export default defineMessages({
     },
     TR_P2P_GET_STARTED_ATTENTION: {
         defaultMessage:
-            'Attention: Do NOT close Trezor Suite at any time during the process or you will have to start over.',
+            'Attention: Do NOT close detahard Suite at any time during the process or you will have to start over.',
         id: 'TR_P2P_GET_STARTED_ATTENTION',
     },
     TR_P2P_GO_TO_PROVIDER: {
@@ -1378,7 +1378,7 @@ export default defineMessages({
         id: 'TR_SAVINGS_SETUP_KYC_ERROR_HEADER',
     },
     TR_SAVINGS_SETUP_KYC_ERROR_DESCRIPTION: {
-        defaultMessage: 'Something went wrong during the KYC check. Please contact Trezor support.',
+        defaultMessage: 'Something went wrong during the KYC check. Please contact detahard support.',
         id: 'TR_SAVINGS_SETUP_KYC_ERROR_DESCRIPTION',
     },
     TR_SAVINGS_PAYMENT_INFO_HEADER: {
@@ -1437,7 +1437,7 @@ export default defineMessages({
     },
     TR_SAVINGS_OVERVIEW_COIN_TRANSFER_DELAYED: {
         defaultMessage:
-            'Coins are in {providerName} custody and will be transferred to your Trezor automatically.',
+            'Coins are in {providerName} custody and will be transferred to your detahard automatically.',
         id: 'TR_SAVINGS_OVERVIEW_COIN_TRANSFER_DELAYED',
     },
     TR_SAVINGS_AUTHORIZATION_ERROR: {
@@ -1517,7 +1517,7 @@ export default defineMessages({
         dynamic: true,
     },
     TR_SAVINGS_MODAL_SECURITY_HEADER: {
-        defaultMessage: 'Security first with your Trezor',
+        defaultMessage: 'Security first with your detahard',
         id: 'TR_SAVINGS_MODAL_SECURITY_HEADER',
         dynamic: true,
     },
@@ -1614,7 +1614,7 @@ export default defineMessages({
         dynamic: true,
     },
     TR_BUY_MODAL_SECURITY_HEADER: {
-        defaultMessage: 'Security first with your Trezor',
+        defaultMessage: 'Security first with your detahard',
         id: 'TR_BUY_MODAL_SECURITY_HEADER',
         dynamic: true,
     },
@@ -1800,9 +1800,9 @@ export default defineMessages({
         defaultMessage: 'Receiving address',
         id: 'TR_BUY_RECEIVING_ADDRESS',
     },
-    TR_BUY_CONFIRMED_ON_TREZOR: {
-        defaultMessage: 'Confirmed on Trezor',
-        id: 'TR_BUY_CONFIRMED_ON_TREZOR',
+    TR_BUY_CONFIRMED_ON_detahard: {
+        defaultMessage: 'Confirmed on detahard',
+        id: 'TR_BUY_CONFIRMED_ON_detahard',
     },
     TR_BUY_OFFERS_FOR: {
         defaultMessage: 'Offers for',
@@ -1816,9 +1816,9 @@ export default defineMessages({
         defaultMessage: 'Compare offers',
         id: 'TR_BUY_SHOW_OFFERS',
     },
-    TR_BUY_CONFIRM_ON_TREZOR: {
-        defaultMessage: 'Confirm on Trezor',
-        id: 'TR_BUY_CONFIRM_ON_TREZOR',
+    TR_BUY_CONFIRM_ON_detahard: {
+        defaultMessage: 'Confirm on detahard',
+        id: 'TR_BUY_CONFIRM_ON_detahard',
     },
     TR_BUY_GO_TO_PAYMENT: {
         defaultMessage: 'Finish transaction',
@@ -1988,7 +1988,7 @@ export default defineMessages({
         id: 'TR_ADVANCED_RECOVERY',
     },
     TR_ADVANCED_RECOVERY_OPTION: {
-        defaultMessage: 'Spell out each word of your recovery seed using your Trezor device.',
+        defaultMessage: 'Spell out each word of your recovery seed using your detahard device.',
         description: 'Button for selecting advanced recovery option',
         id: 'TR_ADVANCED_RECOVERY_OPTION',
     },
@@ -2006,7 +2006,7 @@ export default defineMessages({
     },
     TR_ALLOW_ANALYTICS_DESCRIPTION: {
         defaultMessage:
-            'All data is kept strictly anonymous; we only use it to improve the Trezor ecosystem.',
+            'All data is kept strictly anonymous; we only use it to improve the detahard ecosystem.',
         id: 'TR_ALLOW_ANALYTICS_DESCRIPTION',
     },
     TR_ASSETS: {
@@ -2062,7 +2062,7 @@ export default defineMessages({
     },
     TR_BACKUP_FINISHED_TEXT: {
         defaultMessage:
-            'If you have written down your recovery seed, your Trezor is almost ready. Do not lose your recovery seed, otherwise your funds could be inaccessible.',
+            'If you have written down your recovery seed, your detahard is almost ready. Do not lose your recovery seed, otherwise your funds could be inaccessible.',
         description: 'Text that appears after backup is finished',
         id: 'TR_BACKUP_FINISHED_TEXT',
     },
@@ -2072,7 +2072,7 @@ export default defineMessages({
     },
     TR_BACKUP_SUBHEADING_1: {
         defaultMessage:
-            'A recovery seed backup is a series of randomly generated words created by your Trezor. It’s important that you write down your recovery seed and keep it safe, as it is the only way to recover and access your funds.',
+            'A recovery seed backup is a series of randomly generated words created by your detahard. It’s important that you write down your recovery seed and keep it safe, as it is the only way to recover and access your funds.',
         description: 'Explanation what recovery seed is',
         id: 'TR_BACKUP_SUBHEADING_1',
     },
@@ -2108,7 +2108,7 @@ export default defineMessages({
         id: 'TR_CHANGELOG',
     },
     TR_CHECK_FOR_DEVICES: {
-        defaultMessage: 'Find Trezor',
+        defaultMessage: 'Find detahard',
         id: 'TR_CHECK_FOR_DEVICES',
     },
     TR_CHECK_PGP_SIGNATURE: {
@@ -2124,7 +2124,7 @@ export default defineMessages({
         id: 'TR_CHECK_SEED',
     },
     TR_CHECK_YOUR_DEVICE: {
-        defaultMessage: 'Check your Trezor screen',
+        defaultMessage: 'Check your detahard screen',
         description: 'Placeholder in seed input asking user to pay attention to his device',
         id: 'TR_CHECK_YOUR_DEVICE',
     },
@@ -2150,7 +2150,7 @@ export default defineMessages({
         id: 'TR_CONFIRM',
     },
     TR_CONFIRM_ACTION_ON_YOUR: {
-        defaultMessage: 'Follow the instructions on your Trezor screen',
+        defaultMessage: 'Follow the instructions on your detahard screen',
         id: 'TR_CONFIRM_ACTION_ON_YOUR',
     },
     TR_CONFIRM_EMPTY_HIDDEN_WALLET: {
@@ -2174,18 +2174,18 @@ export default defineMessages({
         id: 'TR_CONFIRMED_TX',
     },
     TR_CONNECT_YOUR_DEVICE: {
-        defaultMessage: 'Connect your Trezor',
+        defaultMessage: 'Connect your detahard',
         description: 'Prompt to user to connect his device.',
         id: 'TR_CONNECT_YOUR_DEVICE',
     },
     TR_RECONNECT_YOUR_DEVICE: {
-        defaultMessage: 'Reconnect your Trezor',
+        defaultMessage: 'Reconnect your detahard',
         description: 'Prompt to user to reconnect his device.',
         id: 'TR_RECONNECT_YOUR_DEVICE',
     },
-    TR_CONNECT_YOUR_TREZOR_TO_CHECK: {
-        defaultMessage: 'Connect your Trezor to verify this address',
-        id: 'TR_CONNECT_YOUR_TREZOR_TO_CHECK',
+    TR_CONNECT_YOUR_detahard_TO_CHECK: {
+        defaultMessage: 'Connect your detahard to verify this address',
+        id: 'TR_CONNECT_YOUR_detahard_TO_CHECK',
     },
     TR_WARNING: {
         defaultMessage: 'Warning',
@@ -2198,7 +2198,7 @@ export default defineMessages({
         id: 'TR_CONNECTED',
     },
     TR_CONTACT_OUR_SUPPORT_LINK: {
-        defaultMessage: 'contact Trezor support',
+        defaultMessage: 'contact detahard support',
         description: 'Part of sentence TR_DID_YOU_PURCHASE. Link to support',
         id: 'TR_CONTACT_OUR_SUPPORT_LINK',
     },
@@ -2218,7 +2218,7 @@ export default defineMessages({
         id: 'TR_CONTINUE',
     },
     TR_ONBOARDING_START_CTA: {
-        defaultMessage: 'Setup Trezor',
+        defaultMessage: 'Setup detahard',
         id: 'TR_ONBOARDING_START_CTA',
     },
     TR_COPY_TO_CLIPBOARD: {
@@ -2241,7 +2241,7 @@ export default defineMessages({
     },
     TR_DEVICE_DISCONNECTED_DURING_ACTION_DESCRIPTION: {
         defaultMessage:
-            'Your Trezor was disconnected during the backup process. We strongly recommend that you use the factory reset option in Device settings to wipe your device and start the wallet backup process again.',
+            'Your detahard was disconnected during the backup process. We strongly recommend that you use the factory reset option in Device settings to wipe your device and start the wallet backup process again.',
         description: 'Error message. Instruction what to do.',
         id: 'TR_DEVICE_DISCONNECTED_DURING_ACTION_DESCRIPTION',
     },
@@ -2270,27 +2270,27 @@ export default defineMessages({
         id: 'TR_EDIT',
     },
     TR_NEEDS_ATTENTION_BOOTLOADER: {
-        defaultMessage: 'Trezor is in Bootloader mode.',
+        defaultMessage: 'detahard is in Bootloader mode.',
         id: 'TR_NEEDS_ATTENTION_BOOTLOADER',
     },
     TR_NEEDS_ATTENTION_INITIALIZE: {
-        defaultMessage: 'Trezor has not been set up.',
+        defaultMessage: 'detahard has not been set up.',
         id: 'TR_NEEDS_ATTENTION_INITIALIZE',
     },
     TR_NEEDS_ATTENTION_SEEDLESS: {
-        defaultMessage: 'Trezor does not have a recovery seed.',
+        defaultMessage: 'detahard does not have a recovery seed.',
         id: 'TR_NEEDS_ATTENTION_SEEDLESS',
     },
     TR_NEEDS_ATTENTION_USED_IN_OTHER_WINDOW: {
-        defaultMessage: 'Trezor is already in use.',
+        defaultMessage: 'detahard is already in use.',
         id: 'TR_NEEDS_ATTENTION_USED_IN_OTHER_WINDOW',
     },
     TR_NEEDS_ATTENTION_WAS_USED_IN_OTHER_WINDOW: {
-        defaultMessage: 'Trezor is already in use.',
+        defaultMessage: 'detahard is already in use.',
         id: 'TR_NEEDS_ATTENTION_WAS_USED_IN_OTHER_WINDOW',
     },
     TR_NEEDS_ATTENTION_UNACQUIRED: {
-        defaultMessage: 'Trezor is already in use in another window.',
+        defaultMessage: 'detahard is already in use in another window.',
         id: 'TR_NEEDS_ATTENTION_UNACQUIRED',
     },
     TR_NEEDS_ATTENTION_FIRMWARE_REQUIRED: {
@@ -2298,11 +2298,11 @@ export default defineMessages({
         id: 'TR_NEEDS_ATTENTION_FIRMWARE_REQUIRED',
     },
     TR_NEEDS_ATTENTION_UNAVAILABLE: {
-        defaultMessage: 'Trezor is not available.',
+        defaultMessage: 'detahard is not available.',
         id: 'TR_NEEDS_ATTENTION_UNAVAILABLE',
     },
     TR_NEEDS_ATTENTION_UNREADABLE: {
-        defaultMessage: 'Trezor is not readable.',
+        defaultMessage: 'detahard is not readable.',
         id: 'TR_NEEDS_ATTENTION_UNREADABLE',
     },
     TR_UDEV_DOWNLOAD_TITLE: {
@@ -2311,7 +2311,7 @@ export default defineMessages({
     },
     TR_UDEV_DOWNLOAD_DESC: {
         defaultMessage:
-            'In some cases, Linux users need to install udev rules to access their device. Please install the following package and reconnect your Trezor.',
+            'In some cases, Linux users need to install udev rules to access their device. Please install the following package and reconnect your detahard.',
         id: 'TR_UDEV_DOWNLOAD_DESC',
     },
     TR_UDEV_DOWNLOAD_MANUAL: {
@@ -2336,7 +2336,7 @@ export default defineMessages({
     },
     TR_DEVICE_SETTINGS_CUSTOM_FIRMWARE_DESCRIPTION: {
         defaultMessage:
-            'It is possible to install custom firmware for your Trezor device if needed. Installing custom firmware will erase its memory and may make it unusable. Never use this process unless you really know what you are doing.',
+            'It is possible to install custom firmware for your detahard device if needed. Installing custom firmware will erase its memory and may make it unusable. Never use this process unless you really know what you are doing.',
         id: 'TR_DEVICE_SETTINGS_CUSTOM_FIRMWARE_DESCRIPTION',
     },
     TR_DEVICE_SETTINGS_DEVICE_EDIT_LABEL: {
@@ -2403,7 +2403,7 @@ export default defineMessages({
         id: 'TR_SAFETY_CHECKS_STRICT_LEVEL',
     },
     TR_SAFETY_CHECKS_STRICT_LEVEL_DESC: {
-        defaultMessage: 'Full Trezor security.',
+        defaultMessage: 'Full detahard security.',
         id: 'TR_SAFETY_CHECKS_STRICT_LEVEL_DESC',
     },
     TR_SAFETY_CHECKS_PROMPT_LEVEL: {
@@ -2416,7 +2416,7 @@ export default defineMessages({
     },
     TR_SAFETY_CHECKS_PROMPT_LEVEL_DESC: {
         defaultMessage:
-            'Allow potentially unsafe actions, such as mismatching coin keys or extreme fees by manually approving them on your Trezor.',
+            'Allow potentially unsafe actions, such as mismatching coin keys or extreme fees by manually approving them on your detahard.',
         id: 'TR_SAFETY_CHECKS_PROMPT_LEVEL_DESC',
     },
     TR_SAFETY_CHECKS_DISABLED_WARNING: {
@@ -2468,7 +2468,7 @@ export default defineMessages({
         id: 'TR_DID_YOU_PURCHASE',
     },
     TR_DISCONNECT_YOUR_DEVICE: {
-        defaultMessage: 'Disconnect your Trezor',
+        defaultMessage: 'Disconnect your detahard',
         description: 'Prompt to disconnect device.',
         id: 'TR_DISCONNECT_YOUR_DEVICE',
     },
@@ -2499,7 +2499,7 @@ export default defineMessages({
         id: 'TR_ENTER_PASSPHRASE',
     },
     TR_ENTER_PASSPHRASE_ON_DEVICE: {
-        defaultMessage: 'Enter passphrase on Trezor',
+        defaultMessage: 'Enter passphrase on detahard',
         id: 'TR_ENTER_PASSPHRASE_ON_DEVICE',
     },
     TR_ENTER_PASSPHRASE_ON_DEVICE_LABEL: {
@@ -2517,7 +2517,7 @@ export default defineMessages({
     },
     TR_ENTER_SEED_WORDS_INSTRUCTION: {
         defaultMessage:
-            'Enter the words from your recovery seed here in the order displayed on your Trezor.',
+            'Enter the words from your recovery seed here in the order displayed on your detahard.',
         description:
             'User is instructed to enter words from seed (backup) into the form in browser',
         id: 'TR_ENTER_SEED_WORDS_INSTRUCTION',
@@ -2531,7 +2531,7 @@ export default defineMessages({
         id: 'TR_EXCHANGE_RATE',
     },
     TR_FAILED_BACKUP: {
-        defaultMessage: 'Backup failed. Please wipe your Trezor and start the setup process again.',
+        defaultMessage: 'Backup failed. Please wipe your detahard and start the setup process again.',
         id: 'TR_FAILED_BACKUP',
     },
     TR_BACKUP_SUCCESSFUL: {
@@ -2579,7 +2579,7 @@ export default defineMessages({
     },
     TR_FIRMWARE_SUBHEADING_NONE: {
         defaultMessage:
-            'Your Trezor is shipped without firmware. Your device is ready to receive the latest full-featured firmware in order to be used safely. If you use only bitcoin, we recommend installing <button>Bitcoin-only firmware</button>.',
+            'Your detahard is shipped without firmware. Your device is ready to receive the latest full-featured firmware in order to be used safely. If you use only bitcoin, we recommend installing <button>Bitcoin-only firmware</button>.',
         description: 'Main text on firmware page for devices without firmware',
         id: 'TR_FIRMWARE_SUBHEADING_NONE',
     },
@@ -2696,7 +2696,7 @@ export default defineMessages({
         id: 'TR_I_UNDERSTAND_PASSPHRASE',
     },
     TR_IF_YOUR_DEVICE_IS_EVER_LOST: {
-        defaultMessage: 'If your Trezor is lost or damaged, your funds may be irreversibly lost.',
+        defaultMessage: 'If your detahard is lost or damaged, your funds may be irreversibly lost.',
         id: 'TR_IF_YOUR_DEVICE_IS_EVER_LOST',
     },
     TR_INCOMING: {
@@ -2719,7 +2719,7 @@ export default defineMessages({
         id: 'TR_INSTALL_BITCOIN_ONLY',
     },
     TR_DO_NOT_DISCONNECT: {
-        defaultMessage: 'Do not disconnect your Trezor.',
+        defaultMessage: 'Do not disconnect your detahard.',
         description: 'Message that is visible when installing process is in progress.',
         id: 'TR_DO_NOT_DISCONNECT',
     },
@@ -2738,7 +2738,7 @@ export default defineMessages({
     },
     TR_LEARN_MORE: {
         defaultMessage: 'Learn more',
-        description: 'Link to Trezor wiki.',
+        description: 'Link to detahard wiki.',
         id: 'TR_LEARN_MORE',
     },
     TR_NORMAL_ACCOUNTS: {
@@ -2945,16 +2945,16 @@ export default defineMessages({
     },
     TR_NEW_COMMUNICATION_TOOL: {
         defaultMessage:
-            'New communication tool to facilitate the connection between your Trezor and your internet browser.',
+            'New communication tool to facilitate the connection between your detahard and your internet browser.',
         id: 'TR_NEW_COMMUNICATION_TOOL',
     },
-    TR_NEW_TREZOR_BRIDGE_IS_AVAILABLE: {
-        defaultMessage: 'New Trezor Bridge is available.',
-        id: 'TR_NEW_TREZOR_BRIDGE_IS_AVAILABLE',
+    TR_NEW_detahard_BRIDGE_IS_AVAILABLE: {
+        defaultMessage: 'New detahard Bridge is available.',
+        id: 'TR_NEW_detahard_BRIDGE_IS_AVAILABLE',
     },
-    TR_NEW_TREZOR_FIRMWARE_IS_AVAILABLE_DOT: {
-        defaultMessage: 'New Trezor firmware is available! Please update your device.',
-        id: 'TR_NEW_TREZOR_FIRMWARE_IS_AVAILABLE_DOT',
+    TR_NEW_detahard_FIRMWARE_IS_AVAILABLE_DOT: {
+        defaultMessage: 'New detahard firmware is available! Please update your device.',
+        id: 'TR_NEW_detahard_FIRMWARE_IS_AVAILABLE_DOT',
     },
     TR_NO_PASSPHRASE_WALLET: {
         defaultMessage: 'Standard wallet',
@@ -3054,13 +3054,13 @@ export default defineMessages({
     },
     TR_PIN_SET_SUCCESS: {
         defaultMessage:
-            'Write your PIN down and keep it safe. Use it to unlock your Trezor when you need to access your funds.',
+            'Write your PIN down and keep it safe. Use it to unlock your detahard when you need to access your funds.',
         description: 'Longer text indicating PIN was set successfully.',
         id: 'TR_PIN_SET_SUCCESS',
     },
     TR_PIN_SUBHEADING: {
         defaultMessage:
-            'Using a strong PIN protects your Trezor from unauthorized physical access.',
+            'Using a strong PIN protects your detahard from unauthorized physical access.',
         description: 'Subheading on PIN page',
         id: 'TR_PIN_SUBHEADING',
     },
@@ -3117,7 +3117,7 @@ export default defineMessages({
         id: 'TR_GOT_IT',
     },
     TR_RECONNECT_HEADER: {
-        defaultMessage: 'Reconnect your Trezor',
+        defaultMessage: 'Reconnect your detahard',
         id: 'TR_RECONNECT_HEADER',
     },
     TR_RECOVER_SUBHEADING_COMPUTER: {
@@ -3148,7 +3148,7 @@ export default defineMessages({
     },
     TR_RECOVERY_TYPES_DESCRIPTION: {
         defaultMessage:
-            'Both methods are secure; advanced recovery allows you to input your recovery seed using your Trezor screen and takes longer.',
+            'Both methods are secure; advanced recovery allows you to input your recovery seed using your detahard screen and takes longer.',
         description: 'There are two methods of recovery for T1. This is a short explanation text.',
         id: 'TR_RECOVERY_TYPES_DESCRIPTION',
     },
@@ -3192,7 +3192,7 @@ export default defineMessages({
     },
     TR_SECURITY_SUBHEADING: {
         defaultMessage:
-            "You've successfully set up your Trezor and created your wallet. You should never use your Trezor without backing it up; it is the only way to recover a lost wallet.",
+            "You've successfully set up your detahard and created your wallet. You should never use your detahard without backing it up; it is the only way to recover a lost wallet.",
         description: 'Text in security page',
         id: 'TR_SECURITY_SUBHEADING',
     },
@@ -3250,7 +3250,7 @@ export default defineMessages({
         id: 'TR_SETTINGS_DEVICE_BANNER_TITLE_BOOTLOADER',
     },
     TR_SETTINGS_DEVICE_BANNER_TITLE_REMEMBERED: {
-        defaultMessage: 'Connect your Trezor to change Device settings',
+        defaultMessage: 'Connect your detahard to change Device settings',
         id: 'TR_SETTINGS_DEVICE_BANNER_TITLE_REMEMBERED',
     },
     TR_SETTINGS_DEVICE_BANNER_DESCRIPTION_BOOTLOADER_NO_BUTTONS: {
@@ -3284,9 +3284,9 @@ export default defineMessages({
         defaultMessage: 'Show details in Block Explorer',
         id: 'TR_SHOW_DETAILS_IN_BLOCK_EXPLORER',
     },
-    TR_SHOW_ON_TREZOR: {
-        defaultMessage: 'Show on Trezor',
-        id: 'TR_SHOW_ON_TREZOR',
+    TR_SHOW_ON_detahard: {
+        defaultMessage: 'Show on detahard',
+        id: 'TR_SHOW_ON_detahard',
     },
     TR_SHOW_UNVERIFIED_ADDRESS: {
         defaultMessage: 'Show unverified address',
@@ -3376,7 +3376,7 @@ export default defineMessages({
         id: 'TR_TESTNET_COINS_LABEL',
     },
     TR_THE_PIN_LAYOUT_IS_DISPLAYED: {
-        defaultMessage: 'Check your Trezor screen for the keypad layout.',
+        defaultMessage: 'Check your detahard screen for the keypad layout.',
         id: 'TR_THE_PIN_LAYOUT_IS_DISPLAYED',
     },
     TR_THIS_HIDDEN_WALLET_IS_EMPTY: {
@@ -3386,16 +3386,16 @@ export default defineMessages({
     },
     TR_THIS_HIDDEN_WALLET_IS_EMPTY_SOURCE: {
         defaultMessage:
-            'This hidden wallet is empty. To make sure you are in the correct hidden wallet, please re-enter the passphrase on your Trezor.',
+            'This hidden wallet is empty. To make sure you are in the correct hidden wallet, please re-enter the passphrase on your detahard.',
         id: 'TR_THIS_HIDDEN_WALLET_IS_EMPTY_SOURCE',
     },
     TR_TO_FIND_YOUR_ACCOUNTS_AND: {
-        defaultMessage: 'Trezor is running a coin discovery check to find your accounts and funds.',
+        defaultMessage: 'detahard is running a coin discovery check to find your accounts and funds.',
         id: 'TR_TO_FIND_YOUR_ACCOUNTS_AND',
     },
     TR_TO_PREVENT_PHISHING_ATTACKS_COMMA: {
         defaultMessage:
-            'To prevent phishing attacks, you should verify the address on your Trezor. {claim}',
+            'To prevent phishing attacks, you should verify the address on your detahard. {claim}',
         id: 'TR_TO_PREVENT_PHISHING_ATTACKS_COMMA',
     },
     TR_TOO_LONG: {
@@ -3414,10 +3414,10 @@ export default defineMessages({
         defaultMessage: 'Details',
         id: 'TR_TRANSACTION_DETAILS',
     },
-    TR_TREZOR_BRIDGE_IS_NOT_RUNNING: {
-        defaultMessage: 'Trezor Bridge is not running',
+    TR_detahard_BRIDGE_IS_NOT_RUNNING: {
+        defaultMessage: 'detahard Bridge is not running',
         description: '',
-        id: 'TR_TREZOR_BRIDGE_IS_NOT_RUNNING',
+        id: 'TR_detahard_BRIDGE_IS_NOT_RUNNING',
     },
     TR_TRY_AGAIN: {
         defaultMessage: 'Try again',
@@ -3487,11 +3487,11 @@ export default defineMessages({
         id: 'TR_UNACQUIRED',
     },
     TR_UNVERIFIED_ADDRESS_COMMA_CONNECT: {
-        defaultMessage: 'Unverified address, connect your Trezor to verify it',
+        defaultMessage: 'Unverified address, connect your detahard to verify it',
         id: 'TR_UNVERIFIED_ADDRESS_COMMA_CONNECT',
     },
     TR_UNVERIFIED_ADDRESS_COMMA_SHOW: {
-        defaultMessage: 'Unverified address, show on Trezor.',
+        defaultMessage: 'Unverified address, show on detahard.',
         id: 'TR_UNVERIFIED_ADDRESS_COMMA_SHOW',
     },
     TR_VALUES: {
@@ -3513,7 +3513,7 @@ export default defineMessages({
         id: 'TR_VERIFY_MESSAGE',
     },
     TR_WAIT_FOR_REBOOT: {
-        defaultMessage: 'Restarting Trezor',
+        defaultMessage: 'Restarting detahard',
         description: 'Info what is happening with users device.',
         id: 'TR_WAIT_FOR_REBOOT',
     },
@@ -3538,9 +3538,9 @@ export default defineMessages({
         defaultMessage: 'Passphrase duplicated',
         id: 'TR_WALLET_DUPLICATE_TITLE',
     },
-    TR_WELCOME_TO_TREZOR_TEXT_WALLET_CREATION: {
+    TR_WELCOME_TO_detahard_TEXT_WALLET_CREATION: {
         defaultMessage: 'Create a new wallet or restore one from a backup',
-        id: 'TR_WELCOME_TO_TREZOR_TEXT_WALLET_CREATION',
+        id: 'TR_WELCOME_TO_detahard_TEXT_WALLET_CREATION',
     },
     TR_WEST: {
         defaultMessage: 'West',
@@ -3610,8 +3610,8 @@ export default defineMessages({
         defaultMessage: 'Version {version} has been downloaded and is ready for installation.',
         id: 'TR_YOUR_NEW_VERSION_IS_READY',
     },
-    TR_YOUR_TREZOR_IS_NOT_BACKED_UP: {
-        defaultMessage: 'Your Trezor wallet is not backed up.',
+    TR_YOUR_detahard_IS_NOT_BACKED_UP: {
+        defaultMessage: 'Your detahard wallet is not backed up.',
         id: 'TR_YOUR_TREZOR_IS_NOT_BACKED_UP',
     },
     TR_YOUR_WALLET_IS_READY_WHAT: {

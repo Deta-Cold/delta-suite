@@ -33,7 +33,7 @@ const checkPackageDependencies = packageName => {
 
     Object.entries(dependencies).forEach(([dependency, version]) => {
         // is not a dependency released from monorepo. we don't care
-        if (!dependency.startsWith('@trezor')) {
+        if (!dependency.startsWith('@detahard')) {
             return;
         }
 

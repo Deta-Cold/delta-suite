@@ -1,6 +1,6 @@
 import * as electron from 'electron';
 
-import * as desktopApi from '@trezor/suite-desktop-api';
+import * as desktopApi from '@detahard/suite-desktop-api';
 
 export type StrictIpcMain = desktopApi.StrictIpcMain<
     Omit<Electron.IpcMain, 'handle' | 'handleOnce' | 'removeHandler'>,

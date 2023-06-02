@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import type { AccountAddress } from '@trezor/connect';
+import type { AccountAddress } from '@detahard/connect';
 import { Translation, FiatValue, FormattedCryptoAmount } from '@suite-components';
-import { variables, Select } from '@trezor/components';
+import { variables, Select } from '@detahard/components';
 import { UseFormMethods, Control, Controller } from 'react-hook-form';
 import { formatNetworkAmount } from '@suite-common/wallet-utils';
 import type { Account } from '@wallet-types';

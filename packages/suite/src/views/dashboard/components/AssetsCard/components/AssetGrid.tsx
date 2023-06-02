@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Network } from '@wallet-types';
-import { CoinLogo, Icon, variables, useTheme } from '@trezor/components';
+import { CoinLogo, Icon, variables, useTheme } from '@detahard/components';
 import {
     FiatValue,
     AmountUnitSwitchWrapper,

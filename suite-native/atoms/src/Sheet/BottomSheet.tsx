@@ -3,7 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated from 'react-native-reanimated';
 import { ScrollView, PanGestureHandler } from 'react-native-gesture-handler';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { Box } from '../Box';
 import { BottomSheetContainer } from './BottomSheetContainer';

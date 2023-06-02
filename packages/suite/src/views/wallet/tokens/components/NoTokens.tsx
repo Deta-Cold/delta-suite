@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import { AccountExceptionLayout } from '@wallet-components';
 import { Translation } from '@suite-components';
 import * as modalActions from '@suite-actions/modalActions';

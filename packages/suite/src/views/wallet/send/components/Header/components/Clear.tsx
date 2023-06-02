@@ -1,7 +1,7 @@
 import React from 'react';
 import { Translation } from '@suite-components/Translation';
 import styled from 'styled-components';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import { useSendFormContext } from '@wallet-hooks';
 
 const Wrapper = styled.div`

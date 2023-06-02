@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
 import { CryptoIconName, CryptoIconWithPercentage, Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { NetworkSymbol } from '@suite-common/wallet-config';
 import { Box, Text } from '@suite-native/atoms';
 import {

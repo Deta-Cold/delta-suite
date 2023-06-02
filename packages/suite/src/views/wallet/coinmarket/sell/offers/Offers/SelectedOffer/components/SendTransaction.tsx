@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Translation, AccountLabeling } from '@suite-components';
-import { Button, variables, Loader } from '@trezor/components';
+import { Button, variables, Loader } from '@detahard/components';
 import { useCoinmarketSellOffersContext } from '@wallet-hooks/useCoinmarketSellOffers';
 import { useWatchSellTrade } from '@wallet-hooks/useCoinmarket';
 
@@ -88,7 +88,7 @@ export const SendTransaction = () => {
 
                     <ButtonWrapper>
                         <StyledButton isLoading={callInProgress} onClick={sendTransaction}>
-                            <Translation id="TR_SELL_CONFIRM_ON_TREZOR_SEND" />
+                            <Translation id="TR_SELL_CONFIRM_ON_detahard_SEND" />
                         </StyledButton>
                     </ButtonWrapper>
                 </>

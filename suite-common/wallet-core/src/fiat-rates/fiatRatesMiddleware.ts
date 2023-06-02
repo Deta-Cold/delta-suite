@@ -1,5 +1,5 @@
 import { createMiddlewareWithExtraDeps } from '@suite-common/redux-utils';
-import { BLOCKCHAIN as TREZOR_CONNECT_BLOCKCHAIN_ACTIONS } from '@trezor/connect';
+import { BLOCKCHAIN as detahard_CONNECT_BLOCKCHAIN_ACTIONS } from '@detahard/connect';
 
 import { transactionsActions } from '../transactions/transactionsActions';
 import { accountsActions } from '../accounts/accountsActions';
@@ -95,7 +95,7 @@ export const prepareFiatRatesMiddleware = createMiddlewareWithExtraDeps(
             dispatch(initFiatRatesThunk(action.payload));
         }
 
-        if (action.type === TREZOR_CONNECT_BLOCKCHAIN_ACTIONS.FIAT_RATES_UPDATE) {
+        if (action.type === detahard_CONNECT_BLOCKCHAIN_ACTIONS.FIAT_RATES_UPDATE) {
             dispatch(onUpdateFiatRateThunk(action.payload));
         }
 

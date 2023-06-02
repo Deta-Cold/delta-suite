@@ -11,8 +11,8 @@ import Animated, {
 import { Canvas, Circle, vec, SweepGradient } from '@shopify/react-native-skia';
 
 import { Box } from '@suite-native/atoms';
-import { useNativeStyles, prepareNativeStyle } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { useNativeStyles, prepareNativeStyle } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 
 type TransactionIconSpinnerProps = {
     radius: number;

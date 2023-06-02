@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { Text } from '../Text';
 import { IconButton } from '../Button/IconButton';

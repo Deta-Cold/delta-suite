@@ -1,7 +1,7 @@
 import React from 'react';
-import { analytics, EventType } from '@trezor/suite-analytics';
-import { Switch, Tooltip } from '@trezor/components';
-import { HELP_CENTER_LABELING } from '@trezor/urls';
+import { analytics, EventType } from '@detahard/suite-analytics';
+import { Switch, Tooltip } from '@detahard/components';
+import { HELP_CENTER_LABELING } from '@detahard/urls';
 import { Translation } from '@suite-components';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { useSelector, useActions, useDevice } from '@suite-hooks';

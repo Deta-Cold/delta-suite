@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Button, H2, P, Image, variables } from '@trezor/components';
+import { Button, H2, P, Image, variables } from '@detahard/components';
 import { SelectWordCount, SelectRecoveryType } from '@recovery-components';
-import { Loading, Translation, CheckItem, TrezorLink, Modal } from '@suite-components';
+import { Loading, Translation, CheckItem, detahardLink, Modal } from '@suite-components';
 import { ReduxModal } from '@suite-components/ModalSwitcher/ReduxModal';
 import * as recoveryActions from '@recovery-actions/recoveryActions';
 import { useDevice, useSelector, useActions } from '@suite-hooks';
@@ -10,8 +10,8 @@ import type { ForegroundAppProps } from '@suite-types';
 import type { WordCount } from '@recovery-types';
 import { InstructionStep } from '@suite-components/InstructionStep';
 import { getCheckBackupUrl } from '@suite-utils/device';
-import { DeviceModel, getDeviceModel, pickByDeviceModel } from '@trezor/device-utils';
-import TrezorConnect from '@trezor/connect';
+import { DeviceModel, getDeviceModel, pickByDeviceModel } from '@detahard/device-utils';
+import detahardConnect from '@detahard/connect';
 import { useIntl } from 'react-intl';
 import messages from '@suite/support/messages';
 
@@ -185,9 +185,9 @@ export const Recovery = ({ onCancel }: ForegroundAppProps) => {
                             description={<Translation id="TR_DRY_RUN_CHECK_ITEM_DESCRIPTION" />}
                             isChecked={understood}
                             link={
-                                <TrezorLink icon="EXTERNAL_LINK" size="tiny" href={learnMoreUrl}>
+                                <detahardLink icon="EXTERNAL_LINK" size="tiny" href={learnMoreUrl}>
                                     <Translation id="TR_LEARN_MORE" />
-                                </TrezorLink>
+                                </detahardLink>
                             }
                             onClick={() => setUnderstood(!understood)}
                         />
@@ -263,7 +263,7 @@ export const Recovery = ({ onCancel }: ForegroundAppProps) => {
             isCancelable
             onCancel={() => {
                 if (['in-progress', 'waiting-for-confirmation'].includes(recovery.status)) {
-                    TrezorConnect.cancel(intl.formatMessage(messages.TR_CANCELLED));
+                    detahardConnect.cancel(intl.formatMessage(messages.TR_CANCELLED));
                 } else {
                     onCancel();
                 }

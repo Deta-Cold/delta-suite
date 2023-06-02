@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Button, Note } from '@trezor/components';
+import { Button, Note } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { isDesktop } from '@suite-utils/env';
 import { useCoinmarketSpendContext } from '@wallet-hooks/useCoinmarketSpend';

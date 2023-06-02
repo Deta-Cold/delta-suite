@@ -4,19 +4,19 @@ import { HEADER_SIZE, MESSAGE_HEADER_BYTE, BUFFER_SIZE } from '../../config';
 
 type Options<Chunked> = {
     chunked: Chunked;
-    addTrezorHeaders: boolean;
+    adddetahardHeaders: boolean;
     messageType: number;
 };
 
 function encode(data: ByteBuffer, options: Options<true>): Buffer[];
 function encode(data: ByteBuffer, options: Options<false>): Buffer;
 function encode(data: any, options: any): any {
-    const { addTrezorHeaders, chunked, messageType } = options;
-    const fullSize = (addTrezorHeaders ? HEADER_SIZE : HEADER_SIZE - 2) + data.limit;
+    const { adddetahardHeaders, chunked, messageType } = options;
+    const fullSize = (adddetahardHeaders ? HEADER_SIZE : HEADER_SIZE - 2) + data.limit;
 
     const encodedByteBuffer = new ByteBuffer(fullSize);
 
-    if (addTrezorHeaders) {
+    if (adddetahardHeaders) {
         // 2*1 byte
         encodedByteBuffer.writeByte(MESSAGE_HEADER_BYTE);
         encodedByteBuffer.writeByte(MESSAGE_HEADER_BYTE);

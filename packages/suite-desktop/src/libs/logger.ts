@@ -5,7 +5,7 @@ import chalk from 'chalk';
 import { app } from 'electron';
 
 import { isDevEnv } from '@suite-common/suite-utils';
-import { ensureDirectoryExists } from '@trezor/node-utils';
+import { ensureDirectoryExists } from '@detahard/node-utils';
 
 import { getBuildInfo, getComputerInfo } from './info';
 
@@ -46,7 +46,7 @@ export class Logger implements ILogger {
             colors: true,
             writeToConsole: !app?.commandLine.hasSwitch('log-no-print'),
             writeToDisk: app?.commandLine.hasSwitch('log-write'),
-            outputFile: app?.commandLine.getSwitchValue('log-file') || 'trezor-suite-log-%tt.txt',
+            outputFile: app?.commandLine.getSwitchValue('log-file') || 'detahard-suite-log-%tt.txt',
             outputPath:
                 app?.commandLine.getSwitchValue('log-path') ||
                 (userDataDir ? `${userDataDir}/logs` : process.cwd()),

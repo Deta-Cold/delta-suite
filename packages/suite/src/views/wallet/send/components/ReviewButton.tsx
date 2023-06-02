@@ -2,7 +2,7 @@ import React from 'react';
 import { useWatch } from 'react-hook-form';
 import styled, { useTheme } from 'styled-components';
 
-import { Checkbox, TooltipButton, Warning, variables } from '@trezor/components';
+import { Checkbox, TooltipButton, Warning, variables } from '@detahard/components';
 import { useDevice } from '@suite-hooks';
 import { useSendFormContext } from '@wallet-hooks';
 import { isLowAnonymityWarning } from '@suite-common/wallet-utils';

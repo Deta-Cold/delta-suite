@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Switch } from '@trezor/components';
+import { Switch } from '@detahard/components';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { useSelector, useDispatch } from '@suite-hooks';
 import { toggleUseDevkit } from '@firmware-actions/firmwareActions';

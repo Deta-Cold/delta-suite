@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
 import { Card, Translation } from '@suite-components';
 import { InputError } from '@wallet-components';
-import { Textarea, Button, Icon, Tooltip, variables } from '@trezor/components';
+import { Textarea, Button, Icon, Tooltip, variables } from '@detahard/components';
 import { useActions } from '@suite-hooks';
 import * as sendFormActions from '@wallet-actions/sendFormActions';
 import { getInputState, isHexValid } from '@suite-common/wallet-utils';

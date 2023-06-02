@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { LoadingContent, Switch } from '@trezor/components';
-import { TOR_PROJECT_URL } from '@trezor/urls';
+import { LoadingContent, Switch } from '@detahard/components';
+import { TOR_PROJECT_URL } from '@detahard/urls';
 import { useSelector, useActions } from '@suite-hooks';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import * as suiteActions from '@suite-actions/suiteActions';

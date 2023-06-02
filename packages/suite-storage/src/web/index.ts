@@ -11,7 +11,7 @@ import {
     deleteDB,
 } from 'idb';
 import { BroadcastChannel } from 'broadcast-channel';
-import { isFirefox } from '@trezor/env-utils';
+import { isFirefox } from '@detahard/env-utils';
 import { StorageMessageEvent } from './types';
 
 export type OnUpgradeFunc<TDBStructure> = (

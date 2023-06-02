@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { Image, PngImage, variables } from '@trezor/components';
+import { Image, PngImage, variables } from '@detahard/components';
 
 const containerGridStyle = css`
     display: grid;

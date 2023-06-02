@@ -1,6 +1,6 @@
 import { NotificationEntry } from '@suite-common/toast-notifications';
 import { ToastNotificationVariant, AppState } from '@suite-types';
-import { colors } from '@trezor/components';
+import { colors } from '@detahard/components';
 import type { NotificationViewProps } from '@suite-components/NotificationRenderer';
 
 export const getNotificationIcon = (variant: ToastNotificationVariant) => {

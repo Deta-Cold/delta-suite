@@ -1,6 +1,6 @@
 import { test as testPlaywright, expect as expectPlaywright } from '@playwright/test';
 
-import { TrezorUserEnvLink } from '@trezor/trezor-user-env-link';
+import { detahardUserEnvLink } from '@detahard/detahard-user-env-link';
 
 import { patchBinaries, launchSuite, waitForDataTestSelector } from '../support/common';
 
@@ -10,21 +10,21 @@ testPlaywright.describe.serial('Bridge', () => {
         // binaries somewhere where they are not, so I copy them to that place. Maybe I find a
         // better solution later
         await patchBinaries();
-        // We make sure that bridge from trezor-user-env is stopped.
+        // We make sure that bridge from detahard-user-env is stopped.
         // So we properly test the electron app spawning bridge binary.
-        await TrezorUserEnvLink.api.trezorUserEnvConnect();
-        await TrezorUserEnvLink.api.stopBridge();
+        await detahardUserEnvLink.api.detahardUserEnvConnect();
+        await detahardUserEnvLink.api.stopBridge();
     });
 
     testPlaywright.afterAll(async () => {
-        // When finish we make bridge from trezor-user-env to run so it is ready for the rest of the tests.
-        await TrezorUserEnvLink.api.startBridge();
+        // When finish we make bridge from detahard-user-env to run so it is ready for the rest of the tests.
+        await detahardUserEnvLink.api.startBridge();
     });
 
     testPlaywright('App spawns bundled bridge and stops it after app quit', async ({ request }) => {
         const suite = await launchSuite();
         const title = await suite.window.title();
-        expectPlaywright(title).toContain('Trezor Suite');
+        expectPlaywright(title).toContain('detahard Suite');
 
         // We wait for `@welcome/title` or `@dashboard/graph` since
         // one or the other will be display depending on the state of the app

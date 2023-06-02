@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'react-fela';
 
-import { prepareNativeTheme } from '@trezor/theme';
+import { prepareNativeTheme } from '@detahard/theme';
 
 import { useActiveColorScheme } from './useActiveColorScheme';
 

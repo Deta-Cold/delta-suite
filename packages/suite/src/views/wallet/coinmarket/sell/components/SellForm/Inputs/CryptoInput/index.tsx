@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import invityAPI from '@suite-services/invityAPI';
 import { FormattedCryptoAmount, Translation, NumberInput } from '@suite-components';
-import { Select, CoinLogo } from '@trezor/components';
+import { Select, CoinLogo } from '@detahard/components';
 import Bignumber from 'bignumber.js';
 import { Controller } from 'react-hook-form';
 import { useCoinmarketSellFormContext } from '@wallet-hooks/useCoinmarketSellForm';

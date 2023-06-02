@@ -1,6 +1,6 @@
 import { Translation } from '@suite/components/suite';
 import { useLayoutSize } from '@suite/hooks/suite';
-import { Button, variables } from '@trezor/components';
+import { Button, variables } from '@detahard/components';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -40,7 +40,7 @@ interface ButtonRowProps {
     isCompleted: boolean;
     isSubmitting: boolean;
     isSignPage: boolean;
-    isTrezorLocked: boolean;
+    isdetahardLocked: boolean;
     resetForm: () => void;
     closeScreen: (withCopy?: boolean) => void;
 }
@@ -49,7 +49,7 @@ export const ButtonRow = ({
     isCompleted,
     isSubmitting,
     isSignPage,
-    isTrezorLocked,
+    isdetahardLocked,
     resetForm,
     closeScreen,
 }: ButtonRowProps) => {
@@ -113,7 +113,7 @@ export const ButtonRow = ({
                     type="submit"
                     variant="primary"
                     size={20}
-                    isDisabled={isTrezorLocked}
+                    isDisabled={isdetahardLocked}
                     isLoading={isSubmitting}
                     data-test="@sign-verify/submit"
                 >

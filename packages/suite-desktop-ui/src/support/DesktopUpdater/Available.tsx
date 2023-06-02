@@ -7,8 +7,8 @@ import { useActions } from '@suite-hooks';
 import { getReleaseUrl } from '@suite/services/github';
 import * as desktopUpdateActions from '@suite-actions/desktopUpdateActions';
 
-import { Button, H2, variables, Link } from '@trezor/components';
-import { desktopApi, UpdateInfo } from '@trezor/suite-desktop-api';
+import { Button, H2, variables, Link } from '@detahard/components';
+import { desktopApi, UpdateInfo } from '@detahard/suite-desktop-api';
 
 const GreenH2 = styled(H2)`
     text-align: left;

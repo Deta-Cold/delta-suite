@@ -2,8 +2,8 @@ import { ActionCreatorWithPayload, ActionCreatorWithPreparedPayload } from '@red
 
 import { Account, FeeInfo } from '@suite-common/wallet-types';
 import { NetworkSymbol } from '@suite-common/wallet-config';
-import { TrezorDevice } from '@suite-common/suite-types';
-import { BlockchainBlock, ConnectSettings, Manifest, PROTO } from '@trezor/connect';
+import { detahardDevice } from '@suite-common/suite-types';
+import { BlockchainBlock, ConnectSettings, Manifest, PROTO } from '@detahard/connect';
 import { FiatCurrencyCode } from '@suite-common/suite-config';
 
 import { ActionType, SuiteCompatibleSelector, SuiteCompatibleThunk } from './types';
@@ -21,12 +21,12 @@ export type ExtraDependencies = {
             block: BlockchainBlock;
             timestamp: number;
         }>;
-        cardanoFetchTrezorPools: SuiteCompatibleThunk<'tADA' | 'ADA'>;
+        cardanoFetchdetahardPools: SuiteCompatibleThunk<'tADA' | 'ADA'>;
     };
     selectors: {
         selectFeeInfo: (networkSymbol: NetworkSymbol) => SuiteCompatibleSelector<FeeInfo>;
-        selectDevices: SuiteCompatibleSelector<TrezorDevice[]>;
-        selectCurrentDevice: SuiteCompatibleSelector<TrezorDevice | undefined>;
+        selectDevices: SuiteCompatibleSelector<detahardDevice[]>;
+        selectCurrentDevice: SuiteCompatibleSelector<detahardDevice | undefined>;
         selectBitcoinAmountUnit: SuiteCompatibleSelector<PROTO.AmountUnit>;
         selectEnabledNetworks: SuiteCompatibleSelector<NetworkSymbol[]>;
         selectLocalCurrency: SuiteCompatibleSelector<FiatCurrencyCode>;

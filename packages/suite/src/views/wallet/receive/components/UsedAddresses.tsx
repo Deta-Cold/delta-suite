@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AccountAddress } from '@trezor/connect';
-import { variables, Button } from '@trezor/components';
+import { AccountAddress } from '@detahard/connect';
+import { variables, Button } from '@detahard/components';
 import { Card, Translation, MetadataLabeling, FormattedCryptoAmount } from '@suite-components';
 import { formatNetworkAmount } from '@suite-common/wallet-utils';
 import { Network } from '@wallet-types';

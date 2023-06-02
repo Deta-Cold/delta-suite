@@ -6,13 +6,13 @@ const isCodesignBuild = process.env.IS_CODESIGN_BUILD === 'true';
 /* eslint-disable no-template-curly-in-string */ // to be able to use patterns like ${author} and ${arch}
 module.exports = {
     // distingush between dev and prod builds
-    appId: `io.trezor.TrezorSuite${isCodesignBuild ? '' : '.dev'}`,
+    appId: `io.detahard.detahardSuite${isCodesignBuild ? '' : '.dev'}`,
     extraMetadata: {
         version: suiteVersion,
         // distingush between dev and prod builds so different userDataDir is used
-        name: `@trezor/suite-desktop${isCodesignBuild ? '' : '-dev'}`,
+        name: `@detahard/suite-desktop${isCodesignBuild ? '' : '-dev'}`,
     },
-    productName: 'Trezor Suite',
+    productName: 'detahard Suite',
     copyright: 'Copyright © ${author}',
     asar: true,
     directories: {
@@ -26,8 +26,8 @@ module.exports = {
         '!build/static/**/{favicon,icons,bin,browsers}',
         '!bin/firmware',
         '!node_modules/@suite-common',
-        '!node_modules/@trezor/**/{src,coverage,build,scripts,webpack,integration,e2e,libDev}',
-        '!node_modules/@trezor/connect-common/**/*.bin',
+        '!node_modules/@detahard/**/{src,coverage,build,scripts,webpack,integration,e2e,libDev}',
+        '!node_modules/@detahard/connect-common/**/*.bin',
         '!node_modules/@babel',
         '!node_modules/date-fns',
         '!node_modules/@reduxjs',
@@ -80,13 +80,13 @@ module.exports = {
         },
     ],
     protocols: {
-        name: 'Trezor Suite',
+        name: 'detahard Suite',
         schemes,
     },
     publish: {
         provider: 'github',
-        repo: 'trezor-suite',
-        owner: 'trezor',
+        repo: 'detahard-suite',
+        owner: 'detahard',
     },
     dmg: {
         sign: false,
@@ -125,7 +125,7 @@ module.exports = {
             },
         ],
         icon: 'build/static/images/desktop/512x512.icns',
-        artifactName: 'Trezor-Suite-${version}-mac-${arch}.${ext}',
+        artifactName: 'detahard-Suite-${version}-mac-${arch}.${ext}',
         hardenedRuntime: true,
         gatekeeperAssess: false,
         darkModeSupport: true,
@@ -149,7 +149,7 @@ module.exports = {
             },
         ],
         icon: 'build/static/images/desktop/512x512.png',
-        artifactName: 'Trezor-Suite-${version}-win-${arch}.${ext}',
+        artifactName: 'detahard-Suite-${version}-win-${arch}.${ext}',
         target: ['nsis'],
         signDlls: true,
     },
@@ -173,8 +173,8 @@ module.exports = {
             },
         ],
         icon: 'build/static/images/desktop/512x512.png',
-        artifactName: 'Trezor-Suite-${version}-linux-${arch}.${ext}',
-        executableName: 'trezor-suite',
+        artifactName: 'detahard-Suite-${version}-linux-${arch}.${ext}',
+        executableName: 'detahard-suite',
         category: 'Utility',
         target: ['AppImage'],
     },

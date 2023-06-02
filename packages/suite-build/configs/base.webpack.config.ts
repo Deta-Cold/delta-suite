@@ -189,7 +189,7 @@ const config: webpack.Configuration = {
                   new SentryWebpackPlugin({
                       authToken: sentryAuthToken,
                       org: 'satoshilabs',
-                      project: 'trezor-suite',
+                      project: 'detahard-suite',
                       release: sentryRelease,
                       include: path.join(getPathForProject(project), 'build'),
                       ignore: ['static/connect'], // connect does not contain source maps for now

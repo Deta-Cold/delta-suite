@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icon, variables, SelectBar } from '@trezor/components';
+import { Icon, variables, SelectBar } from '@detahard/components';
 import { CardWithHeader } from '@suite-components/CardWithHeader';
 
 interface ResponsiveSize {

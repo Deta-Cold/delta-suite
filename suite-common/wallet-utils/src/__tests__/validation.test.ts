@@ -9,7 +9,7 @@ import {
 } from '../validation';
 
 describe('validation', () => {
-    // fixtures from https://github.com/trezor/trezor-address-validator/blob/master/test/wallet_address_validator.js
+    // fixtures from https://github.com/detahard/detahard-address-validator/blob/master/test/wallet_address_validator.js
     it('isAddressValid', () => {
         // BTC valid
         expect(isAddressValid('12QeMLzSrB8XH8FvEzPMVoRxVAzTr5XM2y', 'btc')).toEqual(true);

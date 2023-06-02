@@ -1,4 +1,4 @@
-// Logic of sending data to trezor
+// Logic of sending data to detahard
 //
 // Logic of "call" is broken to two parts - sending and receiving
 import { Root } from 'protobufjs/light';
@@ -20,7 +20,7 @@ export function buildOne(messages: Root, name: string, data: Record<string, unkn
 
     const buffer = encodeProtobuf(Message, data);
     return encodeProtocol(buffer, {
-        addTrezorHeaders: false,
+        adddetahardHeaders: false,
         chunked: false,
         messageType,
     });
@@ -30,7 +30,7 @@ export const buildBuffers = (messages: Root, name: string, data: Record<string, 
     const { Message, messageType } = createMessageFromName(messages, name);
     const buffer = encodeProtobuf(Message, data);
     return encodeProtocol(buffer, {
-        addTrezorHeaders: true,
+        adddetahardHeaders: true,
         chunked: true,
         messageType,
     });

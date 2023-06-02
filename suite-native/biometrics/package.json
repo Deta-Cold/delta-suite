@@ -14,7 +14,7 @@
         "@suite-common/icons": "workspace:*",
         "@suite-native/atoms": "workspace:*",
         "@suite-native/storage": "workspace:*",
-        "@trezor/styles": "workspace:*",
+        "@detahard/styles": "workspace:*",
         "expo-local-authentication": "^13.3.0",
         "jotai": "1.9.1",
         "react": "18.2.0",

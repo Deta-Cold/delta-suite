@@ -110,16 +110,16 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     flavorDimensions "default"
 
-    namespace "io.trezor.suite"
+    namespace "io.detahard.suite"
     defaultConfig {
-        applicationId "io.trezor.suite"
+        applicationId "io.detahard.suite"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         // defaults - correct versions are managed by fastlane while building the app
         versionCode 1
         versionName "1.0.0"
         // we use applicationIdSuffix that is different from the package name indicated in AndroidManifest.xml
-        resValue "string", "build_config_package", "io.trezor.suite"
+        resValue "string", "build_config_package", "io.detahard.suite"
     }
 
     splits {

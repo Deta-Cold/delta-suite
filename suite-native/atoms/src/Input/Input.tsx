@@ -15,8 +15,8 @@ import Animated, {
 
 import { D } from '@mobily/ts-belt';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { nativeSpacings } from '@trezor/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { nativeSpacings } from '@detahard/theme';
 
 import { Box } from '../Box';
 

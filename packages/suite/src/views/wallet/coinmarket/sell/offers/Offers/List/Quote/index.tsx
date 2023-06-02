@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTheme, Button, variables, Icon, H2 } from '@trezor/components';
+import { useTheme, Button, variables, Icon, H2 } from '@detahard/components';
 import { CoinmarketPaymentType, CoinmarketProviderInfo, CoinmarketTag } from '@wallet-components';
 import { QuestionTooltip, Translation } from '@suite-components';
 import { SellFiatTrade } from 'invity-api';

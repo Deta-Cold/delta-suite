@@ -32,7 +32,7 @@ export const decode = (byteBuffer: ByteBuffer) => {
     };
 };
 
-// Parses first raw input that comes from Trezor and returns some information about the whole message.
+// Parses first raw input that comes from detahard and returns some information about the whole message.
 // [compatibility]: accept Buffer just like decode does. But this would require changes in lower levels
 export const decodeChunked = (bytes: ArrayBuffer) => {
     // convert to ByteBuffer so it's easier to read

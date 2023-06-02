@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, H2, P } from '@trezor/components';
+import { Link, H2, P } from '@detahard/components';
 import { Modal } from '@suite-components';
 
 const Wrapper = styled.div`
@@ -25,7 +25,7 @@ export const Version = () => (
                 LAST COMMIT HASH
             </P>
             <Link
-                href={`https://github.com/trezor/trezor-suite/commits/${process.env.COMMITHASH}`}
+                href={`https://github.com/detahard/detahard-suite/commits/${process.env.COMMITHASH}`}
                 data-test="@version/commit-hash-link"
             >
                 <H2>{process.env.COMMITHASH}</H2>

@@ -1,5 +1,5 @@
 import { getAppVersion, isDebugEnv } from '@suite-native/config';
-import { Analytics } from '@trezor/analytics';
+import { Analytics } from '@detahard/analytics';
 
 import { SuiteNativeAnalyticsEvent } from './events';
 

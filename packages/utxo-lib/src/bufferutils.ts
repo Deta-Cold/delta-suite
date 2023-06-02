@@ -1,5 +1,5 @@
 // upstream: https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/ts_src/bufferutils.ts
-// fork: https://github.com/trezor/trezor-utxo-lib/blob/trezor/src/bufferutils.js
+// fork: https://github.com/detahard/detahard-utxo-lib/blob/detahard/src/bufferutils.js
 // differences:
 // - added `BufferReader` "readInt64", "readUInt16" and "readUInt64String" methods.
 // - added `BufferWritter` "writeInt64", "writeUInt16" methods.
@@ -11,7 +11,7 @@ import * as pushdata from 'pushdata-bitcoin';
 import * as varuint from 'varuint-bitcoin';
 import { Int64LE } from 'int64-buffer';
 import * as typeforce from 'typeforce';
-import { bufferUtils } from '@trezor/utils';
+import { bufferUtils } from '@detahard/utils';
 import * as types from './types';
 
 export function verifuint(value: number, max: number) {
@@ -106,7 +106,7 @@ export function getChunkSize(n: number) {
 }
 
 // These types need to be defined here, otherwise
-// importing @trezor/utxo-lib/lib from blockchain-link fails
+// importing @detahard/utxo-lib/lib from blockchain-link fails
 // because of missing pushdata-bitcoin types
 type PushDataSize = (len: number) => number;
 type ReadPushDataInt = (

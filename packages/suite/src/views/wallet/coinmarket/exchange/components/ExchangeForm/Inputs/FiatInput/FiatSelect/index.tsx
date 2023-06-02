@@ -1,4 +1,4 @@
-import { Select } from '@trezor/components';
+import { Select } from '@detahard/components';
 import React from 'react';
 import { Controller } from 'react-hook-form';
 import { useCoinmarketExchangeFormContext } from '@wallet-hooks/useCoinmarketExchangeForm';

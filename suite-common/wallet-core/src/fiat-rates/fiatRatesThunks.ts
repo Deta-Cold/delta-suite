@@ -6,7 +6,7 @@ import {
     fetchLastWeekFiatRates,
     getFiatRatesForTimestamps,
 } from '@suite-common/fiat-services';
-import TrezorConnect, { AccountTransaction, BlockchainFiatRatesUpdate } from '@trezor/connect';
+import detahardConnect, { AccountTransaction, BlockchainFiatRatesUpdate } from '@detahard/connect';
 import { createThunk } from '@suite-common/redux-utils';
 import { NetworkSymbol, networksCompatibility as NETWORKS } from '@suite-common/wallet-config';
 import { Account, CoinFiatRates, TickerId } from '@suite-common/wallet-types';
@@ -118,7 +118,7 @@ export const getFiatStaleTickersThunk = createThunk(
 
 /**
  * Fetch and update current fiat rates for a given ticker
- * Primary source of rates is TrezorConnect, coingecko serves as a fallback
+ * Primary source of rates is detahardConnect, coingecko serves as a fallback
  *
  */
 export const updateCurrentFiatRatesThunk = createThunk(
@@ -156,7 +156,7 @@ export const updateCurrentFiatRatesThunk = createThunk(
         try {
             if (!ticker.tokenAddress) {
                 // standalone coins
-                const response = await TrezorConnect.blockchainGetCurrentFiatRates({
+                const response = await detahardConnect.blockchainGetCurrentFiatRates({
                     coin: ticker.symbol,
                 });
                 results = response.success ? response.payload : null;
@@ -271,7 +271,7 @@ export const updateLastWeekFiatRatesThunk = createThunk(
         ).unwrap();
 
         const promises = staleTickers.map(async ticker => {
-            const response = await TrezorConnect.blockchainGetFiatRatesForTimestamps({
+            const response = await detahardConnect.blockchainGetFiatRatesForTimestamps({
                 coin: ticker.symbol,
                 timestamps,
             });
@@ -300,7 +300,7 @@ export const updateLastWeekFiatRatesThunk = createThunk(
 
 /**
  *  Fetch and update fiat rates for given `txs`
- *  Primary source of rates is TrezorConnect, coingecko serves as a fallback
+ *  Primary source of rates is detahardConnect, coingecko serves as a fallback
  *
  */
 export const updateTxsFiatRatesThunk = createThunk(
@@ -309,7 +309,7 @@ export const updateTxsFiatRatesThunk = createThunk(
         if (txs?.length === 0 || isTestnet(account.symbol)) return;
 
         const timestamps = txs.map(tx => getBlockbookSafeTime(tx.blockTime));
-        const response = await TrezorConnect.blockchainGetFiatRatesForTimestamps({
+        const response = await detahardConnect.blockchainGetFiatRatesForTimestamps({
             coin: account.symbol,
             timestamps,
         });

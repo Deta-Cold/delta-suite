@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 
-import { AccountInfo, AccountAddresses, AccountAddress, AccountTransaction } from '@trezor/connect';
-import { arrayDistinct, bufferUtils } from '@trezor/utils';
+import { AccountInfo, AccountAddresses, AccountAddress, AccountTransaction } from '@detahard/connect';
+import { arrayDistinct, bufferUtils } from '@detahard/utils';
 import {
     networksCompatibility as NETWORKS,
     Network,
@@ -17,13 +17,13 @@ import {
     ReceiveInfo,
     TxFinalCardano,
 } from '@suite-common/wallet-types';
-import { TrezorDevice } from '@suite-common/suite-types';
+import { detahardDevice } from '@suite-common/suite-types';
 import { ACCOUNT_TYPE } from '@suite-common/wallet-constants';
 import {
     HELP_CENTER_ADDRESSES_URL,
     HELP_CENTER_COINJOIN_URL,
     HELP_CENTER_TAPROOT_URL,
-} from '@trezor/urls';
+} from '@detahard/urls';
 
 import { toFiatCurrency } from './fiatConverterUtils';
 
@@ -341,7 +341,7 @@ export const findAccountsByAddress = (address: string, accounts: Account[]) =>
         return a.descriptor === address;
     });
 
-export const findAccountDevice = (account: Account, devices: TrezorDevice[]) =>
+export const findAccountDevice = (account: Account, devices: detahardDevice[]) =>
     devices.find(d => d.state === account.deviceState);
 
 export const getAllAccounts = (deviceState: string | typeof undefined, accounts: Account[]) => {
@@ -417,7 +417,7 @@ export const enhanceAddresses = (
     // These addresses are derived on a backend (Blockbook/Blockfrost) from a public key.
     // In bitcoin an account index is encoded directly in a public key, so blockbook will extract it
     // and return full derivation path for each derived address.
-    // (https://github.com/trezor/blockbook/blob/b82dc92522eee957b7a139c38269a1844fe102f8/bchain/coins/btc/bitcoinparser.go#L428)
+    // (https://github.com/detahard/blockbook/blob/b82dc92522eee957b7a139c38269a1844fe102f8/bchain/coins/btc/bitcoinparser.go#L428)
     // Since cardano account public key doesn't encode information about the account index, like Bitcoin does,
     // Blockfrost backend returns partial derivation path where account index is replaced with character 'i'.
     // So we rely on the client (this function) to replace it with correct account index.

@@ -2,8 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { Icon, IconName } from '@suite-common/icons';
-import { useNativeStyles, prepareNativeStyle, NativeStyleObject } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { useNativeStyles, prepareNativeStyle, NativeStyleObject } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 
 import { Text } from './Text';
 

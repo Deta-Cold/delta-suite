@@ -1,14 +1,14 @@
 {
-    "name": "@trezor/suite-data",
+    "name": "@detahard/suite-data",
     "version": "1.0.0",
     "private": true,
-    "author": "Trezor <info@trezor.io>",
+    "author": "detahard <info@detahard.io>",
     "keywords": [
-        "Trezor",
-        "trezor-data"
+        "detahard",
+        "detahard-data"
     ],
     "license": "SEE LICENSE IN LICENSE.md",
-    "description": "Trezor data",
+    "description": "detahard data",
     "scripts": {
         "build:lib": "yarn browser-detection && yarn guide-pull-content",
         "browser-detection": "webpack --config ./browser-detection.webpack.ts",
@@ -19,9 +19,9 @@
     "dependencies": {
         "@suite-common/suite-types": "workspace:*",
         "@suite-common/suite-utils": "workspace:*",
-        "@trezor/env-utils": "workspace:*",
-        "@trezor/urls": "workspace:*",
-        "@trezor/utils": "workspace:*"
+        "@detahard/env-utils": "workspace:*",
+        "@detahard/urls": "workspace:*",
+        "@detahard/utils": "workspace:*"
     },
     "devDependencies": {
         "@types/fs-extra": "^11.0.1",

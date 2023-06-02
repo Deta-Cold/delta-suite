@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Text } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { useFormatters } from '@suite-common/formatters';
 import { MonthKey, parseTransactionMonthKey } from '@suite-common/wallet-utils';
 

@@ -7,8 +7,8 @@ import { ModalContextProvider } from '@suite-support/ModalContext';
 import { getAppUpdatePayload } from '@suite-utils/analytics';
 import { selectRouteName } from '@suite-reducers/routerReducer';
 
-import { analytics, AppUpdateEventStatus, EventType } from '@trezor/suite-analytics';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { analytics, AppUpdateEventStatus, EventType } from '@detahard/suite-analytics';
+import { desktopApi } from '@detahard/suite-desktop-api';
 
 import { Available } from './DesktopUpdater/Available';
 import { Downloading } from './DesktopUpdater/Downloading';

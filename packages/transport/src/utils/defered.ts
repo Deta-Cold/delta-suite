@@ -1,4 +1,4 @@
-// todo: move to @trezor/utils. probably "resolveAfter"?
+// todo: move to @detahard/utils. probably "resolveAfter"?
 
 export type Deferred<T> = {
     promise: Promise<T>;

@@ -87,7 +87,7 @@ describe('Onboarding - TT in recovery mode', () => {
         cy.task('pressYes');
     });
 
-    // https://github.com/trezor/trezor-suite/issues/2049
+    // https://github.com/detahard/detahard-suite/issues/2049
     it(`
         1. start recovery
         2. enter first shamir share

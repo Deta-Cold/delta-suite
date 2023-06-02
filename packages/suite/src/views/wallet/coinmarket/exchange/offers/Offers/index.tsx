@@ -7,7 +7,7 @@ import {
     CoinmarketFooter,
     CoinmarketRefreshTime,
 } from '@wallet-components';
-import { variables, Icon, CoinLogo, H2 } from '@trezor/components';
+import { variables, Icon, CoinLogo, H2 } from '@detahard/components';
 import { useLayout } from '@suite-hooks';
 import { useCoinmarketExchangeOffersContext } from '@wallet-hooks/useCoinmarketExchangeOffers';
 import { useCoinmarketNavigation } from '@wallet-hooks/useCoinmarketNavigation';
@@ -96,7 +96,7 @@ const Offers = () => {
     } = useCoinmarketExchangeOffersContext();
     const { navigateToExchangeForm } = useCoinmarketNavigation(account);
 
-    useLayout('Trezor Suite | Trade', CoinmarketExchangeTopPanel);
+    useLayout('detahard Suite | Trade', CoinmarketExchangeTopPanel);
 
     if (!quotesRequest) return null;
     const hasLoadingFailed = !(fixedQuotes && floatQuotes && dexQuotes);

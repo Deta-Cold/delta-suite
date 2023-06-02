@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Box, RoundedIcon } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { TokenSymbol, TransactionType } from '@suite-common/wallet-types';
 import { CryptoIcon, IconName } from '@suite-common/icons';
-import { Color } from '@trezor/theme';
+import { Color } from '@detahard/theme';
 import { NetworkSymbol } from '@suite-common/wallet-config';
 
 import { TransactionIconSpinner } from './TransactionIconSpinner';

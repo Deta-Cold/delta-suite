@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 
 import { Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { Box } from '../Box';
 import { ListItemIcon } from './ListItemIcon';

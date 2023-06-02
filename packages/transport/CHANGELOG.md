@@ -17,7 +17,7 @@ chore(transport): update protobufs, update dependencies
 
 # 1.1.7
 
--   Code cleanup, sharing constants with @trezor/connect
+-   Code cleanup, sharing constants with @detahard/connect
 
 # 1.1.6
 
@@ -31,7 +31,7 @@ chore(transport): update protobufs, update dependencies
 
 # 1.1.4
 
--   Added cardano types related to [babbage feature](https://github.com/trezor/trezor-suite/commit/efe9c78a2f74a1b7653b3fddf6cca35ba38d3ae9#diff-c1b9d6a93a3b65c45c4dcf06aa86d6c7a84bcc2e14fefdc4a9bdc3d3298c9a5a)
+-   Added cardano types related to [babbage feature](https://github.com/detahard/detahard-suite/commit/efe9c78a2f74a1b7653b3fddf6cca35ba38d3ae9#diff-c1b9d6a93a3b65c45c4dcf06aa86d6c7a84bcc2e14fefdc4a9bdc3d3298c9a5a)
 
 # 1.1.2
 
@@ -39,12 +39,12 @@ chore(transport): update protobufs, update dependencies
 
 # 1.1.1
 
--   Changed latest bridge url to https://connect.trezor.io/8/data/bridge/latest.txt'
--   Added trezor-common submodule. Protobuf definitions (messages.json) and protobuf related typescript definitions.
+-   Changed latest bridge url to https://connect.detahard.io/8/data/bridge/latest.txt'
+-   Added detahard-common submodule. Protobuf definitions (messages.json) and protobuf related typescript definitions.
 
 # 1.1.0
 
--   Added @trezor/utils dependency.
+-   Added @detahard/utils dependency.
 
 # 1.0.1
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CoinLogo, variables, Icon, H2 } from '@trezor/components';
+import { CoinLogo, variables, Icon, H2 } from '@detahard/components';
 import { BuyTrade } from 'invity-api';
 import { useCoinmarketBuyOffersContext } from '@wallet-hooks/useCoinmarketBuyOffers';
 import Quote from './Quote';

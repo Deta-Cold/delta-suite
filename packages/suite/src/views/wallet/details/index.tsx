@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { P, variables } from '@trezor/components';
-import { HELP_CENTER_XPUB_URL } from '@trezor/urls';
+import { P, variables } from '@detahard/components';
+import { HELP_CENTER_XPUB_URL } from '@detahard/urls';
 import { WalletLayout } from '@wallet-components';
 import { useDevice, useActions, useSelector, useDiscovery } from '@suite-hooks';
 import { Card, Translation } from '@suite-components';

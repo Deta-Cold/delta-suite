@@ -1,6 +1,6 @@
-# @trezor/suite-data
+# @detahard/suite-data
 
-Collection of static assets and scripts for `@trezor/suite-*` packages.
+Collection of static assets and scripts for `@detahard/suite-*` packages.
 
 ## files
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSendFormContext } from '@wallet-hooks';
 import { Translation } from '@suite-components';
 import { OnOffSwitcher } from '@wallet-components';
-import { Button, Tooltip } from '@trezor/components';
+import { Button, Tooltip } from '@detahard/components';
 import DestinationTag from './components/DestinationTag';
 
 const Wrapper = styled.div`

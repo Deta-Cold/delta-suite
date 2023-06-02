@@ -1,4 +1,4 @@
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 
 const { getDeviceFeatures } = global.JestMocks;
 
@@ -580,13 +580,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.TT,
                     major_version: 2,
                     minor_version: 1,
@@ -607,7 +607,7 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'bitcoin-only',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
             {
                 model: DeviceModel.TT,
@@ -615,13 +615,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'regular',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 2,
@@ -642,7 +642,7 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
@@ -669,13 +669,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'regular',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 0,
@@ -696,13 +696,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'regular',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 0,
@@ -720,7 +720,7 @@ export const validateDeviceCompatibility = [
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 0,
@@ -740,7 +740,7 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'regular',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {},
@@ -761,13 +761,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 0,
@@ -788,13 +788,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'regular',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 0,
@@ -815,13 +815,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: 'bitcoin-only',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T1,
                     major_version: 1,
                     minor_version: 0,
@@ -869,7 +869,7 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '*',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
@@ -977,13 +977,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '2.0.4',
                 firmwareRevision: '*',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.TT,
                     major_version: 2,
                     minor_version: 0,
@@ -1176,13 +1176,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '2.1.5',
                 firmwareRevision: '*',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T2B1,
                     major_version: 2,
                     minor_version: 1,
@@ -1206,13 +1206,13 @@ export const validateDeviceCompatibility = [
                 bootloader: '*',
                 firmwareRevision: '123456',
                 variant: '*',
-                vendor: 'trezor.io',
+                vendor: 'detahard.io',
             },
         ],
         device: {
             features: {
                 ...getDeviceFeatures({
-                    vendor: 'trezor.io',
+                    vendor: 'detahard.io',
                     model: DeviceModel.T2B1,
                     major_version: 2,
                     minor_version: 6,
@@ -1562,7 +1562,7 @@ export const getValidMessages = [
                             firmwareRevision: '*',
                             bootloader: '*',
                             variant: '*',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                         {
                             model: DeviceModel.TT,
@@ -1570,7 +1570,7 @@ export const getValidMessages = [
                             firmwareRevision: '*',
                             bootloader: '*',
                             variant: '*',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                     ],
                 },
@@ -1600,7 +1600,7 @@ export const getValidMessages = [
                             firmwareRevision: '*',
                             bootloader: '*',
                             variant: '*',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                     ],
                 },
@@ -1630,7 +1630,7 @@ export const getValidMessages = [
                             firmwareRevision: '*',
                             bootloader: '*',
                             variant: 'bitcoin-only',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                     ],
                 },
@@ -1664,7 +1664,7 @@ export const getValidMessages = [
                             firmwareRevision: '*',
                             bootloader: '*',
                             variant: 'regular',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                     ],
                 },
@@ -1714,7 +1714,7 @@ export const getValidMessages = [
                             firmwareRevision: 'fae8ac',
                             bootloader: '2.0.4',
                             variant: 'bitcoin-only',
-                            vendor: 'trezor.io',
+                            vendor: 'detahard.io',
                         },
                     ],
                 },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Translation } from '@suite-components/Translation';
 import { useCardanoStaking } from '@wallet-hooks/useCardanoStaking';
-import { Warning } from '@trezor/components';
+import { Warning } from '@detahard/components';
 
 export const CardanoActionPending = () => {
     const { pendingStakeTx } = useCardanoStaking();

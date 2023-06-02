@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Pressable, TextInput, TouchableOpacity } from 'react-native';
 
 import { Icon } from '@suite-common/icons';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 import { Box } from '../Box';
 

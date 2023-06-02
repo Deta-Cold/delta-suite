@@ -1,12 +1,12 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
-import { exposeIpcProxy } from '@trezor/ipc-proxy';
-import { getDesktopApi } from '@trezor/suite-desktop-api';
+import { exposeIpcProxy } from '@detahard/ipc-proxy';
+import { getDesktopApi } from '@detahard/suite-desktop-api';
 
 import '@sentry/electron/preload'; // With this only IPCMode.Classic is ever taken into account
 
 contextBridge.exposeInMainWorld(
-    ...exposeIpcProxy(ipcRenderer, ['TrezorConnect', 'CoinjoinBackend', 'CoinjoinClient']),
+    ...exposeIpcProxy(ipcRenderer, ['detahardConnect', 'CoinjoinBackend', 'CoinjoinClient']),
 );
 
 const desktopApi = getDesktopApi(ipcRenderer);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withCoinmarket, WithSelectedAccountLoadedProps } from '@wallet-components';
 import { useCoinmarketSavingsSetupWaiting } from '@wallet-hooks/useCoinmarketSavingsSetupWaiting';
-import { Button, Loader } from '@trezor/components';
+import { Button, Loader } from '@detahard/components';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
 

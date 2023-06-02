@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import { useLayout } from '@suite-hooks';
 import AssetsCard from './components/AssetsCard';
 import PortfolioCard from './components/PortfolioCard';

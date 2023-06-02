@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Color } from '@trezor/theme';
+import { Color } from '@detahard/theme';
 
 import { IconName } from '../icons';
 

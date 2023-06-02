@@ -5,7 +5,7 @@
     - schedules
     - /^release\//
 
-# @trezor/suite-web
+# @detahard/suite-web
 .e2e web:
   stage: integration testing
   retry: 1
@@ -34,9 +34,9 @@
     - docker-compose up -d ${CONTAINERS}
     - docker-compose run test-run
   after_script:
-    - docker cp ${CI_JOB_ID}_trezor-user-env-unix_1:/trezor-user-env/logs/debugging.log trezor-user-env-debugging.log
-    - docker cp ${CI_JOB_ID}_trezor-user-env-unix_1:/trezor-user-env/logs/emulator_bridge.log tenv-emulator-bridge-debugging.log
-    - docker cp ${CI_JOB_ID}_trezor-user-env-unix_1:/trezor-user-env/docker/version.txt trezor-user-env-version.txt
+    - docker cp ${CI_JOB_ID}_detahard-user-env-unix_1:/detahard-user-env/logs/debugging.log detahard-user-env-debugging.log
+    - docker cp ${CI_JOB_ID}_detahard-user-env-unix_1:/detahard-user-env/logs/emulator_bridge.log tenv-emulator-bridge-debugging.log
+    - docker cp ${CI_JOB_ID}_detahard-user-env-unix_1:/detahard-user-env/docker/version.txt detahard-user-env-version.txt
     - docker-compose down
     - docker network prune -f
   artifacts:
@@ -47,9 +47,9 @@
       - ./packages/suite-web/e2e/screenshots
       - ./packages/suite-web/e2e/videos
       - download-snapshots.sh
-      - trezor-user-env-debugging.log
+      - detahard-user-env-debugging.log
       - tenv-emulator-bridge-debugging.log
-      - trezor-user-env-version.txt
+      - detahard-user-env-version.txt
   interruptible: true
 
 .suite web base:
@@ -67,24 +67,24 @@
             "@group:browser",
             "@group:coinmarket",
           ]
-        CONTAINERS: "trezor-user-env-unix"
-        CYPRESS_USE_TREZOR_USER_ENV_BRIDGE: 1
+        CONTAINERS: "detahard-user-env-unix"
+        CYPRESS_USE_detahard_USER_ENV_BRIDGE: 1
       - TEST_GROUP: "@group:wallet"
-        CONTAINERS: "trezor-user-env-unix bitcoin-regtest"
-        CYPRESS_USE_TREZOR_USER_ENV_BRIDGE: 1
+        CONTAINERS: "detahard-user-env-unix bitcoin-regtest"
+        CYPRESS_USE_detahard_USER_ENV_BRIDGE: 1
       - TEST_GROUP: "@group:firmware-update"
-        CONTAINERS: "trezor-user-env-unix" # todo: this group should not need trezor-user-env
+        CONTAINERS: "detahard-user-env-unix" # todo: this group should not need detahard-user-env
 
 suite web migrations:
   extends: .e2e web
   variables:
     # Each test file will be run for all urls in TEST_URLS array. Useful for migration tests
     CYPRESS_TEST_URLS: release/22.5 ${CI_COMMIT_REF_NAME}
-    CYPRESS_USE_TREZOR_USER_ENV_BRIDGE: 1
+    CYPRESS_USE_detahard_USER_ENV_BRIDGE: 1
   parallel:
     matrix:
       - TEST_GROUP: "@group:migrations"
-        CONTAINERS: "trezor-user-env-unix"
+        CONTAINERS: "detahard-user-env-unix"
 
 suite web:
   extends: .suite web base
@@ -96,7 +96,7 @@ suite web snapshots:
     CYPRESS_SNAPSHOT: 1
     CYPRESS_updateSnapshots: 1
 
-# Tests against latest trezor-firmware master
+# Tests against latest detahard-firmware master
 suite web 2-master:
   extends: .suite web base
   only:
@@ -115,9 +115,9 @@ suite web 2-master manual:
     FIRMWARE: 2-master
 
 # TODO scheduled jobs against beta chrome channel
-# TODO scheduled jobs against suite.trezor.io
+# TODO scheduled jobs against suite.detahard.io
 
-# @trezor/suite-desktop
+# @detahard/suite-desktop
 .e2e desktop:
   stage: integration testing
   retry: 1
@@ -133,8 +133,8 @@ suite web 2-master manual:
     - yarn install --immutable
     # 3 next steps could be removed if we passed packages/suite-desktop/dist and build folder as an artifact
     # but since this is run only in nightly builds it can be probably built inside the job for now..
-    - yarn workspace @trezor/message-system sign-config
-    - yarn workspace @trezor/suite-desktop build:linux
+    - yarn workspace @detahard/message-system sign-config
+    - yarn workspace @detahard/suite-desktop build:linux
     - docker-compose pull
     - docker-compose up -d ${CONTAINERS}
     - docker-compose run test-run
@@ -150,12 +150,12 @@ suite web 2-master manual:
   parallel:
     matrix:
       - TEST_FILE: ["spawn-tor", "spawn-bridge"]
-        CONTAINERS: "trezor-user-env-unix"
+        CONTAINERS: "detahard-user-env-unix"
       - TEST_FILE: ["electrum"]
-        CONTAINERS: "trezor-user-env-unix electrum-regtest"
+        CONTAINERS: "detahard-user-env-unix electrum-regtest"
       # commented out. coinjoin test is not adapted to current state of this feature
       # - TEST_FILE: ["coinjoin"]
-      #   CONTAINERS: "trezor-user-env-unix coinjoin-backend"
+      #   CONTAINERS: "detahard-user-env-unix coinjoin-backend"
 
 suite desktop:
   extends: .e2e desktop
@@ -168,15 +168,15 @@ suite desktop manual:
     <<: *run_everything_rules
   when: manual
 
-# @trezor/transport
+# @detahard/transport
 .e2e transport:
   stage: integration testing
   variables:
     COMPOSE_FILE: ./docker/docker-compose.transport-test.yml
   script:
     - yarn install --immutable
-    - yarn workspace @trezor/utils build:lib
-    - yarn workspace @trezor/transport build:lib
+    - yarn workspace @detahard/utils build:lib
+    - yarn workspace @detahard/transport build:lib
     # run e2e tests
     - ./docker/docker-transport-test.sh
   after_script:
@@ -195,7 +195,7 @@ transport manual:
     <<: *run_everything_rules
   when: manual
 
-# @trezor/connect-popup (via @trezor/connect-explorer)
+# @detahard/connect-popup (via @detahard/connect-explorer)
 .e2e connect-popup:
   stage: integration testing
   retry: 1
@@ -207,7 +207,7 @@ transport manual:
   script:
     - yarn install --immutable
     - docker-compose pull
-    - docker-compose up -d trezor-user-env-unix
+    - docker-compose up -d detahard-user-env-unix
     - docker-compose run test-run
   after_script:
     - docker-compose down
@@ -255,7 +255,7 @@ connect-popup manual:
     TESTS_INCLUDED_METHODS: $TESTS_INCLUDED_METHODS
     TESTS_EXCLUDED_METHODS: $TESTS_EXCLUDED_METHODS
     TESTS_PATTERN: $TESTS_PATTERN
-    TESTS_SCRIPT: yarn workspace @trezor/connect test:e2e:${TESTS_ENVIRONMENT}
+    TESTS_SCRIPT: yarn workspace @detahard/connect test:e2e:${TESTS_ENVIRONMENT}
     TESTS_FIRMWARE: $TESTS_FIRMWARE
     TESTS_USE_TX_CACHE: $TESTS_MOCK_BACKENDS
     TESTS_USE_WS_CACHE: $TESTS_MOCK_BACKENDS
@@ -266,21 +266,21 @@ connect-popup manual:
     - git submodule update --init --recursive
     - yarn install --immutable
     # should not be needed, rather hand over artifacts?
-    - if [ "$TESTS_ENVIRONMENT" == "web" ]; then yarn workspace @trezor/connect-iframe build; else echo "else"; fi
+    - if [ "$TESTS_ENVIRONMENT" == "web" ]; then yarn workspace @detahard/connect-iframe build; else echo "else"; fi
     # should not be needed, rather hand over artifacts?
-    - if [ "$TESTS_ENVIRONMENT" == "web" ]; then yarn workspace @trezor/connect-web build; else echo "else"; fi
+    - if [ "$TESTS_ENVIRONMENT" == "web" ]; then yarn workspace @detahard/connect-web build; else echo "else"; fi
 
     # switch node version for testing.
     # todo: nvm is present in base image but not available here
     # - sed -i "/\"node\"/d" package.json
     # - nvm install ${TESTS_NODE_VERSION}
     - docker-compose pull
-    - docker-compose up -d trezor-user-env-unix
+    - docker-compose up -d detahard-user-env-unix
     - docker-compose run test-run
   after_script:
-    - docker cp ${CI_JOB_ID}_trezor-user-env-unix_1:/trezor-user-env/logs/debugging.log trezor-user-env-debugging.log
-    - docker cp ${CI_JOB_ID}_trezor-user-env-unix_1:/trezor-user-env/logs/emulator_bridge.log tenv-emulator-bridge-debugging.log
-    - docker cp ${CI_JOB_ID}_trezor-user-env-unix_1:/trezor-user-env/docker/version.txt trezor-user-env-version.txt
+    - docker cp ${CI_JOB_ID}_detahard-user-env-unix_1:/detahard-user-env/logs/debugging.log detahard-user-env-debugging.log
+    - docker cp ${CI_JOB_ID}_detahard-user-env-unix_1:/detahard-user-env/logs/emulator_bridge.log tenv-emulator-bridge-debugging.log
+    - docker cp ${CI_JOB_ID}_detahard-user-env-unix_1:/detahard-user-env/docker/version.txt detahard-user-env-version.txt
     - docker-compose down
     - docker network prune -f
   interruptible: true
@@ -288,9 +288,9 @@ connect-popup manual:
     expire_in: 7 days
     when: always
     paths:
-      - trezor-user-env-debugging.log
+      - detahard-user-env-debugging.log
       - tenv-emulator-bridge-debugging.log
-      - trezor-user-env-version.txt
+      - detahard-user-env-version.txt
 
 .connect matrix:
   extends: .connect
@@ -349,7 +349,7 @@ connect model R:
         TESTS_FIRMWARE: ["2-latest"]
         TESTS_FIRMWARE_MODEL: "R"
         # todo: would be nice to create a scheduled job in firmware-repo in order to have artifact from this branch always available
-        TESTS_FIRMWARE_URL: "https://gitlab.com/satoshilabs/trezor/trezor-firmware/-/jobs/4189306201/artifacts/raw/core/build/unix/trezor-emu-core"
+        TESTS_FIRMWARE_URL: "https://gitlab.com/satoshilabs/detahard/detahard-firmware/-/jobs/4189306201/artifacts/raw/core/build/unix/detahard-emu-core"
         # one method per job for easier debugging
         TESTS_INCLUDED_METHODS: [
             "applySettings",
@@ -400,7 +400,7 @@ connect model R:
     URL: ${DEV_SERVER_URL}/connect/${CI_COMMIT_REF_NAME}/
   script:
     - yarn install --immutable
-    - yarn workspace @trezor/connect-web test:e2e
+    - yarn workspace @detahard/connect-web test:e2e
   interruptible: true
 
 connect-web:

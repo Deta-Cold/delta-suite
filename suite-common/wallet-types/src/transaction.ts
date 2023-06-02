@@ -8,7 +8,7 @@ import {
     PrecomposedTransaction as PrecomposedTransactionBase,
     CardanoInput,
     CardanoOutput,
-} from '@trezor/connect';
+} from '@detahard/connect';
 import { Network, NetworkSymbol } from '@suite-common/wallet-config';
 import { ExtendedMessageDescriptor } from '@suite-common/intl-types';
 
@@ -54,7 +54,7 @@ export interface FeeInfo {
     maxFee: number;
     dustLimit?: number; // coin dust limit
     feeLimit?: number; // eth gas limit
-    levels: FeeLevel[]; // fee levels are predefined in @trezor/connect > trezor-firmware/common
+    levels: FeeLevel[]; // fee levels are predefined in @detahard/connect > detahard-firmware/common
 }
 
 export type NetworksFees = Record<NetworkSymbol, FeeInfo>;

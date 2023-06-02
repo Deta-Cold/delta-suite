@@ -1,4 +1,4 @@
-package io.trezor.transport.receivers;
+package io.detahard.transport.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,14 +7,14 @@ import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.util.Log;
 
-import io.trezor.transport.bridges.USBBridge;
+import io.detahard.transport.bridges.USBBridge;
 
 public class USBPermissionReceiver extends BroadcastReceiver {
-  private static final String TAG = "Trezor USBPermissionReceiver";
+  private static final String TAG = "detahard USBPermissionReceiver";
   private static USBPermissionReceiver instance;
   private Context context;
 
-  public static final String USB_PERMISSION_GRANTED = "io.trezor.transport.USB_PERMISSION";
+  public static final String USB_PERMISSION_GRANTED = "io.detahard.transport.USB_PERMISSION";
 
   public static USBPermissionReceiver getInstance(Context context) {
     if (instance == null) {
@@ -33,7 +33,7 @@ public class USBPermissionReceiver extends BroadcastReceiver {
       if (intent.getBooleanExtra(UsbManager.EXTRA_PERMISSION_GRANTED, false)) {
         Log.d(TAG, "permission granted adding device");
         USBBridge usbBridge = USBBridge.getInstance(context);
-        usbBridge.addDeviceToList(new USBBridge.TrezorDevice(device));
+        usbBridge.addDeviceToList(new USBBridge.detahardDevice(device));
       }
     }
   }

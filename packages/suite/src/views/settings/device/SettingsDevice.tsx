@@ -1,13 +1,13 @@
 import React from 'react';
 
-import type { TransportInfo } from '@trezor/connect';
+import type { TransportInfo } from '@detahard/connect';
 
 import { SettingsLayout } from '@settings-components';
 import { Translation } from '@suite-components';
 import { SettingsSection, DeviceBanner } from '@suite-components/Settings';
 import { isDeviceRemembered } from '@suite-utils/device';
 import { useDevice, useSelector } from '@suite-hooks';
-import { DeviceModel, getDeviceModel, pickByDeviceModel } from '@trezor/device-utils';
+import { DeviceModel, getDeviceModel, pickByDeviceModel } from '@detahard/device-utils';
 
 import { BackupRecoverySeed } from './BackupRecoverySeed';
 import { BackupFailed } from './BackupFailed';
@@ -25,9 +25,9 @@ import { AutoLock } from './AutoLock';
 import { WipeDevice } from './WipeDevice';
 import { CustomFirmware } from './CustomFirmware';
 
-import type { TrezorDevice } from '@suite-types';
+import type { detahardDevice } from '@suite-types';
 
-const deviceSettingsUnavailable = (device?: TrezorDevice, transport?: Partial<TransportInfo>) => {
+const deviceSettingsUnavailable = (device?: detahardDevice, transport?: Partial<TransportInfo>) => {
     const noTransportAvailable = transport && !transport.type;
     const wrongDeviceType = device?.type && ['unacquired', 'unreadable'].includes(device.type);
     const wrongDeviceMode =

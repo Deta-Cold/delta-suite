@@ -14,7 +14,7 @@ module.exports = makeMetroConfig({
     resolver: {
         blockList: [/libDev/],
         extraNodeModules: {
-            // modules needed for trezor-connect
+            // modules needed for detahard-connect
             crypto: nodejs.crypto,
             stream: nodejs.stream,
             https: nodejs.https,

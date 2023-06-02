@@ -1,4 +1,4 @@
-import { useTheme, SuiteThemeColors } from '@trezor/components';
+import { useTheme, SuiteThemeColors } from '@detahard/components';
 import React, { useCallback, useEffect } from 'react';
 import { DeepMap, FieldError } from 'react-hook-form';
 import styled from 'styled-components';

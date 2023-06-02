@@ -4,15 +4,15 @@ import {
     getDeviceModel,
     getFirmwareRevision,
     getFirmwareVersion,
-} from '@trezor/device-utils';
+} from '@detahard/device-utils';
 
 import { getEnvironment } from '@suite-utils/env';
-import { getBrowserName, getBrowserVersion, getOsName, getOsVersion } from '@trezor/env-utils';
+import { getBrowserName, getBrowserVersion, getOsName, getOsVersion } from '@detahard/env-utils';
 
-import type { TransportInfo } from '@trezor/connect';
+import type { TransportInfo } from '@detahard/connect';
 
 import type { Network } from '@wallet-types';
-import type { EnvironmentType, TrezorDevice } from '@suite-types';
+import type { EnvironmentType, detahardDevice } from '@suite-types';
 import type {
     Duration,
     MessageSystem,
@@ -22,7 +22,7 @@ import type {
     Transport,
     Device,
     Environment,
-} from '@trezor/message-system';
+} from '@detahard/message-system';
 
 type CurrentSettings = {
     tor: boolean;
@@ -32,7 +32,7 @@ type CurrentSettings = {
 type Options = {
     settings: CurrentSettings;
     transport?: Partial<TransportInfo>;
-    device?: TrezorDevice;
+    device?: detahardDevice;
 };
 
 /**
@@ -109,7 +109,7 @@ export const validateTransportCompatibility = (
     const { version } = transport;
     const type = transport.type.toLowerCase();
 
-    // transport names were changed in https://github.com/trezor/trezor-suite/pull/7411
+    // transport names were changed in https://github.com/detahard/detahard-suite/pull/7411
     // to avoid breaking changes with v1 messaging system schema, we introduce this translation
     let legacyTransportType: 'bridge' | 'webusbplugin' | undefined;
 
@@ -124,7 +124,7 @@ export const validateTransportCompatibility = (
 
 export const validateDeviceCompatibility = (
     deviceConditions: Device[],
-    device?: TrezorDevice,
+    device?: detahardDevice,
 ): boolean => {
     // if device conditions are empty, then device should be empty
     if (!deviceConditions.length) {

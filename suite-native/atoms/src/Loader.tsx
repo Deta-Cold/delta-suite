@@ -1,8 +1,8 @@
 import { ActivityIndicator } from 'react-native';
 import React from 'react';
 
-import { useNativeStyles } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { useNativeStyles } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 
 import { Box } from './Box';
 import { Text } from './Text';
@@ -13,7 +13,7 @@ type LoaderProps = {
 };
 
 // TODO: modify component to fit Figma design.
-// issue: https://github.com/trezor/trezor-suite/issues/7538
+// issue: https://github.com/detahard/detahard-suite/issues/7538
 export const Loader = ({ title, color = 'backgroundPrimaryDefault' }: LoaderProps) => {
     const {
         utils: { colors },

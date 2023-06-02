@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NetworkSymbol } from 'suite-common/wallet-config/src';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Icon } from '@suite-common/icons';
 import { WalletAccountTransaction } from '@suite-common/wallet-types';
 import { Box, Card, Text, VStack } from '@suite-native/atoms';

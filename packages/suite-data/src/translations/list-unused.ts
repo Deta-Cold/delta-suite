@@ -3,7 +3,7 @@
 
 import { execSync } from 'child_process';
 import path from 'path';
-import messages from '@trezor/suite/src/support/messages';
+import messages from '@detahard/suite/src/support/messages';
 
 console.log('unused messages: ');
 

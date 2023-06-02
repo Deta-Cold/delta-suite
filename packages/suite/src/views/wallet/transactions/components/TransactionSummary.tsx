@@ -9,7 +9,7 @@ import * as graphActions from '@wallet-actions/graphActions';
 import { RangeSelector } from '@suite-components/TransactionsGraph/components/RangeSelector';
 
 import { calcTicks, calcTicksFromData } from '@suite-common/suite-utils';
-import { variables, Button, Card } from '@trezor/components';
+import { variables, Button, Card } from '@detahard/components';
 
 import { TransactionSummaryDropdown } from './TransactionSummaryDropdown';
 import { SummaryCards } from './SummaryCards';

@@ -1,7 +1,7 @@
 import { Account, Network } from '@wallet-types';
 import { NETWORKS } from '@wallet-config';
-import TrezorConnect from '@trezor/connect';
-import { TrezorDevice } from '@suite-types';
+import detahardConnect from '@detahard/connect';
+import { detahardDevice } from '@suite-types';
 
 const suiteToInvitySymbols = [
     {
@@ -94,7 +94,7 @@ export const getCountryLabelParts = (label: string) => {
 export const getComposeAddressPlaceholder = async (
     account: Account,
     network: Network,
-    device?: TrezorDevice,
+    device?: detahardDevice,
     accounts?: Account[],
 ) => {
     // the address is later replaced by the address of the sell
@@ -121,13 +121,13 @@ export const getComposeAddressPlaceholder = async (
                 if (legacyAccount?.addresses?.unused[0]) {
                     return legacyAccount?.addresses?.unused[0].address;
                 }
-                // if it is not discovered, get an address from trezor
-                const result = await TrezorConnect.getAddress({
+                // if it is not discovered, get an address from detahard
+                const result = await detahardConnect.getAddress({
                     device,
                     coin: legacy.symbol,
                     path: `${legacy.bip43Path.replace('i', '0')}/0/0`,
                     useEmptyPassphrase: device.useEmptyPassphrase,
-                    showOnTrezor: false,
+                    showOndetahard: false,
                 });
                 if (result.success) {
                     return result.payload.address;

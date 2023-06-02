@@ -1,7 +1,7 @@
 // bridge v2 is half-way between lowlevel and not
 // however, it is not doing actual sending in/to the devices
 // and it refers enumerate to bridge
-import { versionUtils } from '@trezor/utils';
+import { versionUtils } from '@detahard/utils';
 
 import { request as http, setFetch as rSetFetch } from './http';
 import * as check from '../utils/highlevel-checks';
@@ -10,7 +10,7 @@ import { parseConfigure } from '../lowlevel/protobuf/messages';
 import { receiveOne } from '../lowlevel/receive';
 import { DEFAULT_URL, DEFAULT_VERSION_URL } from '../config';
 import type { INamespace } from 'protobufjs/light';
-import type { AcquireInput, TrezorDeviceInfoWithSession } from '../types';
+import type { AcquireInput, detahardDeviceInfoWithSession } from '../types';
 
 type IncompleteRequestOptions = {
     body?: Array<any> | Record<string, unknown> | string;
@@ -78,7 +78,7 @@ export default class BridgeTransport {
         this._messages = messages;
     }
 
-    async listen(old?: Array<TrezorDeviceInfoWithSession>) {
+    async listen(old?: Array<detahardDeviceInfoWithSession>) {
         if (old == null) {
             throw new Error('Bridge v2 does not support listen without previous.');
         }

@@ -1,4 +1,4 @@
-package io.trezor.suite;
+package io.detahard.suite;
 
 import android.app.Application;
 import android.content.res.Configuration;

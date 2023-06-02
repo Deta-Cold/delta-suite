@@ -1,4 +1,4 @@
-import type { FiatRates } from '@trezor/connect';
+import type { FiatRates } from '@detahard/connect';
 
 export interface TickerId {
     symbol: string;

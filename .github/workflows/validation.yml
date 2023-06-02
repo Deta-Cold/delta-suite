@@ -39,7 +39,7 @@ jobs:
       - name: verify workspace resolutions
         run: yarn check-workspace-resolutions
       - name: msg-system config validation
-        run: yarn workspace @trezor/message-system validate-config
+        run: yarn workspace @detahard/message-system validate-config
       - run: git status
       - name: build libs
         run: yarn nx:build:libs
@@ -54,4 +54,4 @@ jobs:
       - name: unit tests
         run: yarn nx:test-unit
       - name: translation duplicates
-        run: yarn workspace @trezor/suite translations:list-duplicates
+        run: yarn workspace @detahard/suite translations:list-duplicates

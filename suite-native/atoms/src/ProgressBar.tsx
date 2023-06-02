@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { CSSColor } from '@trezor/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { CSSColor } from '@detahard/theme';
 
 import { Box } from './Box';
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 
 import { Icon } from '@suite-common/icons';
-import { useNativeStyles, prepareNativeStyle } from '@trezor/styles';
+import { useNativeStyles, prepareNativeStyle } from '@detahard/styles';
 import { BottomSheet, Box, Text } from '@suite-native/atoms';
 
 const chipStyle = prepareNativeStyle(utils => ({
@@ -26,8 +26,8 @@ export const DashboardHeaderDeviceChip = () => {
                 style={applyStyle(chipStyle)}
                 onPress={() => setIsDeviceModalVisible(true)}
             >
-                <Icon name="trezorT" />
-                <Text>Trezor T</Text>
+                <Icon name="detahardT" />
+                <Text>detahard T</Text>
                 <Box>
                     <Icon name="chevronUp" size="small" />
                     <Icon name="chevronDown" size="small" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedDate } from 'react-intl';
 import styled from 'styled-components';
 import BigNumber from 'bignumber.js';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import { Translation, HiddenPlaceholder, FormattedCryptoAmount } from '@suite-components';
 import { useFormatters } from '@suite-common/formatters';
 import { parseTransactionDateKey, isTestnet } from '@suite-common/wallet-utils';

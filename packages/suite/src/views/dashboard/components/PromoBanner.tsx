@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { SUITE_MOBILE_APP_STORE, SUITE_MOBILE_PLAY_STORE, SUITE_URL } from '@trezor/urls';
-import { EventType, analytics } from '@trezor/suite-analytics';
-import { Button, Icon, Image, Tooltip, variables } from '@trezor/components';
-import { Translation, QrCode, TrezorLink } from '@suite-components';
+import { SUITE_MOBILE_APP_STORE, SUITE_MOBILE_PLAY_STORE, SUITE_URL } from '@detahard/urls';
+import { EventType, analytics } from '@detahard/suite-analytics';
+import { Button, Icon, Image, Tooltip, variables } from '@detahard/components';
+import { Translation, QrCode, detahardLink } from '@suite-components';
 import { isWeb } from '@suite-utils/env';
 import { useLayoutSize } from '@suite-hooks/useLayoutSize';
 import { DESKTOP_HORIZONTAL_PADDINGS, MOBILE_HORIZONTAL_PADDINGS } from '@suite-constants/layout';
@@ -65,7 +65,7 @@ const OSIcons = styled.div`
     opacity: 0.7;
 `;
 
-const StyledLink = styled(TrezorLink)`
+const StyledLink = styled(detahardLink)`
     margin-left: auto;
 `;
 
@@ -153,7 +153,7 @@ const StoreBadge = ({
             onShow={() => setShowQr(type)}
             onHide={() => setShowQr(undefined)}
         >
-            <TrezorLink
+            <detahardLink
                 href={url}
                 variant="nostyle"
                 onClick={() =>
@@ -166,7 +166,7 @@ const StoreBadge = ({
                 }
             >
                 <Badge image={`${image}_BADGE`} height={35} isHighlighted={showQR === type} />
-            </TrezorLink>
+            </detahardLink>
         </StyledTooltip>
     );
 };

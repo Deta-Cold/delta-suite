@@ -4,9 +4,9 @@ import { View } from 'react-native';
 import { RequireAllOrNone } from 'type-fest';
 import { useNavigation } from '@react-navigation/native';
 
-import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Box, IconButton, StepsProgressBar, Text, VStack } from '@suite-native/atoms';
-import { TypographyStyle } from '@trezor/theme';
+import { TypographyStyle } from '@detahard/theme';
 
 type ScreenHeaderWithIconsProps = {
     leftIcon?: ReactNode;

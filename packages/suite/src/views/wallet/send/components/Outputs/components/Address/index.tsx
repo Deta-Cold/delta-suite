@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { isValidChecksumAddress, toChecksumAddress } from 'ethereumjs-util';
-import { capitalizeFirstLetter } from '@trezor/utils';
-import { Input, useTheme, Icon, Button, Tooltip } from '@trezor/components';
+import { capitalizeFirstLetter } from '@detahard/utils';
+import { Input, useTheme, Icon, Button, Tooltip } from '@detahard/components';
 import { AddressLabeling, Translation, ReadMoreLink, MetadataLabeling } from '@suite-components';
 import { InputError } from '@wallet-components';
 import { scanQrRequest } from '@wallet-actions/sendFormActions';
@@ -143,7 +143,7 @@ export const Address = ({ output, outputId, outputsCount }: AddressProps) => {
             return 'RECIPIENT_REQUIRES_UPDATE';
         }
 
-        // bech32 addresses are valid as uppercase but are not accepted by Trezor
+        // bech32 addresses are valid as uppercase but are not accepted by detahard
         if (networkType === 'bitcoin' && isBech32AddressUppercase(value)) {
             return (
                 <ConvertAddress
@@ -156,7 +156,7 @@ export const Address = ({ output, outputId, outputsCount }: AddressProps) => {
                 />
             );
         }
-        // eth addresses are valid without checksum but Trezor displays them as checksummed
+        // eth addresses are valid without checksum but detahard displays them as checksummed
         if (networkType === 'ethereum' && !isValidChecksumAddress(value)) {
             return (
                 <ConvertAddress

@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable global-require */
 import { configureMockStore, extraDependenciesMock } from '@suite-common/test-utils';
-import { BLOCKCHAIN_EVENT, DEVICE_EVENT, TRANSPORT_EVENT, UI_EVENT } from '@trezor/connect';
+import { BLOCKCHAIN_EVENT, DEVICE_EVENT, TRANSPORT_EVENT, UI_EVENT } from '@detahard/connect';
 
 import { connectInitThunk } from '../connectInitThunks';
 
-jest.mock('@trezor/connect', () => {
+jest.mock('@detahard/connect', () => {
     let fixture: any;
     const callbacks: { [key: string]: (e: any) => any } = {};
     return {
-        ...jest.requireActual('@trezor/connect'),
+        ...jest.requireActual('@detahard/connect'),
         __esModule: true, // this property makes it work
         default: {
             blockchainSetCustomBackend: () => {},
@@ -44,7 +44,7 @@ jest.mock('@trezor/connect', () => {
     };
 });
 
-describe('TrezorConnect Actions', () => {
+describe('detahardConnect Actions', () => {
     let store = configureMockStore();
 
     beforeEach(() => {
@@ -70,9 +70,9 @@ describe('TrezorConnect Actions', () => {
 
     it('Error', async () => {
         const errorFixture = new Error('Iframe error');
-        require('@trezor/connect').setTestFixtures(() => errorFixture);
+        require('@detahard/connect').setTestFixtures(() => errorFixture);
         await store.dispatch(connectInitThunk());
-        require('@trezor/connect').setTestFixtures(undefined);
+        require('@detahard/connect').setTestFixtures(undefined);
         const expectedActions = [
             {
                 type: connectInitThunk.pending.type,
@@ -95,9 +95,9 @@ describe('TrezorConnect Actions', () => {
             message: 'Iframe error',
             code: 'SomeCode',
         };
-        require('@trezor/connect').setTestFixtures(() => errorFixture);
+        require('@detahard/connect').setTestFixtures(() => errorFixture);
         await store.dispatch(connectInitThunk());
-        require('@trezor/connect').setTestFixtures(undefined);
+        require('@detahard/connect').setTestFixtures(undefined);
         const expectedActions = [
             {
                 type: connectInitThunk.pending.type,
@@ -117,9 +117,9 @@ describe('TrezorConnect Actions', () => {
 
     it('Error as string', async () => {
         const errorFixture = 'Iframe error';
-        require('@trezor/connect').setTestFixtures(() => errorFixture);
+        require('@detahard/connect').setTestFixtures(() => errorFixture);
         await store.dispatch(connectInitThunk());
-        require('@trezor/connect').setTestFixtures(undefined);
+        require('@detahard/connect').setTestFixtures(undefined);
         const expectedActions = [
             {
                 type: connectInitThunk.pending.type,
@@ -143,7 +143,7 @@ describe('TrezorConnect Actions', () => {
         expect(() => store.dispatch(connectInitThunk())).not.toThrow();
 
         const actions = store.getActions();
-        const { emit } = require('@trezor/connect');
+        const { emit } = require('@detahard/connect');
 
         expect(actions.pop()).toMatchObject({ type: connectInitThunk.pending.type });
         emit(DEVICE_EVENT, { type: DEVICE_EVENT });
@@ -160,7 +160,7 @@ describe('TrezorConnect Actions', () => {
 
     it('Wrapped method', async () => {
         await store.dispatch(connectInitThunk());
-        await require('@trezor/connect').default.getFeatures();
+        await require('@detahard/connect').default.getFeatures();
         const actions = store.getActions();
         // check actions in reversed order
         expect(actions.pop()).toEqual({

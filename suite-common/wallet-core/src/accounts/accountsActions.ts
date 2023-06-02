@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { AccountInfo } from '@trezor/connect';
+import { AccountInfo } from '@detahard/connect';
 import {
     Account,
     SelectedAccountStatus,

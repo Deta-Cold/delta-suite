@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from 'react-native';
 
 import { Icon, IconName } from '@suite-common/icons';
 import { Text } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 type TabBarItemProps = {
     isFocused: boolean;

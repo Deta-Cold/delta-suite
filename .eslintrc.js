@@ -64,7 +64,7 @@ module.exports = {
             {
                 groups: [['builtin', 'external'], 'internal', ['sibling', 'parent']],
                 pathGroups: [
-                    { pattern: '@trezor/**', group: 'internal' }, // Translates to /packages/** */
+                    { pattern: '@detahard/**', group: 'internal' }, // Translates to /packages/** */
                     { pattern: '@suite-native/**', group: 'internal' },
                     { pattern: '@suite-common/**', group: 'internal' },
                     { pattern: 'react*', group: 'external', position: 'before' },

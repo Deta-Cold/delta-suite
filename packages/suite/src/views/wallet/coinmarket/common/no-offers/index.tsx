@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
 import { CoinmarketRefreshTime } from '@wallet-components';
-import { Button, Image } from '@trezor/components';
+import { Button, Image } from '@detahard/components';
 import { InvityAPIReloadQuotesAfterSeconds } from '@wallet-constants/coinmarket/metadata';
 
 interface Props {

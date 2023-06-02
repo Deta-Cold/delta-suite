@@ -6,7 +6,7 @@ build & push image:
     - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
   variables:
     DOCKER_TLS_CERTDIR: ""
-    CONTAINER_NAME: "$CI_REGISTRY/satoshilabs/trezor/trezor-suite/base"
+    CONTAINER_NAME: "$CI_REGISTRY/satoshilabs/detahard/detahard-suite/base"
   image: $CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX/docker
   services:
     - docker:dind

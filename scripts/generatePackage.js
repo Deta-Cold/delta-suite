@@ -19,7 +19,7 @@ const scopes = {
         path: 'suite-native/',
         templatePath: 'package-template/',
     },
-    '@trezor': {
+    '@detahard': {
         path: 'packages/',
         templatePath: 'package-template/',
     },

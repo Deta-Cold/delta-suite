@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Textarea, Icon } from '@trezor/components';
+import { Textarea, Icon } from '@detahard/components';
 import { QuestionTooltip } from '@suite-components';
 import { InputError } from '@wallet-components';
 import { useSendFormContext } from '@wallet-hooks';

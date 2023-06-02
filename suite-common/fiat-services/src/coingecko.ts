@@ -5,7 +5,7 @@ import { RateLimiter } from './limiter';
 import { fetchUrl } from './fetch';
 
 // a proxy for https://api.coingecko.com/api/v3
-const COINGECKO_API_BASE_URL = 'https://cdn.trezor.io/dynamic/coingecko/api/v3';
+const COINGECKO_API_BASE_URL = 'https://cdn.detahard.io/dynamic/coingecko/api/v3';
 
 interface HistoricalResponse extends LastWeekRates {
     symbol: string;

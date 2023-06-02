@@ -5,8 +5,8 @@ import { fromUnixTime, getUnixTime } from 'date-fns';
 import { FiatCurrencyCode } from '@suite-common/suite-config';
 import { NetworkSymbol } from '@suite-common/wallet-config';
 import { formatNetworkAmount } from '@suite-common/wallet-utils';
-import { AccountBalanceHistory as AccountMovementHistory } from '@trezor/blockchain-link';
-import TrezorConnect from '@trezor/connect';
+import { AccountBalanceHistory as AccountMovementHistory } from '@detahard/blockchain-link';
+import detahardConnect from '@detahard/connect';
 
 import { NUMBER_OF_POINTS } from './constants';
 import {
@@ -65,7 +65,7 @@ export const getAccountBalanceHistory = async ({
     }
 
     const [accountMovementHistory, accountInfo] = await Promise.all([
-        TrezorConnect.blockchainGetAccountBalanceHistory({
+        detahardConnect.blockchainGetAccountBalanceHistory({
             coin,
             descriptor,
             to: endTimeFrameTimestamp,
@@ -73,7 +73,7 @@ export const getAccountBalanceHistory = async ({
             // TODO: doesn't work at all, fix it in connect or blockchain-link?
             currencies: ['usd'],
         }),
-        TrezorConnect.getAccountInfo({ coin, descriptor }),
+        detahardConnect.getAccountInfo({ coin, descriptor }),
     ]);
 
     if (!accountMovementHistory?.success) {
@@ -122,7 +122,7 @@ export const getFiatRatesForNetworkInTimeFrame = async (
         return fiatRatesCache[cacheKey];
     }
 
-    const fiatRatesForDatesInRange = await TrezorConnect.blockchainGetFiatRatesForTimestamps({
+    const fiatRatesForDatesInRange = await detahardConnect.blockchainGetFiatRatesForTimestamps({
         coin: networkSymbol,
         timestamps,
     }).then(res => {

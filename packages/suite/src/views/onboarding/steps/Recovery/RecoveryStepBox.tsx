@@ -8,7 +8,7 @@ import { Translation } from '@suite-components';
 import * as onboardingActions from '@onboarding-actions/onboardingActions';
 import * as recoveryActions from '@recovery-actions/recoveryActions';
 import { useActions, useSelector } from '@suite-hooks';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 import { useDeviceModel } from '@suite-hooks/useDeviceModel';
 
 const RecoveryStepBox = (props: OnboardingStepBoxProps) => {

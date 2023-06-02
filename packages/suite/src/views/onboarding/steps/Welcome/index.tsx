@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import PreOnboardingSetup from './components/PreOnboardingSetup';
 
 const Wrapper = styled.div`

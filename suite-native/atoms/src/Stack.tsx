@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { NativeSpacing } from '@trezor/theme';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { NativeSpacing } from '@detahard/theme';
 
 import { Box, BoxProps } from './Box';
 

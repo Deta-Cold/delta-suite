@@ -66,8 +66,8 @@ const config: webpack.Configuration = {
                     filename: path.join(baseDir, 'build', route.pattern, 'index.html'),
                 }),
         ),
-        // imports from @trezor/connect in @trezor/suite package need to be replaced by imports from @trezor/connect-web
-        new webpack.NormalModuleReplacementPlugin(/@trezor\/connect$/, '@trezor/connect-web'),
+        // imports from @detahard/connect in @detahard/suite package need to be replaced by imports from @detahard/connect-web
+        new webpack.NormalModuleReplacementPlugin(/@detahard\/connect$/, '@detahard/connect-web'),
         ...(!isDev ? [new CssMinimizerPlugin()] : []),
     ],
 };

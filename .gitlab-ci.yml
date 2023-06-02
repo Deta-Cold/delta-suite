@@ -1,11 +1,11 @@
 # ! DO NOT set latest here USE custom hash !
-image: registry.gitlab.com/satoshilabs/trezor/trezor-suite/base@sha256:ba5cf63ec1db0b102664b216114674f98c88cff206f537394f6203ad7d9c580f
+image: registry.gitlab.com/satoshilabs/detahard/detahard-suite/base@sha256:ba5cf63ec1db0b102664b216114674f98c88cff206f537394f6203ad7d9c580f
 
 variables:
   DEV_SERVER_URL: "https://suite.corp.sldev.cz"
-  STAGING_WALLET_SERVER_URL: "https://staging-wallet.trezor.io/wallet"
-  STAGING_SUITE_SERVER_URL: "https://staging-suite.trezor.io"
-  DESKTOP_APP_NAME: "Trezor-Suite"
+  STAGING_WALLET_SERVER_URL: "https://staging-wallet.detahard.io/wallet"
+  STAGING_SUITE_SERVER_URL: "https://staging-suite.detahard.io"
+  DESKTOP_APP_NAME: "detahard-Suite"
   GIT_CLEAN_FLAGS: "-ffdx -e .yarn"
 
 stages:

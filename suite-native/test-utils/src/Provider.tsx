@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { createRenderer, StylesProvider } from '@trezor/styles';
-import { prepareNativeTheme } from '@trezor/theme';
+import { createRenderer, StylesProvider } from '@detahard/styles';
+import { prepareNativeTheme } from '@detahard/theme';
 
 type ProviderProps = {
     children: React.ReactNode;

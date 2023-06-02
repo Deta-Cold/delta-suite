@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import { Loader, Dropdown } from '@trezor/components';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { Loader, Dropdown } from '@detahard/components';
+import { analytics, EventType } from '@detahard/suite-analytics';
 import { Translation } from '@suite-components';
 import { useActions } from '@suite-hooks';
 import { SETTINGS } from '@suite-config';

@@ -2,8 +2,8 @@ import * as http from 'http';
 import * as net from 'net';
 import * as url from 'url';
 
-import { xssFilters } from '@trezor/utils';
-import { TypedEmitter } from '@trezor/utils/lib/typedEventEmitter';
+import { xssFilters } from '@detahard/utils';
+import { TypedEmitter } from '@detahard/utils/lib/typedEventEmitter';
 
 import { HTTP_ORIGINS_DEFAULT } from './constants';
 
@@ -221,7 +221,7 @@ export class HttpReceiver extends TypedEmitter<Events> {
             <!DOCTYPE html>
             <html>
                 <head>
-                    <title>${options?.title ?? 'Trezor Suite'}</title>
+                    <title>${options?.title ?? 'detahard Suite'}</title>
                     ${options?.script || ''}
                 </head>
                 <body>

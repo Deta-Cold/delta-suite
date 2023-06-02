@@ -1,7 +1,7 @@
-import type { TrezorDevice } from '@suite/types/suite';
-import type { FirmwareRelease } from '@trezor/connect';
-import { DeviceModel } from '@trezor/device-utils';
-import * as URLS from '@trezor/urls';
+import type { detahardDevice } from '@suite/types/suite';
+import type { FirmwareRelease } from '@detahard/connect';
+import { DeviceModel } from '@detahard/device-utils';
+import * as URLS from '@detahard/urls';
 
 const { getSuiteDevice } = global.JestMocks;
 
@@ -520,12 +520,12 @@ const parseFirmwareChangelog = [
             min_bridge_version: [2, 0, 25],
             min_firmware_version: [1, 6, 2],
             min_bootloader_version: [1, 5, 0],
-            url: 'firmware/1/trezor-1.9.4.bin',
-            url_bitcoinonly: 'firmware/1/trezor-1.9.4-bitcoinonly.bin',
+            url: 'firmware/1/detahard-1.9.4.bin',
+            url_bitcoinonly: 'firmware/1/detahard-1.9.4-bitcoinonly.bin',
             fingerprint: '867017bd784cc4e9ce6f0875c61ea86f89b19380d54045c34608b85472998000',
             fingerprint_bitcoinonly:
                 '3f73dfbcfc48f66c8814f6562524d81888230e0acd1c19b52b6e8772c6c67e7f',
-            notes: 'https://blog.trezor.io/trezor-suite-and-firmware-updates-rbf-and-spending-now-live-c2f69c42d7f7',
+            notes: 'https://blog.detahard.io/detahard-suite-and-firmware-updates-rbf-and-spending-now-live-c2f69c42d7f7',
             changelog:
                 '* Replacement transaction signing for replace-by-fee.\n* Support for Output Descriptors export.\n* Show Ypub/Zpub correctly for multisig GetAddress.\n* Show amounts in mBTC, uBTC and sat denominations.',
         } as FirmwareRelease,
@@ -536,8 +536,8 @@ const parseFirmwareChangelog = [
                 'Show Ypub/Zpub correctly for multisig GetAddress.',
                 'Show amounts in mBTC, uBTC and sat denominations.',
             ],
-            notes: 'https://blog.trezor.io/trezor-suite-and-firmware-updates-rbf-and-spending-now-live-c2f69c42d7f7',
-            url: 'firmware/1/trezor-1.9.4.bin',
+            notes: 'https://blog.detahard.io/detahard-suite-and-firmware-updates-rbf-and-spending-now-live-c2f69c42d7f7',
+            url: 'firmware/1/detahard-1.9.4.bin',
             versionString: '1.9.4',
         },
     },
@@ -555,9 +555,9 @@ const getChangelogUrl = [
             features: {
                 model: DeviceModel.T2B1,
             },
-        } as TrezorDevice,
+        } as detahardDevice,
         revision: 'ab12cd',
-        result: 'https://github.com/trezor/trezor-firmware/blob/ab12cd/core/CHANGELOG.md',
+        result: 'https://github.com/detahard/detahard-firmware/blob/ab12cd/core/CHANGELOG.md',
     },
     {
         description: 'Missing revision, master/legacy firmware',
@@ -566,8 +566,8 @@ const getChangelogUrl = [
             features: {
                 model: DeviceModel.T1,
             },
-        } as TrezorDevice,
-        result: 'https://github.com/trezor/trezor-firmware/blob/master/legacy/firmware/CHANGELOG.md',
+        } as detahardDevice,
+        result: 'https://github.com/detahard/detahard-firmware/blob/master/legacy/firmware/CHANGELOG.md',
     },
     {
         description: 'Missing revision, core firmware',
@@ -576,8 +576,8 @@ const getChangelogUrl = [
             features: {
                 model: DeviceModel.TT,
             },
-        } as TrezorDevice,
-        result: 'https://github.com/trezor/trezor-firmware/blob/master/core/CHANGELOG.md',
+        } as detahardDevice,
+        result: 'https://github.com/detahard/detahard-firmware/blob/master/core/CHANGELOG.md',
     },
 ];
 
@@ -594,7 +594,7 @@ const getCheckBackupUrl = [
             features: {
                 model: DeviceModel.T2B1,
             },
-        } as TrezorDevice,
+        } as detahardDevice,
         result: URLS[`HELP_CENTER_DRY_RUN_T${DeviceModel.T2B1}_URL`],
     },
 ];
@@ -612,7 +612,7 @@ const getPackagingUrl = [
             features: {
                 model: DeviceModel.T2B1,
             },
-        } as TrezorDevice,
+        } as detahardDevice,
         result: URLS[`HELP_CENTER_PACKAGING_T${DeviceModel.T2B1}_URL`],
     },
 ];
@@ -630,7 +630,7 @@ const getFirmwareDowngradeUrl = [
             features: {
                 model: DeviceModel.T2B1,
             },
-        } as TrezorDevice,
+        } as detahardDevice,
         result: URLS[`HELP_CENTER_FW_DOWNGRADE_T${DeviceModel.T2B1}_URL`],
     },
 ];

@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { useNavigation } from '@react-navigation/core';
 
 import { Box, Card, IconButton, Text } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import {
     AccountsImportStackParamList,
     AccountsImportStackRoutes,

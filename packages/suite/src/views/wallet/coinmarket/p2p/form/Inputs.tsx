@@ -6,7 +6,7 @@ import { FIAT } from '@suite-config';
 import { Translation, NumberInput } from '@suite-components';
 import { MAX_LENGTH } from '@suite-constants/inputs';
 import { getInputState, isDecimalsValid } from '@suite-common/wallet-utils';
-import { CoinLogo, Select } from '@trezor/components';
+import { CoinLogo, Select } from '@detahard/components';
 import { useCoinmarketP2pFormContext } from '@wallet-hooks/useCoinmarketP2pForm';
 import { InputError } from '@wallet-components';
 import { Wrapper } from '@wallet-views/coinmarket';

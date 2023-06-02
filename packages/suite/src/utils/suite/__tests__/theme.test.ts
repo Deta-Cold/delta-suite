@@ -1,5 +1,5 @@
 import { getThemeColors } from '@suite-utils/theme';
-import { THEME } from '@trezor/components/src/config/colors';
+import { THEME } from '@detahard/components/src/config/colors';
 
 describe('theme', () => {
     describe('getThemeColors', () => {

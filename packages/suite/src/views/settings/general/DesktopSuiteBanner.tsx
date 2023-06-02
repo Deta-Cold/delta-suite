@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Button, H2, Icon, Image, P, motionEasing } from '@trezor/components';
-import { analytics, EventType } from '@trezor/suite-analytics';
-import { SUITE_URL } from '@trezor/urls';
+import { Button, H2, Icon, Image, P, motionEasing } from '@detahard/components';
+import { analytics, EventType } from '@detahard/suite-analytics';
+import { SUITE_URL } from '@detahard/urls';
 import { useDispatch } from '@suite-hooks/useDispatch';
-import TrezorLink from '@suite-components/TrezorLink';
+import detahardLink from '@suite-components/detahardLink';
 import { hideDesktopSuitePromo } from '@suite-actions/suiteActions';
 import { Translation } from '@suite-components/Translation';
 
@@ -125,7 +125,7 @@ export const DesktopSuiteBanner = () => {
                 >
                     <CloseButton size={18} icon="CROSS" onClick={handleClose} />
 
-                    <StyledImage image="TREZOR_PATTERN" width={140} />
+                    <StyledImage image="detahard_PATTERN" width={140} />
 
                     <Content>
                         <TextContainer>
@@ -137,7 +137,7 @@ export const DesktopSuiteBanner = () => {
                             </P>
                         </TextContainer>
 
-                        <TrezorLink
+                        <detahardLink
                             href={SUITE_URL}
                             variant="nostyle"
                             onClick={() =>
@@ -149,7 +149,7 @@ export const DesktopSuiteBanner = () => {
                             <StyledButton>
                                 <Translation id="TR_DESKTOP_APP_PROMO_GET" />
                             </StyledButton>
-                        </TrezorLink>
+                        </detahardLink>
 
                         <OSIcons>
                             <Icon icon="OS_MAC" />

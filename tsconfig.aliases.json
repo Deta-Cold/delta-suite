@@ -128,7 +128,7 @@
             "@backup-middlewares/*": ["./packages/suite/src/middlewares/backup/*"],
             "@backup-middlewares": ["./packages/suite/src/middlewares/backup/index"],
 
-            "@trezor/device-utils": ["./packages/device-utils/src"],
+            "@detahard/device-utils": ["./packages/device-utils/src"],
 
             "@suite/*": ["./packages/suite/src/*"],
             "@suite": ["./packages/suite/src/index"]

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 
-import { PROTO } from '@trezor/connect';
+import { PROTO } from '@detahard/connect';
 
 import { FormatterProviderContext, getFormatters } from '../FormatterProvider';
 

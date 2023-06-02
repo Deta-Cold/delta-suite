@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import Quote from './Quote';
 import { ExchangeTrade } from 'invity-api';
 import { FiatValue, FormattedCryptoAmount, QuestionTooltip, Translation } from '@suite-components';

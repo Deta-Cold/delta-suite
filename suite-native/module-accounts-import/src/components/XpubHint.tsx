@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from 'react';
 import { TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 
 import { NetworkType } from '@suite-common/wallet-config';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { BottomSheet, Box, Button, Text, VStack } from '@suite-native/atoms';
 import { Icon } from '@suite-common/icons';
 import { Video, VideoName } from '@suite-native/video-assets';
@@ -38,8 +38,8 @@ const networkToAssetsMap = {
         title: 'Where is my public key (XPUB)?',
         text: (
             <>
-                To view the public key (XPUB) of your account, open the Trezor Suite app, plug in
-                your Trezor device, then select <EmphasizedText>Details</EmphasizedText>, then
+                To view the public key (XPUB) of your account, open the detahard Suite app, plug in
+                your detahard device, then select <EmphasizedText>Details</EmphasizedText>, then
                 choose <EmphasizedText>Show public key.</EmphasizedText>
             </>
         ),
@@ -49,8 +49,8 @@ const networkToAssetsMap = {
         title: 'Where is my receive address?',
         text: (
             <>
-                To view the receive address of your account, open the Trezor Suite desktop app, plug
-                in your Trezor device, select <EmphasizedText>Accounts</EmphasizedText>, choose{' '}
+                To view the receive address of your account, open the detahard Suite desktop app, plug
+                in your detahard device, select <EmphasizedText>Accounts</EmphasizedText>, choose{' '}
                 <EmphasizedText>Receive</EmphasizedText>, and click on{' '}
                 <EmphasizedText>Show full address</EmphasizedText>.
             </>
@@ -61,8 +61,8 @@ const networkToAssetsMap = {
         title: 'Where is my receive address?',
         text: (
             <>
-                To view the receive address of your account, open the Trezor Suite desktop app, plug
-                in your Trezor device, select <EmphasizedText>Accounts</EmphasizedText>, choose{' '}
+                To view the receive address of your account, open the detahard Suite desktop app, plug
+                in your detahard device, select <EmphasizedText>Accounts</EmphasizedText>, choose{' '}
                 <EmphasizedText>Receive</EmphasizedText>, and click on{' '}
                 <EmphasizedText>Show full address</EmphasizedText>.
             </>

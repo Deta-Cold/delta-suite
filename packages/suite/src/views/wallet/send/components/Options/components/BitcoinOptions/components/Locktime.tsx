@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Translation } from '@suite-components';
 import { InputError } from '@wallet-components';
 import { useSendFormContext } from '@wallet-hooks';
-import { Icon, Input, Switch, variables } from '@trezor/components';
+import { Icon, Input, Switch, variables } from '@detahard/components';
 import { getInputState, isInteger } from '@suite-common/wallet-utils';
 import { MAX_LENGTH } from '@suite-constants/inputs';
 import { isFeatureFlagEnabled } from '@suite-common/suite-utils';

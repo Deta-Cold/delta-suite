@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import { Box, Text } from '@suite-native/atoms';
 import { AccountAddressFormatter } from '@suite-native/formatters';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { NetworkSymbol } from '@suite-common/wallet-config';
 import { TokenSymbol } from '@suite-common/wallet-types';
 import { CryptoIcon } from '@suite-common/icons';

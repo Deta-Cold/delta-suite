@@ -1,7 +1,7 @@
 import { UseFormMethods } from 'react-hook-form';
 
 import { Network } from '@suite-common/wallet-config';
-import { AccountUtxo, FeeLevel, PROTO } from '@trezor/connect';
+import { AccountUtxo, FeeLevel, PROTO } from '@detahard/connect';
 
 import { TypedValidationRules } from './form';
 import { Account } from './account';

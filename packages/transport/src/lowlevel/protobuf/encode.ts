@@ -6,9 +6,9 @@ import { isPrimitiveField } from '../../utils/protobuf';
 const transform = (fieldType: string, value: any) => {
     if (fieldType === 'bytes') {
         // special edge case
-        // for example MultisigRedeemScriptType might have field signatures ['', '', ''] (check in TrezorConnect signTransactionMultisig test fixtures).
-        // trezor needs to receive such field as signatures: [b'', b'', b'']. If we transfer this to empty buffer with protobufjs, this will be decoded by
-        // trezor as signatures: [] (empty array)
+        // for example MultisigRedeemScriptType might have field signatures ['', '', ''] (check in detahardConnect signTransactionMultisig test fixtures).
+        // detahard needs to receive such field as signatures: [b'', b'', b'']. If we transfer this to empty buffer with protobufjs, this will be decoded by
+        // detahard as signatures: [] (empty array)
         if (typeof value === 'string' && !value) return value;
 
         // normal flow

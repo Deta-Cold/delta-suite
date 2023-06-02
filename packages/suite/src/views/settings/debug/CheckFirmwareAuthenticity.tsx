@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Switch } from '@trezor/components';
+import { Button, Switch } from '@detahard/components';
 import { ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { useFirmware, useActions, useSelector } from '@suite-hooks';
 import * as suiteActions from '@suite-actions/suiteActions';
@@ -33,7 +33,7 @@ export const CheckFirmwareAuthenticity = () => {
             <SectionItem data-test="@settings/debug/check-firmware-authenticity">
                 <TextColumn
                     title="Check firmware authenticity"
-                    description="Download firmware binary from data.trezor.io and compare its hash with firmware hash provided by Trezor device."
+                    description="Download firmware binary from data.detahard.io and compare its hash with firmware hash provided by detahard device."
                 />
                 <ActionColumn>
                     <Button
@@ -48,7 +48,7 @@ export const CheckFirmwareAuthenticity = () => {
             <SectionItem data-test="@settings/debug/check-firmware-authenticity-on-connect/switch">
                 <TextColumn
                     title="Check firmware authenticity regularly"
-                    description="Carry out firmware authenticity check every time you authorize Trezor device"
+                    description="Carry out firmware authenticity check every time you authorize detahard device"
                 />
                 <ActionColumn>
                     <Switch

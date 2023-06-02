@@ -1,7 +1,7 @@
 import { valid, satisfies } from 'semver';
-import { DeviceModel, getDeviceModel, getFirmwareVersion } from '@trezor/device-utils';
+import { DeviceModel, getDeviceModel, getFirmwareVersion } from '@detahard/device-utils';
 
-import type { AppState, TrezorDevice, ExtendedMessageDescriptor } from '@suite-types';
+import type { AppState, detahardDevice, ExtendedMessageDescriptor } from '@suite-types';
 
 export const getFormattedFingerprint = (fingerprint: string) =>
     [
@@ -81,7 +81,7 @@ export const parseFirmwareFormat = (fw: ArrayBuffer): FirmwareFormat | undefined
 
 export const validateFirmware = (
     fw: ArrayBuffer,
-    device: TrezorDevice | undefined,
+    device: detahardDevice | undefined,
 ): ExtendedMessageDescriptor['id'] | undefined => {
     const deviceModel = getDeviceModel(device);
 

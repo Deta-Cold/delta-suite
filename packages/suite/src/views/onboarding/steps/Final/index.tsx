@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import useMeasure from 'react-use/lib/useMeasure';
-import { analytics, EventType } from '@trezor/suite-analytics';
+import { analytics, EventType } from '@detahard/suite-analytics';
 
-import { Button, Icon, variables, Input, Dropdown, DropdownRef, Tooltip } from '@trezor/components';
+import { Button, Icon, variables, Input, Dropdown, DropdownRef, Tooltip } from '@detahard/components';
 import { Translation, HomescreenGallery } from '@suite-components';
 import { DeviceAnimation, OnboardingStepBox } from '@onboarding-components';
 import { useActions, useDevice, useOnboarding, useSelector } from '@suite-hooks';
 import * as deviceSettingsActions from '@settings-actions/deviceSettingsActions';
 import { DEFAULT_LABEL, MAX_LABEL_LENGTH } from '@suite-constants/device';
-import { getDeviceModel } from '@trezor/device-utils';
+import { getDeviceModel } from '@detahard/device-utils';
 import { isHomescreenSupportedOnDevice } from '@suite-utils/homescreen';
 import { selectIsActionAbortable } from '@suite-reducers/suiteReducer';
 

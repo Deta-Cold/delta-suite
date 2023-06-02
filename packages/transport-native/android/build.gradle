@@ -19,10 +19,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('TrezorTransportNative_compileSdkVersion', 30)
+    compileSdkVersion safeExtGet('detahardTransportNative_compileSdkVersion', 30)
     defaultConfig {
-        minSdkVersion safeExtGet('TrezorTransportNative_minSdkVersion', 26)
-        targetSdkVersion safeExtGet('TrezorTransportNative_targetSdkVersion', 30)
+        minSdkVersion safeExtGet('detahardTransportNative_minSdkVersion', 26)
+        targetSdkVersion safeExtGet('detahardTransportNative_targetSdkVersion', 30)
         ndkVersion = "21.4.7075529"
         versionCode 1
         versionName "1.0"

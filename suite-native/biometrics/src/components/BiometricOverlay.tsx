@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Box } from '@suite-native/atoms';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { Icon } from '@suite-common/icons';
 
 const overlayWrapperStyle = prepareNativeStyle(utils => ({
@@ -17,7 +17,7 @@ export const BiometricOverlay = () => {
 
     return (
         <Box style={applyStyle(overlayWrapperStyle)}>
-            <Icon name="trezor" size="extraLarge" color="iconOnPrimary" />
+            <Icon name="detahard" size="extraLarge" color="iconOnPrimary" />
         </Box>
     );
 };

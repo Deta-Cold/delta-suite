@@ -23,6 +23,6 @@
         { "path": "../suite-desktop-api" },
         { "path": "../urls" },
         { "path": "../utils" },
-        { "path": "../trezor-user-env-link" }
+        { "path": "../detahard-user-env-link" }
     ]
 }

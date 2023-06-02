@@ -1,11 +1,11 @@
-package io.trezor.transport;
+package io.detahard.transport;
 
-public class TrezorException extends RuntimeException {
-  public TrezorException(String message) {
+public class detahardException extends RuntimeException {
+  public detahardException(String message) {
     super(message);
   }
 
-  public TrezorException(String message, Throwable cause) {
+  public detahardException(String message, Throwable cause) {
     super(message, cause);
   }
 }

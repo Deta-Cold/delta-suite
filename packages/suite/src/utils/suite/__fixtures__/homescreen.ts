@@ -1,5 +1,5 @@
 import { deviceModelInformation } from '@suite-utils/homescreen';
-import { DeviceModel } from '@trezor/device-utils';
+import { DeviceModel } from '@detahard/device-utils';
 
 export const isValidImageFormat = [
     {

@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { InputError } from '@wallet-components';
 import styled from 'styled-components';
 import { CustomPaymentAmountKey } from '@wallet-constants/coinmarket/savings';
-import { variables } from '@trezor/components';
+import { variables } from '@detahard/components';
 import { Control, Controller, FieldError } from 'react-hook-form';
 import { Translation, NumberInput } from '@suite-components';
 import { StyledSelectBar } from '@wallet-views/coinmarket';

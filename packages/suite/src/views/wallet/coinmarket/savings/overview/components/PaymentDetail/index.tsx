@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import parseISO from 'date-fns/parseISO';
 import format from 'date-fns/format';
 import styled from 'styled-components';
-import { Button, Icon, Image } from '@trezor/components';
+import { Button, Icon, Image } from '@detahard/components';
 import { Translation } from '@suite-components';
 import type { SavingsTradePlannedPayment } from 'invity-api';
 import type { ExtendedMessageDescriptor } from '@suite/types/suite';

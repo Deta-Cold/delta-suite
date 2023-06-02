@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Translation, QuestionTooltip, ReadMoreLink } from '@suite-components';
 import { AppState } from '@suite-types';
 
-import { Button, Card, variables, H2, Tooltip } from '@trezor/components';
+import { Button, Card, variables, H2, Tooltip } from '@detahard/components';
 import { getFirstFreshAddress } from '@suite-common/wallet-utils';
 import { AccountsRootState, selectIsAccountUtxoBased } from '@suite-common/wallet-core';
 
@@ -169,7 +169,7 @@ export const FreshAddress = ({
             >
                 <StyledButton
                     data-test="@wallet/receive/reveal-address-button"
-                    icon="TREZOR_LOGO"
+                    icon="detahard_LOGO"
                     onClick={() => showAddress(firstFreshAddress.path, firstFreshAddress.address)}
                     isDisabled={disabled || locked || coinjoinDisallowReveal}
                     isLoading={locked}

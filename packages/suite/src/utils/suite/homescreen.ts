@@ -1,6 +1,6 @@
 /* eslint-disable no-bitwise */
-import { TrezorDevice } from '@suite-types/index';
-import { DeviceModel, getDeviceModel } from '@trezor/device-utils';
+import { detahardDevice } from '@suite-types/index';
+import { DeviceModel, getDeviceModel } from '@detahard/device-utils';
 
 export const deviceModelInformation = {
     [DeviceModel.T1]: { width: 128, height: 64, supports: ['png', 'jpeg'] },
@@ -225,7 +225,7 @@ export const imagePathToHex = async (imagePath: string, deviceModel: DeviceModel
     return toig(imageData, deviceModel);
 };
 
-export const isHomescreenSupportedOnDevice = (device: TrezorDevice) => {
+export const isHomescreenSupportedOnDevice = (device: detahardDevice) => {
     const deviceModel = getDeviceModel(device);
 
     return (

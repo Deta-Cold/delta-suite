@@ -8,7 +8,7 @@ import {
     KYCFailed,
     KYCError,
 } from '@wallet-components';
-import { Button, SelectBar, variables } from '@trezor/components';
+import { Button, SelectBar, variables } from '@detahard/components';
 import { useSavingsSetupContinue } from '@wallet-hooks/useCoinmarketSavingsSetupContinue';
 import { Translation } from '@suite-components';
 import { AddressOptions } from '@wallet-views/coinmarket/common/AddressOptions';

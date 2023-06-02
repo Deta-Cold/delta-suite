@@ -14,7 +14,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import messages from '@trezor/suite/src/support/messages';
+import messages from '@detahard/suite/src/support/messages';
 
 const packagesRoot = path.join(__dirname, '../../../');
 const targetPath = path.join(packagesRoot, 'suite/src/support/messages.ts');

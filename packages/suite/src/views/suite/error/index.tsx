@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Translation } from '@suite-components';
 
-import { P, H1, Button, Link, Image } from '@trezor/components';
+import { P, H1, Button, Link, Image } from '@detahard/components';
 
 const Wrapper = styled.div`
     display: flex;

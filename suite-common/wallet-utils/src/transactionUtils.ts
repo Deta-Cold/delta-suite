@@ -13,9 +13,9 @@ import {
     AccountTransaction,
     TokenTransfer,
     InternalTransfer,
-} from '@trezor/connect';
+} from '@detahard/connect';
 import { SignOperator } from '@suite-common/suite-types';
-import { arrayPartition } from '@trezor/utils';
+import { arrayPartition } from '@detahard/utils';
 
 import { formatAmount, formatNetworkAmount } from './accountUtils';
 import { toFiatCurrency } from './fiatConverterUtils';
@@ -546,8 +546,8 @@ const getBitcoinRbfParams = (
     const outputs: RbfTransactionParams['outputs'] = [];
     vout.forEach(output => {
         if (!output.isAddress) {
-            // TODO: this should be done in @trezor/connect, blockchain-link or even blockbook
-            // blockbook sends output.hex as scriptPubKey with additional prefix where: 6a - OP_RETURN and XX - data len. this field should be parsed by @trezor/utxo-lib
+            // TODO: this should be done in @detahard/connect, blockchain-link or even blockbook
+            // blockbook sends output.hex as scriptPubKey with additional prefix where: 6a - OP_RETURN and XX - data len. this field should be parsed by @detahard/utxo-lib
             // blockbook sends ascii data in output.address[0] field in format: "OP_RETURN (ASCII-VALUE)". as a workaround we are extracting ascii data from here
             const dataAscii = output.addresses![0].match(/^OP_RETURN \((.*)\)/)?.pop(); // strip ASCII data from brackets
             if (dataAscii) {

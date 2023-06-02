@@ -5,7 +5,7 @@ import { useRoute } from '@react-navigation/native';
 
 import { Box, Button, Stack, Text } from '@suite-native/atoms';
 import { Link } from '@suite-native/link';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 import { OnboardingStackRoutes } from '@suite-native/navigation';
 import { setIsOnboardingFinished } from '@suite-native/module-settings';
 import { selectHasUserAllowedTracking } from '@suite-common/analytics';
@@ -50,7 +50,7 @@ export const OnboardingFooter = ({ redirectTarget, isLastStep = false }: Onboard
         <Stack spacing="large" style={applyStyle(wrapperStyle)}>
             <Box flexDirection="row" alignItems="center" justifyContent="center">
                 <Text variant="hint">
-                    Don’t have a Trezor? <Link href="https://trezor.io/" label="Get one here." />
+                    Don’t have a detahard? <Link href="https://detahard.io/" label="Get one here." />
                 </Text>
             </Box>
             <Button data-testID={`@onboarding/${route.name}/nextBtn`} onPress={handlePress}>

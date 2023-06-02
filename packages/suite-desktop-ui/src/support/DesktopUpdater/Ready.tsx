@@ -5,7 +5,7 @@ import { Translation, Modal } from '@suite-components';
 import { useActions } from '@suite-hooks';
 import * as desktopUpdateActions from '@suite-actions/desktopUpdateActions';
 
-import { Button, H2, variables } from '@trezor/components';
+import { Button, H2, variables } from '@detahard/components';
 
 const Description = styled.span`
     font-size: ${variables.FONT_SIZE.SMALL};

@@ -10,7 +10,7 @@ import {
     StakePool,
 } from '@suite-common/wallet-types';
 import { Network } from '@suite-common/wallet-config';
-import { CARDANO, CardanoCertificate, CardanoOutput, PROTO } from '@trezor/connect';
+import { CARDANO, CardanoCertificate, CardanoOutput, PROTO } from '@detahard/connect';
 import { CARDANO_DEFAULT_TTL_OFFSET } from '@suite-common/wallet-constants';
 
 import {
@@ -28,7 +28,7 @@ export const loadCardanoLib = async () => {
 };
 
 export const getProtocolMagic = (accountSymbol: Account['symbol']) =>
-    // TODO: use testnet magic from connect once this PR is merged https://github.com/trezor/connect/pull/1046
+    // TODO: use testnet magic from connect once this PR is merged https://github.com/detahard/connect/pull/1046
     accountSymbol === 'ada' ? CARDANO.PROTOCOL_MAGICS.mainnet : 1097911063;
 
 export const getNetworkId = (accountSymbol: Account['symbol']) =>
@@ -131,7 +131,7 @@ export const transformUtxos = (utxos: Account['utxo']): types.Utxo[] => {
 };
 
 export const prepareCertificates = (certs: CardanoCertificate[]) => {
-    // convert @trezor/connect certificate format to cardano coin-selection lib format
+    // convert @detahard/connect certificate format to cardano coin-selection lib format
     const convertedCerts: types.Certificate[] = [];
     certs.forEach(cert => {
         switch (cert.type) {
@@ -240,11 +240,11 @@ export const isPoolOverSaturated = (pool: StakePool, additionalStake?: string) =
         .div(pool.saturation)
         .toNumber() > 0.8;
 
-export const getStakePoolForDelegation = (trezorPools: PoolsResponse, accountBalance: string) => {
-    let pool = trezorPools.next;
+export const getStakePoolForDelegation = (detahardPools: PoolsResponse, accountBalance: string) => {
+    let pool = detahardPools.next;
     if (isPoolOverSaturated(pool, accountBalance)) {
         // eslint-disable-next-line prefer-destructuring
-        pool = trezorPools.pools[0];
+        pool = detahardPools.pools[0];
     }
     return pool;
 };

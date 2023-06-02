@@ -1,4 +1,4 @@
-import { Select, CoinLogo } from '@trezor/components';
+import { Select, CoinLogo } from '@detahard/components';
 import React from 'react';
 import { Controller } from 'react-hook-form';
 import styled from 'styled-components';

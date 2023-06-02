@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image as RNImage, ImageProps as RNImageProps } from 'react-native';
 
-import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@trezor/styles';
+import { NativeStyleObject, prepareNativeStyle, useNativeStyles } from '@detahard/styles';
 
 type ImageProps = {
     width?: number;

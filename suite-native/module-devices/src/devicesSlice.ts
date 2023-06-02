@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { TrezorDevice } from '@suite-common/suite-types';
+import { detahardDevice } from '@suite-common/suite-types';
 
 export const HIDDEN_DEVICE_ID = 'hiddenDeviceWithImportedAccounts';
 export const HIDDEN_DEVICE_STATE = `state@${HIDDEN_DEVICE_ID}:1`;
 
 // This is temporary solution for MVP purposes. We have one hidden device and all imported accounts belongs to it.
-export const hiddenDevice: TrezorDevice = {
+export const hiddenDevice: detahardDevice = {
     type: 'acquired',
     id: HIDDEN_DEVICE_ID,
     status: 'available',
@@ -16,7 +16,7 @@ export const hiddenDevice: TrezorDevice = {
     path: '1',
     firmware: 'valid',
     features: {
-        vendor: 'trezor.io',
+        vendor: 'detahard.io',
         major_version: 2,
         minor_version: 1,
         patch_version: 1,
@@ -25,7 +25,7 @@ export const hiddenDevice: TrezorDevice = {
         pin_protection: false,
         passphrase_protection: false,
         language: 'en-US',
-        label: 'My Trezor',
+        label: 'My detahard',
         initialized: true,
         revision: 'df0963ec',
         bootloader_hash: '7447a41717022e3eb32011b00b2a68ebb9c7f603cdc730e7307850a3f4d62a5c',
@@ -67,7 +67,7 @@ export const hiddenDevice: TrezorDevice = {
 
 export const actionPrefix = '@devices';
 
-export type DevicesState = TrezorDevice[];
+export type DevicesState = detahardDevice[];
 
 const initialState: DevicesState = [];
 
@@ -79,7 +79,7 @@ const devicesSlice = createSlice({
     name: actionPrefix,
     initialState,
     reducers: {
-        createDevice: (state, action: PayloadAction<TrezorDevice>) => {
+        createDevice: (state, action: PayloadAction<detahardDevice>) => {
             state.push(action.payload);
         },
     },

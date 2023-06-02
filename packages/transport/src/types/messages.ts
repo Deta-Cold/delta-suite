@@ -572,7 +572,7 @@ export type SelfTest = {
 export enum CardanoDerivationType {
     LEDGER = 0,
     ICARUS = 1,
-    ICARUS_TREZOR = 2,
+    ICARUS_detahard = 2,
 }
 
 export enum CardanoAddressType {

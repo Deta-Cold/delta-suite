@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 import { ActionButton, ActionColumn, SectionItem, TextColumn } from '@suite-components/Settings';
 import { useSelector, useActions } from '@suite-hooks';
 import { useAnchor } from '@suite-hooks/useAnchor';

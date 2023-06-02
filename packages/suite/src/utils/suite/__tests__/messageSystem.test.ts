@@ -1,6 +1,6 @@
 import * as env from '@suite-utils/env';
 
-import * as envUtils from '@trezor/env-utils';
+import * as envUtils from '@detahard/env-utils';
 
 import * as messageSystem from '../messageSystem';
 import * as fixtures from '../__fixtures__/messageSystem';

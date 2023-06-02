@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from '@trezor/components';
+import { Dropdown } from '@detahard/components';
 import { Translation } from '@suite-components';
 import { useActions } from '@suite-hooks';
 import { useSendFormContext } from '@wallet-hooks';

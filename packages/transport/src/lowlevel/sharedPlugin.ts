@@ -1,10 +1,10 @@
-export type TrezorDeviceInfoDebug = {
+export type detahardDeviceInfoDebug = {
     path: string;
     debug: boolean;
 };
 
 export type LowlevelTransportSharedPlugin = {
-    enumerate: () => Promise<Array<TrezorDeviceInfoDebug>>;
+    enumerate: () => Promise<Array<detahardDeviceInfoDebug>>;
     send: (path: string, data: ArrayBuffer, debug: boolean) => Promise<void>;
     receive: (path: string, debug: boolean) => Promise<ArrayBuffer>;
     connect: (path: string, debug: boolean, first: boolean) => Promise<void>;

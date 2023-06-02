@@ -11,7 +11,7 @@ import {
     Truncate,
     useTheme,
     variables,
-} from '@trezor/components';
+} from '@detahard/components';
 import { TypedFieldError } from '@wallet-types/form';
 import { useCoinmarketExchangeOffersContext } from '@wallet-hooks/useCoinmarketExchangeOffers';
 import { InputError } from '@wallet-components';
@@ -365,7 +365,7 @@ const SendSwapTransactionComponent = () => {
                     isDisabled={callInProgress}
                     onClick={sendTransaction}
                 >
-                    <Translation id="TR_EXCHANGE_CONFIRM_ON_TREZOR_SEND" />
+                    <Translation id="TR_EXCHANGE_CONFIRM_ON_detahard_SEND" />
                 </Button>
             </ButtonWrapper>
         </Wrapper>

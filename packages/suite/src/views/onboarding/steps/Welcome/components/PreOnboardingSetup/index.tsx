@@ -1,14 +1,14 @@
 import React from 'react';
-import { analytics } from '@trezor/suite-analytics';
-import { DOCS_ANALYTICS_URL, DATA_TOS_URL } from '@trezor/urls';
-import { DataAnalytics } from '@trezor/components';
+import { analytics } from '@detahard/suite-analytics';
+import { DOCS_ANALYTICS_URL, DATA_TOS_URL } from '@detahard/urls';
+import { DataAnalytics } from '@detahard/components';
 
 import { useOnboarding, useSelector } from '@suite-hooks';
 import SecurityCheck from './SecurityCheck';
-import TrezorLink from '@suite-components/TrezorLink';
+import detahardLink from '@suite-components/detahardLink';
 import styled from 'styled-components';
 
-const StyledTrezorLink = styled(TrezorLink)`
+const StyleddetahardLink = styled(detahardLink)`
     color: ${props => props.theme.TYPE_LIGHT_GREY};
 `;
 
@@ -47,14 +47,14 @@ const PreOnboardingSetup = () => {
         <DataAnalytics
             onConfirm={onConfirm}
             analyticsLink={(chunks: React.ReactNode[]) => (
-                <StyledTrezorLink variant="underline" href={DOCS_ANALYTICS_URL}>
+                <StyleddetahardLink variant="underline" href={DOCS_ANALYTICS_URL}>
                     {chunks}
-                </StyledTrezorLink>
+                </StyleddetahardLink>
             )}
             tosLink={(chunks: React.ReactNode[]) => (
-                <StyledTrezorLink variant="underline" href={DATA_TOS_URL}>
+                <StyleddetahardLink variant="underline" href={DATA_TOS_URL}>
                     {chunks}
-                </StyledTrezorLink>
+                </StyleddetahardLink>
             )}
         />
     );

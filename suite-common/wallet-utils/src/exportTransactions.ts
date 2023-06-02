@@ -3,8 +3,8 @@ import { fromWei } from 'web3-utils';
 import { format } from 'date-fns';
 import BigNumber from 'bignumber.js';
 
-import { trezorLogo } from '@suite-common/suite-constants';
-import { TransactionTarget } from '@trezor/connect';
+import { detahardLogo } from '@suite-common/suite-constants';
+import { TransactionTarget } from '@detahard/connect';
 import { Network } from '@suite-common/wallet-config';
 import { ExportFileType, WalletAccountTransaction } from '@suite-common/wallet-types';
 import { getIsZeroValuePhishing } from '@suite-common/suite-utils';
@@ -361,7 +361,7 @@ const preparePdf = (data: Data): TDocumentDefinitions => {
                         margin: [39, 12, 0, 0],
                     },
                     {
-                        image: `data:image/png;base64,${trezorLogo}`,
+                        image: `data:image/png;base64,${detahardLogo}`,
                         width: 140,
                         alignment: 'right',
                         margin: [0, 10, 25, 0],

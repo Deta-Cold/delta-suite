@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import useTimeoutFn from 'react-use/lib/useTimeoutFn';
-import { variables, CoinLogo, Select, Icon, useTheme } from '@trezor/components';
+import { variables, CoinLogo, Select, Icon, useTheme } from '@detahard/components';
 import { FiatValue, Translation, AccountLabeling, FormattedCryptoAmount } from '@suite-components';
 import { useActions } from '@suite-hooks';
 import * as modalActions from '@suite-actions/modalActions';

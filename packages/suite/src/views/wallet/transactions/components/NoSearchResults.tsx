@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Card, variables } from '@trezor/components';
+import { Card, variables } from '@detahard/components';
 import { Translation } from '@suite-components';
-import { getRandomNumberInRange } from '@trezor/utils';
+import { getRandomNumberInRange } from '@detahard/utils';
 
 const NoResults = styled(Card)`
     display: flex;

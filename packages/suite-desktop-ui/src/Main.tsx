@@ -27,10 +27,10 @@ import { desktopHandshake } from '@suite-actions/suiteActions';
 import * as STORAGE from '@suite-actions/constants/storageConstants';
 
 import { SENTRY_CONFIG } from '@suite-common/sentry';
-import { desktopApi } from '@trezor/suite-desktop-api';
+import { desktopApi } from '@detahard/suite-desktop-api';
 import { FormatterProvider } from '@suite-common/formatters';
-import { createIpcProxy } from '@trezor/ipc-proxy';
-import TrezorConnect from '@trezor/connect';
+import { createIpcProxy } from '@detahard/ipc-proxy';
+import detahardConnect from '@detahard/connect';
 
 import { DesktopUpdater } from './support/DesktopUpdater';
 import { AppRouter } from './support/Router';
@@ -120,12 +120,12 @@ export const init = async (container: HTMLElement) => {
 
     store.dispatch(desktopHandshake(loadModules.payload));
 
-    // create ipc-proxy for @trezor/connect
-    const proxy = await createIpcProxy<typeof TrezorConnect>('TrezorConnect');
-    // override each method of @trezor/connect using ipc-proxy
-    Object.keys(TrezorConnect).forEach(method => {
+    // create ipc-proxy for @detahard/connect
+    const proxy = await createIpcProxy<typeof detahardConnect>('detahardConnect');
+    // override each method of @detahard/connect using ipc-proxy
+    Object.keys(detahardConnect).forEach(method => {
         // @ts-expect-error key vs union of values endless problem
-        TrezorConnect[method] = proxy[method];
+        detahardConnect[method] = proxy[method];
     });
 
     // finally render whole app

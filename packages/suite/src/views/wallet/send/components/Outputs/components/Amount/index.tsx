@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import BigNumber from 'bignumber.js';
 import styled from 'styled-components';
 
-import { Icon, Switch, Warning, variables, useTheme } from '@trezor/components';
+import { Icon, Switch, Warning, variables, useTheme } from '@detahard/components';
 import { FiatValue, Translation, NumberInput } from '@suite-components';
 import { InputError } from '@wallet-components';
 import {

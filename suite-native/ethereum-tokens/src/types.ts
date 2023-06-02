@@ -1,4 +1,4 @@
-import { TokenTransfer } from '@trezor/blockchain-link';
+import { TokenTransfer } from '@detahard/blockchain-link';
 import {
     TokenAddress,
     TokenSymbol,

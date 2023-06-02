@@ -2,7 +2,7 @@
 
 import React from 'react';
 import * as routerActions from '@suite-actions/routerActions';
-import { Button } from '@trezor/components';
+import { Button } from '@detahard/components';
 import { DeviceInvalidModeLayout, Translation } from '@suite-components';
 import { useActions } from '@suite-hooks';
 

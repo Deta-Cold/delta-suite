@@ -1,11 +1,11 @@
-package io.trezor.transport.interfaces;
+package io.detahard.transport.interfaces;
 
 import java.util.List;
 
 public interface BridgeInterface {
-  List<TrezorInterface> enumerate();
+  List<detahardInterface> enumerate();
 
-  TrezorInterface getDeviceByPath(String path);
+  detahardInterface getDeviceByPath(String path);
 
   void findAlreadyConnectedDevices();
 }

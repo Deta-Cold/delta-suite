@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Translation } from '@suite-components';
 import { OnOffSwitcher } from '@wallet-components';
-import { Button, Tooltip } from '@trezor/components';
+import { Button, Tooltip } from '@detahard/components';
 import { useSendFormContext } from '@wallet-hooks';
 import { isFeatureFlagEnabled } from '@suite-common/suite-utils';
 import { OpenGuideFromTooltip } from '@guide-components';

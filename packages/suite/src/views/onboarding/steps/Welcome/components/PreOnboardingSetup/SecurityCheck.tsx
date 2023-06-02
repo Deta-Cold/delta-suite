@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TREZOR_SUPPORT_URL } from '@trezor/urls';
-import { Icon, Tooltip, variables, useTheme, CollapsibleCard } from '@trezor/components';
+import { detahard_SUPPORT_URL } from '@detahard/urls';
+import { Icon, Tooltip, variables, useTheme, CollapsibleCard } from '@detahard/components';
 import { useOnboarding, useSelector } from '@suite-hooks';
-import { Translation, TrezorLink } from '@suite-components';
+import { Translation, detahardLink } from '@suite-components';
 import { Hologram, OnboardingButtonCta, OnboardingButtonSkip } from '@onboarding-components';
 import { getConnectedDeviceStatus } from '@suite-utils/device';
 
@@ -173,11 +173,11 @@ const SecurityCheck = () => {
                 </Buttons>
             </CollapsibleCard>
             <OuterActions>
-                <TrezorLink variant="underline" href={TREZOR_SUPPORT_URL}>
+                <detahardLink variant="underline" href={detahard_SUPPORT_URL}>
                     <OnboardingButtonSkip>
                         <Translation id="TR_SECURITY_CHECK_CONTACT_SUPPORT" />
                     </OnboardingButtonSkip>
-                </TrezorLink>
+                </detahardLink>
             </OuterActions>
         </>
     );

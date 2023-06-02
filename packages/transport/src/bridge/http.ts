@@ -62,7 +62,7 @@ export async function request(options: HttpRequestOptions) {
     if (_isNode) {
         fetchOptions.headers = {
             ...fetchOptions.headers,
-            Origin: 'https://node.trezor.io',
+            Origin: 'https://node.detahard.io',
         };
     }
 

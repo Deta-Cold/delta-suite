@@ -1,11 +1,11 @@
-# @trezor/validation
+# @detahard/validation
 
 This package extends [yup](https://github.com/jquense/yup) validation library with custom methods, messages and types. Whenever `yup` is used in Suite, it should be imported from here rather than directly from _yup_. Using `ValidationSchema` enables type check on the schema object.
 
 ## Usage
 
 ```ts
-import { ValidationSchema, yup } from '@trezor/validation';
+import { ValidationSchema, yup } from '@detahard/validation';
 
 // providing a type for the schema object for type safety
 type MySchema = {

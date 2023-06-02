@@ -12,8 +12,8 @@ import {
     Screen,
     StackProps,
 } from '@suite-native/navigation';
-import { prepareNativeStyle, useNativeStyles } from '@trezor/styles';
-import { yup } from '@trezor/validation';
+import { prepareNativeStyle, useNativeStyles } from '@detahard/styles';
+import { yup } from '@detahard/validation';
 import { NetworkType, networks } from '@suite-common/wallet-config';
 
 import { XpubImportSection } from '../components/XpubImportSection';

@@ -1,4 +1,4 @@
-import addressValidator from 'trezor-address-validator';
+import addressValidator from 'detahard-address-validator';
 
 import { Account } from '@suite-common/wallet-types';
 

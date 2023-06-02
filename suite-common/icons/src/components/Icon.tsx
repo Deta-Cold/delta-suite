@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 
 import { Canvas, ImageSVG, useSVG, Group, Skia, BlendMode } from '@shopify/react-native-skia';
 
-import { useNativeStyles } from '@trezor/styles';
-import { Color } from '@trezor/theme';
+import { useNativeStyles } from '@detahard/styles';
+import { Color } from '@detahard/theme';
 
 import { IconName, icons } from '../icons';
 

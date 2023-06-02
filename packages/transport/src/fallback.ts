@@ -1,4 +1,4 @@
-import type { Transport, AcquireInput, TrezorDeviceInfoWithSession } from './types';
+import type { Transport, AcquireInput, detahardDeviceInfoWithSession } from './types';
 
 export default class FallbackTransport {
     _availableTransports: Array<Transport> = [];
@@ -76,7 +76,7 @@ export default class FallbackTransport {
         return this.activeTransport.enumerate();
     }
 
-    listen(old?: Array<TrezorDeviceInfoWithSession>) {
+    listen(old?: Array<detahardDeviceInfoWithSession>) {
         return this.activeTransport.listen(old);
     }
 

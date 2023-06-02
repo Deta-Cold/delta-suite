@@ -1,11 +1,11 @@
 export * as Messages from './messages';
 
 // does not have session
-export type TrezorDeviceInfo = {
+export type detahardDeviceInfo = {
     path: string;
 };
 
-export type TrezorDeviceInfoWithSession = TrezorDeviceInfo & {
+export type detahardDeviceInfoWithSession = detahardDeviceInfo & {
     session?: string | null;
     debugSession?: string | null;
     debug: boolean;
@@ -16,11 +16,11 @@ export type AcquireInput = {
     previous?: string;
 };
 
-export type MessageFromTrezor = { type: string; message: Record<string, unknown> };
+export type MessageFromdetahard = { type: string; message: Record<string, unknown> };
 
 export type Transport = {
-    enumerate(): Promise<Array<TrezorDeviceInfoWithSession>>;
-    listen(old?: Array<TrezorDeviceInfoWithSession>): Promise<Array<TrezorDeviceInfoWithSession>>;
+    enumerate(): Promise<Array<detahardDeviceInfoWithSession>>;
+    listen(old?: Array<detahardDeviceInfoWithSession>): Promise<Array<detahardDeviceInfoWithSession>>;
     acquire(input: AcquireInput, debugLink: boolean): Promise<string>;
     release(session: string, onclose: boolean, debugLink?: boolean): Promise<void>;
     configure(signedData: JSON | string): Promise<void>;
@@ -29,14 +29,14 @@ export type Transport = {
         name: string,
         data: Record<string, unknown>,
         debugLink: boolean,
-    ): Promise<MessageFromTrezor>;
+    ): Promise<MessageFromdetahard>;
     post(
         session: string,
         name: string,
         data: Record<string, unknown>,
         debugLink: boolean,
     ): Promise<void>;
-    read(session: string, debugLink: boolean): Promise<MessageFromTrezor>;
+    read(session: string, debugLink: boolean): Promise<MessageFromdetahard>;
     // resolves when the transport can be used; rejects when it cannot
     init(debug?: boolean): Promise<void>;
     stop(): void;
